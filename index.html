@@ -180,7 +180,7 @@ footer a{color:#86efac}
       <div class="card"><div class="ic">🔗</div><h3>Catatan immutable + audit</h3><p>Setiap event absensi bersifat append-only (trigger DB menolak ubah/hapus). Pembatalan HR = baris baru yang tercatat — riwayat tak pernah dipalsukan.</p></div>
       <div class="card"><div class="ic">🧠</div><h3>Mesin keputusan</h3><p>Terima / tolak / tandai berdasarkan bukti, dengan prinsip <b>gagal ke arah aman</b>: bukti rusak → ditandai untuk ditinjau, bukan menuduh karyawan.</p></div>
       <div class="card"><div class="ic">🙂</div><h3>Wajah + liveness</h3><p>Verifikasi wajah dengan deteksi anti-spoofing (continuity + presentation-attack detection) — media direkam, keputusan ditinjau sampai layanan ML aktif.</p></div>
-      <div class="card"><div class="ic">📍</div><h3>GPS sebagai audit</h3><p>Lokasi tersebar sesuai area kerja tambang → GPS jadi bukti audit, bukan gerbang. Deteksi lokasi palsu &amp; atestasi perangkat direkam.</p></div>
+      <div class="card"><div class="ic">📍</div><h3>GPS sebagai audit</h3><p><b>Lokasi GPS asli perangkat</b> (real-time saat absen) + <b>deteksi mock-location</b>. Lokasi tersebar sesuai area tambang → GPS jadi bukti audit, bukan gerbang; kegagalan izin tak memblokir absen.</p></div>
     </div>
   </div>
 </section>
@@ -211,6 +211,12 @@ footer a{color:#86efac}
         </div>
       </div>
     </div>
+    <div class="phones" style="margin-top:44px">
+      <div class="phone"><div class="frame"><img src="img/emp-gaji.png" alt="Tab Gaji"></div><div class="cap"><b>Tab Gaji</b><span>take-home + riwayat periode</span></div></div>
+      <div class="phone"><div class="frame"><img src="img/emp-slip.png" alt="Slip gaji rinci"></div><div class="cap"><b>Slip rinci</b><span>pendapatan · potongan · neto</span></div></div>
+      <div class="phone"><div class="frame"><img src="img/slip-dark.png" alt="Slip gaji dark mode"></div><div class="cap"><b>Slip · Gelap</b><span>dark mode premium</span></div></div>
+    </div>
+    <p style="text-align:center;margin-top:22px;color:var(--tx2);font-size:14px">Setiap angka <b>benar-benar dihitung</b> oleh engine — bukan contoh statis. Engine yang sama berjalan di <b>server (Laravel)</b> &amp; <b>aplikasi (Flutter)</b>, teruji <b>20 tes</b> dengan hasil identik.</p>
   </div>
 </section>
 
@@ -259,9 +265,9 @@ footer a{color:#86efac}
         <div class="road">
           <div class="step done"><span class="dot">✓</span><div><b>Backend + API</b><p>Laravel 12, model anti-curang, 207 tes lulus</p></div><span class="pill d">selesai</span></div>
           <div class="step done"><span class="dot">✓</span><div><b>Web app (Vue 3)</b><p>Portal karyawan + area admin/HR</p></div><span class="pill d">selesai</span></div>
-          <div class="step done"><span class="dot">✓</span><div><b>Mobile — fitur karyawan</b><p>Beranda, Absen wajah, Riwayat, Profil · <b>dark mode istimewa</b> · <b>multi‑bahasa ID/EN</b></p></div><span class="pill d">selesai</span></div>
-          <div class="step wip"><span class="dot">◐</span><div><b>Payroll (penggajian)</b><p>Desain lengkap (BPJS, PPh21 TER, lembur, slip)</p></div><span class="pill w">desain</span></div>
-          <div class="step next"><span class="dot">→</span><div><b>Layanan ML wajah &amp; fitur admin mobile</b><p>Liveness/anti-spoofing, panel admin, laporan</p></div><span class="pill n">berikutnya</span></div>
+          <div class="step done"><span class="dot">✓</span><div><b>Mobile — fitur karyawan</b><p>Beranda, Absen wajah, Riwayat, <b>Gaji</b>, Profil · <b>GPS real</b> · <b>dark mode istimewa</b> · <b>multi‑bahasa ID/EN</b> · splash</p></div><span class="pill d">selesai</span></div>
+          <div class="step done"><span class="dot">✓</span><div><b>Payroll — engine &amp; slip gaji</b><p>Engine server+mobile (BPJS, PPh21 TER, lembur), slip terhitung nyata · <b>20 tes</b></p></div><span class="pill d">selesai</span></div>
+          <div class="step next"><span class="dot">→</span><div><b>Payroll run/finalize, PDF, ML wajah &amp; admin mobile</b><p>Jalankan/ finalisasi payroll, ekspor slip PDF &amp; transfer, liveness, panel admin</p></div><span class="pill n">berikutnya</span></div>
         </div>
       </div>
     </div>

@@ -31,6 +31,14 @@ Alur absen 2 ketukan: **ketuk → verifikasi wajah (liveness) → hasil**. Waktu
 
 Setiap layar dirancang untuk **terang & gelap** (navy dalam + aksen emerald), antarmuka penuh **Bahasa Indonesia & English** yang bisa diganti kapan saja — termasuk format tanggal & waktu.
 
+### 🧾 Slip Gaji — penggajian otomatis dari absensi
+
+| Tab Gaji | Slip · Terang | Slip · Gelap | Splash |
+|:---:|:---:|:---:|:---:|
+| <img src="img/emp-gaji.png" width="200"> | <img src="img/emp-slip.png" width="200"> | <img src="img/slip-dark.png" width="200"> | <img src="img/splash.png" width="200"> |
+
+Setiap angka **benar-benar dihitung** oleh engine penggajian (bukan contoh statis): gaji pokok, tunjangan, **lembur (Kepmenaker 102/2004)**, insentif → **potongan BPJS TK (JHT/JP) & Kesehatan, PPh21 metode TER** → **gaji dibawa pulang**. Engine yang sama berjalan di **server (Laravel)** dan **aplikasi (Flutter)** — teruji **20 tes** dengan hasil **identik lintas-platform**.
+
 ## 🔒 Inti produk — menutup celah kecurangan absensi
 
 - **Waktu otoritatif server** — keputusan pakai waktu server, bukan jam HP → manipulasi jam HP tertutup total.
@@ -38,7 +46,7 @@ Setiap layar dirancang untuk **terang & gelap** (navy dalam + aksen emerald), an
 - **Catatan immutable + audit** — event absensi append-only (trigger DB); pembatalan HR tercatat, riwayat tak dipalsukan.
 - **Mesin keputusan** — terima/tolak/tandai berbasis bukti, prinsip *gagal ke arah aman*.
 - **Wajah + liveness** — verifikasi dengan anti-spoofing (continuity + presentation-attack detection).
-- **GPS = audit, bukan gerbang** — lokasi kerja tersebar; deteksi lokasi palsu & atestasi perangkat direkam.
+- **GPS = audit, bukan gerbang** — **lokasi GPS asli perangkat** (real-time saat absen) + **deteksi mock-location**; lokasi kerja tersebar, atestasi perangkat direkam. Kegagalan izin tidak memblokir absen.
 
 ## 🧾 Payroll (HRIS) — gaji otomatis dari absensi
 
@@ -70,9 +78,9 @@ Absensi (otoritatif, immutable) → Work Sessions → Shift/Roster → Engine Pa
 |---|---|
 | Backend + API (model anti-curang, 207 tes) | ✅ selesai |
 | Web app (portal karyawan + admin/HR) | ✅ selesai |
-| Mobile — fondasi & auth (Flutter) | ✅ selesai |
-| Payroll (penggajian) | ◐ desain lengkap |
-| Fitur karyawan lanjutan & ML wajah | → berikutnya |
+| Mobile — karyawan (Absen, Riwayat, **Gaji**, Profil) + **GPS real** | ✅ selesai |
+| Payroll — engine (server + mobile) & slip gaji, **20 tes** | ✅ selesai |
+| Payroll run/finalize, ekspor PDF, admin mobile, ML wajah | → berikutnya |
 
 ---
 
