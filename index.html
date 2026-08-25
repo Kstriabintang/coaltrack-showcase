@@ -138,14 +138,15 @@ footer a{color:#86efac}
     <div class="sec-head">
       <span class="eyebrow">Aplikasi Mobile</span>
       <h2>Ringan, jelas, nyaman untuk karyawan lapangan.</h2>
-      <p>Dibangun dengan Flutter (satu basis kode Android + iOS). Tema hijau/putih sesuai identitas perusahaan, alur absen singkat, dukungan mode gelap. Berikut tangkapan layar <b>asli</b> dari aplikasinya.</p>
+      <p>Dibangun dengan Flutter (satu basis kode Android + iOS). Tema hijau/putih sesuai identitas perusahaan, alur absen 2 ketukan, dukungan mode gelap. Berikut tangkapan layar <b>asli</b> dari aplikasinya.</p>
     </div>
     <div class="phones">
-      <div class="phone"><div class="frame"><img src="img/login-light.png" alt="Layar Masuk SiAbsen Tambang"></div><div class="cap"><b>Masuk</b><span>login aman (Sanctum + device binding)</span></div></div>
-      <div class="phone"><div class="frame"><img src="img/shell-employee.png" alt="Beranda karyawan"></div><div class="cap"><b>Mode Karyawan</b><span>Beranda · Absen · Riwayat · Profil</span></div></div>
-      <div class="phone"><div class="frame"><img src="img/shell-admin.png" alt="Panel admin"></div><div class="cap"><b>Mode Admin / HR</b><span>Ringkasan · Absensi · Perangkat · Karyawan</span></div></div>
+      <div class="phone"><div class="frame"><img src="img/emp-home.png" alt="Beranda karyawan"></div><div class="cap"><b>Beranda</b><span>status hadir/bekerja + aktivitas</span></div></div>
+      <div class="phone"><div class="frame"><img src="img/emp-absen.png" alt="Layar Absen wajah"></div><div class="cap"><b>Absen ⭐</b><span>verifikasi wajah + liveness</span></div></div>
+      <div class="phone"><div class="frame"><img src="img/emp-riwayat.png" alt="Riwayat absensi"></div><div class="cap"><b>Riwayat</b><span>per hari + status keputusan</span></div></div>
+      <div class="phone"><div class="frame"><img src="img/emp-profil.png" alt="Profil & tema"></div><div class="cap"><b>Profil &amp; Tema</b><span>info, perangkat, terang/gelap</span></div></div>
     </div>
-    <p class="showcase-note">Routing peran otomatis: admin &amp; karyawan mendapat antarmuka berbeda dari satu aplikasi. Sesi bertahan (tetap login saat app dibuka lagi).</p>
+    <p class="showcase-note">Alur absen: ketuk → verifikasi wajah (liveness) → hasil. <b>Waktu ditentukan server</b>, media wajah dibungkus &amp; dikirim aman. Routing peran otomatis (karyawan vs admin/HR), sesi bertahan.</p>
   </div>
 </section>
 
@@ -241,9 +242,9 @@ footer a{color:#86efac}
         <div class="road">
           <div class="step done"><span class="dot">✓</span><div><b>Backend + API</b><p>Laravel 12, model anti-curang, 207 tes lulus</p></div><span class="pill d">selesai</span></div>
           <div class="step done"><span class="dot">✓</span><div><b>Web app (Vue 3)</b><p>Portal karyawan + area admin/HR</p></div><span class="pill d">selesai</span></div>
-          <div class="step done"><span class="dot">✓</span><div><b>Mobile — fondasi &amp; auth</b><p>Flutter: login, routing peran, tema, 2 shell</p></div><span class="pill d">selesai</span></div>
+          <div class="step done"><span class="dot">✓</span><div><b>Mobile — fitur karyawan</b><p>Flutter: login, Beranda, Absen wajah, Riwayat, Profil &amp; tema</p></div><span class="pill d">selesai</span></div>
           <div class="step wip"><span class="dot">◐</span><div><b>Payroll (penggajian)</b><p>Desain lengkap (BPJS, PPh21 TER, lembur, slip)</p></div><span class="pill w">desain</span></div>
-          <div class="step next"><span class="dot">→</span><div><b>Fitur karyawan &amp; ML wajah</b><p>Pipeline absen, liveness, laporan</p></div><span class="pill n">berikutnya</span></div>
+          <div class="step next"><span class="dot">→</span><div><b>Layanan ML wajah &amp; fitur admin mobile</b><p>Liveness/anti-spoofing, panel admin, laporan</p></div><span class="pill n">berikutnya</span></div>
         </div>
       </div>
     </div>

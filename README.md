@@ -16,12 +16,12 @@ Dibangun untuk **PT Kalimantan Tambang Mandiri** · Laravel · Vue · Flutter
 
 ## 📱 Aplikasi mobile (Flutter) — tangkapan layar asli
 
-| Masuk | Mode Karyawan | Mode Admin / HR |
-|:---:|:---:|:---:|
-| <img src="img/login-light.png" width="230"> | <img src="img/shell-employee.png" width="230"> | <img src="img/shell-admin.png" width="230"> |
-| Login aman (Sanctum + device binding) | Beranda · Absen · Riwayat · Profil | Ringkasan · Absensi · Perangkat · Karyawan |
+| Beranda | Absen ⭐ | Riwayat | Profil & Tema |
+|:---:|:---:|:---:|:---:|
+| <img src="img/emp-home.png" width="200"> | <img src="img/emp-absen.png" width="200"> | <img src="img/emp-riwayat.png" width="200"> | <img src="img/emp-profil.png" width="200"> |
+| Status hadir/bekerja + aktivitas | Verifikasi wajah + liveness | Per hari + status keputusan | Info, perangkat, terang/gelap |
 
-Satu aplikasi, **dua permukaan** dipilih otomatis dari peran (`is_admin`). Tema hijau/putih sesuai identitas perusahaan, dukungan mode gelap, sesi bertahan.
+Alur absen 2 ketukan: **ketuk → verifikasi wajah (liveness) → hasil**. Waktu ditentukan **server**, media wajah dibungkus & dikirim aman. Satu aplikasi, **dua permukaan** (karyawan vs admin/HR) dipilih otomatis dari peran; tema hijau/putih, mode gelap, sesi bertahan.
 
 ## 🔒 Inti produk — menutup celah kecurangan absensi
 
