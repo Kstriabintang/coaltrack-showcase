@@ -21,7 +21,15 @@ Dibangun untuk **PT Kalimantan Tambang Mandiri** · Laravel · Vue · Flutter
 | <img src="img/emp-home.png" width="200"> | <img src="img/emp-absen.png" width="200"> | <img src="img/emp-riwayat.png" width="200"> | <img src="img/emp-profil.png" width="200"> |
 | Status hadir/bekerja + aktivitas | Verifikasi wajah + liveness | Per hari + status keputusan | Info, perangkat, terang/gelap |
 
-Alur absen 2 ketukan: **ketuk → verifikasi wajah (liveness) → hasil**. Waktu ditentukan **server**, media wajah dibungkus & dikirim aman. Satu aplikasi, **dua permukaan** (karyawan vs admin/HR) dipilih otomatis dari peran; tema hijau/putih, mode gelap, sesi bertahan.
+Alur absen 2 ketukan: **ketuk → verifikasi wajah (liveness) → hasil**. Waktu ditentukan **server**, media wajah dibungkus & dikirim aman. Satu aplikasi, **dua permukaan** (karyawan vs admin/HR) dipilih otomatis dari peran; sesi bertahan.
+
+### 🌙 Mode gelap istimewa & 🌐 dua bahasa (ID / EN)
+
+| Beranda · Gelap | Absen · Gelap | Bahasa & Tema | English |
+|:---:|:---:|:---:|:---:|
+| <img src="img/home-dark.png" width="200"> | <img src="img/absen-dark.png" width="200"> | <img src="img/profil-dark.png" width="200"> | <img src="img/home-en.png" width="200"> |
+
+Setiap layar dirancang untuk **terang & gelap** (navy dalam + aksen emerald), antarmuka penuh **Bahasa Indonesia & English** yang bisa diganti kapan saja — termasuk format tanggal & waktu.
 
 ## 🔒 Inti produk — menutup celah kecurangan absensi
 
