@@ -4,7 +4,7 @@
 
 ### HRIS **Absensi anti-curang + Penggajian (Payroll)** untuk perusahaan tambang batu bara
 
-Dibangun untuk **PT Kalimantan Tambang Mandiri** · Laravel · Vue · Flutter
+Dibangun untuk **Qubah Group** · Laravel · Vue · Flutter
 
 **[▶ Buka Showcase (live)](https://ksatriabintangsamudra.my.id/siabsen-tambang-showcase/)**
 
@@ -29,7 +29,7 @@ Alur absen 2 ketukan: **ketuk → verifikasi wajah (liveness) → hasil**. Waktu
 |:---:|:---:|:---:|:---:|
 | <img src="img/home-dark.png" width="200"> | <img src="img/absen-dark.png" width="200"> | <img src="img/profil-dark.png" width="200"> | <img src="img/home-en.png" width="200"> |
 
-Setiap layar dirancang untuk **terang & gelap** (navy dalam + aksen emerald), antarmuka penuh **Bahasa Indonesia & English** yang bisa diganti kapan saja — termasuk format tanggal & waktu.
+Setiap layar dirancang untuk **terang & gelap** (navy dalam + aksen hijau daun & emas), antarmuka penuh **Bahasa Indonesia & English** yang bisa diganti kapan saja — termasuk format tanggal & waktu.
 
 ### 🧾 Slip Gaji — penggajian otomatis dari absensi
 
