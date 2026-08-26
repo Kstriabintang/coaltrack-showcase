@@ -6,7 +6,7 @@
 
 Dibangun untuk **Qubah Group** · Laravel · Vue · Flutter
 
-**[▶ Buka Showcase (live)](https://ksatriabintangsamudra.my.id/siabsen-tambang-showcase/)** — presentasi **per-slide** (geser / panah ← →)
+**[▶ Buka Showcase (live)](https://ksatriabintangsamudra.my.id/siabsen-tambang-showcase/)** — per-slide presentation · **5 languages** via the flag switcher (top-right) · English default
 
 </div>
 
@@ -18,16 +18,16 @@ Dibangun untuk **Qubah Group** · Laravel · Vue · Flutter
 
 | Beranda | Absen ⭐ | Riwayat | Profil & Tema |
 |:---:|:---:|:---:|:---:|
-| <img src="img/emp-home.png" width="200"> | <img src="img/emp-absen.png" width="200"> | <img src="img/emp-riwayat.png" width="200"> | <img src="img/emp-profil.png" width="200"> |
+| <img src="img/emp-home.en.png" width="200"> | <img src="img/emp-absen.en.png" width="200"> | <img src="img/emp-riwayat.en.png" width="200"> | <img src="img/emp-profil.en.png" width="200"> |
 | Status hadir/bekerja + aktivitas | Verifikasi wajah + liveness | Per hari + status keputusan | Info, perangkat, terang/gelap |
 
 Alur absen 2 ketukan: **ketuk → verifikasi wajah (liveness) → hasil**. Waktu ditentukan **server**, media wajah dibungkus & dikirim aman. Satu aplikasi, **dua permukaan** (karyawan vs admin/HR) dipilih otomatis dari peran; sesi bertahan.
 
-### 🌙 Mode gelap istimewa & 🌐 dua bahasa (ID / EN)
+### 🌙 Beautiful dark mode & 🌐 5 languages (EN · ID · MS · ZH · AR)
 
 | Beranda · Gelap | Absen · Gelap | Bahasa & Tema | English |
 |:---:|:---:|:---:|:---:|
-| <img src="img/home-dark.png" width="200"> | <img src="img/absen-dark.png" width="200"> | <img src="img/profil-dark.png" width="200"> | <img src="img/home-en.png" width="200"> |
+| <img src="img/home-dark.en.png" width="200"> | <img src="img/absen-dark.en.png" width="200"> | <img src="img/profil-dark.en.png" width="200"> | <img src="img/slip-dark.en.png" width="200"> |
 
 Setiap layar dirancang untuk **terang & gelap** (navy dalam + aksen hijau daun & emas), antarmuka penuh **Bahasa Indonesia & English** yang bisa diganti kapan saja — termasuk format tanggal & waktu.
 
@@ -35,7 +35,7 @@ Setiap layar dirancang untuk **terang & gelap** (navy dalam + aksen hijau daun &
 
 | Tab Gaji | Slip · Terang | Slip · Gelap | Splash |
 |:---:|:---:|:---:|:---:|
-| <img src="img/emp-gaji.png" width="200"> | <img src="img/emp-slip.png" width="200"> | <img src="img/slip-dark.png" width="200"> | <img src="img/splash.png" width="200"> |
+| <img src="img/emp-gaji.en.png" width="200"> | <img src="img/emp-slip.en.png" width="200"> | <img src="img/slip-dark.en.png" width="200"> | <img src="img/splash.png" width="200"> |
 
 Setiap angka **benar-benar dihitung** oleh engine penggajian (bukan contoh statis): gaji pokok, tunjangan, **lembur (Kepmenaker 102/2004)**, insentif → **potongan BPJS TK (JHT/JP) & Kesehatan, PPh21 metode TER** → **gaji dibawa pulang**. Engine yang sama berjalan di **server (Laravel)** dan **aplikasi (Flutter)** — teruji **20 tes** dengan hasil **identik lintas-platform**.
 
@@ -43,7 +43,7 @@ Setiap angka **benar-benar dihitung** oleh engine penggajian (bukan contoh stati
 
 | Izin & Cuti | Notifikasi | Atur Profil | Dashboard | Monitor real-time |
 |:---:|:---:|:---:|:---:|:---:|
-| <img src="img/leave.png" width="150"> | <img src="img/notif.png" width="150"> | <img src="img/edit-profile.png" width="150"> | <img src="img/dash.png" width="150"> | <img src="img/monitor.png" width="150"> |
+| <img src="img/leave.en.png" width="150"> | <img src="img/notif.en.png" width="150"> | <img src="img/edit-profile.en.png" width="150"> | <img src="img/dash.en.png" width="150"> | <img src="img/monitor.en.png" width="150"> |
 
 Karyawan **ajukan izin/cuti/sakit** (dengan sisa kuota & lampiran), terima **notifikasi**, dan **atur profil** (foto + kontak darurat) sendiri — tanpa ke kantor HR. Pimpinan/HR pantau **kehadiran real-time**: siapa di lokasi, biaya payroll, dan **kecurangan tertahan** (lokasi palsu langsung tampak).
 
@@ -51,7 +51,7 @@ Karyawan **ajukan izin/cuti/sakit** (dengan sisa kuota & lampiran), terima **not
 
 | Perangkat | Karyawan | Payroll Run | Slip PDF | Persetujuan Izin |
 |:---:|:---:|:---:|:---:|:---:|
-| <img src="img/devices.png" width="150"> | <img src="img/employees.png" width="150"> | <img src="img/payrollrun.png" width="150"> | <img src="img/slip-pdf.png" width="150"> | <img src="img/admleave.png" width="150"> |
+| <img src="img/devices.en.png" width="150"> | <img src="img/employees.en.png" width="150"> | <img src="img/payrollrun.en.png" width="150"> | <img src="img/slip-pdf.png" width="150"> | <img src="img/admleave.en.png" width="150"> |
 
 **1 perangkat disetujui/karyawan** (setujui/cabut), direktori karyawan (cari/NIK/dept), **payroll run → finalisasi → bayar** dengan **slip gaji PDF** (kirim ke tiap karyawan lewat **Telegram/Email**), dan **persetujuan izin/cuti** — semua dari genggaman.
 
