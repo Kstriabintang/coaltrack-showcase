@@ -6,7 +6,7 @@
 
 Dibangun untuk **Qubah Group** · Laravel · Vue · Flutter
 
-**[▶ Buka Showcase (live)](https://ksatriabintangsamudra.my.id/siabsen-tambang-showcase/)** — per-slide presentation · **5 languages** via the flag switcher (top-right) · English default
+**[▶ Buka Showcase (live)](https://ksatriabintangsamudra.my.id/coaltrack-showcase/)** — per-slide presentation · **5 languages** via the flag switcher (top-right) · English default
 
 </div>
 
