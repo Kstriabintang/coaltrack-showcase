@@ -39,6 +39,14 @@ Setiap layar dirancang untuk **terang & gelap** (navy dalam + aksen emerald), an
 
 Setiap angka **benar-benar dihitung** oleh engine penggajian (bukan contoh statis): gaji pokok, tunjangan, **lembur (Kepmenaker 102/2004)**, insentif → **potongan BPJS TK (JHT/JP) & Kesehatan, PPh21 metode TER** → **gaji dibawa pulang**. Engine yang sama berjalan di **server (Laravel)** dan **aplikasi (Flutter)** — teruji **20 tes** dengan hasil **identik lintas-platform**.
 
+### 📝 Fitur karyawan lengkap & 🖥️ ruang kendali admin
+
+| Izin & Cuti | Notifikasi | Atur Profil | Dashboard | Monitor real-time |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="img/leave.png" width="150"> | <img src="img/notif.png" width="150"> | <img src="img/edit-profile.png" width="150"> | <img src="img/dash.png" width="150"> | <img src="img/monitor.png" width="150"> |
+
+Karyawan **ajukan izin/cuti/sakit** (dengan sisa kuota & lampiran), terima **notifikasi**, dan **atur profil** (foto + kontak darurat) sendiri — tanpa ke kantor HR. Pimpinan/HR pantau **kehadiran real-time**: siapa di lokasi, biaya payroll, dan **kecurangan tertahan** (lokasi palsu langsung tampak).
+
 ## 🔒 Inti produk — menutup celah kecurangan absensi
 
 - **Waktu otoritatif server** — keputusan pakai waktu server, bukan jam HP → manipulasi jam HP tertutup total.
@@ -78,9 +86,10 @@ Absensi (otoritatif, immutable) → Work Sessions → Shift/Roster → Engine Pa
 |---|---|
 | Backend + API (model anti-curang, 207 tes) | ✅ selesai |
 | Web app (portal karyawan + admin/HR) | ✅ selesai |
-| Mobile — karyawan (Absen, Riwayat, **Gaji**, Profil) + **GPS real** | ✅ selesai |
+| Mobile — karyawan (Absen, Riwayat, **Gaji**, **Izin & Cuti**, **Notifikasi**, Profil+foto) + **GPS real** | ✅ selesai |
 | Payroll — engine (server + mobile) & slip gaji, **20 tes** | ✅ selesai |
-| Payroll run/finalize, ekspor PDF, admin mobile, ML wajah | → berikutnya |
+| Admin — **Dashboard** & **Monitor kehadiran real-time** (flag GPS palsu) | ✅ selesai |
+| Push FCM, approve izin (admin), payroll finalize/PDF, ML wajah | → berikutnya |
 
 ---
 
