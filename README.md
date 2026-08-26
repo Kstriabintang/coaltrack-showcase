@@ -47,6 +47,14 @@ Setiap angka **benar-benar dihitung** oleh engine penggajian (bukan contoh stati
 
 Karyawan **ajukan izin/cuti/sakit** (dengan sisa kuota & lampiran), terima **notifikasi**, dan **atur profil** (foto + kontak darurat) sendiri — tanpa ke kantor HR. Pimpinan/HR pantau **kehadiran real-time**: siapa di lokasi, biaya payroll, dan **kecurangan tertahan** (lokasi palsu langsung tampak).
 
+**Operasi HR lengkap** — perangkat, karyawan, penggajian, dan persetujuan:
+
+| Perangkat | Karyawan | Payroll Run | Slip PDF | Persetujuan Izin |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="img/devices.png" width="150"> | <img src="img/employees.png" width="150"> | <img src="img/payrollrun.png" width="150"> | <img src="img/slip-pdf.png" width="150"> | <img src="img/admleave.png" width="150"> |
+
+**1 perangkat disetujui/karyawan** (setujui/cabut), direktori karyawan (cari/NIK/dept), **payroll run → finalisasi → bayar** dengan **slip gaji PDF** (kirim ke tiap karyawan lewat **Telegram/Email**), dan **persetujuan izin/cuti** — semua dari genggaman.
+
 ## 🔒 Inti produk — menutup celah kecurangan absensi
 
 - **Waktu otoritatif server** — keputusan pakai waktu server, bukan jam HP → manipulasi jam HP tertutup total.
@@ -88,8 +96,10 @@ Absensi (otoritatif, immutable) → Work Sessions → Shift/Roster → Engine Pa
 | Web app (portal karyawan + admin/HR) | ✅ selesai |
 | Mobile — karyawan (Absen, Riwayat, **Gaji**, **Izin & Cuti**, **Notifikasi**, Profil+foto) + **GPS real** | ✅ selesai |
 | Payroll — engine (server + mobile) & slip gaji, **20 tes** | ✅ selesai |
-| Admin — **Dashboard** & **Monitor kehadiran real-time** (flag GPS palsu) | ✅ selesai |
-| Push FCM, approve izin (admin), payroll finalize/PDF, ML wajah | → berikutnya |
+| Admin — **Dashboard**, **Monitor real-time**, **Perangkat**, **Karyawan** | ✅ selesai |
+| Payroll **run → finalize → bayar**, **slip PDF**, kirim slip (Telegram/Email) | ✅ selesai |
+| **Persetujuan izin/cuti** (HR) | ✅ selesai |
+| Push FCM (notifikasi HP) & ML wajah (liveness) | → berikutnya |
 
 ---
 
