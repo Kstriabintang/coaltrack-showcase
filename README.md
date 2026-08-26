@@ -6,7 +6,7 @@
 
 Dibangun untuk **Qubah Group** · Laravel · Vue · Flutter
 
-**[▶ Buka Showcase (live)](https://ksatriabintangsamudra.my.id/siabsen-tambang-showcase/)**
+**[▶ Buka Showcase (live)](https://ksatriabintangsamudra.my.id/siabsen-tambang-showcase/)** — presentasi **per-slide** (geser / panah ← →)
 
 </div>
 
