@@ -1,8 +1,8 @@
 <div align="center">
 
-# ⛏️ SiAbsen Tambang
+# ⛏️ CoalTrack
 
-### HRIS **Absensi anti-curang + Penggajian (Payroll)** untuk perusahaan tambang batu bara
+### **Absensi anti-curang** untuk perusahaan tambang batu bara — *Coal Mine Attendance*
 
 Dibangun untuk **Qubah Group** · Laravel · Vue · Flutter
 
