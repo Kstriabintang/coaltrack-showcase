@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CoalTrack — Qubah Group</title>
 <meta name="description" content="CoalTrack by Qubah Group: anti-fraud attendance for coal mining. Per-slide showcase in 5 languages. Laravel · Vue · Flutter.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CoalTrack">
+<meta property="og:title" content="CoalTrack — Coal Mine Attendance">
+<meta property="og:description" content="Anti-fraud attendance + automatic payroll for coal mining operations. By Qubah Group.">
+<meta property="og:image" content="https://ksatriabintangsamudra.my.id/coaltrack-showcase/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://ksatriabintangsamudra.my.id/coaltrack-showcase/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CoalTrack — Coal Mine Attendance">
+<meta name="twitter:description" content="Anti-fraud attendance + payroll for coal mining. By Qubah Group.">
+<meta name="twitter:image" content="https://ksatriabintangsamudra.my.id/coaltrack-showcase/img/og.png">
 <meta name="theme-color" content="#3C8A12">
 <link rel="icon" href="img/qubah-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,6 +142,42 @@ html[dir="rtl"] .rolelist li::before{left:auto;right:0}
 .rolelist li span{color:var(--tx3);font-size:12px}
 .rolecard.admin .rolelist li span{color:#94b697}
 .rolenote{text-align:center;margin-top:18px;font-size:12.5px;color:var(--tx3)}
+
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:10px;margin-top:clamp(20px,3vw,32px)}
+.fnode{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px 14px;width:180px;text-align:center}
+.fnode .fi{width:44px;height:44px;border-radius:12px;background:var(--tint);color:var(--green);display:grid;place-items:center;margin:0 auto 10px}
+.fnode .fi svg{width:23px;height:23px}
+.fnode b{display:block;font-size:14.5px;font-weight:800}
+.fnode span{font-size:11.5px;color:var(--tx3);line-height:1.35;display:block;margin-top:3px}
+.farrow{align-self:center;color:var(--green);font-size:22px;font-weight:800}
+html[dir="rtl"] .farrow{transform:scaleX(-1)}
+.flownote{text-align:center;margin-top:22px;font-size:13px;color:var(--tx3)}
+.cmp{margin-top:clamp(18px,3vw,28px);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
+.cmprow{display:grid;grid-template-columns:1.15fr 1fr 1fr;align-items:center}
+.cmprow+.cmprow{border-top:1px solid var(--line)}
+.cmprow>div{padding:13px 16px;font-size:13.5px}
+.cmphead{background:var(--bg)}
+.cmphead>div{font-weight:800;font-size:13px;letter-spacing:.02em}
+.cmphead .cc{color:var(--green)}
+.cmprow .asp{font-weight:700}
+.cmprow .man{color:var(--tx2)}
+.cmprow .man::before{content:"✕ ";color:#c2410c;font-weight:800}
+.cmprow .ct{color:var(--tx);font-weight:600}
+.cmprow .ct::before{content:"✓ ";color:var(--green);font-weight:800}
+.cmphead .man::before,.cmphead .ct::before{content:""}
+@media(max-width:640px){.cmprow>div{padding:10px 11px;font-size:12px}}
+
+.demo{display:flex;gap:clamp(24px,5vw,64px);align-items:center;justify-content:center;flex-wrap:wrap;margin-top:clamp(18px,3vw,30px)}
+.demophone{width:clamp(184px,20vw,236px)}
+.demophone .frame{padding:6px;border-radius:36px;background:linear-gradient(155deg,#27313f,#0b1220);box-shadow:0 34px 60px -30px rgba(2,44,22,.5),inset 0 0 0 1px rgba(255,255,255,.06)}
+.demophone .frame img{width:100%;display:block;border-radius:30px;aspect-ratio:412/892;object-fit:cover;background:#fff;transition:opacity .32s ease}
+.demoinfo{max-width:330px}
+html[dir="rtl"] .demoinfo{text-align:right}
+.demoinfo .democap{font-size:clamp(22px,3vw,30px);font-weight:900;letter-spacing:-.02em;min-height:1.2em}
+.demodots{display:flex;gap:6px;margin-top:14px}
+html[dir="rtl"] .demodots{justify-content:flex-end}
+.demodots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.3s}
+.demodots i.on{background:var(--green);width:22px;border-radius:4px}
 </style>
 </head>
 <body>
@@ -198,6 +246,22 @@ html[dir="rtl"] .rolelist li::before{left:auto;right:0}
       <div class="phone"><div class="frame"><img data-shot="sec-login" src="img/sec-login.en.png" alt=""></div><div class="cap"><b data-i18n="cLogin"></b></div></div>
       <div class="phone"><div class="frame"><img data-shot="sec-lock" src="img/sec-lock.en.png" alt=""></div><div class="cap"><b data-i18n="cLock"></b></div></div>
       <div class="phone"><div class="frame"><img data-shot="sec-setup" src="img/sec-setup.en.png" alt=""></div><div class="cap"><b data-i18n="cSetup"></b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE DEMO -->
+<section class="slide">
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow r" data-i18n="demoEye" style="justify-content:center"></span>
+    <h2 class="r" data-i18n="demoTtl"></h2>
+    <div class="demo r">
+      <div class="demophone"><div class="frame"><img id="demoimg" src="img/emp-home.en.png" alt=""></div></div>
+      <div class="demoinfo">
+        <div class="democap" id="democap"></div>
+        <div class="demodots" id="demodots"></div>
+        <p class="lead" data-i18n="demoLead" style="margin-top:14px;font-size:15px"></p>
+      </div>
     </div>
   </div>
 </section>
@@ -289,6 +353,16 @@ html[dir="rtl"] .rolelist li::before{left:auto;right:0}
   </div>
 </section>
 
+<!-- FLOW -->
+<section class="slide">
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow r" data-i18n="flowEye" style="justify-content:center"></span>
+    <h2 class="r" data-i18n="flowTtl"></h2>
+    <div class="flow r"><div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><b data-i18n="fn1t"></b><span data-i18n="fn1d"></span></div><span class="farrow">→</span><div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><b data-i18n="fn2t"></b><span data-i18n="fn2d"></span></div><span class="farrow">→</span><div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b data-i18n="fn3t"></b><span data-i18n="fn3d"></span></div><span class="farrow">→</span><div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h8"/></svg></span><b data-i18n="fn4t"></b><span data-i18n="fn4d"></span></div><span class="farrow">→</span><div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6"/></svg></span><b data-i18n="fn5t"></b><span data-i18n="fn5d"></span></div></div>
+    <p class="flownote r" data-i18n="flowNote"></p>
+  </div>
+</section>
+
 <!-- 9 ARCHITECTURE -->
 <section class="slide">
   <div class="wrap" style="text-align:center">
@@ -306,6 +380,18 @@ html[dir="rtl"] .rolelist li::before{left:auto;right:0}
       <span class="badge">PHP 8.3</span><span class="badge" data-i18n="bTests"></span><span class="badge">Riverpod</span>
       <span class="badge">go_router</span><span class="badge">PDF + printing</span><span class="badge">Docker</span>
       <span class="badge">geolocator</span><span class="badge" data-i18n="bData"></span>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="slide">
+  <div class="wrap">
+    <span class="eyebrow r" data-i18n="cmpEye"></span>
+    <h2 class="r" data-i18n="cmpTtl"></h2>
+    <div class="cmp r">
+      <div class="cmprow cmphead"><div class="asp" data-i18n="cmpHa"></div><div class="man" data-i18n="cmpHm"></div><div class="ct cc" data-i18n="cmpHc"></div></div>
+      <div class="cmprow"><div class="asp" data-i18n="cmpAa"></div><div class="man" data-i18n="cmpAm"></div><div class="ct" data-i18n="cmpAc"></div></div><div class="cmprow"><div class="asp" data-i18n="cmpBa"></div><div class="man" data-i18n="cmpBm"></div><div class="ct" data-i18n="cmpBc"></div></div><div class="cmprow"><div class="asp" data-i18n="cmpCa"></div><div class="man" data-i18n="cmpCm"></div><div class="ct" data-i18n="cmpCc"></div></div><div class="cmprow"><div class="asp" data-i18n="cmpDa"></div><div class="man" data-i18n="cmpDm"></div><div class="ct" data-i18n="cmpDc"></div></div><div class="cmprow"><div class="asp" data-i18n="cmpEa"></div><div class="man" data-i18n="cmpEm"></div><div class="ct" data-i18n="cmpEc"></div></div><div class="cmprow"><div class="asp" data-i18n="cmpFa"></div><div class="man" data-i18n="cmpFm"></div><div class="ct" data-i18n="cmpFc"></div></div>
     </div>
   </div>
 </section>
@@ -342,7 +428,7 @@ html[dir="rtl"] .rolelist li::before{left:auto;right:0}
 <script>
 const LANGS=[['en','🇬🇧'],['id','🇮🇩'],['ms','🇲🇾'],['zh','🇨🇳'],['ar','🇸🇦']];
 const I18N={
- en:{rolEye:"Roles",rolTtl:"Two roles, one app.",rolLead:"At login the app automatically opens the right surface for each role — no separate apps to install.",rolEmpN:"Employee",rolEmpT:"Records their own attendance — fast & honest, from a personal phone.",rolAdmN:"Admin / HR",rolAdmT:"Controls & monitors all attendance and payroll.",rolNote:"One app, two surfaces — chosen automatically from the signed-in role.",reAt:"Face + GPS attendance",reAd:"2-tap clock-in, server time, mock-location detection",reBt:"Attendance history",reBd:"per day + decision status",reCt:"Payslip",reCd:"breakdown + download PDF",reDt:"Leave & permits",reDd:"request sick/leave/permit + remaining quota",reEt:"Notifications",reEd:"approvals, payslip ready, reminders",reFt:"Profile & theme",reFd:"photo, emergency contact, 5 languages",raAt:"Operations dashboard",raAd:"on-site headcount, payroll cost, blocked fraud",raBt:"Real-time monitor",raBd:"who's present/late, mock-location flags",raCt:"Leave approvals",raCd:"approve / reject with a reason",raDt:"Device management",raDd:"1 phone per employee, approve/revoke",raEt:"Employee directory",raEd:"search, filter by dept, details",raFt:"Payroll run",raFd:"finalize → pay → PDF slip → Telegram/Email",secEye:"Security",secTtl:"Sign in once. Then just your face or finger.",secLead:"First sign-in with a password on the device — after that, Face ID or fingerprint, adapted to each phone. Sessions are encrypted and bound to the device.",cLogin:"First sign-in",cLock:"Face ID / fingerprint",cSetup:"One-tap enable",badge:"Qubah Group · Coal Mine Attendance",lead:"Anti-fraud attendance for coal mining operations — face check, real GPS, server time. One Flutter app (iOS & Android), Laravel backend, Vue portal.",chip1:"Anti buddy-punching",chip2:"Face liveness",chip3:"Real GPS",chip4:"207+ tests",
+ en:{demoEye:"Live demo",demoTtl:"See it in action.",demoLead:"The employee app, screen by screen — attendance, history, pay, and profile.",flowEye:"Pipeline",flowTtl:"From clock-in to payslip — one pipeline.",flowNote:"Honest attendance feeds accurate payroll — no manual recaps, no gaps.",fn1t:"Attendance",fn1d:"face + real GPS, 2 taps",fn2t:"Server decision",fn2d:"server time, immutable log",fn3t:"Work session",fn3d:"verified hours per day",fn4t:"Payroll engine",fn4d:"overtime, BPJS, PPh21 TER",fn5t:"Payslip",fn5d:"PDF + Telegram/Email",cmpEye:"Why CoalTrack",cmpTtl:"Manual vs CoalTrack.",cmpHa:"Aspect",cmpHm:"Manual / Excel",cmpHc:"CoalTrack",cmpAa:"Attendance time",cmpAm:"Phone clock, manipulable",cmpAc:"Server time, tamper-proof",cmpBa:"Buddy-punching",cmpBm:"Undetected",cmpBc:"Face + 1 phone/employee",cmpCa:"Payroll recap",cmpCm:"Days of manual work, error-prone",cmpCc:"Automatic from attendance",cmpDa:"Reporting",cmpDm:"Monthly, late",cmpDc:"Real-time",cmpEa:"Tax & BPJS",cmpEm:"Manual, error-prone",cmpEc:"PPh21 TER + BPJS automatic",cmpFa:"Cost leakage",cmpFm:"~Rp 7.47 B / year",cmpFc:"Closed",rolEye:"Roles",rolTtl:"Two roles, one app.",rolLead:"At login the app automatically opens the right surface for each role — no separate apps to install.",rolEmpN:"Employee",rolEmpT:"Records their own attendance — fast & honest, from a personal phone.",rolAdmN:"Admin / HR",rolAdmT:"Controls & monitors all attendance and payroll.",rolNote:"One app, two surfaces — chosen automatically from the signed-in role.",reAt:"Face + GPS attendance",reAd:"2-tap clock-in, server time, mock-location detection",reBt:"Attendance history",reBd:"per day + decision status",reCt:"Payslip",reCd:"breakdown + download PDF",reDt:"Leave & permits",reDd:"request sick/leave/permit + remaining quota",reEt:"Notifications",reEd:"approvals, payslip ready, reminders",reFt:"Profile & theme",reFd:"photo, emergency contact, 5 languages",raAt:"Operations dashboard",raAd:"on-site headcount, payroll cost, blocked fraud",raBt:"Real-time monitor",raBd:"who's present/late, mock-location flags",raCt:"Leave approvals",raCd:"approve / reject with a reason",raDt:"Device management",raDd:"1 phone per employee, approve/revoke",raEt:"Employee directory",raEd:"search, filter by dept, details",raFt:"Payroll run",raFd:"finalize → pay → PDF slip → Telegram/Email",secEye:"Security",secTtl:"Sign in once. Then just your face or finger.",secLead:"First sign-in with a password on the device — after that, Face ID or fingerprint, adapted to each phone. Sessions are encrypted and bound to the device.",cLogin:"First sign-in",cLock:"Face ID / fingerprint",cSetup:"One-tap enable",badge:"Qubah Group · Coal Mine Attendance",lead:"Anti-fraud attendance for coal mining operations — face check, real GPS, server time. One Flutter app (iOS & Android), Laravel backend, Vue portal.",chip1:"Anti buddy-punching",chip2:"Face liveness",chip3:"Real GPS",chip4:"207+ tests",
   s2eye:"Employee app",s2ttl:"Light & clear for field workers.",cHome:"Home",cAbsen:"Attend ⭐",cHist:"History",cProfile:"Profile",
   s3eye:"More than attendance",s3ttl:"Everything an employee needs, in one app.",cLeave:"Leave & Permits",cNotif:"Notifications",cEdit:"Edit profile",
   s4eye:"Payroll",s4ttl:"Payslips computed automatically from attendance.",s4lead:"Every figure is truly calculated by the engine (BPJS, PPh21 TER, overtime) — identical on server & app, covered by 20 tests.",cPay:"Pay tab",cSlip:"Payslip",cSlipDark:"Payslip · Dark",
@@ -353,7 +439,7 @@ const I18N={
   s9eye:"Technology",s9ttl:"Built seriously, tested.",nApp:"employee + admin",nWeb:"HR portal",nDb:"append-only",bTests:"Pest — 207 tests",bData:"Data in Indonesia",
   s10eye:"Status",s10ttl:"Live today.",r1t:"Backend + anti-fraud API",r1d:"Laravel 12 · 207 tests",r2t:"Employee mobile",r2d:"Attend, Pay, Leave, Notifications, Profile",r3t:"Payroll engine + PDF payslip",r3d:"BPJS, PPh21 TER, overtime · 20 tests",r4t:"Full admin",r4d:"Dashboard, Monitor, Devices, Employees",r5t:"Payroll run + send slip",r5d:"finalize → pay → Telegram/Email",r6t:"FCM push & face ML",r6d:"phone push, full liveness",
   s11ttl:"Ready for the field.",s11lead:"Anti-fraud attendance + payroll, end-to-end. Pilot at one site, measure the real savings."},
- id:{rolEye:"Peran",rolTtl:"Dua peran, satu aplikasi.",rolLead:"Saat login, aplikasi otomatis membuka permukaan yang tepat untuk tiap peran — tanpa aplikasi terpisah.",rolEmpN:"Karyawan",rolEmpT:"Mencatat kehadiran sendiri — cepat & jujur, dari HP pribadi.",rolAdmN:"Admin / HR",rolAdmT:"Mengontrol & memantau seluruh kehadiran dan penggajian.",rolNote:"Satu aplikasi, dua permukaan — dipilih otomatis dari peran saat login.",reAt:"Absen wajah + GPS",reAd:"clock-in 2 ketukan, waktu server, deteksi lokasi palsu",reBt:"Riwayat kehadiran",reBd:"per hari + status keputusan",reCt:"Slip gaji",reCd:"rincian + unduh PDF",reDt:"Izin & cuti",reDd:"ajukan sakit/cuti/izin + sisa kuota",reEt:"Notifikasi",reEd:"persetujuan, slip terbit, pengingat",reFt:"Profil & tema",reFd:"foto, kontak darurat, 5 bahasa",raAt:"Dashboard operasional",raAd:"headcount on-site, biaya payroll, kecurangan tertahan",raBt:"Monitor real-time",raBd:"siapa hadir/telat, flag lokasi palsu",raCt:"Persetujuan izin/cuti",raCd:"setujui / tolak + alasan",raDt:"Kelola perangkat",raDd:"1 HP/karyawan, setujui/cabut",raEt:"Direktori karyawan",raEd:"cari, filter departemen, detail",raFt:"Payroll run",raFd:"finalisasi → bayar → slip PDF → Telegram/Email",secEye:"Keamanan",secTtl:"Masuk sekali. Setelahnya cukup wajah atau jarimu.",secLead:"Login pertama dengan kata sandi di perangkat — selanjutnya Face ID atau sidik jari, menyesuaikan tiap HP. Sesi terenkripsi & terikat perangkat.",cLogin:"Login pertama",cLock:"Face ID / sidik jari",cSetup:"Aktif sekali ketuk",badge:"Qubah Group · Absensi Tambang Batu Bara",lead:"Absensi anti-curang untuk operasi tambang batu bara — cek wajah, GPS asli, waktu server. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",chip1:"Anti titip-absen",chip2:"Liveness wajah",chip3:"GPS asli",chip4:"207+ tes",
+ id:{demoEye:"Demo langsung",demoTtl:"Lihat langsung.",demoLead:"Aplikasi karyawan, layar demi layar — absen, riwayat, gaji, dan profil.",flowEye:"Alur sistem",flowTtl:"Dari absen ke slip — satu alur.",flowNote:"Kehadiran jujur jadi dasar payroll akurat — tanpa rekap manual, tanpa celah.",fn1t:"Absen",fn1d:"wajah + GPS asli, 2 ketukan",fn2t:"Keputusan server",fn2d:"waktu server, catatan immutable",fn3t:"Sesi kerja",fn3d:"jam kerja terverifikasi",fn4t:"Engine payroll",fn4d:"lembur, BPJS, PPh21 TER",fn5t:"Slip gaji",fn5d:"PDF + Telegram/Email",cmpEye:"Kenapa CoalTrack",cmpTtl:"Manual vs CoalTrack.",cmpHa:"Aspek",cmpHm:"Manual / Excel",cmpHc:"CoalTrack",cmpAa:"Waktu absen",cmpAm:"Jam HP, bisa dimanipulasi",cmpAc:"Waktu server, tak bisa diubah",cmpBa:"Titip-absen",cmpBm:"Tak terdeteksi",cmpBc:"Wajah + 1 HP/karyawan",cmpCa:"Rekap payroll",cmpCm:"Berhari-hari, rawan salah",cmpCc:"Otomatis dari absensi",cmpDa:"Laporan",cmpDm:"Bulanan, telat",cmpDc:"Real-time",cmpEa:"Pajak & BPJS",cmpEm:"Manual, rawan salah",cmpEc:"PPh21 TER + BPJS otomatis",cmpFa:"Kebocoran biaya",cmpFm:"~Rp 7,47 M / tahun",cmpFc:"Tertutup",rolEye:"Peran",rolTtl:"Dua peran, satu aplikasi.",rolLead:"Saat login, aplikasi otomatis membuka permukaan yang tepat untuk tiap peran — tanpa aplikasi terpisah.",rolEmpN:"Karyawan",rolEmpT:"Mencatat kehadiran sendiri — cepat & jujur, dari HP pribadi.",rolAdmN:"Admin / HR",rolAdmT:"Mengontrol & memantau seluruh kehadiran dan penggajian.",rolNote:"Satu aplikasi, dua permukaan — dipilih otomatis dari peran saat login.",reAt:"Absen wajah + GPS",reAd:"clock-in 2 ketukan, waktu server, deteksi lokasi palsu",reBt:"Riwayat kehadiran",reBd:"per hari + status keputusan",reCt:"Slip gaji",reCd:"rincian + unduh PDF",reDt:"Izin & cuti",reDd:"ajukan sakit/cuti/izin + sisa kuota",reEt:"Notifikasi",reEd:"persetujuan, slip terbit, pengingat",reFt:"Profil & tema",reFd:"foto, kontak darurat, 5 bahasa",raAt:"Dashboard operasional",raAd:"headcount on-site, biaya payroll, kecurangan tertahan",raBt:"Monitor real-time",raBd:"siapa hadir/telat, flag lokasi palsu",raCt:"Persetujuan izin/cuti",raCd:"setujui / tolak + alasan",raDt:"Kelola perangkat",raDd:"1 HP/karyawan, setujui/cabut",raEt:"Direktori karyawan",raEd:"cari, filter departemen, detail",raFt:"Payroll run",raFd:"finalisasi → bayar → slip PDF → Telegram/Email",secEye:"Keamanan",secTtl:"Masuk sekali. Setelahnya cukup wajah atau jarimu.",secLead:"Login pertama dengan kata sandi di perangkat — selanjutnya Face ID atau sidik jari, menyesuaikan tiap HP. Sesi terenkripsi & terikat perangkat.",cLogin:"Login pertama",cLock:"Face ID / sidik jari",cSetup:"Aktif sekali ketuk",badge:"Qubah Group · Absensi Tambang Batu Bara",lead:"Absensi anti-curang untuk operasi tambang batu bara — cek wajah, GPS asli, waktu server. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",chip1:"Anti titip-absen",chip2:"Liveness wajah",chip3:"GPS asli",chip4:"207+ tes",
   s2eye:"Aplikasi karyawan",s2ttl:"Ringan & jelas untuk pekerja lapangan.",cHome:"Beranda",cAbsen:"Absen ⭐",cHist:"Riwayat",cProfile:"Profil",
   s3eye:"Lebih dari sekadar absen",s3ttl:"Semua kebutuhan karyawan dalam satu aplikasi.",cLeave:"Izin & Cuti",cNotif:"Notifikasi",cEdit:"Atur profil",
   s4eye:"Penggajian",s4ttl:"Slip gaji dihitung otomatis dari absensi.",s4lead:"Tiap angka benar-benar dihitung engine (BPJS, PPh21 TER, lembur) — identik di server & aplikasi, teruji 20 tes.",cPay:"Tab Gaji",cSlip:"Slip gaji",cSlipDark:"Slip · Gelap",
@@ -364,7 +450,7 @@ const I18N={
   s9eye:"Teknologi",s9ttl:"Dibangun serius, teruji.",nApp:"karyawan + admin",nWeb:"portal HR",nDb:"append-only",bTests:"Pest — 207 tes",bData:"Data di Indonesia",
   s10eye:"Status",s10ttl:"Sudah jalan hari ini.",r1t:"Backend + API anti-curang",r1d:"Laravel 12 · 207 tes",r2t:"Mobile karyawan",r2d:"Absen, Gaji, Izin, Notifikasi, Profil",r3t:"Engine payroll + slip PDF",r3d:"BPJS, PPh21 TER, lembur · 20 tes",r4t:"Admin lengkap",r4d:"Dashboard, Monitor, Perangkat, Karyawan",r5t:"Payroll run + kirim slip",r5d:"finalisasi → bayar → Telegram/Email",r6t:"Push FCM & ML wajah",r6d:"notifikasi HP, liveness penuh",
   s11ttl:"Siap diterapkan di lapangan.",s11lead:"Absensi anti-curang + penggajian, end-to-end. Uji coba di satu site, ukur penghematan nyata."},
- ms:{rolEye:"Peranan",rolTtl:"Dua peranan, satu aplikasi.",rolLead:"Semasa log masuk, aplikasi automatik membuka antara muka yang betul untuk setiap peranan — tanpa aplikasi berasingan.",rolEmpN:"Pekerja",rolEmpT:"Merekod kehadiran sendiri — pantas & jujur, dari telefon peribadi.",rolAdmN:"Admin / HR",rolAdmT:"Mengawal & memantau semua kehadiran dan gaji.",rolNote:"Satu aplikasi, dua antara muka — dipilih automatik daripada peranan log masuk.",reAt:"Kehadiran wajah + GPS",reAd:"daftar masuk 2 ketik, masa pelayan, kesan lokasi palsu",reBt:"Sejarah kehadiran",reBd:"setiap hari + status keputusan",reCt:"Slip gaji",reCd:"perincian + muat turun PDF",reDt:"Cuti & kebenaran",reDd:"mohon sakit/cuti/izin + baki kuota",reEt:"Pemberitahuan",reEd:"kelulusan, slip terbit, peringatan",reFt:"Profil & tema",reFd:"foto, hubungan kecemasan, 5 bahasa",raAt:"Papan pemuka operasi",raAd:"bilangan di lokasi, kos gaji, penipuan disekat",raBt:"Monitor masa nyata",raBd:"siapa hadir/lewat, penanda lokasi palsu",raCt:"Kelulusan cuti",raCd:"lulus / tolak + sebab",raDt:"Urus peranti",raDd:"1 telefon/pekerja, lulus/batal",raEt:"Direktori pekerja",raEd:"cari, tapis jabatan, butiran",raFt:"Larian gaji",raFd:"muktamad → bayar → slip PDF → Telegram/E-mel",secEye:"Keselamatan",secTtl:"Log masuk sekali. Selepas itu cukup wajah atau jari.",secLead:"Log masuk pertama dengan kata laluan pada peranti — selepas itu Face ID atau cap jari, mengikut setiap telefon. Sesi disulitkan & terikat peranti.",cLogin:"Log masuk pertama",cLock:"Face ID / cap jari",cSetup:"Aktif satu ketik",badge:"Qubah Group · Kehadiran Perlombongan Arang Batu",lead:"Kehadiran anti-penipuan untuk operasi perlombongan arang batu — semak wajah, GPS sebenar, masa pelayan. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",chip1:"Anti curi-kehadiran",chip2:"Liveness wajah",chip3:"GPS sebenar",chip4:"207+ ujian",
+ ms:{demoEye:"Demo langsung",demoTtl:"Lihat beraksi.",demoLead:"Aplikasi pekerja, skrin demi skrin — kehadiran, sejarah, gaji, dan profil.",flowEye:"Aliran",flowTtl:"Dari daftar masuk ke slip — satu aliran.",flowNote:"Kehadiran jujur menjadi asas gaji tepat — tanpa rekap manual.",fn1t:"Kehadiran",fn1d:"wajah + GPS sebenar, 2 ketik",fn2t:"Keputusan pelayan",fn2d:"masa pelayan, log kekal",fn3t:"Sesi kerja",fn3d:"jam disahkan setiap hari",fn4t:"Enjin gaji",fn4d:"lebih masa, BPJS, PPh21 TER",fn5t:"Slip gaji",fn5d:"PDF + Telegram/E-mel",cmpEye:"Mengapa CoalTrack",cmpTtl:"Manual vs CoalTrack.",cmpHa:"Aspek",cmpHm:"Manual / Excel",cmpHc:"CoalTrack",cmpAa:"Masa kehadiran",cmpAm:"Jam telefon, boleh dimanipulasi",cmpAc:"Masa pelayan, kalis usik",cmpBa:"Curi-kehadiran",cmpBm:"Tak dikesan",cmpBc:"Wajah + 1 telefon/pekerja",cmpCa:"Rekap gaji",cmpCm:"Berhari-hari, mudah silap",cmpCc:"Automatik dari kehadiran",cmpDa:"Laporan",cmpDm:"Bulanan, lewat",cmpDc:"Masa nyata",cmpEa:"Cukai & BPJS",cmpEm:"Manual, mudah silap",cmpEc:"PPh21 TER + BPJS automatik",cmpFa:"Kebocoran kos",cmpFm:"~Rp 7.47 bil / tahun",cmpFc:"Ditutup",rolEye:"Peranan",rolTtl:"Dua peranan, satu aplikasi.",rolLead:"Semasa log masuk, aplikasi automatik membuka antara muka yang betul untuk setiap peranan — tanpa aplikasi berasingan.",rolEmpN:"Pekerja",rolEmpT:"Merekod kehadiran sendiri — pantas & jujur, dari telefon peribadi.",rolAdmN:"Admin / HR",rolAdmT:"Mengawal & memantau semua kehadiran dan gaji.",rolNote:"Satu aplikasi, dua antara muka — dipilih automatik daripada peranan log masuk.",reAt:"Kehadiran wajah + GPS",reAd:"daftar masuk 2 ketik, masa pelayan, kesan lokasi palsu",reBt:"Sejarah kehadiran",reBd:"setiap hari + status keputusan",reCt:"Slip gaji",reCd:"perincian + muat turun PDF",reDt:"Cuti & kebenaran",reDd:"mohon sakit/cuti/izin + baki kuota",reEt:"Pemberitahuan",reEd:"kelulusan, slip terbit, peringatan",reFt:"Profil & tema",reFd:"foto, hubungan kecemasan, 5 bahasa",raAt:"Papan pemuka operasi",raAd:"bilangan di lokasi, kos gaji, penipuan disekat",raBt:"Monitor masa nyata",raBd:"siapa hadir/lewat, penanda lokasi palsu",raCt:"Kelulusan cuti",raCd:"lulus / tolak + sebab",raDt:"Urus peranti",raDd:"1 telefon/pekerja, lulus/batal",raEt:"Direktori pekerja",raEd:"cari, tapis jabatan, butiran",raFt:"Larian gaji",raFd:"muktamad → bayar → slip PDF → Telegram/E-mel",secEye:"Keselamatan",secTtl:"Log masuk sekali. Selepas itu cukup wajah atau jari.",secLead:"Log masuk pertama dengan kata laluan pada peranti — selepas itu Face ID atau cap jari, mengikut setiap telefon. Sesi disulitkan & terikat peranti.",cLogin:"Log masuk pertama",cLock:"Face ID / cap jari",cSetup:"Aktif satu ketik",badge:"Qubah Group · Kehadiran Perlombongan Arang Batu",lead:"Kehadiran anti-penipuan untuk operasi perlombongan arang batu — semak wajah, GPS sebenar, masa pelayan. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",chip1:"Anti curi-kehadiran",chip2:"Liveness wajah",chip3:"GPS sebenar",chip4:"207+ ujian",
   s2eye:"Aplikasi pekerja",s2ttl:"Ringkas & jelas untuk pekerja lapangan.",cHome:"Utama",cAbsen:"Hadir ⭐",cHist:"Sejarah",cProfile:"Profil",
   s3eye:"Lebih daripada kehadiran",s3ttl:"Semua keperluan pekerja dalam satu aplikasi.",cLeave:"Cuti & Kebenaran",cNotif:"Pemberitahuan",cEdit:"Sunting profil",
   s4eye:"Penggajian",s4ttl:"Slip gaji dikira automatik daripada kehadiran.",s4lead:"Setiap angka benar-benar dikira oleh enjin (BPJS, PPh21 TER, kerja lebih masa) — sama di pelayan & aplikasi, diuji 20 ujian.",cPay:"Tab Gaji",cSlip:"Slip gaji",cSlipDark:"Slip · Gelap",
@@ -375,7 +461,7 @@ const I18N={
   s9eye:"Teknologi",s9ttl:"Dibina serius, diuji.",nApp:"pekerja + admin",nWeb:"portal HR",nDb:"tambah-sahaja",bTests:"Pest — 207 ujian",bData:"Data di Indonesia",
   s10eye:"Status",s10ttl:"Sudah berjalan hari ini.",r1t:"Backend + API anti-penipuan",r1d:"Laravel 12 · 207 ujian",r2t:"Mobil pekerja",r2d:"Hadir, Gaji, Cuti, Pemberitahuan, Profil",r3t:"Enjin gaji + slip PDF",r3d:"BPJS, PPh21 TER, lebih masa · 20 ujian",r4t:"Admin lengkap",r4d:"Papan pemuka, Monitor, Peranti, Pekerja",r5t:"Larian gaji + hantar slip",r5d:"muktamad → bayar → Telegram/E-mel",r6t:"Tolak FCM & ML wajah",r6d:"tolakan telefon, liveness penuh",
   s11ttl:"Sedia untuk lapangan.",s11lead:"Kehadiran anti-penipuan + gaji, hujung ke hujung. Perintis di satu tapak, ukur penjimatan sebenar."},
- zh:{rolEye:"角色",rolTtl:"两种角色，一个应用。",rolLead:"登录时，应用会自动为每种角色打开对应界面——无需安装单独的应用。",rolEmpN:"员工",rolEmpT:"用个人手机记录本人考勤——快速、诚实。",rolAdmN:"管理员 / 人事",rolAdmT:"掌控并监督全部考勤与薪资。",rolNote:"一个应用，两种界面——依据登录角色自动选择。",reAt:"刷脸 + GPS 考勤",reAd:"两步打卡、服务器时间、虚拟定位检测",reBt:"考勤记录",reBd:"按天 + 判定状态",reCt:"工资单",reCd:"明细 + 下载 PDF",reDt:"请假与许可",reDd:"申请病/年/事假 + 剩余额度",reEt:"通知",reEd:"审批、工资单、提醒",reFt:"资料与主题",reFd:"照片、紧急联系人、5 种语言",raAt:"运营仪表盘",raAd:"在场人数、薪资成本、拦截作弊",raBt:"实时监控",raBd:"谁在岗/迟到、虚拟定位标记",raCt:"请假审批",raCd:"批准 / 拒绝 + 理由",raDt:"设备管理",raDd:"每人一台、批准/撤销",raEt:"员工目录",raEd:"搜索、按部门筛选、详情",raFt:"薪资发放",raFd:"定稿 → 支付 → PDF 工资单 → Telegram/邮件",secEye:"安全",secTtl:"登录一次，之后只需刷脸或按指纹。",secLead:"首次在设备上用密码登录——之后使用 Face ID 或指纹，适配每部手机。会话加密且绑定设备。",cLogin:"首次登录",cLock:"Face ID / 指纹",cSetup:"一键启用",badge:"Qubah Group · 煤矿考勤",lead:"面向煤矿作业的防作弊考勤——刷脸、真实 GPS、服务器时间。一个 Flutter 应用（iOS 与 Android）、Laravel 后端、Vue 门户。",chip1:"杜绝代打卡",chip2:"人脸活体",chip3:"真实 GPS",chip4:"207+ 测试",
+ zh:{demoEye:"实时演示",demoTtl:"实际运行一览。",demoLead:"员工应用，逐屏展示——考勤、记录、工资与资料。",flowEye:"流程",flowTtl:"从打卡到工资单——一条流水线。",flowNote:"诚实考勤支撑精准薪资——无需手工汇总，没有漏洞。",fn1t:"考勤",fn1d:"刷脸 + 真实 GPS，两步",fn2t:"服务器判定",fn2d:"服务器时间、不可篡改记录",fn3t:"工作时段",fn3d:"每日核实工时",fn4t:"薪资引擎",fn4d:"加班、BPJS、PPh21 TER",fn5t:"工资单",fn5d:"PDF + Telegram/邮件",cmpEye:"为何选 CoalTrack",cmpTtl:"手工 vs CoalTrack。",cmpHa:"方面",cmpHm:"手工 / Excel",cmpHc:"CoalTrack",cmpAa:"考勤时间",cmpAm:"手机时间，可篡改",cmpAc:"服务器时间，防篡改",cmpBa:"代打卡",cmpBm:"无法察觉",cmpBc:"人脸 + 每人一机",cmpCa:"薪资汇总",cmpCm:"耗时数天、易错",cmpCc:"依考勤自动生成",cmpDa:"报表",cmpDm:"月度、滞后",cmpDc:"实时",cmpEa:"税与 BPJS",cmpEm:"手工、易错",cmpEc:"PPh21 TER + BPJS 自动",cmpFa:"成本流失",cmpFm:"约 Rp 74.7 亿/年",cmpFc:"已封堵",rolEye:"角色",rolTtl:"两种角色，一个应用。",rolLead:"登录时，应用会自动为每种角色打开对应界面——无需安装单独的应用。",rolEmpN:"员工",rolEmpT:"用个人手机记录本人考勤——快速、诚实。",rolAdmN:"管理员 / 人事",rolAdmT:"掌控并监督全部考勤与薪资。",rolNote:"一个应用，两种界面——依据登录角色自动选择。",reAt:"刷脸 + GPS 考勤",reAd:"两步打卡、服务器时间、虚拟定位检测",reBt:"考勤记录",reBd:"按天 + 判定状态",reCt:"工资单",reCd:"明细 + 下载 PDF",reDt:"请假与许可",reDd:"申请病/年/事假 + 剩余额度",reEt:"通知",reEd:"审批、工资单、提醒",reFt:"资料与主题",reFd:"照片、紧急联系人、5 种语言",raAt:"运营仪表盘",raAd:"在场人数、薪资成本、拦截作弊",raBt:"实时监控",raBd:"谁在岗/迟到、虚拟定位标记",raCt:"请假审批",raCd:"批准 / 拒绝 + 理由",raDt:"设备管理",raDd:"每人一台、批准/撤销",raEt:"员工目录",raEd:"搜索、按部门筛选、详情",raFt:"薪资发放",raFd:"定稿 → 支付 → PDF 工资单 → Telegram/邮件",secEye:"安全",secTtl:"登录一次，之后只需刷脸或按指纹。",secLead:"首次在设备上用密码登录——之后使用 Face ID 或指纹，适配每部手机。会话加密且绑定设备。",cLogin:"首次登录",cLock:"Face ID / 指纹",cSetup:"一键启用",badge:"Qubah Group · 煤矿考勤",lead:"面向煤矿作业的防作弊考勤——刷脸、真实 GPS、服务器时间。一个 Flutter 应用（iOS 与 Android）、Laravel 后端、Vue 门户。",chip1:"杜绝代打卡",chip2:"人脸活体",chip3:"真实 GPS",chip4:"207+ 测试",
   s2eye:"员工应用",s2ttl:"为一线工人打造，轻巧清晰。",cHome:"主页",cAbsen:"打卡 ⭐",cHist:"记录",cProfile:"我的",
   s3eye:"不止是考勤",s3ttl:"员工所需，尽在一个应用。",cLeave:"请假与许可",cNotif:"通知",cEdit:"编辑资料",
   s4eye:"薪资",s4ttl:"根据考勤自动核算工资单。",s4lead:"每个数字都由引擎真实计算（BPJS、PPh21 TER、加班）——服务器与应用一致，20 项测试覆盖。",cPay:"工资页",cSlip:"工资单",cSlipDark:"工资单 · 深色",
@@ -386,7 +472,7 @@ const I18N={
   s9eye:"技术",s9ttl:"认真打造，充分测试。",nApp:"员工 + 管理",nWeb:"人事门户",nDb:"仅追加",bTests:"Pest — 207 测试",bData:"数据存于印尼",
   s10eye:"状态",s10ttl:"今天即可上线。",r1t:"后端 + 防作弊 API",r1d:"Laravel 12 · 207 测试",r2t:"员工端",r2d:"打卡、工资、请假、通知、资料",r3t:"薪资引擎 + PDF 工资单",r3d:"BPJS、PPh21 TER、加班 · 20 测试",r4t:"完整管理端",r4d:"仪表盘、监控、设备、员工",r5t:"薪资发放 + 发送工资单",r5d:"定稿 → 支付 → Telegram/邮件",r6t:"FCM 推送与人脸 ML",r6d:"手机推送，完整活体",
   s11ttl:"随时投入现场。",s11lead:"防作弊考勤 + 薪资，端到端。在一个矿点试点，衡量真实节省。"},
- ar:{rolEye:"الأدوار",rolTtl:"دوران، تطبيق واحد.",rolLead:"عند تسجيل الدخول يفتح التطبيق تلقائيًا الواجهة المناسبة لكل دور — دون تطبيقات منفصلة.",rolEmpN:"الموظف",rolEmpT:"يسجّل حضوره بنفسه — سريع وصادق، من هاتفه الشخصي.",rolAdmN:"المشرف / الموارد البشرية",rolAdmT:"يتحكم في كل الحضور والرواتب ويراقبها.",rolNote:"تطبيق واحد، واجهتان — تُختار تلقائيًا حسب دور الدخول.",reAt:"حضور بالوجه + GPS",reAd:"تسجيل بنقرتين، وقت الخادم، كشف الموقع المزيّف",reBt:"سجل الحضور",reBd:"يوميًا + حالة القرار",reCt:"قسيمة الراتب",reCd:"تفصيل + تنزيل PDF",reDt:"الإجازات والأذونات",reDd:"طلب مرضية/سنوية/إذن + الرصيد",reEt:"الإشعارات",reEd:"الموافقات، صدور القسيمة، تذكيرات",reFt:"الملف والمظهر",reFd:"صورة، جهة طوارئ، 5 لغات",raAt:"لوحة العمليات",raAd:"العدد في الموقع، تكلفة الرواتب، تلاعب مُمنَع",raBt:"مراقبة فورية",raBd:"من حاضر/متأخر، علامات الموقع المزيّف",raCt:"موافقات الإجازة",raCd:"موافقة / رفض + سبب",raDt:"إدارة الأجهزة",raDd:"هاتف واحد لكل موظف، موافقة/إلغاء",raEt:"دليل الموظفين",raEd:"بحث، تصفية القسم، تفاصيل",raFt:"تشغيل الرواتب",raFd:"اعتماد ← دفع ← قسيمة PDF ← Telegram/بريد",secEye:"الأمان",secTtl:"سجّل الدخول مرة واحدة. بعدها يكفي وجهك أو إصبعك.",secLead:"أول تسجيل دخول بكلمة مرور على الجهاز — بعدها Face ID أو بصمة الإصبع، متكيّفة مع كل هاتف. الجلسات مشفّرة ومرتبطة بالجهاز.",cLogin:"أول دخول",cLock:"Face ID / بصمة",cSetup:"تفعيل بنقرة",badge:"Qubah Group · حضور منجم الفحم",lead:"حضور مضاد للتلاعب لعمليات مناجم الفحم — فحص الوجه، GPS حقيقي، وقت الخادم. تطبيق Flutter واحد (iOS و Android)، خلفية Laravel، بوابة Vue.",chip1:"منع الحضور بالنيابة",chip2:"حيوية الوجه",chip3:"GPS حقيقي",chip4:"207+ اختبار",
+ ar:{demoEye:"عرض حي",demoTtl:"شاهده أثناء العمل.",demoLead:"تطبيق الموظف، شاشة تلو الأخرى — الحضور، السجل، الراتب، والملف.",flowEye:"التدفق",flowTtl:"من الحضور إلى القسيمة — خط واحد.",flowNote:"حضور صادق يغذّي رواتب دقيقة — دون تجميع يدوي ودون ثغرات.",fn1t:"الحضور",fn1d:"وجه + GPS حقيقي، نقرتان",fn2t:"قرار الخادم",fn2d:"وقت الخادم، سجل ثابت",fn3t:"جلسة العمل",fn3d:"ساعات موثّقة يوميًا",fn4t:"محرك الرواتب",fn4d:"إضافي، BPJS، ضريبة TER",fn5t:"قسيمة الراتب",fn5d:"PDF + Telegram/بريد",cmpEye:"لماذا CoalTrack",cmpTtl:"اليدوي مقابل CoalTrack.",cmpHa:"الجانب",cmpHm:"يدوي / Excel",cmpHc:"CoalTrack",cmpAa:"وقت الحضور",cmpAm:"ساعة الهاتف، قابلة للتلاعب",cmpAc:"وقت الخادم، غير قابل للعبث",cmpBa:"الحضور بالنيابة",cmpBm:"غير مكشوف",cmpBc:"وجه + هاتف لكل موظف",cmpCa:"تجميع الرواتب",cmpCm:"أيام يدوية معرّضة للخطأ",cmpCc:"تلقائي من الحضور",cmpDa:"التقارير",cmpDm:"شهرية ومتأخرة",cmpDc:"فوري",cmpEa:"الضريبة و BPJS",cmpEm:"يدوي ومعرّض للخطأ",cmpEc:"PPh21 TER + BPJS تلقائي",cmpFa:"تسرّب التكلفة",cmpFm:"~Rp 7.47 مليار/سنة",cmpFc:"مُغلق",rolEye:"الأدوار",rolTtl:"دوران، تطبيق واحد.",rolLead:"عند تسجيل الدخول يفتح التطبيق تلقائيًا الواجهة المناسبة لكل دور — دون تطبيقات منفصلة.",rolEmpN:"الموظف",rolEmpT:"يسجّل حضوره بنفسه — سريع وصادق، من هاتفه الشخصي.",rolAdmN:"المشرف / الموارد البشرية",rolAdmT:"يتحكم في كل الحضور والرواتب ويراقبها.",rolNote:"تطبيق واحد، واجهتان — تُختار تلقائيًا حسب دور الدخول.",reAt:"حضور بالوجه + GPS",reAd:"تسجيل بنقرتين، وقت الخادم، كشف الموقع المزيّف",reBt:"سجل الحضور",reBd:"يوميًا + حالة القرار",reCt:"قسيمة الراتب",reCd:"تفصيل + تنزيل PDF",reDt:"الإجازات والأذونات",reDd:"طلب مرضية/سنوية/إذن + الرصيد",reEt:"الإشعارات",reEd:"الموافقات، صدور القسيمة، تذكيرات",reFt:"الملف والمظهر",reFd:"صورة، جهة طوارئ، 5 لغات",raAt:"لوحة العمليات",raAd:"العدد في الموقع، تكلفة الرواتب، تلاعب مُمنَع",raBt:"مراقبة فورية",raBd:"من حاضر/متأخر، علامات الموقع المزيّف",raCt:"موافقات الإجازة",raCd:"موافقة / رفض + سبب",raDt:"إدارة الأجهزة",raDd:"هاتف واحد لكل موظف، موافقة/إلغاء",raEt:"دليل الموظفين",raEd:"بحث، تصفية القسم، تفاصيل",raFt:"تشغيل الرواتب",raFd:"اعتماد ← دفع ← قسيمة PDF ← Telegram/بريد",secEye:"الأمان",secTtl:"سجّل الدخول مرة واحدة. بعدها يكفي وجهك أو إصبعك.",secLead:"أول تسجيل دخول بكلمة مرور على الجهاز — بعدها Face ID أو بصمة الإصبع، متكيّفة مع كل هاتف. الجلسات مشفّرة ومرتبطة بالجهاز.",cLogin:"أول دخول",cLock:"Face ID / بصمة",cSetup:"تفعيل بنقرة",badge:"Qubah Group · حضور منجم الفحم",lead:"حضور مضاد للتلاعب لعمليات مناجم الفحم — فحص الوجه، GPS حقيقي، وقت الخادم. تطبيق Flutter واحد (iOS و Android)، خلفية Laravel، بوابة Vue.",chip1:"منع الحضور بالنيابة",chip2:"حيوية الوجه",chip3:"GPS حقيقي",chip4:"207+ اختبار",
   s2eye:"تطبيق الموظف",s2ttl:"خفيف وواضح لعمال الميدان.",cHome:"الرئيسية",cAbsen:"حضور ⭐",cHist:"السجل",cProfile:"الملف",
   s3eye:"أكثر من الحضور",s3ttl:"كل ما يحتاجه الموظف في تطبيق واحد.",cLeave:"الإجازات والأذونات",cNotif:"الإشعارات",cEdit:"تعديل الملف",
   s4eye:"الرواتب",s4ttl:"قسائم رواتب تُحسب تلقائيًا من الحضور.",s4lead:"كل رقم يُحسب فعليًا بواسطة المحرك (BPJS، ضريبة TER، العمل الإضافي) — مطابق على الخادم والتطبيق، بتغطية 20 اختبارًا.",cPay:"صفحة الراتب",cSlip:"قسيمة الراتب",cSlipDark:"القسيمة · داكن",
@@ -399,6 +485,7 @@ const I18N={
   s11ttl:"جاهز للميدان.",s11lead:"حضور مضاد للتلاعب + رواتب، من الطرف إلى الطرف. جرّبه في موقع واحد وقِس التوفير الحقيقي."}
 };
 
+window.__ctI18N=I18N;
 function setLang(code){
   const dict=I18N[code]||I18N.en;
   document.querySelectorAll('[data-i18n]').forEach(el=>{
@@ -448,6 +535,22 @@ function setLang(code){
     else if(e.key==='Home'){e.preventDefault();slides[0].scrollIntoView();}
     else if(e.key==='End'){e.preventDefault();slides[N-1].scrollIntoView();}
   });
+})();
+</script>
+<script>
+(function(){
+  var seq=[["emp-home","cHome"],["emp-absen","cAbsen"],["emp-riwayat","cHist"],["emp-gaji","cPay"],["emp-profil","cProfile"]];
+  var img=document.getElementById("demoimg"),cap=document.getElementById("democap"),dotsEl=document.getElementById("demodots");
+  if(!img) return;
+  seq.forEach(function(){dotsEl.appendChild(document.createElement("i"));});
+  var dots=dotsEl.children,idx=0;
+  function lang(){return document.documentElement.lang||"en";}
+  function tr(k){var d=window.__ctI18N&&window.__ctI18N[lang()];return (d&&d[k])||k;}
+  function show(i){var sc=seq[i];img.style.opacity=0;
+    setTimeout(function(){img.src="img/"+sc[0]+"."+lang()+".png";cap.textContent=tr(sc[1]);img.style.opacity=1;},260);
+    for(var j=0;j<dots.length;j++)dots[j].className=(j===i?"on":"");}
+  show(0);
+  setInterval(function(){idx=(idx+1)%seq.length;show(idx);},2400);
 })();
 </script>
 </body>
