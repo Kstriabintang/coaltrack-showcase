@@ -2,9 +2,9 @@
 
 <img src="img/og.png" alt="CoalTrack" width="820">
 
-# ⛏️ CoalTrack
+<h1>⛏️ CoalTrack</h1>
 
-### Anti-fraud attendance **+** automatic payroll for coal-mining operations
+<h3>Anti-fraud attendance + automatic payroll for coal-mining operations</h3>
 
 <p>
 <img alt="Flutter" src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white">
@@ -20,11 +20,11 @@
 <img alt="Status" src="https://img.shields.io/badge/status-pilot--ready-2F7009?style=flat-square">
 </p>
 
-**Built for [Qubah Group](https://ksatriabintangsamudra.my.id)**
+<p><b>Built for <a href="https://ksatriabintangsamudra.my.id">Qubah Group</a></b></p>
 
-### [▶ Open the live showcase](https://ksatriabintangsamudra.my.id/coaltrack-showcase/)
+<h3><a href="https://ksatriabintangsamudra.my.id/coaltrack-showcase/">▶ Open the live showcase</a></h3>
 
-*Per-slide presentation · flag switcher for **5 languages** (top-right) · English default · full RTL*
+<p><em>Per-slide presentation · flag switcher for <b>5 languages</b> (top-right) · English default · full RTL</em></p>
 
 <br>
 
