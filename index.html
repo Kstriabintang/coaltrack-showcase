@@ -146,6 +146,20 @@ html[dir="rtl"] .langbar{right:auto;left:16px}
   </div>
 </section>
 
+<!-- SECURITY -->
+<section class="slide">
+  <div class="wrap">
+    <span class="eyebrow r" data-i18n="secEye"></span>
+    <h2 class="r" data-i18n="secTtl"></h2>
+    <p class="lead r" data-i18n="secLead"></p>
+    <div class="phones r">
+      <div class="phone"><div class="frame"><img data-shot="sec-login" src="img/sec-login.en.png" alt=""></div><div class="cap"><b data-i18n="cLogin"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="sec-lock" src="img/sec-lock.en.png" alt=""></div><div class="cap"><b data-i18n="cLock"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="sec-setup" src="img/sec-setup.en.png" alt=""></div><div class="cap"><b data-i18n="cSetup"></b></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- 3 MORE -->
 <section class="slide">
   <div class="wrap">
@@ -286,7 +300,7 @@ html[dir="rtl"] .langbar{right:auto;left:16px}
 <script>
 const LANGS=[['en','🇬🇧'],['id','🇮🇩'],['ms','🇲🇾'],['zh','🇨🇳'],['ar','🇸🇦']];
 const I18N={
- en:{badge:"Qubah Group · Coal Mine Attendance",lead:"Anti-fraud attendance for coal mining operations — face check, real GPS, server time. One Flutter app (iOS & Android), Laravel backend, Vue portal.",chip1:"Anti buddy-punching",chip2:"Face liveness",chip3:"Real GPS",chip4:"207+ tests",
+ en:{secEye:"Security",secTtl:"Sign in once. Then just your face or finger.",secLead:"First sign-in with a password on the device — after that, Face ID or fingerprint, adapted to each phone. Sessions are encrypted and bound to the device.",cLogin:"First sign-in",cLock:"Face ID / fingerprint",cSetup:"One-tap enable",badge:"Qubah Group · Coal Mine Attendance",lead:"Anti-fraud attendance for coal mining operations — face check, real GPS, server time. One Flutter app (iOS & Android), Laravel backend, Vue portal.",chip1:"Anti buddy-punching",chip2:"Face liveness",chip3:"Real GPS",chip4:"207+ tests",
   s2eye:"Employee app",s2ttl:"Light & clear for field workers.",cHome:"Home",cAbsen:"Attend ⭐",cHist:"History",cProfile:"Profile",
   s3eye:"More than attendance",s3ttl:"Everything an employee needs, in one app.",cLeave:"Leave & Permits",cNotif:"Notifications",cEdit:"Edit profile",
   s4eye:"Payroll",s4ttl:"Payslips computed automatically from attendance.",s4lead:"Every figure is truly calculated by the engine (BPJS, PPh21 TER, overtime) — identical on server & app, covered by 20 tests.",cPay:"Pay tab",cSlip:"Payslip",cSlipDark:"Payslip · Dark",
@@ -297,7 +311,7 @@ const I18N={
   s9eye:"Technology",s9ttl:"Built seriously, tested.",nApp:"employee + admin",nWeb:"HR portal",nDb:"append-only",bTests:"Pest — 207 tests",bData:"Data in Indonesia",
   s10eye:"Status",s10ttl:"Live today.",r1t:"Backend + anti-fraud API",r1d:"Laravel 12 · 207 tests",r2t:"Employee mobile",r2d:"Attend, Pay, Leave, Notifications, Profile",r3t:"Payroll engine + PDF payslip",r3d:"BPJS, PPh21 TER, overtime · 20 tests",r4t:"Full admin",r4d:"Dashboard, Monitor, Devices, Employees",r5t:"Payroll run + send slip",r5d:"finalize → pay → Telegram/Email",r6t:"FCM push & face ML",r6d:"phone push, full liveness",
   s11ttl:"Ready for the field.",s11lead:"Anti-fraud attendance + payroll, end-to-end. Pilot at one site, measure the real savings."},
- id:{badge:"Qubah Group · Absensi Tambang Batu Bara",lead:"Absensi anti-curang untuk operasi tambang batu bara — cek wajah, GPS asli, waktu server. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",chip1:"Anti titip-absen",chip2:"Liveness wajah",chip3:"GPS asli",chip4:"207+ tes",
+ id:{secEye:"Keamanan",secTtl:"Masuk sekali. Setelahnya cukup wajah atau jarimu.",secLead:"Login pertama dengan kata sandi di perangkat — selanjutnya Face ID atau sidik jari, menyesuaikan tiap HP. Sesi terenkripsi & terikat perangkat.",cLogin:"Login pertama",cLock:"Face ID / sidik jari",cSetup:"Aktif sekali ketuk",badge:"Qubah Group · Absensi Tambang Batu Bara",lead:"Absensi anti-curang untuk operasi tambang batu bara — cek wajah, GPS asli, waktu server. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",chip1:"Anti titip-absen",chip2:"Liveness wajah",chip3:"GPS asli",chip4:"207+ tes",
   s2eye:"Aplikasi karyawan",s2ttl:"Ringan & jelas untuk pekerja lapangan.",cHome:"Beranda",cAbsen:"Absen ⭐",cHist:"Riwayat",cProfile:"Profil",
   s3eye:"Lebih dari sekadar absen",s3ttl:"Semua kebutuhan karyawan dalam satu aplikasi.",cLeave:"Izin & Cuti",cNotif:"Notifikasi",cEdit:"Atur profil",
   s4eye:"Penggajian",s4ttl:"Slip gaji dihitung otomatis dari absensi.",s4lead:"Tiap angka benar-benar dihitung engine (BPJS, PPh21 TER, lembur) — identik di server & aplikasi, teruji 20 tes.",cPay:"Tab Gaji",cSlip:"Slip gaji",cSlipDark:"Slip · Gelap",
@@ -308,7 +322,7 @@ const I18N={
   s9eye:"Teknologi",s9ttl:"Dibangun serius, teruji.",nApp:"karyawan + admin",nWeb:"portal HR",nDb:"append-only",bTests:"Pest — 207 tes",bData:"Data di Indonesia",
   s10eye:"Status",s10ttl:"Sudah jalan hari ini.",r1t:"Backend + API anti-curang",r1d:"Laravel 12 · 207 tes",r2t:"Mobile karyawan",r2d:"Absen, Gaji, Izin, Notifikasi, Profil",r3t:"Engine payroll + slip PDF",r3d:"BPJS, PPh21 TER, lembur · 20 tes",r4t:"Admin lengkap",r4d:"Dashboard, Monitor, Perangkat, Karyawan",r5t:"Payroll run + kirim slip",r5d:"finalisasi → bayar → Telegram/Email",r6t:"Push FCM & ML wajah",r6d:"notifikasi HP, liveness penuh",
   s11ttl:"Siap diterapkan di lapangan.",s11lead:"Absensi anti-curang + penggajian, end-to-end. Uji coba di satu site, ukur penghematan nyata."},
- ms:{badge:"Qubah Group · Kehadiran Perlombongan Arang Batu",lead:"Kehadiran anti-penipuan untuk operasi perlombongan arang batu — semak wajah, GPS sebenar, masa pelayan. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",chip1:"Anti curi-kehadiran",chip2:"Liveness wajah",chip3:"GPS sebenar",chip4:"207+ ujian",
+ ms:{secEye:"Keselamatan",secTtl:"Log masuk sekali. Selepas itu cukup wajah atau jari.",secLead:"Log masuk pertama dengan kata laluan pada peranti — selepas itu Face ID atau cap jari, mengikut setiap telefon. Sesi disulitkan & terikat peranti.",cLogin:"Log masuk pertama",cLock:"Face ID / cap jari",cSetup:"Aktif satu ketik",badge:"Qubah Group · Kehadiran Perlombongan Arang Batu",lead:"Kehadiran anti-penipuan untuk operasi perlombongan arang batu — semak wajah, GPS sebenar, masa pelayan. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",chip1:"Anti curi-kehadiran",chip2:"Liveness wajah",chip3:"GPS sebenar",chip4:"207+ ujian",
   s2eye:"Aplikasi pekerja",s2ttl:"Ringkas & jelas untuk pekerja lapangan.",cHome:"Utama",cAbsen:"Hadir ⭐",cHist:"Sejarah",cProfile:"Profil",
   s3eye:"Lebih daripada kehadiran",s3ttl:"Semua keperluan pekerja dalam satu aplikasi.",cLeave:"Cuti & Kebenaran",cNotif:"Pemberitahuan",cEdit:"Sunting profil",
   s4eye:"Penggajian",s4ttl:"Slip gaji dikira automatik daripada kehadiran.",s4lead:"Setiap angka benar-benar dikira oleh enjin (BPJS, PPh21 TER, kerja lebih masa) — sama di pelayan & aplikasi, diuji 20 ujian.",cPay:"Tab Gaji",cSlip:"Slip gaji",cSlipDark:"Slip · Gelap",
@@ -319,7 +333,7 @@ const I18N={
   s9eye:"Teknologi",s9ttl:"Dibina serius, diuji.",nApp:"pekerja + admin",nWeb:"portal HR",nDb:"tambah-sahaja",bTests:"Pest — 207 ujian",bData:"Data di Indonesia",
   s10eye:"Status",s10ttl:"Sudah berjalan hari ini.",r1t:"Backend + API anti-penipuan",r1d:"Laravel 12 · 207 ujian",r2t:"Mobil pekerja",r2d:"Hadir, Gaji, Cuti, Pemberitahuan, Profil",r3t:"Enjin gaji + slip PDF",r3d:"BPJS, PPh21 TER, lebih masa · 20 ujian",r4t:"Admin lengkap",r4d:"Papan pemuka, Monitor, Peranti, Pekerja",r5t:"Larian gaji + hantar slip",r5d:"muktamad → bayar → Telegram/E-mel",r6t:"Tolak FCM & ML wajah",r6d:"tolakan telefon, liveness penuh",
   s11ttl:"Sedia untuk lapangan.",s11lead:"Kehadiran anti-penipuan + gaji, hujung ke hujung. Perintis di satu tapak, ukur penjimatan sebenar."},
- zh:{badge:"Qubah Group · 煤矿考勤",lead:"面向煤矿作业的防作弊考勤——刷脸、真实 GPS、服务器时间。一个 Flutter 应用（iOS 与 Android）、Laravel 后端、Vue 门户。",chip1:"杜绝代打卡",chip2:"人脸活体",chip3:"真实 GPS",chip4:"207+ 测试",
+ zh:{secEye:"安全",secTtl:"登录一次，之后只需刷脸或按指纹。",secLead:"首次在设备上用密码登录——之后使用 Face ID 或指纹，适配每部手机。会话加密且绑定设备。",cLogin:"首次登录",cLock:"Face ID / 指纹",cSetup:"一键启用",badge:"Qubah Group · 煤矿考勤",lead:"面向煤矿作业的防作弊考勤——刷脸、真实 GPS、服务器时间。一个 Flutter 应用（iOS 与 Android）、Laravel 后端、Vue 门户。",chip1:"杜绝代打卡",chip2:"人脸活体",chip3:"真实 GPS",chip4:"207+ 测试",
   s2eye:"员工应用",s2ttl:"为一线工人打造，轻巧清晰。",cHome:"主页",cAbsen:"打卡 ⭐",cHist:"记录",cProfile:"我的",
   s3eye:"不止是考勤",s3ttl:"员工所需，尽在一个应用。",cLeave:"请假与许可",cNotif:"通知",cEdit:"编辑资料",
   s4eye:"薪资",s4ttl:"根据考勤自动核算工资单。",s4lead:"每个数字都由引擎真实计算（BPJS、PPh21 TER、加班）——服务器与应用一致，20 项测试覆盖。",cPay:"工资页",cSlip:"工资单",cSlipDark:"工资单 · 深色",
@@ -330,7 +344,7 @@ const I18N={
   s9eye:"技术",s9ttl:"认真打造，充分测试。",nApp:"员工 + 管理",nWeb:"人事门户",nDb:"仅追加",bTests:"Pest — 207 测试",bData:"数据存于印尼",
   s10eye:"状态",s10ttl:"今天即可上线。",r1t:"后端 + 防作弊 API",r1d:"Laravel 12 · 207 测试",r2t:"员工端",r2d:"打卡、工资、请假、通知、资料",r3t:"薪资引擎 + PDF 工资单",r3d:"BPJS、PPh21 TER、加班 · 20 测试",r4t:"完整管理端",r4d:"仪表盘、监控、设备、员工",r5t:"薪资发放 + 发送工资单",r5d:"定稿 → 支付 → Telegram/邮件",r6t:"FCM 推送与人脸 ML",r6d:"手机推送，完整活体",
   s11ttl:"随时投入现场。",s11lead:"防作弊考勤 + 薪资，端到端。在一个矿点试点，衡量真实节省。"},
- ar:{badge:"Qubah Group · حضور منجم الفحم",lead:"حضور مضاد للتلاعب لعمليات مناجم الفحم — فحص الوجه، GPS حقيقي، وقت الخادم. تطبيق Flutter واحد (iOS و Android)، خلفية Laravel، بوابة Vue.",chip1:"منع الحضور بالنيابة",chip2:"حيوية الوجه",chip3:"GPS حقيقي",chip4:"207+ اختبار",
+ ar:{secEye:"الأمان",secTtl:"سجّل الدخول مرة واحدة. بعدها يكفي وجهك أو إصبعك.",secLead:"أول تسجيل دخول بكلمة مرور على الجهاز — بعدها Face ID أو بصمة الإصبع، متكيّفة مع كل هاتف. الجلسات مشفّرة ومرتبطة بالجهاز.",cLogin:"أول دخول",cLock:"Face ID / بصمة",cSetup:"تفعيل بنقرة",badge:"Qubah Group · حضور منجم الفحم",lead:"حضور مضاد للتلاعب لعمليات مناجم الفحم — فحص الوجه، GPS حقيقي، وقت الخادم. تطبيق Flutter واحد (iOS و Android)، خلفية Laravel، بوابة Vue.",chip1:"منع الحضور بالنيابة",chip2:"حيوية الوجه",chip3:"GPS حقيقي",chip4:"207+ اختبار",
   s2eye:"تطبيق الموظف",s2ttl:"خفيف وواضح لعمال الميدان.",cHome:"الرئيسية",cAbsen:"حضور ⭐",cHist:"السجل",cProfile:"الملف",
   s3eye:"أكثر من الحضور",s3ttl:"كل ما يحتاجه الموظف في تطبيق واحد.",cLeave:"الإجازات والأذونات",cNotif:"الإشعارات",cEdit:"تعديل الملف",
   s4eye:"الرواتب",s4ttl:"قسائم رواتب تُحسب تلقائيًا من الحضور.",s4lead:"كل رقم يُحسب فعليًا بواسطة المحرك (BPJS، ضريبة TER، العمل الإضافي) — مطابق على الخادم والتطبيق، بتغطية 20 اختبارًا.",cPay:"صفحة الراتب",cSlip:"قسيمة الراتب",cSlipDark:"القسيمة · داكن",
