@@ -55,6 +55,14 @@ Karyawan **ajukan izin/cuti/sakit** (dengan sisa kuota & lampiran), terima **not
 
 **1 perangkat disetujui/karyawan** (setujui/cabut), direktori karyawan (cari/NIK/dept), **payroll run → finalisasi → bayar** dengan **slip gaji PDF** (kirim ke tiap karyawan lewat **Telegram/Email**), dan **persetujuan izin/cuti** — semua dari genggaman.
 
+### 🔐 Login aman — sekali kata sandi, lalu biometrik
+
+| First sign-in | Face ID / sidik jari | Aktif sekali ketuk |
+|:---:|:---:|:---:|
+| <img src="img/sec-login.en.png" width="200"> | <img src="img/sec-lock.en.png" width="200"> | <img src="img/sec-setup.en.png" width="200"> |
+
+Login pertama di perangkat pakai **kata sandi**; berikutnya **Face ID / Touch ID (iOS) atau sidik jari / face unlock (Android)** — menyesuaikan tiap perangkat via `local_auth`. **Token sesi disimpan terenkripsi** (`flutter_secure_storage`), **terikat perangkat** (1 HP/karyawan), keputusan pakai **waktu server**. Layar kunci ala perbankan; kata sandi tetap sebagai cadangan.
+
 ## 🔒 Inti produk — menutup celah kecurangan absensi
 
 - **Waktu otoritatif server** — keputusan pakai waktu server, bukan jam HP → manipulasi jam HP tertutup total.
