@@ -279,6 +279,20 @@ html[dir="rtl"] .demodots{justify-content:flex-end}
   </div>
 </section>
 
+<!-- OFFLINE -->
+<section class="slide">
+  <div class="wrap">
+    <span class="eyebrow r" data-i18n="offEye"></span>
+    <h2 class="r" data-i18n="offTtl"></h2>
+    <p class="lead r" data-i18n="offLead"></p>
+    <div class="g3 r">
+      <div class="card"><span class="num">01</span><h3 data-i18n="off1t"></h3><p data-i18n="off1d"></p></div>
+      <div class="card"><span class="num">02</span><h3 data-i18n="off2t"></h3><p data-i18n="off2d"></p></div>
+      <div class="card"><span class="num">03</span><h3 data-i18n="off3t"></h3><p data-i18n="off3d"></p></div>
+    </div>
+  </div>
+</section>
+
 <!-- 4 PAYSLIP -->
 <section class="slide">
   <div class="wrap">
@@ -320,6 +334,21 @@ html[dir="rtl"] .demodots{justify-content:flex-end}
       <div class="phone"><div class="frame"><img data-shot="devices" src="img/devices.en.png" alt=""></div><div class="cap"><b data-i18n="cDev"></b></div></div>
       <div class="phone"><div class="frame"><img data-shot="employees" src="img/employees.en.png" alt=""></div><div class="cap"><b data-i18n="cEmp"></b></div></div>
     </div>
+  </div>
+</section>
+
+<!-- HIERARCHY -->
+<section class="slide">
+  <div class="wrap">
+    <span class="eyebrow r" data-i18n="hierEye"></span>
+    <h2 class="r" data-i18n="hierTtl"></h2>
+    <p class="lead r" data-i18n="hierLead"></p>
+    <div class="g3 r">
+      <div class="card"><span class="num" data-i18n="hier1n"></span><h3 data-i18n="hier1t"></h3><p data-i18n="hier1d"></p></div>
+      <div class="card"><span class="num" data-i18n="hier2n"></span><h3 data-i18n="hier2t"></h3><p data-i18n="hier2d"></p></div>
+      <div class="card"><span class="num" data-i18n="hier3n"></span><h3 data-i18n="hier3t"></h3><p data-i18n="hier3d"></p></div>
+    </div>
+    <p class="rolenote r" data-i18n="hierNote"></p>
   </div>
 </section>
 
@@ -412,6 +441,23 @@ html[dir="rtl"] .demodots{justify-content:flex-end}
   </div>
 </section>
 
+<!-- PRICING -->
+<section class="slide">
+  <div class="wrap">
+    <span class="eyebrow r" data-i18n="prcEye"></span>
+    <h2 class="r" data-i18n="prcTtl"></h2>
+    <p class="lead r" data-i18n="prcLead"></p>
+    <div class="cmp r" style="max-width:760px">
+      <div class="cmprow cmphead" style="grid-template-columns:1.35fr 1fr"><div class="asp" data-i18n="prcCol1"></div><div class="asp" style="text-align:right;color:var(--green)" data-i18n="prcCol2"></div></div>
+      <div class="cmprow" style="grid-template-columns:1.35fr 1fr"><div class="asp" data-i18n="prcT1n"></div><div class="asp" style="text-align:right;color:var(--green);font-weight:800" data-i18n="prcT1p"></div></div>
+      <div class="cmprow" style="grid-template-columns:1.35fr 1fr"><div class="asp" data-i18n="prcT2n"></div><div class="asp" style="text-align:right;color:var(--green);font-weight:800" data-i18n="prcT2p"></div></div>
+      <div class="cmprow" style="grid-template-columns:1.35fr 1fr"><div class="asp" data-i18n="prcT3n"></div><div class="asp" style="text-align:right;color:var(--green);font-weight:800" data-i18n="prcT3p"></div></div>
+      <div class="cmprow" style="grid-template-columns:1.35fr 1fr"><div class="asp" data-i18n="prcT4n"></div><div class="asp" style="text-align:right;color:var(--green);font-weight:800" data-i18n="prcT4p"></div></div>
+    </div>
+    <p class="rolenote r" data-i18n="prcNote"></p>
+  </div>
+</section>
+
 <!-- 11 CLOSING -->
 <section class="slide dark cover">
   <div class="wrap">
@@ -485,6 +531,8 @@ const I18N={
   s11ttl:"جاهز للميدان.",s11lead:"حضور مضاد للتلاعب + رواتب، من الطرف إلى الطرف. جرّبه في موقع واحد وقِس التوفير الحقيقي."}
 };
 
+const I18N_EXTRA={"en": {"offEye": "Works offline", "offTtl": "Attend even with no signal.", "offLead": "In the field, signal is thin. Workers still clock in offline — the app captures the photo, real GPS coordinate, and satellite time, queues it on the phone, then syncs the moment signal returns.", "off1t": "Capture offline", "off1d": "Photo, GPS coordinate, and GPS-satellite time captured and stored safely on the phone.", "off2t": "Auto-sync", "off2d": "The queue uploads itself the instant the device is back online. Nothing is lost.", "off3t": "Reviewed by the head", "off3d": "Offline check-ins arrive flagged and are approved by the team head — honest by human review.", "hierEye": "Team structure", "hierTtl": "Many divisions, each head watches their own team.", "hierLead": "Heads sit in the office and monitor their own division's attendance in real time. They approve the exceptions; HR and super-admin see everyone.", "hier1n": "HEAD", "hier1t": "Division head", "hier1d": "Sees and approves only their own team. Real-time monitor of who's present, late, or flagged.", "hier2n": "HR", "hier2t": "HR", "hier2d": "Sees across all divisions, decides escalations, runs payroll.", "hier3n": "SUPER-ADMIN", "hier3t": "Super-admin", "hier3d": "Full control of the whole organization and its settings.", "hierNote": "Approval by exception — normal check-ins pass automatically; only offline or suspicious ones need a head's nod.", "prcEye": "Packages & subscription", "prcTtl": "Clear investment that grows with you.", "prcLead": "Build once, then a monthly maintenance and support fee that scales with your workforce. Server and storage are billed separately, at cost.", "prcCol1": "Workforce", "prcCol2": "Maintenance / month", "prcT1n": "Up to 1,000 workers", "prcT1p": "Rp 5 million", "prcT2n": "1,000–3,000 workers", "prcT2p": "Rp 9 million", "prcT3n": "3,000–5,000 workers", "prcT3p": "Rp 15 million", "prcT4n": "Above 5,000 workers", "prcT4p": "Custom", "prcNote": "Maintenance covers support, updates, and fixes. Server, storage, and infrastructure (VPS/cloud) are separate, charged at actual usage.", "reFd": "photo, emergency contact, 7 languages", "s5lead": "Every screen is designed for both light and dark — and the whole app speaks 7 languages, switchable anytime."}, "id": {"offEye": "Bekerja offline", "offTtl": "Tetap absen walau tanpa sinyal.", "offLead": "Di lapangan sinyal tipis. Karyawan tetap absen offline — aplikasi menangkap foto, koordinat GPS asli, dan waktu satelit, mengantre di HP, lalu menyinkron begitu sinyal kembali.", "off1t": "Tangkap offline", "off1d": "Foto, koordinat GPS, dan waktu satelit GPS ditangkap dan disimpan aman di HP.", "off2t": "Sinkron otomatis", "off2d": "Antrean terkirim sendiri begitu perangkat kembali online. Tidak ada yang hilang.", "off3t": "Ditinjau kepala", "off3d": "Absen offline masuk sebagai perlu tinjau dan disetujui kepala tim — jujur lewat penilaian manusia.", "hierEye": "Struktur tim", "hierTtl": "Banyak divisi, tiap kepala pantau timnya.", "hierLead": "Kepala di kantor memantau kehadiran divisinya secara real-time. Mereka menyetujui yang perlu; HRD dan superadmin melihat semuanya.", "hier1n": "KEPALA", "hier1t": "Kepala divisi", "hier1d": "Hanya lihat & setujui timnya sendiri. Monitor real-time siapa hadir, telat, atau ditandai.", "hier2n": "HRD", "hier2t": "HRD", "hier2d": "Lihat lintas divisi, putuskan eskalasi, jalankan payroll.", "hier3n": "SUPERADMIN", "hier3t": "Superadmin", "hier3d": "Kendali penuh seluruh organisasi dan pengaturannya.", "hierNote": "Persetujuan seperlunya — absen normal lolos otomatis; hanya yang offline atau mencurigakan perlu diketuk kepala.", "prcEye": "Paket & langganan", "prcTtl": "Investasi jelas, tumbuh sesuai skala.", "prcLead": "Bangun sekali, lalu biaya pemeliharaan dan dukungan bulanan yang menyesuaikan jumlah pekerja. Server dan penyimpanan ditagih terpisah, sesuai pemakaian.", "prcCol1": "Jumlah pekerja", "prcCol2": "Pemeliharaan / bulan", "prcT1n": "Sampai 1.000 pekerja", "prcT1p": "Rp 5 juta", "prcT2n": "1.000–3.000 pekerja", "prcT2p": "Rp 9 juta", "prcT3n": "3.000–5.000 pekerja", "prcT3p": "Rp 15 juta", "prcT4n": "Di atas 5.000 pekerja", "prcT4p": "Khusus", "prcNote": "Pemeliharaan mencakup dukungan, pembaruan, dan perbaikan. Server, penyimpanan, dan infrastruktur (VPS/cloud) terpisah, sesuai pemakaian nyata.", "reFd": "foto, kontak darurat, 7 bahasa", "s5lead": "Tiap layar dirancang untuk terang & gelap — dan seluruh aplikasi mendukung 7 bahasa, bisa diganti kapan saja."}, "ms": {"offEye": "Berfungsi luar talian", "offTtl": "Tetap hadir walau tanpa isyarat.", "offLead": "Di lapangan isyarat nipis. Pekerja tetap daftar masuk luar talian — aplikasi menangkap foto, koordinat GPS sebenar, dan masa satelit, beratur pada telefon, kemudian menyegerak sebaik isyarat kembali.", "off1t": "Tangkap luar talian", "off1d": "Foto, koordinat GPS, dan masa satelit GPS ditangkap dan disimpan selamat pada telefon.", "off2t": "Segerak automatik", "off2d": "Baris gilir dihantar sendiri sebaik peranti kembali dalam talian. Tiada yang hilang.", "off3t": "Ditinjau ketua", "off3d": "Kehadiran luar talian masuk sebagai perlu semak dan diluluskan ketua pasukan — jujur melalui semakan manusia.", "hierEye": "Struktur pasukan", "hierTtl": "Banyak bahagian, setiap ketua pantau pasukannya.", "hierLead": "Ketua di pejabat memantau kehadiran bahagiannya secara masa nyata. Mereka meluluskan yang perlu; HR dan superadmin melihat semua.", "hier1n": "KETUA", "hier1t": "Ketua bahagian", "hier1d": "Hanya lihat & luluskan pasukan sendiri. Monitor masa nyata siapa hadir, lewat, atau ditanda.", "hier2n": "HR", "hier2t": "HR", "hier2d": "Lihat merentas bahagian, putuskan eskalasi, jalankan gaji.", "hier3n": "SUPERADMIN", "hier3t": "Superadmin", "hier3d": "Kawalan penuh seluruh organisasi dan tetapannya.", "hierNote": "Kelulusan mengikut keperluan — kehadiran biasa lulus automatik; hanya yang luar talian atau mencurigakan perlu kelulusan ketua.", "prcEye": "Pakej & langganan", "prcTtl": "Pelaburan jelas, berkembang mengikut skala.", "prcLead": "Bina sekali, kemudian yuran penyelenggaraan dan sokongan bulanan yang menyesuaikan bilangan pekerja. Pelayan dan storan dicaj berasingan, mengikut penggunaan.", "prcCol1": "Bilangan pekerja", "prcCol2": "Penyelenggaraan / bulan", "prcT1n": "Sehingga 1,000 pekerja", "prcT1p": "Rp 5 juta", "prcT2n": "1,000–3,000 pekerja", "prcT2p": "Rp 9 juta", "prcT3n": "3,000–5,000 pekerja", "prcT3p": "Rp 15 juta", "prcT4n": "Melebihi 5,000 pekerja", "prcT4p": "Khusus", "prcNote": "Penyelenggaraan meliputi sokongan, kemas kini, dan pembaikan. Pelayan, storan, dan infrastruktur (VPS/awan) berasingan, mengikut penggunaan sebenar.", "reFd": "foto, hubungan kecemasan, 7 bahasa", "s5lead": "Setiap skrin direka untuk cerah & gelap — dan seluruh aplikasi menyokong 7 bahasa, boleh ditukar bila-bila masa."}, "zh": {"offEye": "离线可用", "offTtl": "没有信号也能打卡。", "offLead": "野外信号微弱。员工仍可离线打卡——应用采集照片、真实 GPS 坐标与卫星时间，在手机上排队，信号恢复后立即同步。", "off1t": "离线采集", "off1d": "照片、GPS 坐标与 GPS 卫星时间被采集并安全存于手机。", "off2t": "自动同步", "off2d": "设备恢复联网即自动上传队列，数据不丢失。", "off3t": "负责人审核", "off3d": "离线打卡以待审状态送达，由团队负责人批准——以人工审核保证诚实。", "hierEye": "团队结构", "hierTtl": "多个部门，每位负责人管好自己团队。", "hierLead": "负责人在办公室实时监控本部门考勤，审批例外；人事与超级管理员可见全部。", "hier1n": "负责人", "hier1t": "部门负责人", "hier1d": "仅查看并审批本团队。实时监控谁在岗、迟到或被标记。", "hier2n": "人事", "hier2t": "人事", "hier2d": "跨部门查看，裁定升级事项，运行薪资。", "hier3n": "超级管理员", "hier3t": "超级管理员", "hier3d": "对整个组织及其设置拥有完全控制。", "hierNote": "按例外审批——正常打卡自动通过；仅离线或可疑的需要负责人确认。", "prcEye": "套餐与订阅", "prcTtl": "清晰的投入，随规模增长。", "prcLead": "一次搭建，之后按月维护与支持费，随员工规模调整。服务器与存储按用量单独计费。", "prcCol1": "员工规模", "prcCol2": "维护 / 每月", "prcT1n": "最多 1,000 名员工", "prcT1p": "Rp 500万", "prcT2n": "1,000–3,000 名员工", "prcT2p": "Rp 900万", "prcT3n": "3,000–5,000 名员工", "prcT3p": "Rp 1,500万", "prcT4n": "5,000 名以上", "prcT4p": "面议", "prcNote": "维护涵盖支持、更新与修复。服务器、存储与基础设施（VPS/云）单独计费，按实际用量。", "reFd": "照片、紧急联系人、7 种语言", "s5lead": "每个界面都为浅色与深色而设计——整个应用支持 7 种语言，随时切换。"}, "ar": {"offEye": "يعمل دون اتصال", "offTtl": "سجّل الحضور حتى بلا إشارة.", "offLead": "في الميدان تكون الإشارة ضعيفة. يسجّل العامل حضوره دون اتصال — يلتقط التطبيق الصورة وإحداثيات GPS الحقيقية ووقت القمر الصناعي، ويصفّها على الهاتف، ثم يزامنها فور عودة الإشارة.", "off1t": "التقاط دون اتصال", "off1d": "تُلتقط الصورة وإحداثيات GPS ووقت قمر GPS وتُحفظ بأمان على الهاتف.", "off2t": "مزامنة تلقائية", "off2d": "تُرفع قائمة الانتظار تلقائيًا فور عودة الجهاز للاتصال. لا شيء يضيع.", "off3t": "مراجعة الرئيس", "off3d": "يصل الحضور دون اتصال بحالة قيد المراجعة ويعتمده رئيس الفريق — صدق عبر مراجعة بشرية.", "hierEye": "هيكل الفريق", "hierTtl": "أقسام عديدة، كل رئيس يراقب فريقه.", "hierLead": "يراقب الرؤساء من المكتب حضور أقسامهم لحظيًا ويعتمدون الاستثناءات؛ الموارد البشرية والمشرف الأعلى يرون الجميع.", "hier1n": "رئيس", "hier1t": "رئيس القسم", "hier1d": "يرى ويعتمد فريقه فقط. مراقبة فورية لمن حاضر أو متأخر أو معلَّم.", "hier2n": "الموارد البشرية", "hier2t": "الموارد البشرية", "hier2d": "يرى عبر الأقسام، يبتّ التصعيدات، يشغّل الرواتب.", "hier3n": "المشرف الأعلى", "hier3t": "المشرف الأعلى", "hier3d": "تحكم كامل بالمؤسسة كلها وإعداداتها.", "hierNote": "اعتماد بالاستثناء — الحضور العادي يمر تلقائيًا؛ فقط ما كان دون اتصال أو مريبًا يحتاج موافقة الرئيس.", "prcEye": "الباقات والاشتراك", "prcTtl": "استثمار واضح ينمو مع حجمك.", "prcLead": "بناء لمرة واحدة، ثم رسوم صيانة ودعم شهرية تتناسب مع عدد العاملين. الخادم والتخزين يُحتسبان منفصلين حسب الاستخدام.", "prcCol1": "عدد العاملين", "prcCol2": "الصيانة / شهريًا", "prcT1n": "حتى 1,000 عامل", "prcT1p": "5 ملايين روبية", "prcT2n": "1,000–3,000 عامل", "prcT2p": "9 ملايين روبية", "prcT3n": "3,000–5,000 عامل", "prcT3p": "15 مليون روبية", "prcT4n": "أكثر من 5,000 عامل", "prcT4p": "حسب الطلب", "prcNote": "تشمل الصيانة الدعم والتحديثات والإصلاحات. الخادم والتخزين والبنية التحتية (VPS/سحابة) منفصلة، حسب الاستخدام الفعلي.", "reFd": "صورة، جهة طوارئ، 7 لغات", "s5lead": "صُمم كل شاشة للفاتح والداكن — والتطبيق بأكمله يدعم 7 لغات، قابلة للتبديل في أي وقت."}};
+Object.keys(I18N_EXTRA).forEach(function(k){I18N[k]=I18N[k]||{};Object.assign(I18N[k],I18N_EXTRA[k]);});
 window.__ctI18N=I18N;
 function setLang(code){
   const dict=I18N[code]||I18N.en;
