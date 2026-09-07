@@ -543,7 +543,7 @@ function setLang(code){
     const v=dict[el.getAttribute('data-i18n')];
     if(v!=null) el.textContent=v;
   });
-  const slang=['en','id','ms','zh','ar'].includes(code)?code:'en';
+  const slang=['en','id','ms','zh','ar','th','fil'].includes(code)?code:'en';
   document.querySelectorAll('img[data-shot]').forEach(img=>{
     img.src='img/'+img.getAttribute('data-shot')+'.'+slang+'.png';
   });
@@ -597,7 +597,7 @@ function setLang(code){
   seq.forEach(function(){dotsEl.appendChild(document.createElement("i"));});
   var dots=dotsEl.children,idx=0;
   function lang(){return document.documentElement.lang||"en";}
-  function slang(){var c=lang();return ["en","id","ms","zh","ar"].indexOf(c)>=0?c:"en";}
+  function slang(){var c=lang();return ["en","id","ms","zh","ar","th","fil"].indexOf(c)>=0?c:"en";}
   function tr(k){var d=window.__ctI18N&&window.__ctI18N[lang()];return (d&&d[k])||k;}
   function show(i){var sc=seq[i];img.style.opacity=0;
     setTimeout(function(){img.src="img/"+sc[0]+"."+slang()+".png";cap.textContent=tr(sc[1]);img.style.opacity=1;},260);
