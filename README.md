@@ -20,9 +20,9 @@
 <img alt="Status" src="https://img.shields.io/badge/status-pilot--ready-2F7009?style=flat-square">
 </p>
 
-<p><b>Built for <a href="https://ksatriabintangsamudra.my.id">Qubah Group</a></b></p>
+<p><b>Built for coal-mining operators — first deployment: PT Surya Alam Bakti</b></p>
 
-<h3><a href="https://ksatriabintangsamudra.my.id/coaltrack-showcase/">▶ Open the live showcase</a></h3>
+<h3><a href="https://coaltrack.id/">▶ Open the live showcase</a></h3>
 
 <p><em>Per-slide presentation · flag switcher for <b>5 languages</b> (top-right) · English default · full RTL</em></p>
 
@@ -149,4 +149,4 @@ Attendance (authoritative, immutable) → Work sessions → Shift/Roster → Pay
 
 ---
 
-<div align="center"><sub>Technical showcase by <a href="https://ksatriabintangsamudra.my.id">Ksatria Bintang Samudra</a> · source code is private</sub></div>
+<div align="center"><sub>Technical showcase by <a href="https://coaltrack.id">Ksatria Bintang Samudra</a> · source code is private</sub></div>
