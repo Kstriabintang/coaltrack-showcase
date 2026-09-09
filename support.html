@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bantuan · Support — CoalTrack</title>
+<meta name="description" content="Pusat Bantuan CoalTrack — cara menghubungi dukungan (balasan 1 hari kerja), FAQ login, ganti perangkat, lupa kata sandi, absen offline, slip gaji via email, bahasa, dan hapus akun & data. / CoalTrack Support &amp; FAQ.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0B1220">
+<link rel="icon" href="img/qubah-icon.png">
+<link rel="canonical" href="https://ksatriabintangsamudra.my.id/coaltrack-showcase/support.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CoalTrack">
+<meta property="og:title" content="Bantuan · Support — CoalTrack">
+<meta property="og:description" content="Pusat bantuan dan FAQ aplikasi absensi & penggajian CoalTrack.">
+<meta property="og:url" content="https://ksatriabintangsamudra.my.id/coaltrack-showcase/support.html">
+<style>
+:root{
+  --navy:#0B1220; --navy2:#111A2E; --navy3:#182540; --line:rgba(255,255,255,.09);
+  --amber:#E6A200; --amber2:#FFC53D; --amber-tint:rgba(230,162,0,.12);
+  --tx:#E8EDF7; --tx2:#B3BED2; --tx3:#7F8DA8;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--sans);background:var(--navy);color:var(--tx);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--amber2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;text-wrap:balance}
+html[lang="id"] .t-en{display:none!important}
+html[lang="en"] .t-id{display:none!important}
+
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;padding:10px clamp(14px,3vw,28px);background:rgba(11,18,32,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:16px;color:#fff;letter-spacing:-.01em;white-space:nowrap}
+.brand:hover{text-decoration:none}
+.brand i{width:26px;height:26px;border-radius:8px;background:linear-gradient(150deg,var(--amber2),#c98c00);display:grid;place-items:center;color:#1a1200;font-style:normal;font-size:13px;font-weight:900;flex:none}
+.top nav{margin-left:auto;display:flex;gap:2px}
+.top nav a{font-size:13px;font-weight:600;color:var(--tx2);padding:7px 10px;border-radius:8px;white-space:nowrap}
+.top nav a:hover{color:#fff;background:rgba(255,255,255,.06);text-decoration:none}
+.top nav a.on{color:var(--amber2)}
+.lang{display:flex;gap:2px;background:var(--navy3);border:1px solid var(--line);border-radius:999px;padding:3px;flex:none}
+.lang button{border:0;background:transparent;color:var(--tx3);font:inherit;font-size:12px;font-weight:800;letter-spacing:.06em;padding:5px 10px;border-radius:999px;cursor:pointer}
+.lang button.on{background:var(--amber);color:#1a1200}
+@media(max-width:600px){.top nav a{padding:7px 6px;font-size:12px}.brand span{display:none}}
+
+.hero{padding:clamp(34px,7vw,72px) clamp(16px,4vw,32px) clamp(26px,5vw,46px);background:radial-gradient(900px 380px at 15% -10%,rgba(230,162,0,.18),transparent 62%),linear-gradient(180deg,#0d1730,var(--navy) 85%);border-bottom:1px solid var(--line)}
+.wrap{max-width:820px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--amber2)}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--amber2);border-radius:2px}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:900;margin:12px 0 10px;color:#fff}
+.hero .lead{font-size:clamp(15px,1.7vw,17.5px);color:var(--tx2);max-width:64ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.meta span{font-size:12.5px;font-weight:600;color:var(--tx2);background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.meta span b{color:var(--amber2)}
+.sw{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;cursor:pointer}
+
+main{padding:clamp(22px,4vw,44px) clamp(16px,4vw,32px) 36px}
+.toc{background:var(--navy2);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:26px}
+.toc b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);margin-bottom:8px}
+.toc ol{margin:0;padding-left:20px;columns:2;column-gap:24px;font-size:13.5px}
+.toc li{margin:3px 0;break-inside:avoid}
+.toc a{color:var(--tx)}
+@media(max-width:560px){.toc ol{columns:1}}
+
+section{padding:22px 0;border-top:1px solid var(--line)}
+.wrap>section:first-of-type{border-top:0;padding-top:0}
+section h2{font-size:clamp(19px,2.6vw,24px);font-weight:800;color:#fff;margin-bottom:10px;display:flex;gap:10px;align-items:baseline}
+section h2 .n{color:var(--amber2);font-size:.8em;font-weight:900;font-variant-numeric:tabular-nums;flex:none}
+section h3{font-size:15.5px;font-weight:700;color:#fff;margin:16px 0 6px}
+p{font-size:15px;color:var(--tx2);margin:8px 0}
+p strong,li strong{color:var(--tx)}
+ul,ol{padding-left:22px;margin:8px 0;color:var(--tx2);font-size:15px}
+li{margin:5px 0}
+li::marker{color:var(--amber2)}
+.callout{background:var(--amber-tint);border:1px solid rgba(230,162,0,.35);border-left:4px solid var(--amber);border-radius:12px;padding:14px 16px;margin:14px 0}
+.callout p,.callout li{color:var(--tx)}
+.callout .ttl{display:block;font-weight:800;color:var(--amber2);margin-bottom:4px;font-size:14px}
+.tbl{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:12px;background:var(--navy2)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--tx2);line-height:1.5}
+th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);background:rgba(255,255,255,.03)}
+td:first-child{color:var(--tx);font-weight:600}
+tr:last-child td{border-bottom:0}
+.steps{list-style:none;padding:0;margin:12px 0;counter-reset:s}
+.steps li{position:relative;padding:12px 14px 12px 52px;background:var(--navy2);border:1px solid var(--line);border-radius:12px;margin:8px 0;color:var(--tx2)}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--amber);color:#1a1200;font-weight:900;font-size:13px;display:grid;place-items:center}
+.steps li b{display:block;color:#fff;margin-bottom:2px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--navy2);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card b{display:block;color:#fff;font-size:14.5px;margin-bottom:4px}
+.card p{font-size:13.5px;margin:4px 0 0}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#1a1200!important;font-weight:800;border-radius:10px;padding:11px 16px;font-size:14px;text-decoration:none!important;margin:6px 8px 6px 0}
+.btn.ghost{background:transparent;color:var(--amber2)!important;border:1px solid rgba(230,162,0,.5)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;background:rgba(255,255,255,.07);padding:1px 6px;border-radius:6px;color:var(--tx)}
+details{background:var(--navy2);border:1px solid var(--line);border-radius:12px;margin:8px 0;padding:0 16px}
+summary{cursor:pointer;font-weight:700;color:#fff;padding:13px 0;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:15px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--amber2);font-weight:900;font-size:18px;flex:none}
+details[open] summary::after{content:"–"}
+details>div{padding:0 0 14px}
+details p,details li{font-size:14px}
+.foot{border-top:1px solid var(--line);padding:22px clamp(16px,4vw,32px) 34px;font-size:12.5px;color:var(--tx3);text-align:center}
+.foot a{color:var(--tx2)}
+.foot .links{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;margin-bottom:8px}
+@media print{
+  body{background:#fff;color:#111}.top,.lang,.sw,.foot .links,.btn{display:none!important}
+  p,li,td,th,.hero .lead,.meta span,details p,details li{color:#222}
+  h1,h2,h3,section h2,.card b,.steps li b,summary,.toc a,td:first-child{color:#000}
+  .hero{background:none;border-bottom:1px solid #ccc}.toc,.card,.steps li,.tbl,details,.callout{background:#fff;border-color:#ccc}
+  details{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><i>C</i><span>CoalTrack</span></a>
+  <nav aria-label="Legal">
+    <a href="privacy.html"><span class="t-id">Privasi</span><span class="t-en">Privacy</span></a>
+    <a href="terms.html"><span class="t-id">Ketentuan</span><span class="t-en">Terms</span></a>
+    <a href="support.html" class="on"><span class="t-id">Bantuan</span><span class="t-en">Support</span></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Bahasa / Language">
+    <button type="button" data-set="id" class="on">ID</button>
+    <button type="button" data-set="en">EN</button>
+  </div>
+</header>
+
+<!-- ===================== BAHASA INDONESIA ===================== -->
+<div class="t-id">
+<div class="hero"><div class="wrap">
+  <span class="eyebrow">Pusat Bantuan</span>
+  <h1>Bantuan CoalTrack</h1>
+  <p class="lead">Butuh bantuan dengan aplikasi absensi &amp; penggajian CoalTrack? Temukan jawaban cepat di bawah ini, atau hubungi tim dukungan kami — kami membalas dalam <strong>1 hari kerja</strong>.</p>
+  <div class="meta">
+    <span>Email: <b>support@ksatriabintangsamudra.my.id</b></span>
+    <span>Balasan: <b>≤ 1 hari kerja</b></span>
+    <span>Jam layanan: <b>Senin–Jumat, 08.00–17.00 WITA</b></span>
+  </div>
+  <a class="sw" data-set="en" href="?lang=en">Read this page in English →</a>
+</div></div>
+
+<main><div class="wrap">
+<section id="hubungi">
+  <h2><span class="n">01</span>Cara mendapatkan bantuan</h2>
+  <div class="grid2">
+    <div class="card"><b>1. HR / admin perusahaan Anda</b>
+      <p>Untuk aktivasi akun, reset kata sandi, persetujuan ganti perangkat, sengketa absensi, cuti, dan pertanyaan gaji. HR memiliki portal admin untuk menangani hal-hal ini secara langsung.</p>
+    </div>
+    <div class="card"><b>2. Tim dukungan CoalTrack</b>
+      <p>Untuk kendala teknis aplikasi, kesalahan (<em>error</em>), gangguan layanan, pertanyaan privasi, dan permintaan hapus akun.</p>
+      <p><a class="btn" href="mailto:support@ksatriabintangsamudra.my.id?subject=Bantuan%20CoalTrack">✉ support@ksatriabintangsamudra.my.id</a></p>
+      <p>Kami mengonfirmasi setiap email dalam <strong>1 hari kerja</strong> (Senin–Jumat, 08.00–17.00 WITA, di luar hari libur nasional). Gangguan layanan yang berdampak luas ditangani dengan prioritas.</p>
+    </div>
+  </div>
+  <div class="callout"><span class="ttl">Agar cepat ditangani, sertakan dalam email Anda:</span>
+    <ul>
+      <li>Nama lengkap, nama perusahaan, dan nomor induk karyawan</li>
+      <li>Merek/model HP dan versi sistem operasi (mis. Android 15 / iOS 19)</li>
+      <li>Versi aplikasi (menu <strong>Profil → Tentang</strong>)</li>
+      <li>Tangkapan layar pesan kesalahan, waktu kejadian, dan apakah saat itu Anda online atau offline</li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq">
+  <h2><span class="n">02</span>Pertanyaan yang sering diajukan (FAQ)</h2>
+
+  <h3>Akun &amp; login</h3>
+  <details><summary>Bagaimana cara masuk pertama kali?</summary><div>
+    <ol>
+      <li>HR perusahaan Anda membuat akun dan memberikan <strong>nama pengguna</strong> (biasanya nomor induk karyawan atau email) beserta <strong>kata sandi sementara</strong>.</li>
+      <li>Pasang CoalTrack dari Google Play atau App Store pada HP yang akan Anda gunakan sehari-hari — HP tersebut akan terikat ke akun Anda.</li>
+      <li>Masuk dengan kata sandi, lalu ganti kata sandi sementara.</li>
+      <li>Opsional: aktifkan <strong>Face ID / sidik jari</strong> agar masuk berikutnya lebih cepat.</li>
+    </ol>
+  </div></details>
+  <details><summary>Saya lupa kata sandi.</summary><div>
+    <p>Hubungi HR/admin perusahaan Anda. Admin dapat mengatur ulang kata sandi dari portal HR dan memberikan kata sandi sementara; Anda akan diminta menggantinya saat masuk berikutnya. Jika Face ID/sidik jari sudah aktif, Anda tetap bisa membuka aplikasi dengan biometrik selama sesi masih berlaku.</p>
+  </div></details>
+  <details><summary>Login gagal: “akun tidak aktif” atau “perangkat tidak terdaftar”.</summary><div>
+    <ul>
+      <li><strong>Akun tidak aktif</strong> — akun Anda belum diaktifkan atau telah dinonaktifkan oleh HR. Hubungi HR.</li>
+      <li><strong>Perangkat tidak terdaftar</strong> — akun Anda sudah terikat ke HP lain. Minta HR melepas perangkat lama (lihat “Ganti HP”).</li>
+      <li>Pastikan koneksi internet aktif, nama pengguna benar, dan tidak ada spasi tambahan. Perhatikan huruf besar/kecil pada kata sandi.</li>
+    </ul>
+  </div></details>
+
+  <h3>Perangkat</h3>
+  <details><summary>Saya ganti HP. Bagaimana caranya?</summary><div>
+    <p>CoalTrack mengikat <strong>satu HP per karyawan</strong> untuk mencegah titip absen.</p>
+    <ol>
+      <li>Minta HR/admin melepas perangkat lama Anda (menu <strong>Perangkat → Lepas</strong> di portal admin).</li>
+      <li>Pasang CoalTrack di HP baru dan masuk dengan kata sandi Anda. HP baru akan terikat otomatis.</li>
+      <li>Aktifkan kembali Face ID/sidik jari bila diinginkan.</li>
+    </ol>
+    <p>Jika HP lama <strong>hilang atau dicuri</strong>, segera laporkan ke HR agar perangkat dilepas dan sesi dicabut.</p>
+  </div></details>
+  <details><summary>Face ID / sidik jari tidak berfungsi.</summary><div>
+    <ul>
+      <li>Pastikan biometrik sudah terdaftar di pengaturan HP dan kunci layar aktif.</li>
+      <li>Aktifkan ulang di <strong>Profil → Keamanan → Kunci biometrik</strong>.</li>
+      <li>Anda selalu bisa masuk dengan kata sandi sebagai cadangan.</li>
+    </ul>
+  </div></details>
+
+  <h3>Absensi</h3>
+  <details><summary>Bagaimana absen saat tidak ada sinyal (offline)?</summary><div>
+    <p>Absen tetap bisa dilakukan tanpa sinyal. Aplikasi mengambil foto wajah, koordinat GPS, dan <strong>waktu satelit GPS</strong>, lalu menyimpannya di HP dengan status <strong>“Menunggu sinkronisasi”</strong>.</p>
+    <ul>
+      <li>Saat sinyal kembali, <strong>buka aplikasi</strong> — data akan tersinkron otomatis dan keputusan server akan muncul di Riwayat.</li>
+      <li>Jangan menghapus aplikasi atau membersihkan data aplikasi sebelum antrean tersinkron.</li>
+      <li>Perusahaan Anda dapat menetapkan batas waktu penerimaan absen offline; sinkronkan sesegera mungkin.</li>
+      <li>Pastikan GPS aktif — waktu satelit memerlukan sinyal GPS meskipun tanpa jaringan seluler.</li>
+    </ul>
+  </div></details>
+  <details><summary>Absen ditolak: “lokasi palsu terdeteksi” atau GPS tidak akurat.</summary><div>
+    <ul>
+      <li>Matikan aplikasi lokasi palsu dan nonaktifkan opsi <em>“Pilih aplikasi lokasi tiruan”</em> pada Opsi Pengembang (Android).</li>
+      <li>Aktifkan <strong>lokasi presisi/akurasi tinggi</strong> untuk CoalTrack di pengaturan HP.</li>
+      <li>Pindah ke area terbuka, tunggu beberapa detik agar akurasi GPS membaik, lalu coba lagi.</li>
+      <li>Kejadian yang ditandai akan ditinjau HR; hubungi HR bila Anda yakin berada di area kerja.</li>
+    </ul>
+  </div></details>
+  <details><summary>Wajah tidak terverifikasi.</summary><div>
+    <ul>
+      <li>Hadapkan wajah ke kamera dengan pencahayaan cukup; hindari cahaya dari belakang.</li>
+      <li>Lepas masker, kacamata hitam, dan pastikan pelindung helm tidak menutupi wajah.</li>
+      <li>Pegang HP stabil, hanya satu wajah dalam bingkai, dan ikuti instruksi liveness (mis. kedip).</li>
+      <li>Bila terus gagal, HR dapat mendaftarkan ulang foto referensi wajah Anda.</li>
+    </ul>
+  </div></details>
+  <details><summary>Absen saya ditolak atau ditandai. Apa yang harus dilakukan?</summary><div>
+    <p>Buka <strong>Riwayat</strong> untuk melihat alasan keputusan. Setiap kejadian yang ditolak atau ditandai dapat ditinjau oleh HR perusahaan Anda — ajukan keberatan ke HR sesuai kebijakan perusahaan. Tim dukungan CoalTrack tidak dapat mengubah catatan absensi; catatan bersifat <em>append-only</em> dan koreksi hanya dilakukan HR yang berwenang.</p>
+  </div></details>
+
+  <h3>Gaji &amp; slip gaji</h3>
+  <details><summary>Slip gaji dikirim lewat email — kapan dan dari mana?</summary><div>
+    <ul>
+      <li>Slip dikirim otomatis setelah HR <strong>memfinalisasi</strong> penggajian periode tersebut, ke alamat email yang terdaftar di profil Anda.</li>
+      <li>Periksa folder <strong>Spam/Promosi</strong> dan tandai pengirim sebagai aman.</li>
+      <li>Pastikan email di <strong>Profil</strong> sudah benar; ubah bila perlu dan beri tahu HR.</li>
+      <li>Slip juga selalu tersedia di tab <strong>Gaji → Slip → PDF</strong>; Anda dapat mengunduh atau membagikannya. Pengiriman via Telegram tersedia bila diaktifkan perusahaan Anda.</li>
+    </ul>
+  </div></details>
+  <details><summary>Angka di slip gaji tidak sesuai.</summary><div>
+    <p>CoalTrack menghitung gaji dari jam kerja terverifikasi dan komponen gaji yang dikonfigurasi perusahaan (gaji pokok, tunjangan, lembur, BPJS, PPh 21). Bila ada ketidaksesuaian, hubungi HR/keuangan perusahaan Anda — koreksi dilakukan melalui penyesuaian oleh HR, bukan oleh tim dukungan CoalTrack.</p>
+  </div></details>
+
+  <h3>Aplikasi &amp; bahasa</h3>
+  <details><summary>Bagaimana mengganti bahasa aplikasi?</summary><div>
+    <p>Buka <strong>Profil → Bahasa</strong>. CoalTrack tersedia dalam Bahasa Indonesia, English, Bahasa Melayu, 中文, dan العربية (bahasa lain dapat tersedia sesuai versi aplikasi). Mode gelap dapat diatur di <strong>Profil → Tema</strong>.</p>
+  </div></details>
+  <details><summary>Notifikasi tidak muncul.</summary><div>
+    <ul>
+      <li>Izinkan notifikasi untuk CoalTrack di pengaturan HP.</li>
+      <li>Nonaktifkan <em>optimasi baterai</em> untuk CoalTrack agar notifikasi tidak tertahan (Android).</li>
+      <li>Pusat notifikasi di dalam aplikasi tetap menampilkan semua pemberitahuan.</li>
+    </ul>
+  </div></details>
+  <details><summary>Aplikasi meminta pembaruan / tidak bisa dibuka.</summary><div>
+    <p>Perbarui CoalTrack dari Google Play atau App Store. Versi lama dapat diblokir demi keamanan. Jika aplikasi tetap tidak bisa dibuka, kirimkan versi aplikasi, model HP, dan tangkapan layar ke tim dukungan.</p>
+  </div></details>
+  <details><summary>Mengapa saya tidak bisa mengambil tangkapan layar?</summary><div>
+    <p>Tangkapan layar diblokir pada layar yang memuat data sensitif (mis. slip gaji dan data pribadi) untuk melindungi Anda. Ini bukan kesalahan aplikasi.</p>
+  </div></details>
+
+  <h3>Privasi &amp; data</h3>
+  <details id="hapus-akun"><summary>Bagaimana cara menghapus akun dan data saya?</summary><div>
+    <p>Kirim email ke <a href="mailto:support@ksatriabintangsamudra.my.id?subject=Hapus%20Akun%20CoalTrack">support@ksatriabintangsamudra.my.id</a> dengan subjek <code>Hapus Akun CoalTrack</code> dari email terdaftar Anda (atau melalui HR). Kami memverifikasi identitas Anda, menonaktifkan akun, menghapus media wajah dan data identitas sesuai jadwal, lalu mengirim konfirmasi. Data absensi dan penggajian yang wajib disimpan berdasarkan hukum tetap disimpan oleh perusahaan Anda.</p>
+    <p><a class="btn ghost" href="privacy.html#hapus-akun">Prosedur lengkap: Hapus Akun &amp; Data →</a></p>
+  </div></details>
+  <details><summary>Siapa yang bisa melihat foto absensi saya, dan berapa lama disimpan?</summary><div>
+    <p>Hanya HR/admin perusahaan Anda yang berwenang. Foto/video wajah absensi disimpan maksimal <strong>90 hari</strong> (dapat lebih pendek sesuai pengaturan perusahaan), kecuali kejadian ditandai untuk peninjauan. Selengkapnya di <a href="privacy.html#retensi">Kebijakan Privasi</a>.</p>
+  </div></details>
+  <details><summary>Apakah lokasi saya dilacak terus-menerus?</summary><div>
+    <p><strong>Tidak.</strong> Lokasi hanya diambil pada saat Anda menekan tombol absen masuk/pulang. Tidak ada pelacakan di latar belakang. Lihat <a href="privacy.html#izin">Izin aplikasi</a>.</p>
+  </div></details>
+</section>
+
+<section id="keamanan">
+  <h2><span class="n">03</span>Laporkan masalah keamanan</h2>
+  <p>Menemukan celah keamanan pada CoalTrack? Kirim laporan ke <a href="mailto:support@ksatriabintangsamudra.my.id?subject=Security%20report">support@ksatriabintangsamudra.my.id</a> dengan subjek <code>Security report</code>. Mohon tidak mengakses data yang bukan milik Anda dan beri kami waktu wajar untuk memperbaiki sebelum dipublikasikan.</p>
+</section>
+
+<section id="status">
+  <h2><span class="n">04</span>Status layanan &amp; pemeliharaan</h2>
+  <p>Pemeliharaan terjadwal diberitahukan kepada HR/admin perusahaan Anda sebelumnya dan diupayakan di luar jam kerja. Bila Anda menduga ada gangguan layanan, tanyakan ke HR terlebih dahulu; HR dapat menghubungi kami untuk pembaruan status.</p>
+</section>
+
+<section id="kontak">
+  <h2><span class="n">05</span>Kontak</h2>
+  <div class="grid2">
+    <div class="card"><b>Tim dukungan CoalTrack</b>
+      <p>Ksatria Bintang Samudra</p>
+      <p>Email: <a href="mailto:support@ksatriabintangsamudra.my.id">support@ksatriabintangsamudra.my.id</a></p>
+      <p>Web: <a href="https://ksatriabintangsamudra.my.id">ksatriabintangsamudra.my.id</a></p>
+      <p>Balasan dalam 1 hari kerja · Senin–Jumat, 08.00–17.00 WITA</p>
+    </div>
+    <div class="card"><b>Dokumen terkait</b>
+      <p><a href="privacy.html">Kebijakan Privasi</a></p>
+      <p><a href="terms.html">Ketentuan Layanan</a></p>
+      <p><a href="privacy.html#hapus-akun">Hapus Akun &amp; Data</a></p>
+    </div>
+  </div>
+</section>
+</div></main>
+</div>
+
+<!-- ===================== ENGLISH ===================== -->
+<div class="t-en">
+<div class="hero"><div class="wrap">
+  <span class="eyebrow">Help Center</span>
+  <h1>CoalTrack Support</h1>
+  <p class="lead">Need help with the CoalTrack attendance &amp; payroll app? Find quick answers below or contact our support team — we reply within <strong>1 business day</strong>.</p>
+  <div class="meta">
+    <span>Email: <b>support@ksatriabintangsamudra.my.id</b></span>
+    <span>Response: <b>≤ 1 business day</b></span>
+    <span>Hours: <b>Mon–Fri, 08:00–17:00 WITA (UTC+8)</b></span>
+  </div>
+  <a class="sw" data-set="id" href="?lang=id">Baca dalam Bahasa Indonesia →</a>
+</div></div>
+
+<main><div class="wrap">
+<section id="get-help">
+  <h2><span class="n">01</span>How to get help</h2>
+  <div class="grid2">
+    <div class="card"><b>1. Your company's HR / admin</b>
+      <p>For account activation, password resets, device-change approval, attendance disputes, leave, and pay questions. HR has an admin portal to handle these directly.</p>
+    </div>
+    <div class="card"><b>2. CoalTrack support team</b>
+      <p>For technical problems with the app, errors, service outages, privacy questions, and account deletion requests.</p>
+      <p><a class="btn" href="mailto:support@ksatriabintangsamudra.my.id?subject=CoalTrack%20Support">✉ support@ksatriabintangsamudra.my.id</a></p>
+      <p>We acknowledge every email within <strong>1 business day</strong> (Mon–Fri, 08:00–17:00 WITA, excluding Indonesian public holidays). Widespread service outages are handled with priority.</p>
+    </div>
+  </div>
+  <div class="callout"><span class="ttl">To speed things up, include in your email:</span>
+    <ul>
+      <li>Full name, company name, and employee number</li>
+      <li>Phone make/model and OS version (e.g. Android 15 / iOS 19)</li>
+      <li>App version (<strong>Profile → About</strong>)</li>
+      <li>A screenshot of the error, the time it happened, and whether you were online or offline</li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq-en">
+  <h2><span class="n">02</span>Frequently asked questions</h2>
+
+  <h3>Account &amp; login</h3>
+  <details><summary>How do I sign in for the first time?</summary><div>
+    <ol>
+      <li>Your company's HR creates your account and gives you a <strong>username</strong> (usually your employee number or email) and a <strong>temporary password</strong>.</li>
+      <li>Install CoalTrack from Google Play or the App Store on the phone you will use every day — that phone becomes bound to your account.</li>
+      <li>Sign in with the password, then change the temporary password.</li>
+      <li>Optional: enable <strong>Face ID / fingerprint</strong> for faster sign-in next time.</li>
+    </ol>
+  </div></details>
+  <details><summary>I forgot my password.</summary><div>
+    <p>Contact your company's HR/admin. An admin can reset your password from the HR portal and give you a temporary password; you will be asked to change it at your next sign-in. If Face ID/fingerprint is enabled you can still open the app with biometrics while your session is valid.</p>
+  </div></details>
+  <details><summary>Sign-in fails: “account inactive” or “device not registered”.</summary><div>
+    <ul>
+      <li><strong>Account inactive</strong> — your account has not been activated or has been deactivated by HR. Contact HR.</li>
+      <li><strong>Device not registered</strong> — your account is already bound to another phone. Ask HR to release the old device (see “Changing phones”).</li>
+      <li>Check that you are online, the username is correct with no extra spaces, and the password's letter case is right.</li>
+    </ul>
+  </div></details>
+
+  <h3>Devices</h3>
+  <details><summary>I changed phones. What do I do?</summary><div>
+    <p>CoalTrack binds <strong>one phone per employee</strong> to prevent buddy punching.</p>
+    <ol>
+      <li>Ask HR/admin to release your old device (<strong>Devices → Release</strong> in the admin portal).</li>
+      <li>Install CoalTrack on the new phone and sign in with your password. The new phone binds automatically.</li>
+      <li>Re-enable Face ID/fingerprint if you want.</li>
+    </ol>
+    <p>If the old phone was <strong>lost or stolen</strong>, report it to HR immediately so the device is released and sessions are revoked.</p>
+  </div></details>
+  <details><summary>Face ID / fingerprint is not working.</summary><div>
+    <ul>
+      <li>Make sure biometrics are enrolled in your phone settings and a screen lock is set.</li>
+      <li>Re-enable it under <strong>Profile → Security → Biometric lock</strong>.</li>
+      <li>You can always sign in with your password as a fallback.</li>
+    </ul>
+  </div></details>
+
+  <h3>Attendance</h3>
+  <details><summary>How do I check in with no signal (offline)?</summary><div>
+    <p>You can still check in without signal. The app captures your face photo, GPS coordinates, and <strong>GPS satellite time</strong>, then stores them on the phone with the status <strong>“Waiting to sync”</strong>.</p>
+    <ul>
+      <li>When signal returns, <strong>open the app</strong> — the queue syncs automatically and the server's decision appears in History.</li>
+      <li>Do not uninstall the app or clear its data before the queue has synced.</li>
+      <li>Your company may set an acceptance window for offline events; sync as soon as you can.</li>
+      <li>Keep GPS on — satellite time needs a GPS fix even without a mobile network.</li>
+    </ul>
+  </div></details>
+  <details><summary>Check-in rejected: “mock location detected” or GPS inaccurate.</summary><div>
+    <ul>
+      <li>Turn off any fake-location app and disable <em>“Select mock location app”</em> in Developer Options (Android).</li>
+      <li>Enable <strong>precise / high-accuracy location</strong> for CoalTrack in your phone settings.</li>
+      <li>Move to an open area, wait a few seconds for GPS accuracy to improve, then try again.</li>
+      <li>Flagged events are reviewed by HR; contact HR if you are sure you were inside the work area.</li>
+    </ul>
+  </div></details>
+  <details><summary>My face could not be verified.</summary><div>
+    <ul>
+      <li>Face the camera in good light; avoid strong light behind you.</li>
+      <li>Remove masks and sunglasses, and make sure a helmet visor is not covering your face.</li>
+      <li>Hold the phone steady, keep a single face in the frame, and follow the liveness prompts (e.g. blink).</li>
+      <li>If it keeps failing, HR can re-enrol your reference face photo.</li>
+    </ul>
+  </div></details>
+  <details><summary>My check-in was rejected or flagged. What now?</summary><div>
+    <p>Open <strong>History</strong> to see the reason. Every rejected or flagged event can be reviewed by your company's HR — raise it with HR under your company's policy. CoalTrack support cannot change attendance records; they are <em>append-only</em> and corrections are made only by authorised HR.</p>
+  </div></details>
+
+  <h3>Pay &amp; payslips</h3>
+  <details><summary>Payslips by email — when and from where?</summary><div>
+    <ul>
+      <li>Payslips are sent automatically once HR <strong>finalises</strong> payroll for the period, to the email address on your profile.</li>
+      <li>Check your <strong>Spam/Promotions</strong> folder and mark the sender as safe.</li>
+      <li>Make sure the email on your <strong>Profile</strong> is correct; update it if needed and tell HR.</li>
+      <li>Payslips are also always available under <strong>Pay → Payslip → PDF</strong>; you can download or share them. Telegram delivery is available if your company enables it.</li>
+    </ul>
+  </div></details>
+  <details><summary>The figures on my payslip look wrong.</summary><div>
+    <p>CoalTrack calculates pay from verified hours and the salary components configured by your company (base pay, allowances, overtime, BPJS, PPh 21). If something looks wrong, contact your company's HR/finance — corrections are made through HR adjustments, not by CoalTrack support.</p>
+  </div></details>
+
+  <h3>App &amp; language</h3>
+  <details><summary>How do I change the app language?</summary><div>
+    <p>Go to <strong>Profile → Language</strong>. CoalTrack is available in Bahasa Indonesia, English, Bahasa Melayu, 中文, and العربية (more languages may be available depending on your app version). Dark mode is under <strong>Profile → Theme</strong>.</p>
+  </div></details>
+  <details><summary>Notifications are not showing.</summary><div>
+    <ul>
+      <li>Allow notifications for CoalTrack in your phone settings.</li>
+      <li>Disable <em>battery optimisation</em> for CoalTrack so notifications are not held back (Android).</li>
+      <li>The in-app notification centre always shows all messages.</li>
+    </ul>
+  </div></details>
+  <details><summary>The app asks for an update / will not open.</summary><div>
+    <p>Update CoalTrack from Google Play or the App Store. Old versions may be blocked for security. If it still will not open, send the app version, phone model, and a screenshot to support.</p>
+  </div></details>
+  <details><summary>Why can't I take screenshots?</summary><div>
+    <p>Screenshots are blocked on screens containing sensitive data (e.g. payslips and personal details) to protect you. This is not an error.</p>
+  </div></details>
+
+  <h3>Privacy &amp; data</h3>
+  <details id="delete-account"><summary>How do I delete my account and data?</summary><div>
+    <p>Email <a href="mailto:support@ksatriabintangsamudra.my.id?subject=Delete%20CoalTrack%20Account">support@ksatriabintangsamudra.my.id</a> with the subject <code>Delete CoalTrack Account</code> from your registered email (or via HR). We verify your identity, deactivate the account, delete face media and identity data on schedule, and send confirmation. Attendance and payroll records that must be kept by law remain with your company.</p>
+    <p><a class="btn ghost" href="privacy.html#delete-account">Full procedure: Delete Account &amp; Data →</a></p>
+  </div></details>
+  <details><summary>Who can see my attendance photos, and how long are they kept?</summary><div>
+    <p>Only authorised HR/admin staff at your company. Attendance face photos/videos are kept for at most <strong>90 days</strong> (shorter if your company configures it), unless an event is flagged for review. Details in the <a href="privacy.html#retention">Privacy Policy</a>.</p>
+  </div></details>
+  <details><summary>Is my location tracked continuously?</summary><div>
+    <p><strong>No.</strong> Location is captured only when you tap check-in/out. There is no background tracking. See <a href="privacy.html#permissions">App permissions</a>.</p>
+  </div></details>
+</section>
+
+<section id="security-report">
+  <h2><span class="n">03</span>Report a security issue</h2>
+  <p>Found a vulnerability in CoalTrack? Send a report to <a href="mailto:support@ksatriabintangsamudra.my.id?subject=Security%20report">support@ksatriabintangsamudra.my.id</a> with the subject <code>Security report</code>. Please do not access data that is not yours, and give us reasonable time to fix the issue before disclosing it.</p>
+</section>
+
+<section id="service-status">
+  <h2><span class="n">04</span>Service status &amp; maintenance</h2>
+  <p>Scheduled maintenance is announced to your company's HR/admin in advance and planned outside working hours where possible. If you suspect an outage, check with HR first; HR can contact us for status updates.</p>
+</section>
+
+<section id="contact">
+  <h2><span class="n">05</span>Contact</h2>
+  <div class="grid2">
+    <div class="card"><b>CoalTrack support team</b>
+      <p>Ksatria Bintang Samudra</p>
+      <p>Email: <a href="mailto:support@ksatriabintangsamudra.my.id">support@ksatriabintangsamudra.my.id</a></p>
+      <p>Web: <a href="https://ksatriabintangsamudra.my.id">ksatriabintangsamudra.my.id</a></p>
+      <p>Reply within 1 business day · Mon–Fri, 08:00–17:00 WITA</p>
+    </div>
+    <div class="card"><b>Related documents</b>
+      <p><a href="privacy.html">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms of Service</a></p>
+      <p><a href="privacy.html#delete-account">Delete Account &amp; Data</a></p>
+    </div>
+  </div>
+</section>
+</div></main>
+</div>
+
+<footer class="foot">
+  <div class="links">
+    <a href="./"><span class="t-id">Beranda</span><span class="t-en">Home</span></a>
+    <a href="privacy.html"><span class="t-id">Kebijakan Privasi</span><span class="t-en">Privacy Policy</span></a>
+    <a href="terms.html"><span class="t-id">Ketentuan Layanan</span><span class="t-en">Terms of Service</span></a>
+    <a href="support.html"><span class="t-id">Bantuan</span><span class="t-en">Support</span></a>
+    <a href="privacy.html#hapus-akun"><span class="t-id">Hapus Akun &amp; Data</span><span class="t-en">Delete Account &amp; Data</span></a>
+  </div>
+  <div>© 2026 Ksatria Bintang Samudra · CoalTrack · <a href="https://ksatriabintangsamudra.my.id">ksatriabintangsamudra.my.id</a> · <a href="mailto:support@ksatriabintangsamudra.my.id">support@ksatriabintangsamudra.my.id</a></div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,KEY='ct_legal_lang';
+  var ctl=document.querySelectorAll('[data-set]');
+  function set(l,save){
+    root.lang=l;
+    for(var i=0;i<ctl.length;i++){if(ctl[i].tagName==='BUTTON')ctl[i].classList.toggle('on',ctl[i].getAttribute('data-set')===l);}
+    if(save){try{localStorage.setItem(KEY,l)}catch(e){}}
+  }
+  function fromHash(){
+    if(!location.hash)return null;
+    var el=document.getElementById(location.hash.slice(1));
+    if(!el||!el.closest)return null;
+    var b=el.closest('.t-en,.t-id');
+    return b?(b.classList.contains('t-en')?'en':'id'):null;
+  }
+  var start='id';
+  try{var s=localStorage.getItem(KEY);if(s==='en'||s==='id')start=s;}catch(e){}
+  var q=/[?&]lang=(en|id)(?:&|$)/.exec(location.search);
+  if(q)start=q[1];
+  var h=fromHash();if(h)start=h;
+  set(start,!!q);
+  for(var i=0;i<ctl.length;i++){
+    ctl[i].addEventListener('click',function(ev){
+      var l=this.getAttribute('data-set');
+      var href=this.getAttribute('href')||'';
+      var hash=href.indexOf('#')>=0?href.slice(href.indexOf('#')):'';
+      ev.preventDefault();
+      set(l,true);
+      if(hash){var t=document.getElementById(hash.slice(1));if(t){history.replaceState(null,'',hash);t.scrollIntoView();}}
+      else{window.scrollTo(0,0);}
+    });
+  }
+  if(location.hash){var t=document.getElementById(location.hash.slice(1));if(t)setTimeout(function(){t.scrollIntoView();},0);}
+  window.addEventListener('hashchange',function(){var l=fromHash();if(l&&l!==root.lang)set(l,false);});
+})();
+</script>
+</body>
+</html>
