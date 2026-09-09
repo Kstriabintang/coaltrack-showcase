@@ -24,7 +24,7 @@
 
 <h3><a href="https://coaltrack.id/">▶ Open the live showcase</a></h3>
 
-<p><em>Per-slide presentation · flag switcher for <b>5 languages</b> (top-right) · English default · full RTL</em></p>
+<p><em>Per-slide presentation · flag switcher for <b>7 languages</b> (top-right) · English default · full RTL</em></p>
 
 <br>
 
@@ -40,7 +40,7 @@
 
 **CoalTrack turns honest attendance into accurate payroll — automatically.** Employees clock in with **face + real GPS** in two taps; the server decides on **immutable, tamper-proof** rules; verified hours flow straight into a **compliant payroll engine** (BPJS, PPh21 TER, overtime) that produces a **PDF payslip**. One Flutter app for **iOS & Android**, a **Laravel** API, and a **Vue** HR portal.
 
-| 🛡️ Anti-fraud | 🙂 Face + liveness | 📍 Real GPS | 🔐 Biometric login | 🌐 5 languages | ✅ 207 tests |
+| 🛡️ Anti-fraud | 🙂 Face + liveness | 📍 Real GPS | 🔐 Biometric login | 🌐 7 languages | ✅ 207 tests |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 
 ---
@@ -56,7 +56,7 @@ The app opens the right surface automatically from the signed-in role — no sep
 | ✓ Payslip (breakdown + PDF) | ✓ Leave approvals (approve / reject + reason) |
 | ✓ Leave & permits (+ remaining quota) | ✓ Device management (1 phone / employee) |
 | ✓ Notifications | ✓ Employee directory (search, filter) |
-| ✓ Profile & theme (5 languages) | ✓ Payroll run → pay → PDF slip → Telegram/Email |
+| ✓ Profile & theme (7 languages) | ✓ Payroll run → pay → PDF slip → Telegram/Email |
 
 ---
 
