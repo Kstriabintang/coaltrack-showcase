@@ -19,7 +19,7 @@
 <img alt="Docker" src="https://img.shields.io/badge/Docker-0B1220?style=flat-square&logo=docker&logoColor=F5A524">
 </p>
 <p>
-<img alt="Tests" src="https://img.shields.io/badge/tests-353%20passing-F5A524?style=flat-square&labelColor=13213A">
+<img alt="Tests" src="https://img.shields.io/badge/tests-353%20app%20%2B%20216%20API-F5A524?style=flat-square&labelColor=13213A">
 <img alt="Languages" src="https://img.shields.io/badge/languages-7-F5A524?style=flat-square&labelColor=13213A">
 <img alt="Login" src="https://img.shields.io/badge/login-Face%20ID%20%2F%20Fingerprint-F5A524?style=flat-square&labelColor=13213A">
 <img alt="Tenancy" src="https://img.shields.io/badge/multi--tenant-licensed-F5A524?style=flat-square&labelColor=13213A">
@@ -43,7 +43,7 @@ Attendance recaps in a mining operation are usually a spreadsheet problem: the p
 changed, a friend can clock in for you, and by the time payroll is assembled nobody can prove what
 really happened. CoalTrack closes that loop end to end.
 
-A worker clocks in with **face verification + real GPS** in two taps. The **server** decides — using
+A worker clocks in with **face evidence + real GPS** in two taps. The **server** decides — using
 the server clock, not the phone — and writes an **append-only** event that nobody can edit later.
 Verified hours roll into **work sessions**, work sessions into a **payroll engine** that computes
 overtime, BPJS and **PPh21 TER**, and the engine produces a **PDF payslip** that is emailed to the
@@ -62,12 +62,14 @@ One Flutter app for iOS, Android and Web (employee + admin surfaces), a Laravel 
 | 1 | **Server time** | Decisions use the server clock. Changing the phone clock does nothing. |
 | 2 | **Device binding** | One approved device per employee. Buddy-punching from a colleague's phone is blocked. |
 | 3 | **Immutable log** | Attendance events are append-only (enforced by a DB trigger). History cannot be rewritten. |
-| 4 | **Face + liveness** | Face verification with anti-spoofing; the evidence media is stored with the event. |
+| 4 | **Face evidence + liveness challenge** | A randomized liveness challenge is prompted and the face frames are stored with the event as evidence. Automated face matching is **→ next**, so every event is reviewed. |
 | 5 | **Real GPS, mandatory** | Real device location with mock-location detection. Recorded as audit evidence. |
 | 6 | **Decision engine** | Accept / reject / flag on the evidence — and it fails safe. |
 
-Attendance also works **offline**: the photo, GPS coordinate and satellite time are captured and
-queued on the phone, then synced the moment signal returns and reviewed by the team head.
+Attendance capture also works with **no signal**: the photo, GPS coordinate and satellite time are
+recorded on the phone itself. A local queue that uploads automatically when signal returns is
+**→ next**; today the check-in is submitted when the app is opened with a signal, and the team head
+reviews it.
 
 ### Payroll
 
@@ -76,18 +78,22 @@ queued on the phone, then synced the moment signal returns and reviewed by the t
 - Identical results on the server and in the app, covered by dedicated tests.
 - **PDF payslip** with letterhead and signature — download, print, or send.
 - **Bank transfer file** generated for the company's own cash-management portal.
-- **Four-eyes governance**: HR prepares the run → Director/Finance approves → only then is the
-  transfer file released. Sensitive changes need a second approver and apply from the next period.
+- **Four-eyes on company-rule changes**: sensitive changes in Payroll Settings (pay components,
+  overtime multipliers, the payroll bank account) need a second approver who cannot be the requester,
+  and take effect from the next period — never retroactively. Four-eyes release of the bank transfer
+  file itself is **→ next**.
 - **Audit trail** on every change (who, when, old → new, and the reason) — not deletable, exportable
-  for auditors. Anomaly checks (duplicate bank accounts, paid-with-no-attendance, abnormal overtime)
-  run before pay day.
+  for auditors.
+- Anomaly checks before pay day (duplicate bank accounts, paid-with-no-attendance, abnormal
+  overtime) are **→ next** — they are not in the product today.
 - Money never passes through CoalTrack. Funds leave the company's own bank account.
 
-### Payslip delivery — email on your own domain
+### Payslip delivery — email from an authenticated sending domain
 
-CoalTrack includes a transactional email pipeline that sends from the **company's own authenticated
+CoalTrack includes a transactional email pipeline that runs on a **fully authenticated sending
 domain** (SPF, DKIM, DMARC), so payslips land in the inbox rather than the spam folder and cannot be
-forged. Each employee receives a clean HTML letter with the official **PDF payslip attached**; HR is
+forged. There is no mail server for the customer to run; sending from the **customer's own domain is
+available on request**. Each employee receives a clean HTML letter with the official **PDF payslip attached**; HR is
 notified when a run has finished sending, and every send is logged per employee with retry. Send a
 single slip or an entire payroll run — queued, and within the daily sending limit. Email runs
 alongside in-app download/print and Telegram delivery.
@@ -134,8 +140,8 @@ in the app and on this showcase. Every screen is designed for both light and dar
 
 | Licence activation | Payroll settings | Payroll run | Payslip PDF |
 | :---: | :---: | :---: | :---: |
-| <img src="img/activate.en.png" width="190"> | <img src="img/payrollsettings.en.png" width="190"> | <img src="img/payrollrun.en.png" width="190"> | <img src="img/slip-pdf.en.png" width="190"> |
-| A fresh install is neutral CoalTrack until the company licence code is entered — once per device. | Company rules are edited by the client's own HR/Superadmin; statutory rates stay locked. | Four-eyes approval before the bank transfer file is released. | Official payslip PDF, also delivered by email from the company's own domain. |
+| <img src="img/activate.en.png" width="190"> | <img src="img/payrollsettings.en.png" width="190"> | <img src="img/payrollrun.en.png" width="190"> | <img src="img/slip-pdf.png" width="190"> |
+| A fresh install is neutral CoalTrack until the company licence code is entered — once per device. | Company rules are edited by the client's own HR/Superadmin; statutory rates stay locked. | Four-eyes approval on sensitive company payroll rules. | Official payslip PDF, also delivered by email from an authenticated sending domain. |
 
 First login uses a password on the device; after that Face ID / Touch ID (iOS) or fingerprint /
 face unlock (Android), adapted to each phone. Sessions are encrypted and device-bound, re-lock when
@@ -148,11 +154,11 @@ the app is backgrounded, and screenshots are blocked on sensitive screens.
 | Aspect | Manual / Excel | CoalTrack |
 |---|---|---|
 | Attendance time | ✕ Phone clock, manipulable | ✓ **Server time, tamper-proof** |
-| Buddy-punching | ✕ Undetected | ✓ **Face + one phone per employee** |
+| Buddy-punching | ✕ Undetected | ✓ **One approved phone per employee + face evidence** |
 | Payroll recap | ✕ Days of manual work, error-prone | ✓ **Automatic from attendance** |
 | Reporting | ✕ Monthly, late | ✓ **Real-time** |
 | Tax & BPJS | ✕ Manual, error-prone | ✓ **PPh21 TER + BPJS automatic** |
-| Payslip delivery | ✕ Printed and handed out | ✓ **Email on your domain + Telegram + PDF** |
+| Payslip delivery | ✕ Printed and handed out | ✓ **Email from an authenticated domain + Telegram + PDF** |
 
 ---
 
@@ -174,7 +180,7 @@ Vue 3 (HR portal)           ─┘
 Attendance (authoritative, immutable) → Work sessions → Shift/Roster → Payroll engine → Payslip
 ```
 
-**Backend** PHP 8.3 · Laravel 12 · PostgreSQL 16 · Sanctum · Pest (207 tests) · Docker
+**Backend** PHP 8.3 · Laravel 12 · PostgreSQL 16 · Sanctum · Pest (216 tests) · Docker
 **Web** Vue 3 · Vite · Tailwind · Pinia
 **Mobile** Flutter (iOS / Android / Web) · Riverpod · go_router · dio · geolocator · local_auth · flutter_secure_storage
 
@@ -184,7 +190,7 @@ Attendance (authoritative, immutable) → Work sessions → Shift/Roster → Pay
 
 | Area | Status |
 |---|---|
-| Backend + anti-fraud API (207 tests) | ✅ done |
+| Backend + anti-fraud API (216 Pest tests) | ✅ done |
 | Web portal (employee + admin/HR) | ✅ done |
 | Mobile employee — attend, history, pay, leave, notifications, profile, real GPS | ✅ done |
 | Biometric login + app-wide screenshot protection | ✅ done |
@@ -192,8 +198,11 @@ Attendance (authoritative, immutable) → Work sessions → Shift/Roster → Pay
 | Admin — dashboard, live monitor, devices, employees | ✅ done |
 | Payroll run → pay → PDF slip → email + Telegram delivery | ✅ done |
 | Leave approvals (HR) | ✅ done |
-| Four-eyes payroll approval + audit trail | ✅ done |
-| FCM push & face-ML liveness | → next |
+| Audit trail (who, when, old → new, reason) + four-eyes on Payroll Settings | ✅ done |
+| Four-eyes release of the bank transfer file | → next |
+| Offline queue that uploads itself when signal returns | → next |
+| Anomaly checks before pay day (duplicate accounts, ghost employees, abnormal overtime) | → next |
+| FCM push & automated face matching | → next |
 
 > **Honest note:** the backend is **not yet hosted publicly**. `demo.coaltrack.id` is a demo build
 > with sample data; production deployment happens per customer, on their own infrastructure.
