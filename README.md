@@ -19,7 +19,7 @@
 <img alt="Docker" src="https://img.shields.io/badge/Docker-0B1220?style=flat-square&logo=docker&logoColor=F5A524">
 </p>
 <p>
-<img alt="Tests" src="https://img.shields.io/badge/tests-207%20passing-F5A524?style=flat-square&labelColor=13213A">
+<img alt="Tests" src="https://img.shields.io/badge/tests-353%20passing-F5A524?style=flat-square&labelColor=13213A">
 <img alt="Languages" src="https://img.shields.io/badge/languages-7-F5A524?style=flat-square&labelColor=13213A">
 <img alt="Login" src="https://img.shields.io/badge/login-Face%20ID%20%2F%20Fingerprint-F5A524?style=flat-square&labelColor=13213A">
 <img alt="Tenancy" src="https://img.shields.io/badge/multi--tenant-licensed-F5A524?style=flat-square&labelColor=13213A">
@@ -129,6 +129,13 @@ in the app and on this showcase. Every screen is designed for both light and dar
 | First sign-in | Face ID / fingerprint | One-tap enable |
 |:---:|:---:|:---:|
 | <img src="img/sec-login.en.png" width="190"> | <img src="img/sec-lock.en.png" width="190"> | <img src="img/sec-setup.en.png" width="190"> |
+
+**Licensing &amp; payroll governance**
+
+| Licence activation | Payroll settings | Payroll run | Payslip PDF |
+| :---: | :---: | :---: | :---: |
+| <img src="img/activate.en.png" width="190"> | <img src="img/payrollsettings.en.png" width="190"> | <img src="img/payrollrun.en.png" width="190"> | <img src="img/slip-pdf.en.png" width="190"> |
+| A fresh install is neutral CoalTrack until the company licence code is entered — once per device. | Company rules are edited by the client's own HR/Superadmin; statutory rates stay locked. | Four-eyes approval before the bank transfer file is released. | Official payslip PDF, also delivered by email from the company's own domain. |
 
 First login uses a password on the device; after that Face ID / Touch ID (iOS) or fingerprint /
 face unlock (Android), adapted to each phone. Sessions are encrypted and device-bound, re-lock when
