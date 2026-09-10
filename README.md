@@ -1,158 +1,222 @@
 <div align="center">
 
-<img src="img/og.png" alt="CoalTrack" width="820">
+<img src="img/coaltrack-mark.png" alt="CoalTrack" width="150">
 
-<h1>⛏️ CoalTrack</h1>
+# CoalTrack
 
-<h3>Anti-fraud attendance + automatic payroll for coal-mining operations</h3>
+### Anti-fraud attendance + automatic payroll for coal-mining operations
 
 <p>
-<img alt="Flutter" src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white">
-<img alt="Laravel 12" src="https://img.shields.io/badge/Laravel%2012-FF2D20?style=flat-square&logo=laravel&logoColor=white">
-<img alt="PostgreSQL 16" src="https://img.shields.io/badge/PostgreSQL%2016-4169E1?style=flat-square&logo=postgresql&logoColor=white">
-<img alt="Vue 3" src="https://img.shields.io/badge/Vue%203-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white">
-<img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white">
+<a href="https://coaltrack.id"><img alt="Showcase" src="https://img.shields.io/badge/showcase-coaltrack.id-F5A524?style=for-the-badge&labelColor=0B1220"></a>
+<a href="https://demo.coaltrack.id"><img alt="Demo" src="https://img.shields.io/badge/live%20demo-demo.coaltrack.id-E8940F?style=for-the-badge&labelColor=0B1220"></a>
+</p>
+
+<p>
+<img alt="Flutter" src="https://img.shields.io/badge/Flutter-0B1220?style=flat-square&logo=flutter&logoColor=F5A524">
+<img alt="Laravel 12" src="https://img.shields.io/badge/Laravel%2012-0B1220?style=flat-square&logo=laravel&logoColor=F5A524">
+<img alt="PostgreSQL 16" src="https://img.shields.io/badge/PostgreSQL%2016-0B1220?style=flat-square&logo=postgresql&logoColor=F5A524">
+<img alt="Vue 3" src="https://img.shields.io/badge/Vue%203-0B1220?style=flat-square&logo=vuedotjs&logoColor=F5A524">
+<img alt="Docker" src="https://img.shields.io/badge/Docker-0B1220?style=flat-square&logo=docker&logoColor=F5A524">
 </p>
 <p>
-<img alt="Tests" src="https://img.shields.io/badge/tests-207%20passing-3C8A12?style=flat-square&logo=checkmarx&logoColor=white">
-<img alt="Languages" src="https://img.shields.io/badge/languages-5%20(EN%C2%B7ID%C2%B7MS%C2%B7ZH%C2%B7AR)-6BBE33?style=flat-square">
-<img alt="Biometric" src="https://img.shields.io/badge/login-Face%20ID%20%2F%20Fingerprint-124C08?style=flat-square">
-<img alt="Status" src="https://img.shields.io/badge/status-pilot--ready-2F7009?style=flat-square">
+<img alt="Tests" src="https://img.shields.io/badge/tests-207%20passing-F5A524?style=flat-square&labelColor=13213A">
+<img alt="Languages" src="https://img.shields.io/badge/languages-7-F5A524?style=flat-square&labelColor=13213A">
+<img alt="Login" src="https://img.shields.io/badge/login-Face%20ID%20%2F%20Fingerprint-F5A524?style=flat-square&labelColor=13213A">
+<img alt="Tenancy" src="https://img.shields.io/badge/multi--tenant-licensed-F5A524?style=flat-square&labelColor=13213A">
+<img alt="Status" src="https://img.shields.io/badge/status-pilot--ready-F5A524?style=flat-square&labelColor=13213A">
 </p>
 
-<p><b>Built for coal-mining operators — first deployment: PT Surya Alam Bakti</b></p>
+**A product of Ksatria Bintang Samudra**
 
-<h3><a href="https://coaltrack.id/">▶ Open the live showcase</a></h3>
-
-<p><em>Per-slide presentation · flag switcher for <b>7 languages</b> (top-right) · English default · full RTL</em></p>
-
-<br>
-
-<img src="img/demo.gif" alt="CoalTrack employee app demo" width="300">
+<img src="img/demo.gif" alt="CoalTrack employee app" width="280">
 
 </div>
 
-> ℹ️ This is the **public showcase / portfolio** repository. **The full source code is private** to keep it easy to evolve.
+> **This is the public showcase / portfolio repository.** It contains the marketing deck at
+> [coaltrack.id](https://coaltrack.id) and its screenshots. **The application source code is private.**
 
 ---
 
-## ✨ What it does
+## What CoalTrack does
 
-**CoalTrack turns honest attendance into accurate payroll — automatically.** Employees clock in with **face + real GPS** in two taps; the server decides on **immutable, tamper-proof** rules; verified hours flow straight into a **compliant payroll engine** (BPJS, PPh21 TER, overtime) that produces a **PDF payslip**. One Flutter app for **iOS & Android**, a **Laravel** API, and a **Vue** HR portal.
+Attendance recaps in a mining operation are usually a spreadsheet problem: the phone clock can be
+changed, a friend can clock in for you, and by the time payroll is assembled nobody can prove what
+really happened. CoalTrack closes that loop end to end.
 
-| 🛡️ Anti-fraud | 🙂 Face + liveness | 📍 Real GPS | 🔐 Biometric login | 🌐 7 languages | ✅ 207 tests |
-|:---:|:---:|:---:|:---:|:---:|:---:|
+A worker clocks in with **face verification + real GPS** in two taps. The **server** decides — using
+the server clock, not the phone — and writes an **append-only** event that nobody can edit later.
+Verified hours roll into **work sessions**, work sessions into a **payroll engine** that computes
+overtime, BPJS and **PPh21 TER**, and the engine produces a **PDF payslip** that is emailed to the
+employee and pushed to Telegram. Management watches all of it in real time.
 
----
-
-## 👥 Two roles, one app
-
-The app opens the right surface automatically from the signed-in role — no separate apps.
-
-| 👤 **Employee** — *records their own attendance* | 🛡️ **Admin / HR** — *controls & monitors everything* |
-|:---|:---|
-| ✓ Face + GPS attendance (2-tap, server time) | ✓ Operations dashboard (on-site headcount, cost) |
-| ✓ Attendance history + decision status | ✓ Real-time monitor (present/late, mock-GPS flags) |
-| ✓ Payslip (breakdown + PDF) | ✓ Leave approvals (approve / reject + reason) |
-| ✓ Leave & permits (+ remaining quota) | ✓ Device management (1 phone / employee) |
-| ✓ Notifications | ✓ Employee directory (search, filter) |
-| ✓ Profile & theme (7 languages) | ✓ Payroll run → pay → PDF slip → Telegram/Email |
+One Flutter app for iOS, Android and Web (employee + admin surfaces), a Laravel API, a Vue HR portal.
 
 ---
 
-## 🔐 Security — sign in once, then just your face or finger
+## Key features
+
+### Anti-fraud attendance — six layers
+
+| | Layer | What it closes |
+|---|---|---|
+| 1 | **Server time** | Decisions use the server clock. Changing the phone clock does nothing. |
+| 2 | **Device binding** | One approved device per employee. Buddy-punching from a colleague's phone is blocked. |
+| 3 | **Immutable log** | Attendance events are append-only (enforced by a DB trigger). History cannot be rewritten. |
+| 4 | **Face + liveness** | Face verification with anti-spoofing; the evidence media is stored with the event. |
+| 5 | **Real GPS, mandatory** | Real device location with mock-location detection. Recorded as audit evidence. |
+| 6 | **Decision engine** | Accept / reject / flag on the evidence — and it fails safe. |
+
+Attendance also works **offline**: the photo, GPS coordinate and satellite time are captured and
+queued on the phone, then synced the moment signal returns and reviewed by the team head.
+
+### Payroll
+
+- Payslips computed from verified attendance — **BPJS**, **PPh21 TER**, overtime, allowances,
+  cut-off and pay date, all configurable per company.
+- Identical results on the server and in the app, covered by dedicated tests.
+- **PDF payslip** with letterhead and signature — download, print, or send.
+- **Bank transfer file** generated for the company's own cash-management portal.
+- **Four-eyes governance**: HR prepares the run → Director/Finance approves → only then is the
+  transfer file released. Sensitive changes need a second approver and apply from the next period.
+- **Audit trail** on every change (who, when, old → new, and the reason) — not deletable, exportable
+  for auditors. Anomaly checks (duplicate bank accounts, paid-with-no-attendance, abnormal overtime)
+  run before pay day.
+- Money never passes through CoalTrack. Funds leave the company's own bank account.
+
+### Payslip delivery — email on your own domain
+
+CoalTrack includes a transactional email pipeline that sends from the **company's own authenticated
+domain** (SPF, DKIM, DMARC), so payslips land in the inbox rather than the spam folder and cannot be
+forged. Each employee receives a clean HTML letter with the official **PDF payslip attached**; HR is
+notified when a run has finished sending, and every send is logged per employee with retry. Send a
+single slip or an entire payroll run — queued, and within the daily sending limit. Email runs
+alongside in-app download/print and Telegram delivery.
+
+### Roles, teams and tenancy
+
+- **Employee** — attendance, history, payslip, leave & permits, notifications, profile & theme.
+- **Division head** — real-time monitor and approvals for their own team only.
+- **HR** — visibility across divisions, escalations, payroll runs.
+- **Super-admin** — full control of the organisation and its settings.
+- **Multi-tenant, licensed** — one deployment serves several companies with isolated data, each on
+  its own licence and its own configuration.
+
+### Everywhere, in 7 languages
+
+English, Indonesian, Malay, Chinese, Arabic (full RTL), Thai and Filipino — switchable at any time,
+in the app and on this showcase. Every screen is designed for both light and dark mode.
+
+---
+
+## Screens
+
+| Home | Attend | History | Payslip |
+|:---:|:---:|:---:|:---:|
+| <img src="img/emp-home.en.png" width="190"> | <img src="img/emp-absen.en.png" width="190"> | <img src="img/emp-riwayat.en.png" width="190"> | <img src="img/emp-slip.en.png" width="190"> |
+
+| Leave & permits | Notifications | Edit profile | Dark mode |
+|:---:|:---:|:---:|:---:|
+| <img src="img/leave.en.png" width="190"> | <img src="img/notif.en.png" width="190"> | <img src="img/edit-profile.en.png" width="190"> | <img src="img/home-dark.en.png" width="190"> |
+
+**Admin / HR control room**
+
+| Dashboard | Live monitor | Devices | Employees |
+|:---:|:---:|:---:|:---:|
+| <img src="img/dash.en.png" width="190"> | <img src="img/monitor.en.png" width="190"> | <img src="img/devices.en.png" width="190"> | <img src="img/employees.en.png" width="190"> |
+
+**Sign in once, then just your face or finger**
 
 | First sign-in | Face ID / fingerprint | One-tap enable |
 |:---:|:---:|:---:|
-| <img src="img/sec-login.en.png" width="210"> | <img src="img/sec-lock.en.png" width="210"> | <img src="img/sec-setup.en.png" width="210"> |
+| <img src="img/sec-login.en.png" width="190"> | <img src="img/sec-lock.en.png" width="190"> | <img src="img/sec-setup.en.png" width="190"> |
 
-First login uses a **password** on the device; after that **Face ID / Touch ID (iOS)** or **fingerprint / face-unlock (Android)** — adapting to each phone via `local_auth`. Sessions are **encrypted** (`flutter_secure_storage`), **device-bound** (1 phone per employee), and re-lock automatically when the app is backgrounded. **Screenshots are blocked** on sensitive screens (Android `FLAG_SECURE` + iOS app-switcher blur).
-
-### The six layers that close the fraud gaps
-
-**Server time** · **Device binding** · **Immutable append-only log** · **Face + liveness** · **Real GPS + mock detection** · **Evidence-based decision engine** *(fails safe)*.
+First login uses a password on the device; after that Face ID / Touch ID (iOS) or fingerprint /
+face unlock (Android), adapted to each phone. Sessions are encrypted and device-bound, re-lock when
+the app is backgrounded, and screenshots are blocked on sensitive screens.
 
 ---
 
-## 🆚 Manual / Excel vs CoalTrack
+## Manual / Excel vs CoalTrack
 
 | Aspect | Manual / Excel | CoalTrack |
 |---|---|---|
 | Attendance time | ✕ Phone clock, manipulable | ✓ **Server time, tamper-proof** |
-| Buddy-punching | ✕ Undetected | ✓ **Face + 1 phone/employee** |
+| Buddy-punching | ✕ Undetected | ✓ **Face + one phone per employee** |
 | Payroll recap | ✕ Days of manual work, error-prone | ✓ **Automatic from attendance** |
 | Reporting | ✕ Monthly, late | ✓ **Real-time** |
 | Tax & BPJS | ✕ Manual, error-prone | ✓ **PPh21 TER + BPJS automatic** |
-| Cost leakage | ✕ ~Rp 7.47 B / year | ✓ **Closed** |
+| Payslip delivery | ✕ Printed and handed out | ✓ **Email on your domain + Telegram + PDF** |
 
 ---
 
-## 📱 The app
-
-| Home | Attend ⭐ | History | Payslip |
-|:---:|:---:|:---:|:---:|
-| <img src="img/emp-home.en.png" width="200"> | <img src="img/emp-absen.en.png" width="200"> | <img src="img/emp-riwayat.en.png" width="200"> | <img src="img/emp-slip.en.png" width="200"> |
-
-| Leave & permits | Notifications | Edit profile | Beautiful dark mode |
-|:---:|:---:|:---:|:---:|
-| <img src="img/leave.en.png" width="200"> | <img src="img/notif.en.png" width="200"> | <img src="img/edit-profile.en.png" width="200"> | <img src="img/home-dark.en.png" width="200"> |
-
-### 🖥️ The control room — Admin / HR
-
-| Dashboard | Live monitor | Devices | Employees |
-|:---:|:---:|:---:|:---:|
-| <img src="img/dash.en.png" width="200"> | <img src="img/monitor.en.png" width="200"> | <img src="img/devices.en.png" width="200"> | <img src="img/employees.en.png" width="200"> |
-
----
-
-## 🔄 From clock-in to payslip — one pipeline
+## Pipeline
 
 ```
-📲 Attendance  ─▶  🖥️ Server decision  ─▶  ⏱️ Work session  ─▶  🧮 Payroll engine  ─▶  🧾 Payslip
- face + GPS         server time,            verified hours       overtime, BPJS,        PDF + Telegram
- 2 taps             immutable log           per day              PPh21 TER              / Email
+Attendance    ─▶  Server decision  ─▶  Work session   ─▶  Payroll engine   ─▶  Payslip
+face + real GPS   server time,         verified hours     overtime, BPJS,      PDF + Email
+2 taps            immutable log        per day            PPh21 TER            + Telegram
 ```
 
-Honest attendance feeds accurate payroll — **no manual recaps, no gaps**.
-
----
-
-## 🏗️ Architecture
+## Architecture
 
 ```
-📱 Flutter (employee + admin)  ─┐
-                                ├─▶  🔌 Laravel 12 API (Sanctum)  ─▶  🗄️ PostgreSQL 16 (append-only)
-🖥️ Vue 3 (HR portal)          ─┘
+Flutter (employee + admin)  ─┐
+                             ├─▶  Laravel 12 API (Sanctum)  ─▶  PostgreSQL 16 (append-only)
+Vue 3 (HR portal)           ─┘
 
 Attendance (authoritative, immutable) → Work sessions → Shift/Roster → Payroll engine → Payslip
 ```
 
-**Backend** PHP 8.3 · Laravel 12 · PostgreSQL 16 · Sanctum · Pest (**207 tests**) · Docker
+**Backend** PHP 8.3 · Laravel 12 · PostgreSQL 16 · Sanctum · Pest (207 tests) · Docker
 **Web** Vue 3 · Vite · Tailwind · Pinia
-**Mobile** Flutter · Riverpod · go_router · dio · local_auth · flutter_secure_storage
+**Mobile** Flutter (iOS / Android / Web) · Riverpod · go_router · dio · geolocator · local_auth · flutter_secure_storage
 
 ---
 
-## 🚦 Status
+## Status
 
 | Area | Status |
 |---|---|
 | Backend + anti-fraud API (207 tests) | ✅ done |
 | Web portal (employee + admin/HR) | ✅ done |
-| Mobile employee (attend, history, pay, leave, notifications, profile) + **real GPS** | ✅ done |
-| **Biometric login** (Face ID / fingerprint) + app-wide screenshot protection | ✅ done |
-| Payroll engine (BPJS, PPh21 TER, overtime) + PDF payslip · **20 tests** | ✅ done |
-| Admin (dashboard, live monitor, devices, employees) | ✅ done |
-| Payroll run → pay + PDF slip · Telegram/Email delivery | ✅ done |
+| Mobile employee — attend, history, pay, leave, notifications, profile, real GPS | ✅ done |
+| Biometric login + app-wide screenshot protection | ✅ done |
+| Payroll engine (BPJS, PPh21 TER, overtime) + PDF payslip · 20 tests | ✅ done |
+| Admin — dashboard, live monitor, devices, employees | ✅ done |
+| Payroll run → pay → PDF slip → email + Telegram delivery | ✅ done |
 | Leave approvals (HR) | ✅ done |
+| Four-eyes payroll approval + audit trail | ✅ done |
 | FCM push & face-ML liveness | → next |
 
----
-
-## 📣 Sales slide
-
-The deck ends with a **Get CoalTrack for your company** slide (try the demo → talk to us → onboarding in days) plus WhatsApp / email CTAs, repeated on the closing slide. Fill the sales WhatsApp number in `const SALES_WA` at the top of the inline script in `index.html` (international format, digits only, e.g. `62812…`); while it is empty the buttons fall back to `sales@coaltrack.id` and the demo link, so nothing breaks.
+> **Honest note:** the backend is **not yet hosted publicly**. `demo.coaltrack.id` is a demo build
+> with sample data; production deployment happens per customer, on their own infrastructure.
 
 ---
 
-<div align="center"><sub>Technical showcase by <a href="https://coaltrack.id">Ksatria Bintang Samudra</a> · source code is private</sub></div>
+## About this repository
+
+| File | What it is |
+|---|---|
+| `index.html` | The showcase deck — 22 scroll-snap slides, 7 languages, no build step, no dependencies |
+| `privacy.html`, `terms.html`, `support.html` | Legal & support pages (ID / EN) |
+| `img/` | Product screenshots per language, brand marks, OG image |
+| `CNAME` | GitHub Pages custom domain (`coaltrack.id`) |
+
+The deck's sales CTA reads a single constant near the top of the inline script in `index.html`:
+
+```js
+const SALES_WA = '…';   // WhatsApp number, international format, digits only (e.g. 62812…)
+```
+
+While it is empty the buttons fall back to `sales@coaltrack.id` and the demo link, so nothing breaks.
+
+---
+
+## Talk to us
+
+- **Showcase** — [coaltrack.id](https://coaltrack.id)
+- **Live demo** — [demo.coaltrack.id](https://demo.coaltrack.id)
+- **Sales** — [sales@coaltrack.id](mailto:sales@coaltrack.id)
+- **Support** — [support@coaltrack.id](mailto:support@coaltrack.id)
+
+<div align="center"><sub>CoalTrack — a product of <a href="https://coaltrack.id">Ksatria Bintang Samudra</a> · application source code is private</sub></div>
