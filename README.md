@@ -149,4 +149,10 @@ Attendance (authoritative, immutable) → Work sessions → Shift/Roster → Pay
 
 ---
 
+## 📣 Sales slide
+
+The deck ends with a **Get CoalTrack for your company** slide (try the demo → talk to us → onboarding in days) plus WhatsApp / email CTAs, repeated on the closing slide. Fill the sales WhatsApp number in `const SALES_WA` at the top of the inline script in `index.html` (international format, digits only, e.g. `62812…`); while it is empty the buttons fall back to `sales@coaltrack.id` and the demo link, so nothing breaks.
+
+---
+
 <div align="center"><sub>Technical showcase by <a href="https://coaltrack.id">Ksatria Bintang Samudra</a> · source code is private</sub></div>
