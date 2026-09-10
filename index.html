@@ -103,6 +103,10 @@ a{color:var(--or);text-decoration:none}
   background:rgba(245,165,36,.13);border:1px solid rgba(245,165,36,.26)}
 .card h3{font-size:15.5px;font-weight:800;margin:11px 0 6px;color:var(--tx)}
 .card p{font-size:13.2px;line-height:1.55;color:var(--tx2)}
+.card.next{background:transparent;box-shadow:none}
+.card.next::before{background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.card.next .num{color:var(--tx3);background:var(--surf2);border-color:var(--line)}
+.card.next .num::after{content:" \2192"}
 .cardlink{display:inline-block;margin-top:11px;font-size:12.8px;font-weight:800;color:var(--acc);
   border-block-end:1px solid currentColor;padding-block-end:1px}
 
@@ -125,7 +129,7 @@ a{color:var(--or);text-decoration:none}
 .phone .frame{padding:6px;border-radius:34px;background:linear-gradient(160deg,#2C3B5C,#0B1220 72%);
   box-shadow:0 44px 74px -38px rgba(0,0,0,.95),0 0 70px -34px rgba(245,165,36,.55),
   inset 0 0 0 1px rgba(255,255,255,.09)}
-.phone .frame img{width:100%;display:block;border-radius:28px;aspect-ratio:412/892;object-fit:cover;background:#fff}
+.phone .frame img{width:100%;height:auto;display:block;border-radius:28px;aspect-ratio:412/892;object-fit:cover;background:#fff}
 .phone .cap{text-align:center;margin-top:13px}
 .phone .cap b{display:block;font-size:13px;font-weight:700;color:var(--tx)}
 .phone .cap span{font-size:11.5px;color:var(--tx3)}
@@ -134,7 +138,7 @@ a{color:var(--or);text-decoration:none}
   inset 0 0 0 1px rgba(255,255,255,.14)}
 .paper{width:clamp(146px,15vw,204px);border-radius:10px;overflow:hidden;border:1px solid var(--line);
   box-shadow:0 36px 66px -32px rgba(0,0,0,.9)}
-.paper img{display:block}
+.paper img{display:block;width:100%;height:auto}
 
 /* ======================= cover ======================= */
 .cover{text-align:center;align-items:center}
@@ -238,7 +242,7 @@ html[dir="rtl"] .farrow,html[dir="rtl"] .arrow{display:inline-block;transform:sc
 .demophone .frame{padding:6px;border-radius:36px;background:linear-gradient(160deg,#2C3B5C,#0B1220 72%);
   box-shadow:0 44px 74px -38px rgba(0,0,0,.9),0 0 80px -34px rgba(245,165,36,.6),
   inset 0 0 0 1px rgba(255,255,255,.09)}
-.demophone .frame img{width:100%;display:block;border-radius:30px;aspect-ratio:412/892;object-fit:cover;
+.demophone .frame img{width:100%;height:auto;display:block;border-radius:30px;aspect-ratio:412/892;object-fit:cover;
   background:#fff;transition:opacity .32s ease}
 .demoinfo{max-width:330px;text-align:start}
 .demoinfo .democap{font-size:clamp(22px,3vw,30px);font-weight:900;letter-spacing:-.03em;min-height:1.2em;color:var(--tx)}
@@ -323,6 +327,31 @@ html[dir="rtl"] .farrow,html[dir="rtl"] .arrow{display:inline-block;transform:sc
 .mchan{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--tx2);
   background:var(--surf);border:1px solid var(--line);border-radius:999px;padding:7px 13px}
 .mchan i{width:6px;height:6px;border-radius:50%;background:var(--acc);flex:none}
+/* The email slide carries the most copy of any slide. On wide viewports both columns sit side by
+   side and the slide is held to one screen; the column scrolls inside the slide if a translation
+   still runs long. Narrower viewports stack the columns and the slide simply grows, exactly like
+   the other card slides in this deck. */
+#email{padding-block:clamp(30px,4.2vh,52px) clamp(24px,3.4vh,42px)}
+@media(min-width:941px){
+  #email{max-block-size:100svh}
+  #email>.wrap{max-block-size:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+}
+#email h2{margin:9px 0 6px}
+#email .lead{max-width:78ch}
+#email .mailgrid{margin-top:clamp(12px,2vh,22px);gap:clamp(18px,2.6vw,36px)}
+#email .mailcard{max-width:404px}
+#email .mailhead{padding:12px 15px}
+#email .mailbody{padding:13px 15px 15px}
+#email .mintro{margin-top:4px}
+#email .mrows{margin-top:11px}
+#email .mrows>div{padding:8px 12px}
+#email .mattach{margin-top:11px;padding:9px 12px}
+#email .mfoot{margin-top:8px}
+#email .mfeat{gap:8px}
+#email .mrow{padding:10px 14px}
+#email .mchans{margin-top:9px}
+#email .note{margin-top:10px}
+@media(max-width:940px){#email .mailcard{max-width:380px}}
 
 /* ======================= CTA ======================= */
 .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
@@ -406,7 +435,7 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
 <section class="slide cover">
   <span class="halo" aria-hidden="true"></span>
   <div class="wrap">
-    <img class="mark r" src="img/coaltrack-mark.png" alt="CoalTrack" width="640" height="640">
+    <img class="mark r" src="img/coaltrack-mark.png" alt="CoalTrack" width="640" height="640" decoding="async" fetchpriority="high">
     <h1 class="r"><i>Coal</i><em>Track</em></h1>
     <div class="by r" data-i18n="badge"></div>
     <p class="lead r" data-i18n="lead"></p>
@@ -446,10 +475,10 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <span class="eyebrow r" data-i18n="s2eye"></span>
     <h2 class="r" data-i18n="s2ttl"></h2>
     <div class="phones r">
-      <div class="phone"><div class="frame"><img data-shot="emp-home" src="img/emp-home.en.png" alt=""></div><div class="cap"><b data-i18n="cHome"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="emp-absen" src="img/emp-absen.en.png" alt=""></div><div class="cap"><b data-i18n="cAbsen"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="emp-riwayat" src="img/emp-riwayat.en.png" alt=""></div><div class="cap"><b data-i18n="cHist"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="emp-profil" src="img/emp-profil.en.png" alt=""></div><div class="cap"><b data-i18n="cProfile"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="emp-home" src="img/emp-home.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cHome"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="emp-absen" src="img/emp-absen.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cAbsen"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="emp-riwayat" src="img/emp-riwayat.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cHist"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="emp-profil" src="img/emp-profil.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cProfile"></b></div></div>
     </div>
   </div>
 </section>
@@ -461,9 +490,9 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <h2 class="r" data-i18n="secTtl"></h2>
     <p class="lead r" data-i18n="secLead"></p>
     <div class="phones r">
-      <div class="phone"><div class="frame"><img data-shot="activate" src="img/activate.en.png" alt=""></div><div class="cap"><b data-i18n="cActivate"></b></div></div><div class="phone"><div class="frame"><img data-shot="sec-login" src="img/sec-login.en.png" alt=""></div><div class="cap"><b data-i18n="cLogin"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="sec-lock" src="img/sec-lock.en.png" alt=""></div><div class="cap"><b data-i18n="cLock"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="sec-setup" src="img/sec-setup.en.png" alt=""></div><div class="cap"><b data-i18n="cSetup"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="activate" src="img/activate.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cActivate"></b></div></div><div class="phone"><div class="frame"><img data-shot="sec-login" src="img/sec-login.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cLogin"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="sec-lock" src="img/sec-lock.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cLock"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="sec-setup" src="img/sec-setup.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cSetup"></b></div></div>
     </div>
   </div>
 </section>
@@ -474,7 +503,7 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <span class="eyebrow r" data-i18n="demoEye" style="justify-content:center"></span>
     <h2 class="r" data-i18n="demoTtl"></h2>
     <div class="demo r">
-      <div class="demophone"><div class="frame"><img id="demoimg" src="img/emp-home.en.png" alt=""></div></div>
+      <div class="demophone"><div class="frame"><img id="demoimg" src="img/emp-home.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div></div>
       <div class="demoinfo">
         <div class="democap" id="democap"></div>
         <div class="demodots" id="demodots"></div>
@@ -490,9 +519,9 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <span class="eyebrow r" data-i18n="s3eye"></span>
     <h2 class="r" data-i18n="s3ttl"></h2>
     <div class="phones r">
-      <div class="phone"><div class="frame"><img data-shot="leave" src="img/leave.en.png" alt=""></div><div class="cap"><b data-i18n="cLeave"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="notif" src="img/notif.en.png" alt=""></div><div class="cap"><b data-i18n="cNotif"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="edit-profile" src="img/edit-profile.en.png" alt=""></div><div class="cap"><b data-i18n="cEdit"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="leave" src="img/leave.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cLeave"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="notif" src="img/notif.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cNotif"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="edit-profile" src="img/edit-profile.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cEdit"></b></div></div>
     </div>
   </div>
 </section>
@@ -505,7 +534,7 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <p class="lead r" data-i18n="offLead"></p>
     <div class="g3 r">
       <div class="card"><span class="num">01</span><h3 data-i18n="off1t"></h3><p data-i18n="off1d"></p></div>
-      <div class="card"><span class="num">02</span><h3 data-i18n="off2t"></h3><p data-i18n="off2d"></p></div>
+      <div class="card next"><span class="num">02</span><h3 data-i18n="off2t"></h3><p data-i18n="off2d"></p></div>
       <div class="card"><span class="num">03</span><h3 data-i18n="off3t"></h3><p data-i18n="off3d"></p></div>
     </div>
   </div>
@@ -518,9 +547,9 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <h2 class="r" data-i18n="s4ttl"></h2>
     <p class="lead r" data-i18n="s4lead"></p>
     <div class="phones r">
-      <div class="phone"><div class="frame"><img data-shot="emp-gaji" src="img/emp-gaji.en.png" alt=""></div><div class="cap"><b data-i18n="cPay"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="emp-slip" src="img/emp-slip.en.png" alt=""></div><div class="cap"><b data-i18n="cSlip"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="slip-dark" src="img/slip-dark.en.png" alt=""></div><div class="cap"><b data-i18n="cSlipDark"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="emp-gaji" src="img/emp-gaji.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cPay"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="emp-slip" src="img/emp-slip.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cSlip"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="slip-dark" src="img/slip-dark.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cSlipDark"></b></div></div>
     </div>
   </div>
 </section>
@@ -532,10 +561,10 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <h2 class="r" data-i18n="s5ttl"></h2>
     <p class="lead r" data-i18n="s5lead"></p>
     <div class="phones r">
-      <div class="phone"><div class="frame"><img data-shot="home-dark" src="img/home-dark.en.png" alt=""></div><div class="cap"><b data-i18n="cHome"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="absen-dark" src="img/absen-dark.en.png" alt=""></div><div class="cap"><b data-i18n="cAbsen"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="profil-dark" src="img/profil-dark.en.png" alt=""></div><div class="cap"><b data-i18n="cProfile"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="slip-dark" src="img/slip-dark.en.png" alt=""></div><div class="cap"><b data-i18n="cSlip"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="home-dark" src="img/home-dark.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cHome"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="absen-dark" src="img/absen-dark.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cAbsen"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="profil-dark" src="img/profil-dark.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cProfile"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="slip-dark" src="img/slip-dark.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cSlip"></b></div></div>
     </div>
   </div>
 </section>
@@ -547,10 +576,10 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <h2 class="r" data-i18n="s6ttl"></h2>
     <p class="lead r" data-i18n="s6lead"></p>
     <div class="phones r">
-      <div class="phone"><div class="frame"><img data-shot="dash" src="img/dash.en.png" alt=""></div><div class="cap"><b data-i18n="cDash"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="monitor" src="img/monitor.en.png" alt=""></div><div class="cap"><b data-i18n="cMon"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="devices" src="img/devices.en.png" alt=""></div><div class="cap"><b data-i18n="cDev"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="employees" src="img/employees.en.png" alt=""></div><div class="cap"><b data-i18n="cEmp"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="dash" src="img/dash.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cDash"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="monitor" src="img/monitor.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cMon"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="devices" src="img/devices.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cDev"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="employees" src="img/employees.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cEmp"></b></div></div>
     </div>
   </div>
 </section>
@@ -577,9 +606,9 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <h2 class="r" data-i18n="s7ttl"></h2>
     <p class="lead r" data-i18n="s7lead"></p>
     <div class="phones r">
-      <div class="phone"><div class="frame"><img data-shot="payrollrun" src="img/payrollrun.en.png" alt=""></div><div class="cap"><b data-i18n="cRun"></b></div></div>
-      <div style="text-align:center"><div class="paper"><img src="img/slip-pdf.png" alt="PDF"></div><div class="cap" style="margin-top:13px"><b style="font-size:13px;font-weight:700" data-i18n="cPdf"></b></div></div>
-      <div class="phone"><div class="frame"><img data-shot="admleave" src="img/admleave.en.png" alt=""></div><div class="cap"><b data-i18n="cApprove"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="payrollrun" src="img/payrollrun.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cRun"></b></div></div>
+      <div style="text-align:center"><div class="paper"><img src="img/slip-pdf.png" alt="PDF" width="387" height="548" loading="lazy" decoding="async"></div><div class="cap" style="margin-top:13px"><b style="font-size:13px;font-weight:700" data-i18n="cPdf"></b></div></div>
+      <div class="phone"><div class="frame"><img data-shot="admleave" src="img/admleave.en.png" alt="" width="412" height="892" loading="lazy" decoding="async"></div><div class="cap"><b data-i18n="cApprove"></b></div></div>
     </div>
   </div>
 </section>
@@ -712,6 +741,7 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
       <div class="step"><span class="dot">✓</span><div><b data-i18n="r4t"></b><span data-i18n="r4d"></span></div></div>
       <div class="step"><span class="dot">✓</span><div><b data-i18n="r5t"></b><span data-i18n="r5d"></span></div></div>
       <div class="step next"><span class="dot">→</span><div><b data-i18n="r6t"></b><span data-i18n="r6d"></span></div></div>
+      <div class="step next"><span class="dot">→</span><div><b data-i18n="r7t"></b><span data-i18n="r7d"></span></div></div>
     </div>
   </div>
 </section>
@@ -748,7 +778,7 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <div class="g4 r">
       <div class="card"><span class="num">01</span><h3 data-i18n="gov1t"></h3><p data-i18n="gov1d"></p></div>
       <div class="card"><span class="num">02</span><h3 data-i18n="gov2t"></h3><p data-i18n="gov2d"></p></div>
-      <div class="card"><span class="num">03</span><h3 data-i18n="gov3t"></h3><p data-i18n="gov3d"></p></div>
+      <div class="card next"><span class="num">03</span><h3 data-i18n="gov3t"></h3><p data-i18n="gov3d"></p></div>
       <div class="card"><span class="num">04</span><h3 data-i18n="gov4t"></h3><p data-i18n="gov4d"></p></div>
     </div>
     <p class="note r" data-i18n="govFoot"></p>
@@ -778,7 +808,7 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
 <section class="slide deep cover">
   <span class="halo" aria-hidden="true"></span>
   <div class="wrap">
-    <img class="mark r" src="img/coaltrack-mark.png" alt="CoalTrack" width="640" height="640" style="width:clamp(104px,12vw,150px)">
+    <img class="mark r" src="img/coaltrack-mark.png" alt="CoalTrack" width="640" height="640" loading="lazy" decoding="async" style="width:clamp(104px,12vw,150px)">
     <h2 class="r" data-i18n="s11ttl" style="font-size:clamp(30px,6vw,58px);margin-top:4px"></h2>
     <p class="lead r" data-i18n="s11lead" style="margin-inline:auto"></p>
     <div class="chips r">
@@ -833,7 +863,7 @@ const I18N={
   "cmpAc":"Server time, tamper-proof",
   "cmpBa":"Buddy-punching",
   "cmpBm":"Undetected",
-  "cmpBc":"Face + 1 phone/employee",
+  "cmpBc":"1 approved phone per employee + face evidence",
   "cmpCa":"Payroll recap",
   "cmpCm":"Days of manual work, error-prone",
   "cmpCc":"Automatic from attendance",
@@ -887,9 +917,9 @@ const I18N={
   "badge":"Ksatria Bintang Samudra · Coal Mine Attendance",
   "lead":"Anti-fraud attendance for coal mining operations — face check, real GPS, server time. One Flutter app (iOS & Android), Laravel backend, Vue portal.",
   "chip1":"Anti buddy-punching",
-  "chip2":"Face liveness",
+  "chip2":"Face evidence",
   "chip3":"Real GPS",
-  "chip4":"353+ tests",
+  "chip4":"353 app + 216 API tests",
   "s2eye":"Employee app",
   "s2ttl":"Light & clear for field workers.",
   "cHome":"Home",
@@ -924,10 +954,10 @@ const I18N={
   "cPdf":"PDF payslip",
   "cApprove":"Leave approval",
   "mailEye":"Email & payslip",
-  "mailTtl":"Payslips land in the inbox — from your own domain.",
-  "mailLead":"CoalTrack ships with a transactional email pipeline that sends from your company's own authenticated domain (SPF, DKIM, DMARC). Every payslip arrives as a clean letter with the official PDF attached — there is no mail server for you to run.",
-  "mail1t":"Your own authenticated domain",
-  "mail1d":"Mail leaves under your company name, signed with SPF, DKIM and DMARC — so it lands in the inbox instead of the spam folder, and nobody can forge it.",
+  "mailTtl":"Payslips land in the inbox, not the spam folder.",
+  "mailLead":"CoalTrack ships with a transactional email pipeline that runs on a fully authenticated sending domain (SPF, DKIM, DMARC). Every payslip arrives as a clean letter with the official PDF attached — there is no mail server for you to run. Sending from your company's own domain is available on request.",
+  "mail1t":"Fully authenticated sending domain",
+  "mail1d":"Every payslip goes out over a sending domain signed with SPF, DKIM and DMARC — so it lands in the inbox instead of the spam folder, and nobody can forge it. Sending from your company's own domain is available on request.",
   "mail2t":"A letter, with the PDF attached",
   "mail2d":"A clean HTML letter with your letterhead, a short summary of the period, and the official PDF payslip attached — readable on any phone.",
   "mail3t":"Every send is logged",
@@ -935,7 +965,7 @@ const I18N={
   "mail4t":"One slip, or the whole run",
   "mail4d":"Send a single payslip or the entire payroll run in one action. Sending is queued and respects the daily limit, so a 3,000-person run goes out safely.",
   "mailCardSubj":"Your payslip is ready",
-  "mailCardFrom":"Payroll · your company's verified domain",
+  "mailCardFrom":"Payroll · authenticated sending domain",
   "mailCardHi":"Dear employee,",
   "mailCardIntro":"Your payslip for the period below is attached as a PDF. Please keep it for your records.",
   "mailCardPeriod":"Period",
@@ -958,8 +988,8 @@ const I18N={
   "p2d":"One approved device per employee. Closes buddy-punching via someone else's phone.",
   "p3t":"Immutable log",
   "p3d":"Append-only events (DB trigger). History cannot be faked.",
-  "p4t":"Face + liveness",
-  "p4d":"Face verification with anti-spoofing; evidence media is recorded.",
+  "p4t":"Face evidence + liveness challenge",
+  "p4d":"A randomized liveness challenge is prompted and the face frames are stored with the event as evidence. Automated face matching is on the roadmap — see Status.",
   "p5t":"Real GPS + anti-mock",
   "p5d":"Real device location, mock detection. Audit, not a gate.",
   "p6t":"Decision engine",
@@ -969,12 +999,12 @@ const I18N={
   "nApp":"employee + admin",
   "nWeb":"HR portal",
   "nDb":"append-only",
-  "bTests":"Pest — 353 tests",
+  "bTests":"Pest — 216 tests",
   "bData":"Region set by contract",
   "s10eye":"Status",
   "s10ttl":"Live today.",
   "r1t":"Backend + anti-fraud API",
-  "r1d":"Laravel 12 · 353 tests",
+  "r1d":"Laravel 12 · 216 Pest tests",
   "r2t":"Employee mobile",
   "r2d":"Attend, Pay, Leave, Notifications, Profile",
   "r3t":"Payroll engine + PDF payslip",
@@ -984,7 +1014,9 @@ const I18N={
   "r5t":"Payroll run + send slip",
   "r5d":"finalize → pay → Telegram/Email",
   "r6t":"FCM push & face ML",
-  "r6d":"phone push, full liveness",
+  "r6d":"phone push, automated face matching",
+  "r7t":"Offline queue",
+  "r7d":"auto-upload when signal returns",
   "s11ttl":"Ready for the field.",
   "s11lead":"Anti-fraud attendance + payroll, end-to-end. Pilot at one site, measure the real savings.",
   "getEye":"Get started",
@@ -1019,24 +1051,24 @@ const I18N={
   "govR3d":"Salary, tax status (K/TK), NPWP, bank account",
   "govR3w":"Your HR team",
   "govR3c":"Full control",
-  "gov1t":"Four-eyes approval",
-  "gov1d":"HR prepares the payroll run → Director/Finance approves → only then is the bank transfer file released. Sensitive changes (pay components, overtime multipliers, bank accounts) need a second approver and apply from the next period — never retroactively.",
+  "gov1t":"Four-eyes on company-rule changes",
+  "gov1d":"Sensitive company-rule changes in Payroll Settings — pay components, overtime multipliers, the payroll bank account — need a second approver who cannot be the requester. They take effect from the next period, never retroactively.",
   "gov2t":"Audit trail",
   "gov2d":"Every change is logged — who, when, old → new, and the reason. Nobody can delete it, not even Super-admin. Exportable for your auditors.",
-  "gov3t":"Anomaly checks before pay day",
-  "gov3d":"Duplicate bank accounts across employees, employees paid with no attendance (“ghost employees”), sudden raises and abnormal overtime are flagged for the approver before anything is paid.",
+  "gov3t":"Anomaly checks before pay day — planned",
+  "gov3d":"Planned, not in the product yet: flagging duplicate bank accounts across employees, employees paid with no attendance (“ghost employees”), sudden raises and abnormal overtime for the approver before anything is paid.",
   "gov4t":"Money never passes through CoalTrack",
   "gov4d":"The app computes payroll and prepares the transfer file. Funds leave your company's own bank account (e.g. Mandiri Cash Management) only after your own approver releases them.",
   "govFoot":"Onboarding: we set the company rules once from your questionnaire, train HR, then you run it yourselves.",
-  "offEye":"Works offline",
-  "offTtl":"Attend even with no signal.",
-  "offLead":"In the field, signal is thin. Workers still clock in offline — the app captures the photo, real GPS coordinate, and satellite time, queues it on the phone, then syncs the moment signal returns.",
+  "offEye":"Offline capture",
+  "offTtl":"Capture attendance even with no signal.",
+  "offLead":"In the field, signal is thin. The app captures the photo, the real GPS coordinate and the satellite time on the phone itself, so nothing has to be noted down and typed in later. A local queue that uploads automatically when signal returns is planned — see Status.",
   "off1t":"Capture offline",
   "off1d":"Photo, GPS coordinate, and GPS-satellite time captured and stored safely on the phone.",
-  "off2t":"Auto-sync",
-  "off2d":"The queue uploads itself the instant the device is back online. Nothing is lost.",
+  "off2t":"Auto-sync — planned",
+  "off2d":"A local queue that uploads itself the moment the device is back online is on the roadmap. It is not in the product yet.",
   "off3t":"Reviewed by the head",
-  "off3d":"Offline check-ins arrive flagged and are approved by the team head — honest by human review.",
+  "off3d":"Check-ins arrive flagged and are approved by the team head — honest by human review.",
   "hierEye":"Team structure",
   "hierTtl":"Many divisions, each head watches their own team.",
   "hierLead":"Heads sit in the office and monitor their own division's attendance in real time. They approve the exceptions; HR and super-admin see everyone.",
@@ -1093,7 +1125,7 @@ const I18N={
   "cmpAc":"Waktu server, tak bisa diubah",
   "cmpBa":"Titip-absen",
   "cmpBm":"Tak terdeteksi",
-  "cmpBc":"Wajah + 1 HP/karyawan",
+  "cmpBc":"1 HP disetujui per karyawan + bukti wajah",
   "cmpCa":"Rekap payroll",
   "cmpCm":"Berhari-hari, rawan salah",
   "cmpCc":"Otomatis dari absensi",
@@ -1147,9 +1179,9 @@ const I18N={
   "badge":"Ksatria Bintang Samudra · Absensi Tambang Batu Bara",
   "lead":"Absensi anti-curang untuk operasi tambang batu bara — cek wajah, GPS asli, waktu server. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",
   "chip1":"Anti titip-absen",
-  "chip2":"Liveness wajah",
+  "chip2":"Bukti wajah",
   "chip3":"GPS asli",
-  "chip4":"353+ tes",
+  "chip4":"353 tes aplikasi + 216 tes API",
   "s2eye":"Aplikasi karyawan",
   "s2ttl":"Ringan & jelas untuk pekerja lapangan.",
   "cHome":"Beranda",
@@ -1184,10 +1216,10 @@ const I18N={
   "cPdf":"Slip PDF",
   "cApprove":"Persetujuan izin",
   "mailEye":"Email & slip gaji",
-  "mailTtl":"Slip gaji masuk ke inbox — dari domain perusahaan Anda sendiri.",
-  "mailLead":"CoalTrack sudah dilengkapi jalur email transaksional yang mengirim dari domain terautentikasi milik perusahaan Anda (SPF, DKIM, DMARC). Setiap slip gaji datang sebagai surat yang rapi dengan PDF resmi terlampir — tanpa perlu Anda mengelola server email sendiri.",
-  "mail1t":"Domain terautentikasi milik Anda",
-  "mail1d":"Email keluar atas nama perusahaan Anda, ditandatangani SPF, DKIM, dan DMARC — masuk ke inbox, bukan folder spam, dan tidak bisa dipalsukan pihak lain.",
+  "mailTtl":"Slip gaji masuk ke inbox, bukan folder spam.",
+  "mailLead":"CoalTrack sudah dilengkapi jalur email transaksional yang berjalan di atas domain pengirim terautentikasi penuh (SPF, DKIM, DMARC). Setiap slip gaji datang sebagai surat yang rapi dengan PDF resmi terlampir — tanpa perlu Anda mengelola server email sendiri. Pengiriman dari domain perusahaan Anda sendiri tersedia atas permintaan.",
+  "mail1t":"Domain pengirim terautentikasi penuh",
+  "mail1d":"Setiap slip gaji dikirim lewat domain pengirim yang ditandatangani SPF, DKIM, dan DMARC — masuk ke inbox, bukan folder spam, dan tidak bisa dipalsukan pihak lain. Pengiriman dari domain perusahaan Anda sendiri tersedia atas permintaan.",
   "mail2t":"Surat rapi, PDF terlampir",
   "mail2d":"Surat HTML bersih dengan kop perusahaan, ringkasan singkat periode gaji, dan slip PDF resmi terlampir — nyaman dibaca di HP mana pun.",
   "mail3t":"Setiap pengiriman tercatat",
@@ -1195,7 +1227,7 @@ const I18N={
   "mail4t":"Satu slip, atau satu putaran penuh",
   "mail4d":"Kirim satu slip saja atau seluruh payroll run sekali jalan. Pengiriman diantre dan mengikuti batas harian, sehingga 3.000 karyawan tetap aman terkirim.",
   "mailCardSubj":"Slip gaji Anda sudah siap",
-  "mailCardFrom":"Penggajian · domain terverifikasi perusahaan Anda",
+  "mailCardFrom":"Penggajian · domain pengirim terautentikasi",
   "mailCardHi":"Yth. Karyawan,",
   "mailCardIntro":"Slip gaji untuk periode di bawah ini terlampir dalam bentuk PDF. Mohon disimpan sebagai arsip Anda.",
   "mailCardPeriod":"Periode",
@@ -1218,8 +1250,8 @@ const I18N={
   "p2d":"1 HP disetujui per karyawan. Menutup titip absen lewat HP orang lain.",
   "p3t":"Catatan immutable",
   "p3d":"Event append-only (trigger DB). Riwayat tak bisa dipalsukan.",
-  "p4t":"Wajah + liveness",
-  "p4d":"Verifikasi wajah dengan anti-spoofing; media bukti direkam.",
+  "p4t":"Bukti wajah + tantangan liveness",
+  "p4d":"Tantangan liveness acak ditampilkan dan frame wajah disimpan bersama kejadiannya sebagai bukti. Pencocokan wajah otomatis masih dalam rencana — lihat Status.",
   "p5t":"GPS asli + anti-mock",
   "p5d":"Lokasi nyata perangkat, deteksi lokasi palsu. Audit, bukan gerbang.",
   "p6t":"Mesin keputusan",
@@ -1229,12 +1261,12 @@ const I18N={
   "nApp":"karyawan + admin",
   "nWeb":"portal HR",
   "nDb":"append-only",
-  "bTests":"Pest — 353 tes",
+  "bTests":"Pest — 216 tes",
   "bData":"Wilayah data sesuai kontrak",
   "s10eye":"Status",
   "s10ttl":"Sudah jalan hari ini.",
   "r1t":"Backend + API anti-curang",
-  "r1d":"Laravel 12 · 353 tes",
+  "r1d":"Laravel 12 · 216 tes Pest",
   "r2t":"Mobile karyawan",
   "r2d":"Absen, Gaji, Izin, Notifikasi, Profil",
   "r3t":"Engine payroll + slip PDF",
@@ -1244,7 +1276,9 @@ const I18N={
   "r5t":"Payroll run + kirim slip",
   "r5d":"finalisasi → bayar → Telegram/Email",
   "r6t":"Push FCM & ML wajah",
-  "r6d":"notifikasi HP, liveness penuh",
+  "r6d":"notifikasi HP, pencocokan wajah otomatis",
+  "r7t":"Antrean offline",
+  "r7d":"unggah otomatis saat sinyal kembali",
   "s11ttl":"Siap diterapkan di lapangan.",
   "s11lead":"Absensi anti-curang + penggajian, end-to-end. Uji coba di satu site, ukur penghematan nyata.",
   "getEye":"Mulai sekarang",
@@ -1279,24 +1313,24 @@ const I18N={
   "govR3d":"Gaji, status pajak (K/TK), NPWP, rekening bank",
   "govR3w":"Tim HRD Anda",
   "govR3c":"Kendali penuh",
-  "gov1t":"Persetujuan empat mata",
-  "gov1d":"HRD menyiapkan payroll run → Direktur/Finance menyetujui → barulah file transfer bank dirilis. Perubahan sensitif (komponen gaji, pengali lembur, rekening bank) butuh penyetuju kedua dan berlaku mulai periode berikutnya — tidak pernah berlaku surut.",
+  "gov1t":"Empat mata untuk perubahan aturan perusahaan",
+  "gov1d":"Perubahan aturan perusahaan yang sensitif di Pengaturan Payroll — komponen gaji, pengali lembur, rekening bank penggajian — butuh penyetuju kedua yang bukan pengaju. Perubahan berlaku mulai periode berikutnya, tidak pernah berlaku surut.",
   "gov2t":"Jejak audit",
   "gov2d":"Setiap perubahan tercatat — siapa, kapan, nilai lama → baru, dan alasannya. Tidak bisa dihapus siapa pun, termasuk Superadmin. Bisa diekspor untuk auditor.",
-  "gov3t":"Pemeriksaan anomali sebelum gajian",
-  "gov3d":"Rekening bank ganda antar karyawan, karyawan digaji tanpa absensi (“karyawan fiktif”), kenaikan gaji mendadak, dan lembur tidak wajar ditandai untuk penyetuju sebelum ada yang dibayar.",
+  "gov3t":"Pemeriksaan anomali sebelum gajian — rencana",
+  "gov3d":"Masih rencana, belum ada di produk: menandai rekening bank ganda antar karyawan, karyawan digaji tanpa absensi (“karyawan fiktif”), kenaikan gaji mendadak, dan lembur tidak wajar untuk penyetuju sebelum ada yang dibayar.",
   "gov4t":"Uang tidak pernah lewat CoalTrack",
   "gov4d":"Aplikasi menghitung payroll dan menyiapkan file transfer. Dana keluar dari rekening bank perusahaan Anda sendiri (mis. Mandiri Cash Management) hanya setelah penyetuju Anda merilisnya.",
   "govFoot":"Onboarding: kami mengatur aturan perusahaan sekali dari kuesioner Anda, melatih HRD, lalu Anda menjalankannya sendiri.",
-  "offEye":"Bekerja offline",
-  "offTtl":"Tetap absen walau tanpa sinyal.",
-  "offLead":"Di lapangan sinyal tipis. Karyawan tetap absen offline — aplikasi menangkap foto, koordinat GPS asli, dan waktu satelit, mengantre di HP, lalu menyinkron begitu sinyal kembali.",
+  "offEye":"Perekaman offline",
+  "offTtl":"Rekam absensi walau tanpa sinyal.",
+  "offLead":"Di lapangan sinyal tipis. Aplikasi menangkap foto, koordinat GPS asli, dan waktu satelit langsung di HP, jadi tidak ada yang perlu dicatat manual lalu diketik ulang. Antrean lokal yang terkirim otomatis begitu sinyal kembali masih dalam rencana — lihat Status.",
   "off1t":"Tangkap offline",
   "off1d":"Foto, koordinat GPS, dan waktu satelit GPS ditangkap dan disimpan aman di HP.",
-  "off2t":"Sinkron otomatis",
-  "off2d":"Antrean terkirim sendiri begitu perangkat kembali online. Tidak ada yang hilang.",
+  "off2t":"Sinkron otomatis — rencana",
+  "off2d":"Antrean lokal yang terkirim sendiri begitu perangkat kembali online ada di peta jalan. Fitur ini belum ada di produk.",
   "off3t":"Ditinjau kepala",
-  "off3d":"Absen offline masuk sebagai perlu tinjau dan disetujui kepala tim — jujur lewat penilaian manusia.",
+  "off3d":"Absensi masuk sebagai perlu tinjau dan disetujui kepala tim — jujur lewat penilaian manusia.",
   "hierEye":"Struktur tim",
   "hierTtl":"Banyak divisi, tiap kepala pantau timnya.",
   "hierLead":"Kepala di kantor memantau kehadiran divisinya secara real-time. Mereka menyetujui yang perlu; HRD dan superadmin melihat semuanya.",
@@ -1353,7 +1387,7 @@ const I18N={
   "cmpAc":"Masa pelayan, kalis usik",
   "cmpBa":"Curi-kehadiran",
   "cmpBm":"Tak dikesan",
-  "cmpBc":"Wajah + 1 telefon/pekerja",
+  "cmpBc":"1 telefon diluluskan setiap pekerja + bukti wajah",
   "cmpCa":"Rekap gaji",
   "cmpCm":"Berhari-hari, mudah silap",
   "cmpCc":"Automatik dari kehadiran",
@@ -1407,9 +1441,9 @@ const I18N={
   "badge":"Ksatria Bintang Samudra · Kehadiran Perlombongan Arang Batu",
   "lead":"Kehadiran anti-penipuan untuk operasi perlombongan arang batu — semak wajah, GPS sebenar, masa pelayan. Satu aplikasi Flutter (iOS & Android), backend Laravel, portal Vue.",
   "chip1":"Anti curi-kehadiran",
-  "chip2":"Liveness wajah",
+  "chip2":"Bukti wajah",
   "chip3":"GPS sebenar",
-  "chip4":"207+ ujian",
+  "chip4":"353 ujian aplikasi + 216 ujian API",
   "s2eye":"Aplikasi pekerja",
   "s2ttl":"Ringkas & jelas untuk pekerja lapangan.",
   "cHome":"Utama",
@@ -1444,10 +1478,10 @@ const I18N={
   "cPdf":"Slip PDF",
   "cApprove":"Kelulusan cuti",
   "mailEye":"E-mel & slip gaji",
-  "mailTtl":"Slip gaji terus ke peti masuk — dari domain syarikat anda sendiri.",
-  "mailLead":"CoalTrack disertakan saluran e-mel transaksi yang menghantar daripada domain sah milik syarikat anda (SPF, DKIM, DMARC). Setiap slip gaji tiba sebagai surat kemas dengan PDF rasmi dilampirkan — tanpa perlu anda mengendalikan pelayan e-mel sendiri.",
-  "mail1t":"Domain sah milik anda sendiri",
-  "mail1d":"E-mel keluar atas nama syarikat anda, ditandatangani SPF, DKIM dan DMARC — masuk ke peti masuk, bukan folder spam, dan tidak boleh dipalsukan pihak lain.",
+  "mailTtl":"Slip gaji masuk ke peti masuk, bukan folder spam.",
+  "mailLead":"CoalTrack disertakan saluran e-mel transaksi yang berjalan di atas domain penghantar yang disahkan sepenuhnya (SPF, DKIM, DMARC). Setiap slip gaji tiba sebagai surat kemas dengan PDF rasmi dilampirkan — tanpa perlu anda mengendalikan pelayan e-mel sendiri. Penghantaran daripada domain syarikat anda sendiri disediakan atas permintaan.",
+  "mail1t":"Domain penghantar disahkan sepenuhnya",
+  "mail1d":"Setiap slip gaji dihantar melalui domain penghantar yang ditandatangani SPF, DKIM dan DMARC — masuk ke peti masuk, bukan folder spam, dan tidak boleh dipalsukan pihak lain. Penghantaran daripada domain syarikat anda sendiri disediakan atas permintaan.",
   "mail2t":"Surat kemas, PDF dilampirkan",
   "mail2d":"Surat HTML bersih dengan kepala surat anda, ringkasan tempoh gaji, dan slip PDF rasmi dilampirkan — mudah dibaca pada mana-mana telefon.",
   "mail3t":"Setiap penghantaran direkod",
@@ -1455,7 +1489,7 @@ const I18N={
   "mail4t":"Satu slip, atau seluruh pusingan",
   "mail4d":"Hantar satu slip sahaja atau seluruh pusingan gaji sekali gus. Penghantaran beratur dan mematuhi had harian, jadi 3,000 pekerja tetap selamat dihantar.",
   "mailCardSubj":"Slip gaji anda sudah sedia",
-  "mailCardFrom":"Penggajian · domain disahkan syarikat anda",
+  "mailCardFrom":"Penggajian · domain penghantar disahkan",
   "mailCardHi":"Pekerja yang dihormati,",
   "mailCardIntro":"Slip gaji bagi tempoh di bawah dilampirkan dalam bentuk PDF. Sila simpan sebagai rekod anda.",
   "mailCardPeriod":"Tempoh",
@@ -1478,8 +1512,8 @@ const I18N={
   "p2d":"1 telefon diluluskan setiap pekerja. Menutup curi-kehadiran guna telefon orang lain.",
   "p3t":"Log tak boleh ubah",
   "p3d":"Acara tambah-sahaja (pencetus DB). Sejarah tak boleh dipalsukan.",
-  "p4t":"Wajah + liveness",
-  "p4d":"Pengesahan wajah dengan anti-spoofing; media bukti direkod.",
+  "p4t":"Bukti wajah + cabaran liveness",
+  "p4d":"Cabaran liveness rawak dipaparkan dan bingkai wajah disimpan bersama peristiwanya sebagai bukti. Padanan wajah automatik masih dalam perancangan — lihat Status.",
   "p5t":"GPS sebenar + anti-mock",
   "p5d":"Lokasi sebenar peranti, pengesanan lokasi palsu. Audit, bukan pintu.",
   "p6t":"Enjin keputusan",
@@ -1489,12 +1523,12 @@ const I18N={
   "nApp":"pekerja + admin",
   "nWeb":"portal HR",
   "nDb":"tambah-sahaja",
-  "bTests":"Pest — 207 ujian",
+  "bTests":"Pest — 216 ujian",
   "bData":"Wilayah data sesuai kontrak",
   "s10eye":"Status",
   "s10ttl":"Sudah berjalan hari ini.",
   "r1t":"Backend + API anti-penipuan",
-  "r1d":"Laravel 12 · 207 ujian",
+  "r1d":"Laravel 12 · 216 ujian Pest",
   "r2t":"Mobil pekerja",
   "r2d":"Hadir, Gaji, Cuti, Pemberitahuan, Profil",
   "r3t":"Enjin gaji + slip PDF",
@@ -1504,7 +1538,9 @@ const I18N={
   "r5t":"Larian gaji + hantar slip",
   "r5d":"muktamad → bayar → Telegram/E-mel",
   "r6t":"Tolak FCM & ML wajah",
-  "r6d":"tolakan telefon, liveness penuh",
+  "r6d":"tolakan telefon, padanan wajah automatik",
+  "r7t":"Baris gilir luar talian",
+  "r7d":"muat naik automatik apabila isyarat kembali",
   "s11ttl":"Sedia untuk lapangan.",
   "s11lead":"Kehadiran anti-penipuan + gaji, hujung ke hujung. Perintis di satu tapak, ukur penjimatan sebenar.",
   "getEye":"Mula sekarang",
@@ -1539,24 +1575,24 @@ const I18N={
   "govR3d":"Gaji, status cukai (K/TK), NPWP, akaun bank",
   "govR3w":"Pasukan HR anda",
   "govR3c":"Kawalan penuh",
-  "gov1t":"Kelulusan empat mata",
-  "gov1d":"HR menyediakan larian gaji → Pengarah/Kewangan meluluskan → barulah fail pindahan bank dikeluarkan. Perubahan sensitif (komponen gaji, pengganda lebih masa, akaun bank) memerlukan pelulus kedua dan berkuat kuasa mulai tempoh berikutnya — tidak pernah ke belakang.",
+  "gov1t":"Empat mata untuk perubahan peraturan syarikat",
+  "gov1d":"Perubahan peraturan syarikat yang sensitif dalam Tetapan Gaji — komponen gaji, pengganda lebih masa, akaun bank penggajian — memerlukan pelulus kedua yang bukan pemohon. Ia berkuat kuasa mulai tempoh berikutnya, tidak pernah ke belakang.",
   "gov2t":"Jejak audit",
   "gov2d":"Setiap perubahan direkodkan — siapa, bila, nilai lama → baharu, dan sebabnya. Tiada sesiapa boleh memadamnya, termasuk Superadmin. Boleh dieksport untuk juruaudit.",
-  "gov3t":"Semakan anomali sebelum hari gaji",
-  "gov3d":"Akaun bank berulang antara pekerja, pekerja dibayar tanpa kehadiran (“pekerja hantu”), kenaikan gaji mendadak, dan lebih masa luar biasa ditandakan untuk pelulus sebelum apa-apa dibayar.",
+  "gov3t":"Semakan anomali sebelum hari gaji — dirancang",
+  "gov3d":"Masih dirancang, belum ada dalam produk: menandakan akaun bank berulang antara pekerja, pekerja dibayar tanpa kehadiran (“pekerja hantu”), kenaikan gaji mendadak, dan lebih masa luar biasa untuk pelulus sebelum apa-apa dibayar.",
   "gov4t":"Wang tidak pernah melalui CoalTrack",
   "gov4d":"Aplikasi mengira gaji dan menyediakan fail pindahan. Dana keluar dari akaun bank syarikat anda sendiri (cth. Mandiri Cash Management) hanya selepas pelulus anda mengeluarkannya.",
   "govFoot":"Onboarding: kami menetapkan peraturan syarikat sekali daripada soal selidik anda, melatih HR, kemudian anda menjalankannya sendiri.",
-  "offEye":"Berfungsi luar talian",
-  "offTtl":"Tetap hadir walau tanpa isyarat.",
-  "offLead":"Di lapangan isyarat nipis. Pekerja tetap daftar masuk luar talian — aplikasi menangkap foto, koordinat GPS sebenar, dan masa satelit, beratur pada telefon, kemudian menyegerak sebaik isyarat kembali.",
+  "offEye":"Rakaman luar talian",
+  "offTtl":"Rakam kehadiran walau tanpa isyarat.",
+  "offLead":"Di lapangan isyarat nipis. Aplikasi menangkap foto, koordinat GPS sebenar, dan masa satelit terus pada telefon, jadi tiada apa perlu dicatat lalu ditaip semula. Baris gilir setempat yang dihantar automatik sebaik isyarat kembali masih dalam perancangan — lihat Status.",
   "off1t":"Tangkap luar talian",
   "off1d":"Foto, koordinat GPS, dan masa satelit GPS ditangkap dan disimpan selamat pada telefon.",
-  "off2t":"Segerak automatik",
-  "off2d":"Baris gilir dihantar sendiri sebaik peranti kembali dalam talian. Tiada yang hilang.",
+  "off2t":"Segerak automatik — dirancang",
+  "off2d":"Baris gilir setempat yang dihantar sendiri sebaik peranti kembali dalam talian ada dalam peta jalan. Ia belum ada dalam produk.",
   "off3t":"Ditinjau ketua",
-  "off3d":"Kehadiran luar talian masuk sebagai perlu semak dan diluluskan ketua pasukan — jujur melalui semakan manusia.",
+  "off3d":"Kehadiran masuk sebagai perlu semak dan diluluskan ketua pasukan — jujur melalui semakan manusia.",
   "hierEye":"Struktur pasukan",
   "hierTtl":"Banyak bahagian, setiap ketua pantau pasukannya.",
   "hierLead":"Ketua di pejabat memantau kehadiran bahagiannya secara masa nyata. Mereka meluluskan yang perlu; HR dan superadmin melihat semua.",
@@ -1613,7 +1649,7 @@ const I18N={
   "cmpAc":"服务器时间，防篡改",
   "cmpBa":"代打卡",
   "cmpBm":"无法察觉",
-  "cmpBc":"人脸 + 每人一机",
+  "cmpBc":"每位员工 1 台已批准手机 + 人脸证据",
   "cmpCa":"薪资汇总",
   "cmpCm":"耗时数天、易错",
   "cmpCc":"依考勤自动生成",
@@ -1667,9 +1703,9 @@ const I18N={
   "badge":"Ksatria Bintang Samudra · 煤矿考勤",
   "lead":"面向煤矿作业的防作弊考勤——刷脸、真实 GPS、服务器时间。一个 Flutter 应用（iOS 与 Android）、Laravel 后端、Vue 门户。",
   "chip1":"杜绝代打卡",
-  "chip2":"人脸活体",
+  "chip2":"人脸证据",
   "chip3":"真实 GPS",
-  "chip4":"207+ 测试",
+  "chip4":"353 项应用测试 + 216 项 API 测试",
   "s2eye":"员工应用",
   "s2ttl":"为一线工人打造，轻巧清晰。",
   "cHome":"主页",
@@ -1704,10 +1740,10 @@ const I18N={
   "cPdf":"PDF 工资单",
   "cApprove":"请假审批",
   "mailEye":"邮件与工资单",
-  "mailTtl":"工资单直达收件箱——从贵公司自有域名发出。",
-  "mailLead":"CoalTrack 内置事务邮件通道，使用贵公司自有的已认证域名发送（SPF、DKIM、DMARC）。每份工资单都以整洁的信函送达，并附上正式 PDF——您无需自建邮件服务器。",
-  "mail1t":"贵公司自有的已认证域名",
-  "mail1d":"邮件以贵公司名义发出，并由 SPF、DKIM 与 DMARC 签名——直接进入收件箱而非垃圾邮件，且无法被他人伪造。",
+  "mailTtl":"工资单直达收件箱，而不是垃圾邮件。",
+  "mailLead":"CoalTrack 内置事务邮件通道，运行在一个已完整认证的发信域名上（SPF、DKIM、DMARC）。每份工资单都以整洁的信函送达，并附上正式 PDF——您无需自建邮件服务器。如需改为从贵公司自有域名发信，可按需求配置。",
+  "mail1t":"已完整认证的发信域名",
+  "mail1d":"每份工资单都经由带 SPF、DKIM 与 DMARC 签名的发信域名发出——直接进入收件箱而非垃圾邮件，且无法被他人伪造。如需改为从贵公司自有域名发信，可按需求配置。",
   "mail2t":"一封信函，附带 PDF",
   "mail2d":"整洁的 HTML 信函，含公司抬头、本期薪资摘要，并附上正式 PDF 工资单——在任何手机上都清晰易读。",
   "mail3t":"每次发送都有记录",
@@ -1715,7 +1751,7 @@ const I18N={
   "mail4t":"一份工资单，或整批发放",
   "mail4d":"既可只发一份工资单，也可一次发送整批薪资。发送进入队列并遵守每日额度，3,000 人的批量也能安全送出。",
   "mailCardSubj":"您的工资单已就绪",
-  "mailCardFrom":"薪资 · 贵公司已验证域名",
+  "mailCardFrom":"薪资 · 已认证发信域名",
   "mailCardHi":"尊敬的员工：",
   "mailCardIntro":"以下周期的工资单已以 PDF 附件形式随信奉上，请妥善保存备查。",
   "mailCardPeriod":"周期",
@@ -1738,8 +1774,8 @@ const I18N={
   "p2d":"每位员工仅限一台已批准设备。杜绝用他人手机代打卡。",
   "p3t":"不可篡改记录",
   "p3d":"仅追加事件（数据库触发器）。记录无法伪造。",
-  "p4t":"人脸 + 活体",
-  "p4d":"带防伪的人脸验证；留存证据媒体。",
+  "p4t":"人脸证据 + 活体挑战",
+  "p4d":"系统随机给出活体动作要求，并把人脸画面与该事件一并保存为证据。自动人脸比对仍在路线图上——见「状态」。",
   "p5t":"真实 GPS + 防模拟",
   "p5d":"真实设备定位，检测虚拟定位。审计而非门禁。",
   "p6t":"决策引擎",
@@ -1749,12 +1785,12 @@ const I18N={
   "nApp":"员工 + 管理",
   "nWeb":"人事门户",
   "nDb":"仅追加",
-  "bTests":"Pest — 207 测试",
+  "bTests":"Pest — 216 测试",
   "bData":"数据区域依合同约定",
   "s10eye":"状态",
   "s10ttl":"今天即可上线。",
   "r1t":"后端 + 防作弊 API",
-  "r1d":"Laravel 12 · 207 测试",
+  "r1d":"Laravel 12 · 216 项 Pest 测试",
   "r2t":"员工端",
   "r2d":"打卡、工资、请假、通知、资料",
   "r3t":"薪资引擎 + PDF 工资单",
@@ -1764,7 +1800,9 @@ const I18N={
   "r5t":"薪资发放 + 发送工资单",
   "r5d":"定稿 → 支付 → Telegram/邮件",
   "r6t":"FCM 推送与人脸 ML",
-  "r6d":"手机推送，完整活体",
+  "r6d":"手机推送，自动人脸比对",
+  "r7t":"离线队列",
+  "r7d":"信号恢复后自动上传",
   "s11ttl":"随时投入现场。",
   "s11lead":"防作弊考勤 + 薪资，端到端。在一个矿点试点，衡量真实节省。",
   "getEye":"立即开始",
@@ -1799,24 +1837,24 @@ const I18N={
   "govR3d":"薪资、税务状态（K/TK）、NPWP、银行账户",
   "govR3w":"贵司人事团队",
   "govR3c":"完全掌控",
-  "gov1t":"四眼审批",
-  "gov1d":"人事准备薪资发放 → 董事/财务审批 → 之后才放行银行转账文件。敏感变更（薪资项目、加班倍率、银行账户）需第二位审批人，且自下一周期生效——绝不追溯。",
+  "gov1t":"公司规则变更需四眼审批",
+  "gov1d":"薪资设置中的敏感公司规则变更——薪资项目、加班倍率、发薪银行账户——需要第二位审批人，且不得是提出变更的人。变更自下一周期生效，绝不追溯。",
   "gov2t":"审计轨迹",
   "gov2d":"每次变更均有记录——谁、何时、旧值 → 新值、原因。任何人都无法删除，包括 Superadmin。可导出供审计师使用。",
-  "gov3t":"发薪前异常检查",
-  "gov3d":"多名员工共用银行账户、无考勤却发薪的员工（“幽灵员工”）、突然加薪、异常加班——在付款前标记给审批人。",
+  "gov3t":"发薪前异常检查——计划中",
+  "gov3d":"尚在计划中，产品中还没有：在付款前向审批人标记多名员工共用银行账户、无考勤却发薪的员工（“幽灵员工”）、突然加薪与异常加班。",
   "gov4t":"资金从不经过 CoalTrack",
   "gov4d":"应用只负责计算薪资并生成转账文件。资金从贵司自有银行账户（如 Mandiri Cash Management）划出，且仅在贵司审批人放行之后。",
   "govFoot":"上线：我们根据贵司问卷一次性设定公司规则并培训人事，之后由贵司自行运行。",
-  "offEye":"离线可用",
-  "offTtl":"没有信号也能打卡。",
-  "offLead":"野外信号微弱。员工仍可离线打卡——应用采集照片、真实 GPS 坐标与卫星时间，在手机上排队，信号恢复后立即同步。",
+  "offEye":"离线采集",
+  "offTtl":"没有信号也能采集打卡。",
+  "offLead":"野外信号微弱。应用会直接在手机上采集照片、真实 GPS 坐标与卫星时间，因此不必手抄再补录。信号恢复后自动上传的本地队列仍在计划中——见「状态」。",
   "off1t":"离线采集",
   "off1d":"照片、GPS 坐标与 GPS 卫星时间被采集并安全存于手机。",
-  "off2t":"自动同步",
-  "off2d":"设备恢复联网即自动上传队列，数据不丢失。",
+  "off2t":"自动同步——计划中",
+  "off2d":"设备恢复联网即自动上传的本地队列列在路线图中，目前产品尚未提供。",
   "off3t":"负责人审核",
-  "off3d":"离线打卡以待审状态送达，由团队负责人批准——以人工审核保证诚实。",
+  "off3d":"打卡以待审状态送达，由团队负责人批准——以人工审核保证诚实。",
   "hierEye":"团队结构",
   "hierTtl":"多个部门，每位负责人管好自己团队。",
   "hierLead":"负责人在办公室实时监控本部门考勤，审批例外；人事与超级管理员可见全部。",
@@ -1873,7 +1911,7 @@ const I18N={
   "cmpAc":"وقت الخادم، غير قابل للعبث",
   "cmpBa":"الحضور بالنيابة",
   "cmpBm":"غير مكشوف",
-  "cmpBc":"وجه + هاتف لكل موظف",
+  "cmpBc":"1 هاتف معتمد لكل موظف + دليل الوجه",
   "cmpCa":"تجميع الرواتب",
   "cmpCm":"أيام يدوية معرّضة للخطأ",
   "cmpCc":"تلقائي من الحضور",
@@ -1927,9 +1965,9 @@ const I18N={
   "badge":"Ksatria Bintang Samudra · حضور منجم الفحم",
   "lead":"حضور مضاد للتلاعب لعمليات مناجم الفحم — فحص الوجه، GPS حقيقي، وقت الخادم. تطبيق Flutter واحد (iOS و Android)، خلفية Laravel، بوابة Vue.",
   "chip1":"منع الحضور بالنيابة",
-  "chip2":"حيوية الوجه",
+  "chip2":"دليل الوجه",
   "chip3":"GPS حقيقي",
-  "chip4":"207+ اختبار",
+  "chip4":"353 اختبار للتطبيق + 216 اختبار للواجهة",
   "s2eye":"تطبيق الموظف",
   "s2ttl":"خفيف وواضح لعمال الميدان.",
   "cHome":"الرئيسية",
@@ -1964,10 +2002,10 @@ const I18N={
   "cPdf":"قسيمة PDF",
   "cApprove":"اعتماد الإجازة",
   "mailEye":"البريد وقسيمة الراتب",
-  "mailTtl":"قسائم الرواتب تصل إلى صندوق الوارد — من نطاق شركتك نفسه.",
-  "mailLead":"يأتي CoalTrack بمسار بريد معاملاتي يرسل من نطاق شركتك الموثّق (SPF وDKIM وDMARC). تصل كل قسيمة راتب كرسالة أنيقة مع ملف PDF الرسمي مرفقًا — دون حاجة إلى تشغيل خادم بريد لديك.",
-  "mail1t":"نطاق شركتك الموثّق",
-  "mail1d":"يخرج البريد باسم شركتك وموقّعًا بـ SPF وDKIM وDMARC — فيصل إلى صندوق الوارد لا إلى الرسائل غير المرغوبة، ولا يستطيع أحد انتحاله.",
+  "mailTtl":"قسائم الرواتب تصل إلى صندوق الوارد، لا إلى الرسائل غير المرغوبة.",
+  "mailLead":"يأتي CoalTrack بمسار بريد معاملاتي يعمل على نطاق إرسال موثّق بالكامل (SPF وDKIM وDMARC). تصل كل قسيمة راتب كرسالة أنيقة مع ملف PDF الرسمي مرفقًا — دون حاجة إلى تشغيل خادم بريد لديك. أما الإرسال من نطاق شركتك نفسه فمتاح عند الطلب.",
+  "mail1t":"نطاق إرسال موثّق بالكامل",
+  "mail1d":"تُرسَل كل قسيمة راتب عبر نطاق إرسال موقّع بـ SPF وDKIM وDMARC — فتصل إلى صندوق الوارد لا إلى الرسائل غير المرغوبة، ولا يستطيع أحد انتحالها. والإرسال من نطاق شركتك نفسه متاح عند الطلب.",
   "mail2t":"رسالة أنيقة مع مرفق PDF",
   "mail2d":"رسالة HTML نظيفة بترويسة شركتك، وملخّص قصير للفترة، وقسيمة PDF الرسمية مرفقة — تُقرأ بوضوح على أي هاتف.",
   "mail3t":"كل إرسال مسجَّل",
@@ -1975,7 +2013,7 @@ const I18N={
   "mail4t":"قسيمة واحدة أو الدورة كاملة",
   "mail4d":"أرسل قسيمة واحدة أو دورة الرواتب بالكامل بإجراء واحد. يدخل الإرسال في طابور ويلتزم بالحد اليومي، فتخرج دورة من 3000 موظف بأمان.",
   "mailCardSubj":"قسيمة راتبك جاهزة",
-  "mailCardFrom":"الرواتب · نطاق شركتك الموثّق",
+  "mailCardFrom":"الرواتب · نطاق إرسال موثّق",
   "mailCardHi":"عزيزي الموظف،",
   "mailCardIntro":"قسيمة راتبك للفترة أدناه مرفقة بصيغة PDF. يُرجى الاحتفاظ بها في سجلاتك.",
   "mailCardPeriod":"الفترة",
@@ -1998,8 +2036,8 @@ const I18N={
   "p2d":"جهاز واحد معتمد لكل موظف. يمنع الحضور بالنيابة عبر هاتف آخر.",
   "p3t":"سجل غير قابل للتعديل",
   "p3d":"أحداث للإضافة فقط (مُشغّل قاعدة البيانات). لا يمكن تزوير السجل.",
-  "p4t":"وجه + حيوية",
-  "p4d":"تحقق من الوجه مع مقاومة الانتحال؛ تُسجّل وسائط الإثبات.",
+  "p4t":"دليل الوجه + تحدي الحيوية",
+  "p4d":"يُطلب تحدٍّ عشوائي لإثبات الحيوية، وتُحفظ لقطات الوجه مع الحدث كدليل. أما مطابقة الوجه الآلية فما زالت ضمن خطة التطوير — انظر «الحالة».",
   "p5t":"GPS حقيقي + مقاومة التزييف",
   "p5d":"موقع الجهاز الحقيقي، كشف الموقع المزيّف. تدقيق لا بوابة.",
   "p6t":"محرك القرار",
@@ -2009,12 +2047,12 @@ const I18N={
   "nApp":"موظف + إدارة",
   "nWeb":"بوابة الموارد البشرية",
   "nDb":"للإضافة فقط",
-  "bTests":"Pest — 207 اختبار",
+  "bTests":"Pest — 216 اختبار",
   "bData":"منطقة البيانات حسب العقد",
   "s10eye":"الحالة",
   "s10ttl":"جاهز اليوم.",
   "r1t":"خلفية + واجهة مضادة للتلاعب",
-  "r1d":"Laravel 12 · 207 اختبار",
+  "r1d":"Laravel 12 · 216 اختبار Pest",
   "r2t":"تطبيق الموظف",
   "r2d":"حضور، راتب، إجازة، إشعارات، ملف",
   "r3t":"محرك الرواتب + قسيمة PDF",
@@ -2024,7 +2062,9 @@ const I18N={
   "r5t":"تشغيل الرواتب + إرسال القسيمة",
   "r5d":"اعتماد → دفع → Telegram/بريد",
   "r6t":"إشعارات FCM وذكاء الوجه",
-  "r6d":"إشعارات الهاتف، حيوية كاملة",
+  "r6d":"إشعارات الهاتف، مطابقة الوجه الآلية",
+  "r7t":"الطابور دون اتصال",
+  "r7d":"رفع تلقائي فور عودة الإشارة",
   "s11ttl":"جاهز للميدان.",
   "s11lead":"حضور مضاد للتلاعب + رواتب، من الطرف إلى الطرف. جرّبه في موقع واحد وقِس التوفير الحقيقي.",
   "getEye":"ابدأ الآن",
@@ -2059,24 +2099,24 @@ const I18N={
   "govR3d":"الراتب، الحالة الضريبية (K/TK)، رقم NPWP، الحساب البنكي",
   "govR3w":"فريق الموارد البشرية لديكم",
   "govR3c":"تحكم كامل",
-  "gov1t":"اعتماد بأربع أعين",
-  "gov1d":"تُعدّ الموارد البشرية دورة الرواتب ← يعتمدها المدير/المالية ← وعندها فقط يُصدَر ملف التحويل البنكي. التغييرات الحساسة (بنود الراتب، مضاعفات الإضافي، الحسابات البنكية) تتطلب معتمِدًا ثانيًا وتسري من الفترة التالية — ولا تُطبَّق بأثر رجعي أبدًا.",
+  "gov1t":"اعتماد بأربع أعين لتغييرات قواعد الشركة",
+  "gov1d":"التغييرات الحساسة في قواعد الشركة داخل «إعدادات الرواتب» — بنود الراتب، مضاعفات العمل الإضافي، الحساب البنكي للرواتب — تتطلب معتمِدًا ثانيًا لا يكون هو مقدّم الطلب. وتسري من الفترة التالية، ولا تُطبَّق بأثر رجعي أبدًا.",
   "gov2t":"سجل التدقيق",
   "gov2d":"كل تغيير مسجّل — مَن، متى، القيمة القديمة ← الجديدة، والسبب. لا يستطيع أحد حذفه، ولا حتى مدير النظام. قابل للتصدير للمدققين.",
-  "gov3t":"فحص الشذوذ قبل يوم الصرف",
-  "gov3d":"حسابات بنكية مكرّرة بين الموظفين، موظفون يتقاضون رواتب دون أي حضور («موظفون وهميون»)، زيادات مفاجئة، وعمل إضافي غير طبيعي — تُعلَّم للمعتمِد قبل صرف أي مبلغ.",
+  "gov3t":"فحص الشذوذ قبل يوم الصرف — مخطط له",
+  "gov3d":"ما زال ضمن الخطة وغير متوفر في المنتج بعد: تعليم الحسابات البنكية المكرّرة بين الموظفين، والموظفين الذين يتقاضون رواتب دون أي حضور («موظفون وهميون»)، والزيادات المفاجئة، والعمل الإضافي غير الطبيعي، للمعتمِد قبل صرف أي مبلغ.",
   "gov4t":"المال لا يمرّ عبر CoalTrack أبدًا",
   "gov4d":"يحسب التطبيق الرواتب ويُعدّ ملف التحويل. تخرج الأموال من حساب شركتكم البنكي (مثل Mandiri Cash Management) فقط بعد أن يُطلقها المعتمِد لديكم.",
   "govFoot":"التهيئة: نضبط قواعد الشركة مرة واحدة من استبيانكم، وندرّب الموارد البشرية، ثم تديرون النظام بأنفسكم.",
-  "offEye":"يعمل دون اتصال",
-  "offTtl":"سجّل الحضور حتى بلا إشارة.",
-  "offLead":"في الميدان تكون الإشارة ضعيفة. يسجّل العامل حضوره دون اتصال — يلتقط التطبيق الصورة وإحداثيات GPS الحقيقية ووقت القمر الصناعي، ويصفّها على الهاتف، ثم يزامنها فور عودة الإشارة.",
+  "offEye":"تسجيل دون اتصال",
+  "offTtl":"سجّل بيانات الحضور حتى بلا إشارة.",
+  "offLead":"في الميدان تكون الإشارة ضعيفة. يلتقط التطبيق الصورة وإحداثيات GPS الحقيقية ووقت القمر الصناعي على الهاتف نفسه، فلا حاجة إلى تدوين شيء وإعادة إدخاله لاحقًا. أما وجود طابور محلي يرفع البيانات تلقائيًا فور عودة الإشارة فما زال ضمن الخطة — انظر «الحالة».",
   "off1t":"التقاط دون اتصال",
   "off1d":"تُلتقط الصورة وإحداثيات GPS ووقت قمر GPS وتُحفظ بأمان على الهاتف.",
-  "off2t":"مزامنة تلقائية",
-  "off2d":"تُرفع قائمة الانتظار تلقائيًا فور عودة الجهاز للاتصال. لا شيء يضيع.",
+  "off2t":"مزامنة تلقائية — مخطط لها",
+  "off2d":"طابور محلي يرفع نفسه فور عودة الجهاز للاتصال مدرج ضمن خطة التطوير، وهو غير متوفر في المنتج بعد.",
   "off3t":"مراجعة الرئيس",
-  "off3d":"يصل الحضور دون اتصال بحالة قيد المراجعة ويعتمده رئيس الفريق — صدق عبر مراجعة بشرية.",
+  "off3d":"يصل الحضور بحالة قيد المراجعة ويعتمده رئيس الفريق — صدق عبر مراجعة بشرية.",
   "hierEye":"هيكل الفريق",
   "hierTtl":"أقسام عديدة، كل رئيس يراقب فريقه.",
   "hierLead":"يراقب الرؤساء من المكتب حضور أقسامهم لحظيًا ويعتمدون الاستثناءات؛ الموارد البشرية والمشرف الأعلى يرون الجميع.",
@@ -2134,7 +2174,7 @@ I18N.th={
  "cmpAc":"เวลาเซิร์ฟเวอร์ แก้ไขไม่ได้",
  "cmpBa":"ลงเวลาแทนกัน",
  "cmpBm":"ตรวจไม่พบ",
- "cmpBc":"ใบหน้า + 1 เครื่องต่อพนักงาน",
+ "cmpBc":"1 เครื่องที่อนุมัติต่อพนักงาน + หลักฐานใบหน้า",
  "cmpCa":"สรุปเงินเดือน",
  "cmpCm":"ทำมือหลายวัน ผิดพลาดง่าย",
  "cmpCc":"อัตโนมัติจากการลงเวลา",
@@ -2188,9 +2228,9 @@ I18N.th={
  "badge":"Ksatria Bintang Samudra · การลงเวลาเหมืองถ่านหิน",
  "lead":"การลงเวลากันทุจริตสำหรับงานเหมืองถ่านหิน — ตรวจใบหน้า GPS จริง เวลาเซิร์ฟเวอร์ แอป Flutter เดียว (iOS & Android) แบ็กเอนด์ Laravel พอร์ทัล Vue",
  "chip1":"กันลงเวลาแทนกัน",
- "chip2":"ตรวจใบหน้ามีชีวิต",
+ "chip2":"หลักฐานใบหน้า",
  "chip3":"GPS จริง",
- "chip4":"207+ เทสต์",
+ "chip4":"353 เทสต์แอป + 216 เทสต์ API",
  "s2eye":"แอปพนักงาน",
  "s2ttl":"เบาและชัดเจนสำหรับคนหน้างาน",
  "cHome":"หน้าแรก",
@@ -2225,10 +2265,10 @@ I18N.th={
  "cPdf":"สลิป PDF",
  "cApprove":"การอนุมัติการลา",
  "mailEye":"อีเมลและสลิปเงินเดือน",
- "mailTtl":"สลิปเงินเดือนถึงกล่องจดหมาย — จากโดเมนของบริษัทคุณเอง",
- "mailLead":"CoalTrack มาพร้อมระบบส่งอีเมลธุรกรรมที่ส่งจากโดเมนซึ่งยืนยันตัวตนแล้วของบริษัทคุณ (SPF, DKIM, DMARC) สลิปเงินเดือนทุกใบมาถึงในรูปจดหมายที่เรียบร้อย พร้อมไฟล์ PDF ทางการแนบมาด้วย — โดยคุณไม่ต้องดูแลเมลเซิร์ฟเวอร์เอง",
- "mail1t":"โดเมนที่ยืนยันตัวตนของคุณเอง",
- "mail1d":"อีเมลออกในนามบริษัทของคุณ ลงลายเซ็นด้วย SPF, DKIM และ DMARC — จึงเข้ากล่องจดหมายแทนที่จะตกไปอยู่ในสแปม และไม่มีใครปลอมแปลงได้",
+ "mailTtl":"สลิปเงินเดือนถึงกล่องจดหมาย ไม่ตกไปอยู่ในสแปม",
+ "mailLead":"CoalTrack มาพร้อมระบบส่งอีเมลธุรกรรมที่ทำงานบนโดเมนผู้ส่งซึ่งยืนยันตัวตนครบถ้วน (SPF, DKIM, DMARC) สลิปเงินเดือนทุกใบมาถึงในรูปจดหมายที่เรียบร้อย พร้อมไฟล์ PDF ทางการแนบมาด้วย — โดยคุณไม่ต้องดูแลเมลเซิร์ฟเวอร์เอง หากต้องการส่งจากโดเมนของบริษัทคุณเอง ทำได้ตามคำขอ",
+ "mail1t":"โดเมนผู้ส่งที่ยืนยันตัวตนครบถ้วน",
+ "mail1d":"สลิปเงินเดือนทุกใบส่งผ่านโดเมนผู้ส่งที่ลงลายเซ็นด้วย SPF, DKIM และ DMARC — จึงเข้ากล่องจดหมายแทนที่จะตกไปอยู่ในสแปม และไม่มีใครปลอมแปลงได้ หากต้องการส่งจากโดเมนของบริษัทคุณเอง ทำได้ตามคำขอ",
  "mail2t":"จดหมายเรียบร้อย พร้อมไฟล์ PDF",
  "mail2d":"จดหมาย HTML ที่สะอาดตา มีหัวจดหมายบริษัท สรุปงวดจ่ายสั้น ๆ และแนบสลิป PDF ทางการ — อ่านง่ายบนมือถือทุกรุ่น",
  "mail3t":"ทุกการส่งถูกบันทึกไว้",
@@ -2236,7 +2276,7 @@ I18N.th={
  "mail4t":"ทีละใบ หรือทั้งรอบจ่าย",
  "mail4d":"ส่งสลิปใบเดียวหรือทั้งรอบการจ่ายเงินเดือนได้ในคราวเดียว ระบบจัดคิวการส่งและเคารพโควตารายวัน พนักงาน 3,000 คนจึงส่งได้อย่างปลอดภัย",
  "mailCardSubj":"สลิปเงินเดือนของคุณพร้อมแล้ว",
- "mailCardFrom":"ฝ่ายเงินเดือน · โดเมนที่ยืนยันแล้วของบริษัทคุณ",
+ "mailCardFrom":"ฝ่ายเงินเดือน · โดเมนผู้ส่งที่ยืนยันแล้ว",
  "mailCardHi":"เรียน พนักงาน",
  "mailCardIntro":"สลิปเงินเดือนสำหรับงวดด้านล่างแนบมาในรูปแบบ PDF กรุณาเก็บไว้เป็นหลักฐาน",
  "mailCardPeriod":"งวด",
@@ -2259,8 +2299,8 @@ I18N.th={
  "p2d":"หนึ่งอุปกรณ์ที่อนุมัติต่อพนักงาน ปิดการลงเวลาแทนกันผ่านมือถือคนอื่น",
  "p3t":"บันทึกที่แก้ไขไม่ได้",
  "p3d":"เหตุการณ์เพิ่มได้อย่างเดียว (ทริกเกอร์ฐานข้อมูล) ประวัติปลอมไม่ได้",
- "p4t":"ใบหน้า + ตรวจมีชีวิต",
- "p4d":"ยืนยันใบหน้าพร้อมกันการปลอม บันทึกสื่อหลักฐานไว้",
+ "p4t":"หลักฐานใบหน้า + ชาเลนจ์ตรวจมีชีวิต",
+ "p4d":"ระบบสุ่มชาเลนจ์ตรวจการมีชีวิตให้ทำ แล้วเก็บภาพใบหน้าไว้กับเหตุการณ์นั้นเป็นหลักฐาน ส่วนการจับคู่ใบหน้าอัตโนมัติยังอยู่ในแผนพัฒนา — ดูหัวข้อสถานะ",
  "p5t":"GPS จริง + กันตำแหน่งปลอม",
  "p5d":"ตำแหน่งจริงของอุปกรณ์ ตรวจจับตำแหน่งปลอม เป็นการตรวจสอบ ไม่ใช่ด่านกั้น",
  "p6t":"เครื่องตัดสิน",
@@ -2270,12 +2310,12 @@ I18N.th={
  "nApp":"พนักงาน + ผู้ดูแล",
  "nWeb":"พอร์ทัลฝ่ายบุคคล",
  "nDb":"เพิ่มได้อย่างเดียว",
- "bTests":"Pest — 207 เทสต์",
+ "bTests":"Pest — 216 เทสต์",
  "bData":"ภูมิภาคข้อมูลตามสัญญา",
  "s10eye":"สถานะ",
  "s10ttl":"พร้อมใช้วันนี้",
  "r1t":"แบ็กเอนด์ + API กันทุจริต",
- "r1d":"Laravel 12 · 207 เทสต์",
+ "r1d":"Laravel 12 · 216 เทสต์ Pest",
  "r2t":"แอปมือถือพนักงาน",
  "r2d":"ลงเวลา เงินเดือน ลา แจ้งเตือน โปรไฟล์",
  "r3t":"เครื่องคำนวณเงินเดือน + สลิป PDF",
@@ -2285,7 +2325,9 @@ I18N.th={
  "r5t":"รอบจ่ายเงินเดือน + ส่งสลิป",
  "r5d":"ปิดยอด → จ่าย → Telegram/Email",
  "r6t":"การแจ้งเตือน FCM & ML ใบหน้า",
- "r6d":"แจ้งเตือนบนมือถือ ตรวจมีชีวิตเต็มรูปแบบ",
+ "r6d":"แจ้งเตือนบนมือถือ จับคู่ใบหน้าอัตโนมัติ",
+ "r7t":"คิวออฟไลน์",
+ "r7d":"อัปโหลดอัตโนมัติเมื่อสัญญาณกลับมา",
  "s11ttl":"พร้อมสำหรับหน้างาน",
  "s11lead":"การลงเวลากันทุจริต + เงินเดือน ครบวงจร นำร่องที่ไซต์เดียว วัดการประหยัดจริง",
  "getEye":"เริ่มต้นใช้งาน",
@@ -2320,24 +2362,24 @@ I18N.th={
  "govR3d":"เงินเดือน สถานะภาษี (K/TK), NPWP, บัญชีธนาคาร",
  "govR3w":"ทีม HR ของคุณ",
  "govR3c":"ควบคุมเต็มที่",
- "gov1t":"อนุมัติแบบสี่ตา",
- "gov1d":"HR เตรียมรอบเงินเดือน → กรรมการ/ฝ่ายการเงินอนุมัติ → จากนั้นจึงปล่อยไฟล์โอนเงินธนาคาร การเปลี่ยนแปลงที่อ่อนไหว (องค์ประกอบค่าจ้าง ตัวคูณล่วงเวลา บัญชีธนาคาร) ต้องมีผู้อนุมัติคนที่สองและมีผลในงวดถัดไป — ไม่ย้อนหลังเด็ดขาด",
+ "gov1t":"สี่ตาสำหรับการแก้กติกาบริษัท",
+ "gov1d":"การแก้กติกาบริษัทที่อ่อนไหวในหน้าตั้งค่าเงินเดือน — องค์ประกอบค่าจ้าง ตัวคูณล่วงเวลา บัญชีธนาคารที่ใช้จ่ายเงินเดือน — ต้องมีผู้อนุมัติคนที่สองซึ่งไม่ใช่ผู้ยื่นเรื่อง และมีผลในงวดถัดไป ไม่ย้อนหลังเด็ดขาด",
  "gov2t":"ร่องรอยการตรวจสอบ",
  "gov2d":"ทุกการเปลี่ยนแปลงถูกบันทึก — ใคร เมื่อไร ค่าเดิม → ค่าใหม่ และเหตุผล ไม่มีใครลบได้ แม้แต่ Superadmin ส่งออกให้ผู้ตรวจสอบบัญชีได้",
- "gov3t":"ตรวจความผิดปกติก่อนวันจ่าย",
- "gov3d":"บัญชีธนาคารซ้ำกันระหว่างพนักงาน พนักงานที่ได้รับเงินโดยไม่มีการลงเวลา (“พนักงานผี”) การขึ้นเงินเดือนกะทันหัน และล่วงเวลาผิดปกติ — ถูกแจ้งไปยังผู้อนุมัติก่อนจ่ายเงิน",
+ "gov3t":"ตรวจความผิดปกติก่อนวันจ่าย — อยู่ในแผน",
+ "gov3d":"ยังอยู่ในแผน ยังไม่มีในผลิตภัณฑ์: การแจ้งผู้อนุมัติก่อนจ่ายเงินเมื่อพบบัญชีธนาคารซ้ำกันระหว่างพนักงาน พนักงานที่ได้รับเงินโดยไม่มีการลงเวลา (“พนักงานผี”) การขึ้นเงินเดือนกะทันหัน และล่วงเวลาผิดปกติ",
  "gov4t":"เงินไม่เคยผ่าน CoalTrack",
  "gov4d":"แอปคำนวณเงินเดือนและเตรียมไฟล์โอนเงิน เงินออกจากบัญชีธนาคารของบริษัทคุณเอง (เช่น Mandiri Cash Management) หลังจากผู้อนุมัติของคุณสั่งปล่อยเท่านั้น",
  "govFoot":"การเริ่มใช้งาน: เราตั้งกฎของบริษัทครั้งเดียวจากแบบสอบถามของคุณ ฝึกอบรม HR แล้วคุณดำเนินการเองต่อได้",
- "offEye":"ใช้งานออฟไลน์ได้",
- "offTtl":"ลงเวลาได้แม้ไม่มีสัญญาณ",
- "offLead":"หน้างานสัญญาณอ่อน พนักงานยังลงเวลาออฟไลน์ได้ — แอปเก็บรูปภาพ พิกัด GPS จริง และเวลาจากดาวเทียม เข้าคิวไว้บนมือถือ แล้วซิงก์ทันทีที่สัญญาณกลับมา",
+ "offEye":"การเก็บข้อมูลออฟไลน์",
+ "offTtl":"เก็บข้อมูลลงเวลาได้แม้ไม่มีสัญญาณ",
+ "offLead":"หน้างานสัญญาณอ่อน แอปเก็บรูปภาพ พิกัด GPS จริง และเวลาจากดาวเทียมไว้บนมือถือโดยตรง จึงไม่ต้องจดแล้วมากรอกย้อนหลัง ส่วนคิวในเครื่องที่อัปโหลดเองทันทีที่สัญญาณกลับมายังอยู่ในแผนพัฒนา — ดูหัวข้อสถานะ",
  "off1t":"เก็บข้อมูลออฟไลน์",
  "off1d":"รูปภาพ พิกัด GPS และเวลาจากดาวเทียม GPS ถูกเก็บและบันทึกอย่างปลอดภัยบนมือถือ",
- "off2t":"ซิงก์อัตโนมัติ",
- "off2d":"คิวอัปโหลดตัวเองทันทีที่อุปกรณ์กลับมาออนไลน์ ไม่มีข้อมูลสูญหาย",
+ "off2t":"ซิงก์อัตโนมัติ — อยู่ในแผน",
+ "off2d":"คิวในเครื่องที่อัปโหลดตัวเองทันทีที่อุปกรณ์กลับมาออนไลน์อยู่ในแผนพัฒนา ยังไม่มีในผลิตภัณฑ์",
  "off3t":"ตรวจสอบโดยหัวหน้า",
- "off3d":"การลงเวลาออฟไลน์จะถูกตั้งสถานะรอตรวจและอนุมัติโดยหัวหน้าทีม — ซื่อตรงด้วยการตรวจโดยคน",
+ "off3d":"การลงเวลาจะถูกตั้งสถานะรอตรวจและอนุมัติโดยหัวหน้าทีม — ซื่อตรงด้วยการตรวจโดยคน",
  "hierEye":"โครงสร้างทีม",
  "hierTtl":"หลายแผนก แต่ละหัวหน้าดูแลทีมของตนเอง",
  "hierLead":"หัวหน้าอยู่ที่สำนักงานและติดตามการลงเวลาของแผนกตนเองแบบเรียลไทม์ อนุมัติเฉพาะกรณียกเว้น ฝ่ายบุคคลและผู้ดูแลสูงสุดเห็นทุกคน",
@@ -2394,7 +2436,7 @@ I18N.fil={
  "cmpAc":"Oras ng server, hindi mapapakialaman",
  "cmpBa":"Buddy-punching",
  "cmpBm":"Hindi natutukoy",
- "cmpBc":"Mukha + 1 telepono/empleyado",
+ "cmpBc":"1 aprubadong telepono kada empleyado + ebidensyang mukha",
  "cmpCa":"Recap ng payroll",
  "cmpCm":"Ilang araw na manu-mano, madaling magkamali",
  "cmpCc":"Awtomatiko mula sa attendance",
@@ -2448,9 +2490,9 @@ I18N.fil={
  "badge":"Ksatria Bintang Samudra · Attendance sa Minahan ng Karbon",
  "lead":"Anti-fraud na attendance para sa operasyon ng minahan ng karbon — face check, tunay na GPS, oras ng server. Isang Flutter app (iOS at Android), Laravel backend, Vue portal.",
  "chip1":"Anti buddy-punching",
- "chip2":"Face liveness",
+ "chip2":"Ebidensyang mukha",
  "chip3":"Tunay na GPS",
- "chip4":"207+ na test",
+ "chip4":"353 test sa app + 216 test sa API",
  "s2eye":"App ng empleyado",
  "s2ttl":"Magaan at malinaw para sa field workers.",
  "cHome":"Home",
@@ -2485,10 +2527,10 @@ I18N.fil={
  "cPdf":"PDF payslip",
  "cApprove":"Pag-apruba ng leave",
  "mailEye":"Email at payslip",
- "mailTtl":"Dumidiretso sa inbox ang payslip — mula sa sariling domain ninyo.",
- "mailLead":"May kasamang transactional email pipeline ang CoalTrack na nagpapadala mula sa authenticated na domain ng inyong kompanya (SPF, DKIM, DMARC). Dumarating ang bawat payslip bilang malinis na liham na may nakalakip na opisyal na PDF — walang mail server na kailangan ninyong patakbuhin.",
- "mail1t":"Sariling authenticated na domain",
- "mail1d":"Lumalabas ang email sa pangalan ng inyong kompanya, nilagdaan ng SPF, DKIM at DMARC — kaya napupunta ito sa inbox, hindi sa spam, at hindi ito mapepeke ninuman.",
+ "mailTtl":"Dumidiretso sa inbox ang payslip, hindi sa spam.",
+ "mailLead":"May kasamang transactional email pipeline ang CoalTrack na tumatakbo sa isang ganap na authenticated na sending domain (SPF, DKIM, DMARC). Dumarating ang bawat payslip bilang malinis na liham na may nakalakip na opisyal na PDF — walang mail server na kailangan ninyong patakbuhin. Available kapag hiniling ang pagpapadala mula sa sariling domain ng inyong kompanya.",
+ "mail1t":"Ganap na authenticated na sending domain",
+ "mail1d":"Ipinapadala ang bawat payslip sa pamamagitan ng sending domain na nilagdaan ng SPF, DKIM at DMARC — kaya napupunta ito sa inbox, hindi sa spam, at hindi ito mapepeke ninuman. Available kapag hiniling ang pagpapadala mula sa sariling domain ng inyong kompanya.",
  "mail2t":"Isang liham, may kalakip na PDF",
  "mail2d":"Malinis na HTML na liham na may letterhead ninyo, maikling buod ng panahon ng sahod, at nakalakip na opisyal na PDF payslip — madaling basahin sa kahit anong telepono.",
  "mail3t":"Naka-log ang bawat padala",
@@ -2496,7 +2538,7 @@ I18N.fil={
  "mail4t":"Isang slip, o buong payroll run",
  "mail4d":"Magpadala ng isang payslip lang o ng buong payroll run sa isang pindot. Naka-queue ang padala at sumusunod sa pang-araw-araw na limitasyon, kaya ligtas na naipapadala ang 3,000 empleyado.",
  "mailCardSubj":"Handa na ang inyong payslip",
- "mailCardFrom":"Payroll · verified na domain ng inyong kompanya",
+ "mailCardFrom":"Payroll · authenticated na sending domain",
  "mailCardHi":"Mahal naming empleyado,",
  "mailCardIntro":"Nakalakip bilang PDF ang payslip ninyo para sa panahong nasa ibaba. Itago po ito para sa inyong talaan.",
  "mailCardPeriod":"Panahon",
@@ -2519,8 +2561,8 @@ I18N.fil={
  "p2d":"Isang aprubadong device kada empleyado. Isinasara ang buddy-punching gamit ang telepono ng iba.",
  "p3t":"Hindi mababagong log",
  "p3d":"Append-only na mga event (DB trigger). Hindi mapepeke ang kasaysayan.",
- "p4t":"Mukha + liveness",
- "p4d":"Beripikasyon ng mukha na may anti-spoofing; nire-record ang media na ebidensya.",
+ "p4t":"Ebidensyang mukha + liveness challenge",
+ "p4d":"Random na liveness challenge ang ipinapagawa, at itinatago ang mga frame ng mukha kasama ng event bilang ebidensya. Nasa roadmap pa ang awtomatikong face matching — tingnan ang Status.",
  "p5t":"Tunay na GPS + anti-mock",
  "p5d":"Tunay na lokasyon ng device, pagtukoy ng mock. Audit, hindi gate.",
  "p6t":"Decision engine",
@@ -2530,12 +2572,12 @@ I18N.fil={
  "nApp":"empleyado + admin",
  "nWeb":"HR portal",
  "nDb":"append-only",
- "bTests":"Pest — 207 na test",
+ "bTests":"Pest — 216 na test",
  "bData":"Rehiyon ng data ayon sa kontrata",
  "s10eye":"Status",
  "s10ttl":"Live na ngayon.",
  "r1t":"Backend + anti-fraud API",
- "r1d":"Laravel 12 · 207 na test",
+ "r1d":"Laravel 12 · 216 Pest test",
  "r2t":"Mobile ng empleyado",
  "r2d":"Attend, Sahod, Leave, Notipikasyon, Profile",
  "r3t":"Payroll engine + PDF payslip",
@@ -2545,7 +2587,9 @@ I18N.fil={
  "r5t":"Payroll run + padala ng slip",
  "r5d":"finalize → bayad → Telegram/Email",
  "r6t":"FCM push at face ML",
- "r6d":"push sa telepono, buong liveness",
+ "r6d":"push sa telepono, awtomatikong face matching",
+ "r7t":"Offline na pila",
+ "r7d":"awtomatikong upload pagbalik ng signal",
  "s11ttl":"Handa para sa field.",
  "s11lead":"Anti-fraud na attendance + payroll, end-to-end. Mag-pilot sa isang site, sukatin ang tunay na tipid.",
  "getEye":"Magsimula na",
@@ -2580,24 +2624,24 @@ I18N.fil={
  "govR3d":"Sahod, tax status (K/TK), NPWP, bank account",
  "govR3w":"Inyong HR team",
  "govR3c":"Buong kontrol",
- "gov1t":"Four-eyes na pag-apruba",
- "gov1d":"Inihahanda ng HR ang payroll run → inaaprubahan ng Director/Finance → saka lamang inilalabas ang bank transfer file. Ang mga sensitibong pagbabago (pay component, overtime multiplier, bank account) ay nangangailangan ng pangalawang approver at magkakabisa sa susunod na period — hindi kailanman retroactive.",
+ "gov1t":"Four-eyes sa pagbabago ng patakaran ng kompanya",
+ "gov1d":"Ang sensitibong pagbabago sa patakaran ng kompanya sa Payroll Settings — pay component, overtime multiplier, bank account na pambayad ng sahod — ay nangangailangan ng pangalawang approver na hindi maaaring ang mismong humiling. Magkakabisa ito sa susunod na period, hindi kailanman retroactive.",
  "gov2t":"Audit trail",
  "gov2d":"Bawat pagbabago ay naitatala — sino, kailan, luma → bago, at dahilan. Walang makakapagbura nito, kahit ang Superadmin. Maaaring i-export para sa mga auditor.",
- "gov3t":"Pagsusuri ng anomalya bago ang sahod",
- "gov3d":"Magkaparehong bank account sa iba't ibang empleyado, empleyadong binabayaran nang walang attendance (“ghost employee”), biglaang pagtaas ng sahod, at abnormal na overtime — minamarkahan para sa approver bago bayaran.",
+ "gov3t":"Anomaly check bago mag-pay day — nakaplano",
+ "gov3d":"Nakaplano pa lamang, wala pa sa produkto: ang pag-flag ng magkaparehong bank account sa iba't ibang empleyado, empleyadong binabayaran nang walang attendance (“ghost employee”), biglaang pagtaas ng sahod, at abnormal na overtime para sa approver bago may mabayaran.",
  "gov4t":"Hindi dumadaan sa CoalTrack ang pera",
  "gov4d":"Kinakalkula ng app ang payroll at inihahanda ang transfer file. Lumalabas ang pondo mula sa sariling bank account ng kumpanya (hal. Mandiri Cash Management) pagkatapos lamang itong ilabas ng inyong sariling approver.",
  "govFoot":"Onboarding: itinatakda namin nang isang beses ang mga panuntunan ng kumpanya mula sa inyong questionnaire, sinasanay ang HR, at kayo na ang magpapatakbo.",
- "offEye":"Gumagana offline",
- "offTtl":"Mag-attend kahit walang signal.",
- "offLead":"Sa field, manipis ang signal. Nakakapag-time-in pa rin offline ang mga manggagawa — kinukuha ng app ang larawan, tunay na GPS coordinate, at oras ng satellite, pinipila sa telepono, tapos nagsi-sync sa sandaling bumalik ang signal.",
+ "offEye":"Pagkuha offline",
+ "offTtl":"Kunin ang attendance kahit walang signal.",
+ "offLead":"Sa field, manipis ang signal. Kinukuha ng app ang larawan, tunay na GPS coordinate, at oras ng satellite mismo sa telepono, kaya walang kailangang isulat at i-type muli. Nakaplano pa lamang ang lokal na pila na awtomatikong nag-a-upload pagbalik ng signal — tingnan ang Status.",
  "off1t":"Kunin offline",
  "off1d":"Larawan, GPS coordinate, at oras ng GPS-satellite ay kinukuha at ligtas na iniimbak sa telepono.",
- "off2t":"Auto-sync",
- "off2d":"Awtomatikong nag-a-upload ang pila sa sandaling bumalik online ang device. Walang mawawala.",
+ "off2t":"Auto-sync — nakaplano",
+ "off2d":"Nasa roadmap ang lokal na pila na kusang nag-a-upload sa sandaling bumalik online ang device. Wala pa ito sa produkto.",
  "off3t":"Sinusuri ng pinuno",
- "off3d":"Ang offline na check-in ay dumarating na naka-flag at inaaprubahan ng pinuno ng team — tapat sa pamamagitan ng pagsusuri ng tao.",
+ "off3d":"Dumarating na naka-flag ang mga check-in at inaaprubahan ng pinuno ng team — tapat sa pamamagitan ng pagsusuri ng tao.",
  "hierEye":"Istruktura ng team",
  "hierTtl":"Maraming dibisyon, bawat pinuno binabantayan ang sariling team.",
  "hierLead":"Nasa opisina ang mga pinuno at binabantayan ang attendance ng sariling dibisyon real-time. Inaaprubahan nila ang mga eksepsiyon; nakikita ng HR at super-admin ang lahat.",
@@ -2650,7 +2694,8 @@ function setLang(code){
   });
   const slang=['en','id','ms','zh','ar','th','fil'].includes(code)?code:'en';
   document.querySelectorAll('img[data-shot]').forEach(img=>{
-    img.src='img/'+img.getAttribute('data-shot')+'.'+slang+'.png';
+    const next='img/'+img.getAttribute('data-shot')+'.'+slang+'.png';
+    if(img.getAttribute('src')!==next) img.src=next;
   });
   const root=document.documentElement;
   root.lang=code;
@@ -2705,7 +2750,7 @@ function setLang(code){
   function slang(){var c=lang();return ["en","id","ms","zh","ar","th","fil"].indexOf(c)>=0?c:"en";}
   function tr(k){var d=window.__ctI18N&&window.__ctI18N[lang()];return (d&&d[k])||k;}
   function show(i){var sc=seq[i];img.style.opacity=0;
-    setTimeout(function(){img.src="img/"+sc[0]+"."+slang()+".png";cap.textContent=tr(sc[1]);img.style.opacity=1;},260);
+    setTimeout(function(){var nx="img/"+sc[0]+"."+slang()+".png";if(img.getAttribute("src")!==nx)img.src=nx;cap.textContent=tr(sc[1]);img.style.opacity=1;},260);
     for(var j=0;j<dots.length;j++)dots[j].className=(j===i?"on":"");}
   show(0);
   setInterval(function(){idx=(idx+1)%seq.length;show(idx);},2400);

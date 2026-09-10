@@ -302,11 +302,11 @@ details p,details li{font-size:14px}
 
   <h3>Absensi</h3>
   <details><summary>Bagaimana absen saat tidak ada sinyal (offline)?</summary><div>
-    <p>Absen tetap bisa dilakukan tanpa sinyal. Aplikasi mengambil foto wajah, koordinat GPS, dan <strong>waktu satelit GPS</strong>, lalu menyimpannya di HP dengan status <strong>“Menunggu sinkronisasi”</strong>.</p>
+    <p>Perekaman tetap bisa dilakukan tanpa sinyal. Aplikasi mengambil foto wajah, koordinat GPS, dan <strong>waktu satelit GPS</strong>, lalu menyimpannya di HP. <strong>Pengunggahan otomatis dari antrean lokal masih dalam rencana</strong> — untuk saat ini absen dikirim ketika Anda membuka aplikasi dalam keadaan ada sinyal.</p>
     <ul>
-      <li>Saat sinyal kembali, <strong>buka aplikasi</strong> — data akan tersinkron otomatis dan keputusan server akan muncul di Riwayat.</li>
-      <li>Jangan menghapus aplikasi atau membersihkan data aplikasi sebelum antrean tersinkron.</li>
-      <li>Perusahaan Anda dapat menetapkan batas waktu penerimaan absen offline; sinkronkan sesegera mungkin.</li>
+      <li>Saat sinyal kembali, <strong>buka aplikasi</strong> dan kirim absen tersebut — keputusan server akan muncul di Riwayat.</li>
+      <li>Jangan menghapus aplikasi atau membersihkan data aplikasi sebelum absen terkirim.</li>
+      <li>Perusahaan Anda dapat menetapkan batas waktu penerimaan absen offline; kirimkan sesegera mungkin.</li>
       <li>Pastikan GPS aktif — waktu satelit memerlukan sinyal GPS meskipun tanpa jaringan seluler.</li>
     </ul>
   </div></details>
@@ -318,12 +318,13 @@ details p,details li{font-size:14px}
       <li>Kejadian yang ditandai akan ditinjau HR; hubungi HR bila Anda yakin berada di area kerja.</li>
     </ul>
   </div></details>
-  <details><summary>Wajah tidak terverifikasi.</summary><div>
+  <details><summary>Tantangan liveness gagal / foto wajah tidak terekam.</summary><div>
     <ul>
       <li>Hadapkan wajah ke kamera dengan pencahayaan cukup; hindari cahaya dari belakang.</li>
       <li>Lepas masker, kacamata hitam, dan pastikan pelindung helm tidak menutupi wajah.</li>
       <li>Pegang HP stabil, hanya satu wajah dalam bingkai, dan ikuti instruksi liveness (mis. kedip).</li>
-      <li>Bila terus gagal, HR dapat mendaftarkan ulang foto referensi wajah Anda.</li>
+      <li>Foto wajah disimpan sebagai bukti bersama kejadian absen; belum ada pencocokan wajah otomatis, sehingga setiap kejadian ditinjau manusia.</li>
+      <li>Bila terus gagal, ulangi di tempat dengan cahaya lebih baik lalu hubungi HR — kejadian yang ditandai tetap dapat ditinjau HR.</li>
     </ul>
   </div></details>
   <details><summary>Absen saya ditolak atau ditandai. Apa yang harus dilakukan?</summary><div>
@@ -334,7 +335,7 @@ details p,details li{font-size:14px}
   <details><summary>Slip gaji dikirim lewat email — kapan dan dari mana?</summary><div>
     <ul>
       <li>Slip dikirim otomatis setelah HR <strong>memfinalisasi</strong> penggajian periode tersebut, ke alamat email yang terdaftar di profil Anda.</li>
-      <li>Pengirimnya adalah <strong>domain terautentikasi milik perusahaan Anda</strong> (SPF, DKIM, DMARC) — bukan alamat pribadi. Tanyakan alamat pengirim resminya ke HR bila ragu.</li>
+      <li>Pengirimnya adalah <strong>domain pengirim terautentikasi penuh</strong> (SPF, DKIM, DMARC) — bukan alamat pribadi. Pengiriman dari domain perusahaan Anda sendiri tersedia atas permintaan. Tanyakan alamat pengirim resminya ke HR bila ragu.</li>
       <li>Periksa folder <strong>Spam/Promosi</strong> dan tandai pengirim sebagai aman.</li>
       <li>Pastikan email di <strong>Profil</strong> sudah benar; ubah bila perlu dan beri tahu HR.</li>
       <li>Slip juga selalu tersedia di tab <strong>Gaji → Slip → PDF</strong>; Anda dapat mengunduh atau membagikannya. Pengiriman via Telegram tersedia bila diaktifkan perusahaan Anda.</li>
@@ -484,11 +485,11 @@ details p,details li{font-size:14px}
 
   <h3>Attendance</h3>
   <details><summary>How do I check in with no signal (offline)?</summary><div>
-    <p>You can still check in without signal. The app captures your face photo, GPS coordinates, and <strong>GPS satellite time</strong>, then stores them on the phone with the status <strong>“Waiting to sync”</strong>.</p>
+    <p>You can still capture a check-in without signal. The app records your face photo, GPS coordinates, and <strong>GPS satellite time</strong>, and stores them on the phone. <strong>Automatic upload from a local queue is planned</strong> — for now the check-in is submitted when you open the app with a signal.</p>
     <ul>
-      <li>When signal returns, <strong>open the app</strong> — the queue syncs automatically and the server's decision appears in History.</li>
-      <li>Do not uninstall the app or clear its data before the queue has synced.</li>
-      <li>Your company may set an acceptance window for offline events; sync as soon as you can.</li>
+      <li>When signal returns, <strong>open the app</strong> and submit the check-in — the server's decision then appears in History.</li>
+      <li>Do not uninstall the app or clear its data before the check-in has been submitted.</li>
+      <li>Your company may set an acceptance window for offline events; submit as soon as you can.</li>
       <li>Keep GPS on — satellite time needs a GPS fix even without a mobile network.</li>
     </ul>
   </div></details>
@@ -500,12 +501,13 @@ details p,details li{font-size:14px}
       <li>Flagged events are reviewed by HR; contact HR if you are sure you were inside the work area.</li>
     </ul>
   </div></details>
-  <details><summary>My face could not be verified.</summary><div>
+  <details><summary>The liveness challenge failed / my face photo was not captured.</summary><div>
     <ul>
       <li>Face the camera in good light; avoid strong light behind you.</li>
       <li>Remove masks and sunglasses, and make sure a helmet visor is not covering your face.</li>
       <li>Hold the phone steady, keep a single face in the frame, and follow the liveness prompts (e.g. blink).</li>
-      <li>If it keeps failing, HR can re-enrol your reference face photo.</li>
+      <li>The face photo is stored with the event as evidence; there is no automated face matching yet, so every event is reviewed by a person.</li>
+      <li>If it keeps failing, retry in better light and contact HR — a flagged event can still be reviewed by HR.</li>
     </ul>
   </div></details>
   <details><summary>My check-in was rejected or flagged. What now?</summary><div>
@@ -516,7 +518,7 @@ details p,details li{font-size:14px}
   <details><summary>Payslips by email — when and from where?</summary><div>
     <ul>
       <li>Payslips are sent automatically once HR <strong>finalises</strong> payroll for the period, to the email address on your profile.</li>
-      <li>They are sent from <strong>your company's own authenticated domain</strong> (SPF, DKIM, DMARC) — never a personal address. Ask HR for the official sender address if you are unsure.</li>
+      <li>They are sent from a <strong>fully authenticated sending domain</strong> (SPF, DKIM, DMARC) — never a personal address. Sending from your company's own domain is available on request. Ask HR for the official sender address if you are unsure.</li>
       <li>Check your <strong>Spam/Promotions</strong> folder and mark the sender as safe.</li>
       <li>Make sure the email on your <strong>Profile</strong> is correct; update it if needed and tell HR.</li>
       <li>Payslips are also always available under <strong>Pay → Payslip → PDF</strong>; you can download or share them. Telegram delivery is available if your company enables it.</li>
