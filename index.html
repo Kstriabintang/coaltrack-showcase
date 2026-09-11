@@ -333,12 +333,15 @@ html[dir="rtl"] .farrow,html[dir="rtl"] .arrow{display:inline-block;transform:sc
    the other card slides in this deck. */
 #email{padding-block:clamp(30px,4.2vh,52px) clamp(24px,3.4vh,42px)}
 @media(min-width:941px){
-  #email{max-block-size:100svh}
-  #email>.wrap{max-block-size:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+  /* Tanpa penggulir dalam: `overscroll-behavior:contain` memerangkap roda
+     mouse sehingga slide terasa macet. Slide ini tumbuh seperti slide lain
+     dan ikut gulir halaman. */
+  #email{max-block-size:none}
+  #email>.wrap{max-block-size:none;overflow:visible}
 }
 #email h2{margin:9px 0 6px}
 #email .lead{max-width:78ch}
-#email .mailgrid{margin-top:clamp(12px,2vh,22px);gap:clamp(18px,2.6vw,36px)}
+#email .mailgrid{margin-top:clamp(10px,1.6vh,18px);gap:clamp(16px,2.2vw,30px)}
 #email .mailcard{max-width:404px}
 #email .mailhead{padding:12px 15px}
 #email .mailbody{padding:13px 15px 15px}
@@ -348,7 +351,7 @@ html[dir="rtl"] .farrow,html[dir="rtl"] .arrow{display:inline-block;transform:sc
 #email .mattach{margin-top:11px;padding:9px 12px}
 #email .mfoot{margin-top:8px}
 #email .mfeat{gap:8px}
-#email .mrow{padding:10px 14px}
+#email .mrow{padding:9px 13px}
 #email .mchans{margin-top:9px}
 #email .note{margin-top:10px}
 @media(max-width:940px){#email .mailcard{max-width:380px}}
