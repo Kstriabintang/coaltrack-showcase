@@ -261,10 +261,10 @@ details p,details li{font-size:14px}
   <ul>
     <li><strong>CoalTrack</strong> adalah aplikasi absensi dan penggajian yang disediakan oleh <strong>Pemberi Kerja</strong> Anda kepada karyawannya. Anda menggunakan aplikasi ini karena perusahaan tempat Anda bekerja berlangganan CoalTrack.</li>
     <li>Pemberi Kerja Anda adalah <strong>Pengendali Data Pribadi</strong>. <strong>Ksatria Bintang Samudra</strong> (pengembang CoalTrack) adalah <strong>Prosesor Data Pribadi</strong> yang memproses data hanya atas instruksi Pemberi Kerja.</li>
-    <li>Data yang diproses: identitas dan kepegawaian, kejadian absensi, koordinat GPS <em>saat absen</em>, foto/video wajah singkat untuk verifikasi, pengenal perangkat, data penggajian, dan diagnostik aplikasi.</li>
+    <li>Data yang diproses: identitas dan kepegawaian, kejadian absensi, koordinat GPS <em>saat absen</em>, pengenal perangkat, data penggajian, dan diagnostik aplikasi. Tidak ada data wajah/biometrik yang dikumpulkan.</li>
     <li>Kami <strong>tidak menjual</strong> data, <strong>tidak menayangkan iklan</strong>, dan tidak membagikan data kepada pihak lain selain Pemberi Kerja dan sub-prosesor yang terikat kontrak.</li>
     <li>Lokasi hanya diambil pada saat absen masuk/pulang — <strong>tidak ada pelacakan di latar belakang</strong>.</li>
-    <li>Foto/video wajah absensi disimpan <strong>maksimal 90 hari</strong> (dapat dikonfigurasi lebih pendek oleh Pemberi Kerja), kecuali kejadian ditandai untuk peninjauan.</li>
+    <li>CoalTrack tidak mengambil, mengirim, atau menyimpan foto, video, atau data wajah apa pun untuk absensi.</li>
     <li>Anda dapat meminta akses, koreksi, dan penghapusan data — lihat bagian <a href="#hapus-akun">Hapus Akun &amp; Data</a>.</li>
   </ul>
 </section>
@@ -289,7 +289,7 @@ details p,details li{font-size:14px}
       <tr><td>Akun &amp; keamanan</td><td>Nama pengguna, kata sandi dalam bentuk <em>hash</em> (kami tidak menyimpan kata sandi asli), token sesi, catatan masuk (waktu, alamat IP, perangkat), pengaturan bahasa dan tema.</td><td>Dibuat saat akun dibuat dan saat Anda menggunakan aplikasi.</td></tr>
       <tr><td>Kejadian absensi</td><td>Jenis (masuk/pulang), <strong>stempel waktu server</strong>, stempel waktu perangkat dan waktu satelit GPS (untuk absen offline), hasil keputusan (diterima/ditolak/ditandai) beserta alasannya, sesi kerja dan jam kerja terverifikasi, lembur, shift, cuti dan izin.</td><td>Dihasilkan saat Anda melakukan absen; keputusan dibuat oleh server.</td></tr>
       <tr><td>Lokasi</td><td>Koordinat GPS (lintang/bujur), akurasi, ketinggian, kecepatan, penyedia lokasi, dan indikator lokasi tiruan (<em>mock location</em>) dari sistem operasi — <strong>hanya pada saat Anda menekan tombol absen masuk/pulang</strong>.</td><td>Sensor lokasi perangkat, dengan izin Anda.</td></tr>
-      <tr><td>Wajah &amp; liveness (data biometrik)</td><td>Foto wajah dan/atau video singkat (beberapa detik) yang diambil saat absen untuk verifikasi identitas dan deteksi keaslian (<em>liveness</em>), skor kecocokan, serta foto referensi wajah yang didaftarkan HR. Ini termasuk <strong>Data Pribadi yang bersifat spesifik</strong> menurut UU PDP.</td><td>Kamera perangkat, dengan izin dan persetujuan Anda.</td></tr>
+      <tr><td>Integritas absensi (non-biometrik)</td><td>Sinyal non-biometrik untuk menilai keabsahan absen: koordinat &amp; akurasi GPS, indikasi lokasi tiruan, ikatan perangkat, dan cap waktu server tepercaya. <strong>Tidak ada foto, video, atau data wajah.</strong></td><td>Dihitung di perangkat &amp; server saat Anda menekan tombol absen.</td></tr>
       <tr><td>Perangkat</td><td>Merek/model, sistem operasi dan versinya, pengenal instalasi/perangkat (<em>device ID</em>), versi aplikasi, indikasi <em>root/jailbreak</em> dan pengaturan lokasi tiruan, token notifikasi push.</td><td>Dikumpulkan aplikasi untuk mengikat 1 perangkat per karyawan.</td></tr>
       <tr><td>Penggajian &amp; keuangan</td><td>Komponen gaji (gaji pokok, tunjangan, potongan), status PTKP/perpajakan (PPh 21), NPWP, nomor kepesertaan BPJS Kesehatan/Ketenagakerjaan, nama bank dan nomor rekening, slip gaji, riwayat pembayaran. Data keuangan pribadi termasuk <strong>Data Pribadi yang bersifat spesifik</strong>.</td><td>Dimasukkan oleh HR/keuangan Pemberi Kerja; dihitung oleh mesin penggajian.</td></tr>
       <tr><td>Diagnostik</td><td>Laporan kesalahan (<em>crash</em>), waktu respons, versi aplikasi, jenis jaringan, dan log teknis — tanpa isi pesan pribadi sedapat mungkin.</td><td>Dihasilkan otomatis oleh aplikasi dan server.</td></tr>
@@ -297,7 +297,7 @@ details p,details li{font-size:14px}
   </table></div>
   <p><strong>Kami tidak</strong> menggunakan SDK iklan, tidak melakukan pelacakan lintas aplikasi, dan tidak menggunakan layanan analitik pihak ketiga yang memprofilkan pengguna.</p>
   <div class="callout"><span class="ttl">Tentang kunci biometrik perangkat (Face ID / Touch ID / sidik jari)</span>
-    <p>Fitur membuka aplikasi dengan Face ID, Touch ID, sidik jari, atau face-unlock diproses <strong>sepenuhnya di perangkat Anda oleh sistem operasi</strong>. CoalTrack hanya menerima hasil “berhasil/gagal” dan <strong>tidak pernah menerima, menyimpan, atau mengirim</strong> data sidik jari atau geometri wajah dari fitur ini. Fitur ini opsional dan berbeda dari pengambilan foto wajah saat absen.</p>
+    <p>Fitur membuka aplikasi dengan Face ID, Touch ID, sidik jari, atau face-unlock diproses <strong>sepenuhnya di perangkat Anda oleh sistem operasi</strong>. CoalTrack hanya menerima hasil “berhasil/gagal” dan <strong>tidak pernah menerima, menyimpan, atau mengirim</strong> data sidik jari atau geometri wajah dari fitur ini. Fitur ini opsional. Absensi CoalTrack tidak menggunakan foto atau data wajah sama sekali.</p>
   </div>
 </section>
 
@@ -306,7 +306,7 @@ details p,details li{font-size:14px}
   <ul>
     <li><strong>Integritas absensi</strong> — mencatat kehadiran secara akurat menggunakan waktu server dan catatan yang tidak dapat diubah (<em>append-only</em>).</li>
     <li><strong>Pencegahan dan deteksi kecurangan</strong> — titip absen (<em>buddy punching</em>), lokasi palsu, manipulasi jam perangkat, penggunaan perangkat yang tidak terdaftar, dan pengulangan kejadian lama.</li>
-    <li><strong>Verifikasi identitas</strong> — pencocokan wajah dan deteksi keaslian saat absen.</li>
+    <li><strong>Integritas absensi</strong> — GPS asli, deteksi lokasi tiruan, ikatan perangkat, dan cap waktu server tepercaya saat absen.</li>
     <li><strong>Penggajian</strong> — menghitung jam kerja, lembur, BPJS, dan PPh 21 (metode TER), menerbitkan slip gaji, dan mengirimkannya melalui email atau saluran lain yang diaktifkan Pemberi Kerja.</li>
     <li><strong>Administrasi HR</strong> — cuti dan izin, jadwal shift, direktori karyawan, dan pelaporan kepada manajemen Pemberi Kerja.</li>
     <li><strong>Keamanan akun dan Layanan</strong> — autentikasi, ikatan perangkat, pencatatan audit, pencegahan penyalahgunaan.</li>
@@ -323,7 +323,7 @@ details p,details li{font-size:14px}
     <li><strong>Pelaksanaan perjanjian kerja / hubungan kerja</strong> — data identitas, kepegawaian, absensi, jam kerja, dan penggajian diperlukan untuk memenuhi perjanjian kerja antara Anda dan Pemberi Kerja.</li>
     <li><strong>Pemenuhan kewajiban hukum</strong> — penghitungan dan pelaporan PPh 21, iuran BPJS, serta penyimpanan catatan kepegawaian dan pembukuan sesuai peraturan.</li>
     <li><strong>Kepentingan yang sah</strong> Pemberi Kerja — pencegahan kecurangan absensi, keamanan sistem, dan perlindungan aset perusahaan, dengan tetap memperhatikan hak Anda.</li>
-    <li><strong>Persetujuan eksplisit</strong> — untuk <strong>data biometrik</strong> (foto/video wajah dan foto referensi), yang merupakan Data Pribadi yang bersifat spesifik (Pasal 4 ayat (2) UU PDP). Persetujuan diminta saat pendaftaran wajah dan dapat ditarik kapan saja melalui HR Pemberi Kerja atau email kami. Penarikan persetujuan tidak memengaruhi keabsahan pemrosesan sebelumnya; Pemberi Kerja menentukan metode absensi alternatif sesuai kebijakan internalnya.</li>
+    <li><strong>Persetujuan eksplisit</strong> — bila diperlukan menurut hukum yang berlaku, dan dapat ditarik kapan saja melalui HR Pemberi Kerja atau email kami. Penarikan persetujuan tidak memengaruhi keabsahan pemrosesan sebelumnya; Pemberi Kerja menentukan metode absensi alternatif sesuai kebijakan internalnya.</li>
   </ul>
 </section>
 
@@ -335,8 +335,8 @@ details p,details li{font-size:14px}
     <tbody>
       <tr><td>Akun, identitas &amp; kontak</td><td>Selama hubungan kerja, lalu dihapus/dianonimkan maks. 30 hari setelah akun dihapus</td><td>Kecuali sebagian data wajib disimpan lebih lama berdasarkan hukum (lihat baris absensi &amp; penggajian).</td></tr>
       <tr><td>Kejadian absensi &amp; sesi kerja</td><td>Sesuai kebijakan Pemberi Kerja dan peraturan ketenagakerjaan/perpajakan</td><td>Dokumen pembukuan dan catatan yang terkait perpajakan umumnya wajib disimpan <strong>10 tahun</strong> (Pasal 28 ayat (11) UU KUP). Koordinat lokasi melekat pada kejadian absensi.</td></tr>
-      <tr><td>Foto/video wajah absensi</td><td><strong>Maks. 90 hari</strong> sejak diambil, lalu dihapus otomatis</td><td>Pemberi Kerja dapat mengonfigurasi batas yang lebih pendek. Kejadian yang <strong>ditandai untuk peninjauan</strong> (sengketa, dugaan kecurangan, audit) disimpan sampai peninjauan selesai, lalu dihapus.</td></tr>
-      <tr><td>Foto referensi wajah</td><td>Selama hubungan kerja</td><td>Dihapus saat akun dihapus atau persetujuan ditarik.</td></tr>
+      
+      
       <tr><td>Pengenal perangkat &amp; token push</td><td>Selama perangkat terikat + 30 hari setelah dilepas</td><td>Diperlukan untuk ikatan 1 perangkat per karyawan.</td></tr>
       <tr><td>Data penggajian &amp; slip gaji</td><td>Sesuai peraturan perpajakan &amp; ketenagakerjaan (umumnya 10 tahun)</td><td>Disimpan oleh/atas nama Pemberi Kerja sebagai Pengendali.</td></tr>
       <tr><td>Log akses &amp; audit keamanan</td><td>Maks. 12 bulan</td><td>Untuk investigasi insiden dan audit.</td></tr>
@@ -353,7 +353,7 @@ details p,details li{font-size:14px}
   <h3>Langkah keamanan</h3>
   <ul>
     <li><strong>Enkripsi dalam transit</strong> — seluruh komunikasi antara aplikasi, portal, dan server menggunakan HTTPS/TLS 1.2 atau lebih baru.</li>
-    <li><strong>Enkripsi saat disimpan</strong> — cadangan dan media wajah disimpan terenkripsi di sisi server.</li>
+    <li><strong>Enkripsi saat disimpan</strong> — cadangan disimpan terenkripsi di sisi server.</li>
     <li><strong>Kontrol akses berbasis peran</strong> — hanya pengguna dengan peran yang sesuai (mis. HR/admin Pemberi Kerja) yang dapat melihat data karyawan; staf KBS mengakses data produksi hanya untuk dukungan dan pemeliharaan, secara terbatas dan tercatat.</li>
     <li><strong>Catatan absensi <em>append-only</em></strong> — riwayat absensi tidak dapat diubah atau dihapus melalui aplikasi; koreksi dicatat sebagai penyesuaian baru dengan jejak audit.</li>
     <li><strong>Di perangkat Anda</strong> — sesi disimpan di penyimpanan aman sistem operasi (Keychain/Keystore), data absen offline disimpan terenkripsi dan dihapus setelah tersinkron, tangkapan layar diblokir pada layar sensitif, dan aplikasi terkunci otomatis saat berpindah ke latar belakang.</li>
@@ -401,12 +401,12 @@ details p,details li{font-size:14px}
     <li><strong>mengakses</strong> dan memperoleh salinan data pribadi Anda;</li>
     <li>meminta <strong>koreksi/pembaruan</strong> data yang tidak akurat atau tidak lengkap;</li>
     <li>meminta <strong>penghapusan</strong> data, dengan memperhatikan kewajiban penyimpanan berdasarkan hukum;</li>
-    <li><strong>menarik persetujuan</strong> untuk pemrosesan yang didasarkan pada persetujuan (mis. data biometrik);</li>
+    <li><strong>menarik persetujuan</strong> untuk pemrosesan yang didasarkan pada persetujuan (bila ada);</li>
     <li>mengajukan <strong>keberatan</strong> atas keputusan yang semata-mata otomatis dan meminta <strong>peninjauan oleh manusia</strong>; dan</li>
     <li>mengajukan <strong>pengaduan</strong> dan menuntut ganti rugi sesuai peraturan.</li>
   </ul>
   <div class="callout"><span class="ttl">Keputusan absensi otomatis dapat ditinjau</span>
-    <p>Mesin keputusan CoalTrack menandai atau menolak kejadian absensi berdasarkan bukti (kecocokan wajah, liveness, lokasi, ikatan perangkat, indikasi lokasi tiruan). Setiap penolakan atau penandaan <strong>dapat ditinjau oleh HR Pemberi Kerja</strong>. Keputusan akhir mengenai kehadiran, upah, dan sanksi ada pada Pemberi Kerja sesuai peraturan perusahaan dan hukum ketenagakerjaan — bukan pada KBS.</p>
+    <p>Mesin keputusan CoalTrack menandai atau menolak kejadian absensi berdasarkan bukti (lokasi GPS dan akurasinya, ikatan perangkat, cap waktu server, indikasi lokasi tiruan). Setiap penolakan atau penandaan <strong>dapat ditinjau oleh HR Pemberi Kerja</strong>. Keputusan akhir mengenai kehadiran, upah, dan sanksi ada pada Pemberi Kerja sesuai peraturan perusahaan dan hukum ketenagakerjaan — bukan pada KBS.</p>
   </div>
   <h3>Cara menggunakan hak Anda</h3>
   <p>Ajukan permintaan melalui <strong>HR Pemberi Kerja Anda</strong> (jalur utama, karena Pemberi Kerja adalah Pengendali Data) atau melalui email <a href="mailto:support@coaltrack.id">support@coaltrack.id</a>; kami akan meneruskan dan mengoordinasikan permintaan tersebut dengan Pemberi Kerja. Kami dapat meminta verifikasi identitas sebelum memproses. Kami mengonfirmasi penerimaan permintaan dalam <strong>1 hari kerja</strong>, dan menyelesaikannya dalam batas waktu yang ditetapkan UU PDP (untuk akses dan perbaikan data umumnya 3×24 jam sejak permintaan lengkap diterima), atau paling lambat <strong>30 hari</strong> untuk permintaan penghapusan yang memerlukan verifikasi dan koordinasi dengan Pemberi Kerja.</p>
@@ -416,15 +416,15 @@ details p,details li{font-size:14px}
   <h2><span class="n">11</span>Hapus Akun &amp; Data / Delete Account &amp; Data</h2>
   <p>Anda dapat meminta penghapusan akun CoalTrack Anda beserta data pribadi Anda kapan saja. Bagian ini juga menjadi rujukan permintaan penghapusan sesuai kebijakan <strong>Google Play</strong> dan <strong>Apple App Store</strong>. <span class="t-id">Versi bahasa Inggris: <a data-set="en" href="?lang=en#delete-account">Delete Account &amp; Data</a>.</span></p>
   <ol class="steps">
-    <li><b>Kirim permintaan</b>Kirim email ke <a href="mailto:support@coaltrack.id?subject=Hapus%20Akun%20CoalTrack&body=Nama%20lengkap%3A%20%0ANama%20perusahaan%20(Pemberi%20Kerja)%3A%20%0ANomor%20induk%20karyawan%3A%20%0AEmail%2Fnomor%20HP%20terdaftar%3A%20%0APermintaan%3A%20hapus%20seluruh%20akun%20%26%20data%20%2F%20hanya%20data%20wajah%20%2F%20lepas%20perangkat%0A">support@coaltrack.id</a> dengan subjek <code>Hapus Akun CoalTrack</code>, berisi: nama lengkap, nama perusahaan (Pemberi Kerja), nomor induk karyawan, email/nomor HP yang terdaftar, dan jenis permintaan (hapus seluruh akun &amp; data, atau hanya data tertentu). Kirim dari email yang terdaftar di akun Anda, atau ajukan melalui HR Pemberi Kerja.</li>
+    <li><b>Kirim permintaan</b>Kirim email ke <a href="mailto:support@coaltrack.id?subject=Hapus%20Akun%20CoalTrack&body=Nama%20lengkap%3A%20%0ANama%20perusahaan%20(Pemberi%20Kerja)%3A%20%0ANomor%20induk%20karyawan%3A%20%0AEmail%2Fnomor%20HP%20terdaftar%3A%20%0APermintaan%3A%20hapus%20seluruh%20akun%20%26%20data%20%2F%20lepas%20perangkat%0A">support@coaltrack.id</a> dengan subjek <code>Hapus Akun CoalTrack</code>, berisi: nama lengkap, nama perusahaan (Pemberi Kerja), nomor induk karyawan, email/nomor HP yang terdaftar, dan jenis permintaan (hapus seluruh akun &amp; data, atau hanya data tertentu). Kirim dari email yang terdaftar di akun Anda, atau ajukan melalui HR Pemberi Kerja.</li>
     <li><b>Verifikasi</b>Dalam 1 hari kerja kami mengonfirmasi penerimaan dan memverifikasi identitas Anda. Kami dapat meminta konfirmasi dari HR Pemberi Kerja karena akun CoalTrack diterbitkan oleh perusahaan Anda.</li>
-    <li><b>Pemrosesan</b>Setelah terverifikasi: akun dinonaktifkan dan perangkat dilepas <strong>segera (maks. 3 hari kerja)</strong>; foto/video wajah, foto referensi wajah, dan token perangkat dihapus <strong>maks. 7 hari</strong>; data identitas dan kontak dihapus atau dianonimkan <strong>maks. 30 hari</strong>; salinan pada cadangan terhapus pada siklus rotasi berikutnya (<strong>maks. 35 hari</strong>).</li>
+    <li><b>Pemrosesan</b>Setelah terverifikasi: akun dinonaktifkan dan perangkat dilepas <strong>segera (maks. 3 hari kerja)</strong>; token perangkat dihapus <strong>maks. 7 hari</strong>; data identitas dan kontak dihapus atau dianonimkan <strong>maks. 30 hari</strong>; salinan pada cadangan terhapus pada siklus rotasi berikutnya (<strong>maks. 35 hari</strong>).</li>
     <li><b>Konfirmasi</b>Kami mengirimkan konfirmasi tertulis melalui email setelah penghapusan selesai.</li>
   </ol>
   <h3>Data yang tetap disimpan</h3>
-  <p>Catatan absensi, sesi kerja, dan data penggajian yang <strong>wajib disimpan berdasarkan peraturan ketenagakerjaan dan perpajakan</strong> tetap disimpan oleh/atas nama Pemberi Kerja selama masa wajib simpan (umumnya sampai 10 tahun), dipisahkan dari media wajah, dan diminimalkan atau dipseudonimkan bila memungkinkan. Data yang diperlukan untuk menyelesaikan sengketa hukum yang sedang berjalan juga dapat disimpan sampai sengketa selesai.</p>
+  <p>Catatan absensi, sesi kerja, dan data penggajian yang <strong>wajib disimpan berdasarkan peraturan ketenagakerjaan dan perpajakan</strong> tetap disimpan oleh/atas nama Pemberi Kerja selama masa wajib simpan (umumnya sampai 10 tahun), diminimalkan atau dipseudonimkan bila memungkinkan. Data yang diperlukan untuk menyelesaikan sengketa hukum yang sedang berjalan juga dapat disimpan sampai sengketa selesai.</p>
   <h3>Penghapusan sebagian</h3>
-  <p>Tanpa menghapus akun, Anda dapat meminta: penghapusan foto/video wajah dan foto referensi (penarikan persetujuan biometrik), pelepasan ikatan perangkat, atau koreksi data tertentu.</p>
+  <p>Tanpa menghapus akun, Anda dapat meminta: pelepasan ikatan perangkat, atau koreksi data tertentu.</p>
   <div class="callout"><span class="ttl">Perlu diketahui</span>
     <ul>
       <li>Menghapus (<em>uninstall</em>) aplikasi dari HP <strong>tidak</strong> menghapus akun atau data Anda di server. Gunakan prosedur di atas.</li>
@@ -444,7 +444,7 @@ details p,details li{font-size:14px}
   <div class="tbl"><table>
     <thead><tr><th>Izin</th><th>Untuk apa</th><th>Kapan digunakan</th></tr></thead>
     <tbody>
-      <tr><td>Kamera</td><td>Mengambil foto/video wajah singkat untuk verifikasi identitas dan liveness saat absen, serta pendaftaran foto referensi.</td><td>Hanya saat Anda menekan tombol absen atau mendaftarkan wajah. Tidak ada perekaman di latar belakang.</td></tr>
+      <tr><td>Kamera (opsional)</td><td>Hanya bila Anda memilih mengambil foto profil. Tidak digunakan untuk absensi.</td><td>Hanya saat Anda memilih ambil foto profil. Tidak ada perekaman di latar belakang.</td></tr>
       <tr><td>Lokasi (presisi, saat aplikasi digunakan)</td><td>Merekam koordinat GPS dan akurasi saat absen, memverifikasi Anda berada di area kerja (geofence), dan mendeteksi lokasi tiruan.</td><td>Hanya saat absen masuk/pulang. <strong>Tidak ada pelacakan lokasi latar belakang atau terus-menerus.</strong></td></tr>
       <tr><td>Notifikasi</td><td>Status absensi, persetujuan cuti/izin, slip gaji tersedia, dan pengumuman HR.</td><td>Opsional; dapat dimatikan di pengaturan perangkat.</td></tr>
       <tr><td>Biometrik perangkat (Face ID / Touch ID / sidik jari)</td><td>Membuka kunci aplikasi setelah masuk pertama kali dengan kata sandi.</td><td>Opsional. Diproses oleh sistem operasi; data biometrik tidak pernah dikirim ke server.</td></tr>
@@ -521,10 +521,10 @@ details p,details li{font-size:14px}
   <ul>
     <li><strong>CoalTrack</strong> is an attendance and payroll app provided by your <strong>Employer</strong> to its workforce. You use it because the company you work for subscribes to CoalTrack.</li>
     <li>Your Employer is the <strong>Data Controller</strong>. <strong>Ksatria Bintang Samudra</strong> (the developer of CoalTrack) is the <strong>Data Processor</strong> and processes data only on the Employer's instructions.</li>
-    <li>Data processed: identity and employment data, attendance events, GPS coordinates <em>at check-in/out</em>, short face photos/videos for verification, device identifiers, payroll data, and app diagnostics.</li>
+    <li>Data processed: identity and employment data, attendance events, GPS coordinates <em>at check-in/out</em>, device identifiers, payroll data, and app diagnostics. No face/biometric data is collected.</li>
     <li>We <strong>do not sell</strong> data, <strong>show no ads</strong>, and share data only with the Employer and contractually bound subprocessors.</li>
     <li>Location is captured only at the moment of check-in/out — <strong>no background tracking</strong>.</li>
-    <li>Attendance face media is retained for <strong>at most 90 days</strong> (the Employer may configure a shorter period), unless an event is flagged for review.</li>
+    <li>CoalTrack does not capture, transmit, or store any photo, video, or face data for attendance.</li>
     <li>You can request access, correction, and deletion — see <a href="#delete-account">Delete Account &amp; Data</a>.</li>
   </ul>
 </section>
@@ -549,7 +549,7 @@ details p,details li{font-size:14px}
       <tr><td>Account &amp; security</td><td>Username, password <em>hash</em> (we never store the plain password), session tokens, sign-in records (time, IP address, device), language and theme settings.</td><td>Created when your account is set up and as you use the app.</td></tr>
       <tr><td>Attendance events</td><td>Type (check-in/out), <strong>server timestamp</strong>, device timestamp and GPS satellite time (for offline attendance), decision result (accepted/rejected/flagged) with its reason, work sessions and verified hours, overtime, shifts, leave and permits.</td><td>Generated when you check in/out; decisions are made by the server.</td></tr>
       <tr><td>Location</td><td>GPS coordinates (latitude/longitude), accuracy, altitude, speed, location provider, and the operating system's mock-location indicator — <strong>only at the moment you tap check-in/out</strong>.</td><td>Device location sensors, with your permission.</td></tr>
-      <tr><td>Face &amp; liveness (biometric data)</td><td>A face photo and/or short video (a few seconds) captured at check-in/out for identity verification and liveness detection, the match score, and the reference face photo enrolled by HR. This is <strong>specific (sensitive) personal data</strong> under Indonesia's PDP Law.</td><td>Device camera, with your permission and consent.</td></tr>
+      <tr><td>Attendance integrity (non-biometric)</td><td>Non-biometric signals used to judge a check-in: GPS coordinates &amp; accuracy, mock-location indicators, device binding, and a trusted server timestamp. <strong>No photo, video, or face data.</strong></td><td>Computed on device &amp; server when you tap check-in/out.</td></tr>
       <tr><td>Device</td><td>Make/model, operating system and version, installation/device identifier, app version, root/jailbreak and mock-location indicators, push notification token.</td><td>Collected by the app to bind one device per employee.</td></tr>
       <tr><td>Payroll &amp; financial</td><td>Salary components (base pay, allowances, deductions), tax status (PTKP / PPh 21), tax ID (NPWP), BPJS health and employment membership numbers, bank name and account number, payslips, payment history. Personal financial data is <strong>specific (sensitive) personal data</strong>.</td><td>Entered by the Employer's HR/finance; calculated by the payroll engine.</td></tr>
       <tr><td>Diagnostics</td><td>Crash reports, response times, app version, network type, and technical logs — without personal message content wherever possible.</td><td>Generated automatically by the app and server.</td></tr>
@@ -557,7 +557,7 @@ details p,details li{font-size:14px}
   </table></div>
   <p>We <strong>do not</strong> use advertising SDKs, do not track you across apps, and do not use third-party analytics that profile users.</p>
   <div class="callout"><span class="ttl">About device biometric unlock (Face ID / Touch ID / fingerprint)</span>
-    <p>Unlocking the app with Face ID, Touch ID, fingerprint, or face-unlock is processed <strong>entirely on your device by the operating system</strong>. CoalTrack only receives a “success/failure” result and <strong>never receives, stores, or transmits</strong> fingerprint or face-geometry data from this feature. It is optional and separate from the face photo captured at check-in.</p>
+    <p>Unlocking the app with Face ID, Touch ID, fingerprint, or face-unlock is processed <strong>entirely on your device by the operating system</strong>. CoalTrack only receives a “success/failure” result and <strong>never receives, stores, or transmits</strong> fingerprint or face-geometry data from this feature. It is optional. CoalTrack's attendance does not use any photo or face data.</p>
   </div>
 </section>
 
@@ -566,7 +566,7 @@ details p,details li{font-size:14px}
   <ul>
     <li><strong>Attendance integrity</strong> — recording attendance accurately using server time and an immutable (<em>append-only</em>) log.</li>
     <li><strong>Fraud prevention and detection</strong> — buddy punching, fake locations, device clock manipulation, use of unregistered devices, and replay of old events.</li>
-    <li><strong>Identity verification</strong> — face matching and liveness detection at check-in/out.</li>
+    <li><strong>Attendance integrity</strong> — real GPS, mock-location detection, device binding, and a trusted server clock at check-in/out.</li>
     <li><strong>Payroll</strong> — calculating hours, overtime, BPJS contributions, and PPh 21 income tax (TER method), issuing payslips, and delivering them by email or other channels enabled by the Employer.</li>
     <li><strong>HR administration</strong> — leave and permits, shift schedules, the employee directory, and reporting to the Employer's management.</li>
     <li><strong>Account and Service security</strong> — authentication, device binding, audit logging, abuse prevention.</li>
@@ -583,7 +583,7 @@ details p,details li{font-size:14px}
     <li><strong>Performance of the employment contract / employment relationship</strong> — identity, employment, attendance, working-hours, and payroll data are needed to perform the employment agreement between you and the Employer.</li>
     <li><strong>Compliance with legal obligations</strong> — calculating and reporting PPh 21, BPJS contributions, and keeping employment and accounting records as required by law.</li>
     <li><strong>Legitimate interests</strong> of the Employer — preventing attendance fraud, securing systems, and protecting company assets, balanced against your rights.</li>
-    <li><strong>Explicit consent</strong> — for <strong>biometric data</strong> (face photos/videos and the reference photo), which is specific personal data (Article 4(2) PDP Law). Consent is requested when your face is enrolled and can be withdrawn at any time through the Employer's HR or by emailing us. Withdrawal does not affect the lawfulness of earlier processing; the Employer determines an alternative attendance method under its internal policy.</li>
+    <li><strong>Explicit consent</strong> — where required by applicable law, and can be withdrawn at any time through the Employer's HR or by emailing us. Withdrawal does not affect the lawfulness of earlier processing; the Employer determines an alternative attendance method under its internal policy.</li>
   </ul>
 </section>
 
@@ -595,8 +595,8 @@ details p,details li{font-size:14px}
     <tbody>
       <tr><td>Account, identity &amp; contact</td><td>For the duration of employment, then deleted/anonymised within 30 days after account deletion</td><td>Except data that must be kept longer by law (see attendance and payroll rows).</td></tr>
       <tr><td>Attendance events &amp; work sessions</td><td>Per Employer policy and Indonesian labour/tax regulations</td><td>Accounting records and tax-related documents must generally be kept for <strong>10 years</strong> (Article 28(11) of the General Tax Provisions Law). Location coordinates are attached to the attendance event.</td></tr>
-      <tr><td>Attendance face photos/videos</td><td><strong>Max. 90 days</strong> from capture, then deleted automatically</td><td>The Employer may configure a shorter limit. Events <strong>flagged for review</strong> (disputes, suspected fraud, audits) are kept until the review is closed, then deleted.</td></tr>
-      <tr><td>Reference face photo</td><td>For the duration of employment</td><td>Deleted when the account is deleted or consent is withdrawn.</td></tr>
+      
+      
       <tr><td>Device identifiers &amp; push tokens</td><td>While the device is bound + 30 days after release</td><td>Required for one-device-per-employee binding.</td></tr>
       <tr><td>Payroll data &amp; payslips</td><td>Per tax and labour regulations (generally 10 years)</td><td>Kept by or on behalf of the Employer as Controller.</td></tr>
       <tr><td>Access &amp; security audit logs</td><td>Max. 12 months</td><td>For incident investigation and audits.</td></tr>
@@ -613,7 +613,7 @@ details p,details li{font-size:14px}
   <h3>Security measures</h3>
   <ul>
     <li><strong>Encryption in transit</strong> — all communication between the app, the portal, and the server uses HTTPS/TLS 1.2 or newer.</li>
-    <li><strong>Encryption at rest</strong> — backups and face media are stored encrypted on the server side.</li>
+    <li><strong>Encryption at rest</strong> — backups are stored encrypted on the server side.</li>
     <li><strong>Role-based access control</strong> — only users with an appropriate role (e.g. the Employer's HR/admin) can view employee data; KBS staff access production data only for support and maintenance, on a limited and logged basis.</li>
     <li><strong>Append-only attendance log</strong> — attendance history cannot be edited or deleted through the app; corrections are recorded as new adjustments with an audit trail.</li>
     <li><strong>On your device</strong> — sessions are stored in the operating system's secure storage (Keychain/Keystore), offline attendance data is stored encrypted and removed once synced, screenshots are blocked on sensitive screens, and the app locks automatically when sent to the background.</li>
@@ -661,12 +661,12 @@ details p,details li{font-size:14px}
     <li><strong>access</strong> and obtain a copy of your personal data;</li>
     <li>request <strong>correction/updating</strong> of inaccurate or incomplete data;</li>
     <li>request <strong>deletion</strong> of data, subject to statutory retention obligations;</li>
-    <li><strong>withdraw consent</strong> for processing based on consent (e.g. biometric data);</li>
+    <li><strong>withdraw consent</strong> for processing based on consent (where applicable);</li>
     <li><strong>object</strong> to decisions based solely on automated processing and request <strong>human review</strong>; and</li>
     <li>lodge a <strong>complaint</strong> and claim compensation as provided by law.</li>
   </ul>
   <div class="callout"><span class="ttl">Automated attendance decisions can be reviewed</span>
-    <p>CoalTrack's decision engine flags or rejects attendance events based on evidence (face match, liveness, location, device binding, mock-location indicators). Every rejection or flag <strong>can be reviewed by the Employer's HR</strong>. Final decisions on attendance, wages, and sanctions rest with the Employer under its company regulations and labour law — not with KBS.</p>
+    <p>CoalTrack's decision engine flags or rejects attendance events based on evidence (GPS location and accuracy, device binding, server timestamp, mock-location indicators). Every rejection or flag <strong>can be reviewed by the Employer's HR</strong>. Final decisions on attendance, wages, and sanctions rest with the Employer under its company regulations and labour law — not with KBS.</p>
   </div>
   <h3>How to exercise your rights</h3>
   <p>Submit requests through <strong>your Employer's HR</strong> (the primary channel, as the Employer is the Data Controller) or by emailing <a href="mailto:support@coaltrack.id">support@coaltrack.id</a>; we will forward and coordinate the request with the Employer. We may ask you to verify your identity first. We acknowledge requests within <strong>1 business day</strong> and complete them within the time limits set by the PDP Law (for access and correction generally 3×24 hours from receipt of a complete request), or at most <strong>30 days</strong> for deletion requests that require verification and coordination with the Employer.</p>
@@ -676,15 +676,15 @@ details p,details li{font-size:14px}
   <h2><span class="n">11</span>Delete Account &amp; Data / Hapus Akun &amp; Data</h2>
   <p>You can request deletion of your CoalTrack account and your personal data at any time. This section is also the reference for deletion requests under <strong>Google Play</strong> and <strong>Apple App Store</strong> policies. Indonesian version: <a data-set="id" href="?lang=id#hapus-akun">Hapus Akun &amp; Data</a>.</p>
   <ol class="steps">
-    <li><b>Send the request</b>Email <a href="mailto:support@coaltrack.id?subject=Delete%20CoalTrack%20Account&body=Full%20name%3A%20%0ACompany%20(Employer)%3A%20%0AEmployee%20number%3A%20%0ARegistered%20email%2Fphone%3A%20%0ARequest%3A%20delete%20entire%20account%20%26%20data%20%2F%20face%20data%20only%20%2F%20release%20device%0A">support@coaltrack.id</a> with the subject <code>Delete CoalTrack Account</code>, including: your full name, company (Employer) name, employee number, registered email/phone number, and the type of request (delete the entire account &amp; data, or specific data only). Send it from the email address registered on your account, or submit it through your Employer's HR.</li>
+    <li><b>Send the request</b>Email <a href="mailto:support@coaltrack.id?subject=Delete%20CoalTrack%20Account&body=Full%20name%3A%20%0ACompany%20(Employer)%3A%20%0AEmployee%20number%3A%20%0ARegistered%20email%2Fphone%3A%20%0ARequest%3A%20delete%20entire%20account%20%26%20data%20%2F%20release%20device%0A">support@coaltrack.id</a> with the subject <code>Delete CoalTrack Account</code>, including: your full name, company (Employer) name, employee number, registered email/phone number, and the type of request (delete the entire account &amp; data, or specific data only). Send it from the email address registered on your account, or submit it through your Employer's HR.</li>
     <li><b>Verification</b>Within 1 business day we acknowledge receipt and verify your identity. We may ask the Employer's HR to confirm, because CoalTrack accounts are issued by your company.</li>
-    <li><b>Processing</b>Once verified: the account is deactivated and the device released <strong>immediately (max. 3 business days)</strong>; face photos/videos, the reference face photo, and device tokens are deleted within <strong>7 days</strong>; identity and contact data are deleted or anonymised within <strong>30 days</strong>; backup copies expire in the next rotation cycle (<strong>max. 35 days</strong>).</li>
+    <li><b>Processing</b>Once verified: the account is deactivated and the device released <strong>immediately (max. 3 business days)</strong>; device tokens are deleted within <strong>7 days</strong>; identity and contact data are deleted or anonymised within <strong>30 days</strong>; backup copies expire in the next rotation cycle (<strong>max. 35 days</strong>).</li>
     <li><b>Confirmation</b>We send written confirmation by email once deletion is complete.</li>
   </ol>
   <h3>Data that is retained</h3>
-  <p>Attendance records, work sessions, and payroll data that <strong>must be kept under labour and tax regulations</strong> remain stored by or on behalf of the Employer for the statutory period (generally up to 10 years), separated from face media and minimised or pseudonymised where possible. Data needed to resolve an ongoing legal dispute may also be kept until the dispute is closed.</p>
+  <p>Attendance records, work sessions, and payroll data that <strong>must be kept under labour and tax regulations</strong> remain stored by or on behalf of the Employer for the statutory period (generally up to 10 years), minimised or pseudonymised where possible. Data needed to resolve an ongoing legal dispute may also be kept until the dispute is closed.</p>
   <h3>Partial deletion</h3>
-  <p>Without deleting your account, you can request: deletion of face photos/videos and the reference photo (withdrawal of biometric consent), release of the device binding, or correction of specific data.</p>
+  <p>Without deleting your account, you can request: release of the device binding, or correction of specific data.</p>
   <div class="callout"><span class="ttl">Please note</span>
     <ul>
       <li>Uninstalling the app from your phone <strong>does not</strong> delete your account or your data on the server. Use the procedure above.</li>
@@ -704,7 +704,7 @@ details p,details li{font-size:14px}
   <div class="tbl"><table>
     <thead><tr><th>Permission</th><th>What it is for</th><th>When it is used</th></tr></thead>
     <tbody>
-      <tr><td>Camera</td><td>Capturing a short face photo/video for identity verification and liveness at check-in/out, and enrolling the reference photo.</td><td>Only when you tap check-in/out or enrol your face. No background recording.</td></tr>
+      <tr><td>Camera (optional)</td><td>Only if you choose to take a profile photo. Not used for attendance.</td><td>Only when you choose to take a profile photo. No background recording.</td></tr>
       <tr><td>Location (precise, while in use)</td><td>Recording GPS coordinates and accuracy at check-in/out, verifying that you are inside the work area (geofence), and detecting mock locations.</td><td>Only at check-in/out. <strong>No background or continuous location tracking.</strong></td></tr>
       <tr><td>Notifications</td><td>Attendance status, leave/permit approvals, payslip availability, and HR announcements.</td><td>Optional; can be turned off in device settings.</td></tr>
       <tr><td>Device biometrics (Face ID / Touch ID / fingerprint)</td><td>Unlocking the app after the first password sign-in.</td><td>Optional. Handled by the operating system; biometric data never leaves the device.</td></tr>

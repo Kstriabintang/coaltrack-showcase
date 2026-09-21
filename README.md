@@ -43,7 +43,7 @@ Attendance recaps in a mining operation are usually a spreadsheet problem: the p
 changed, a friend can clock in for you, and by the time payroll is assembled nobody can prove what
 really happened. CoalTrack closes that loop end to end.
 
-A worker clocks in with **face evidence + real GPS** in two taps. The **server** decides — using
+A worker clocks in with **real GPS + server time** in two taps. The **server** decides — using
 the server clock, not the phone — and writes an **append-only** event that nobody can edit later.
 Verified hours roll into **work sessions**, work sessions into a **payroll engine** that computes
 overtime, BPJS and **PPh21 TER**, and the engine produces a **PDF payslip** that is emailed to the
@@ -62,7 +62,7 @@ One Flutter app for iOS, Android and Web (employee + admin surfaces), a Laravel 
 | 1 | **Server time** | Decisions use the server clock. Changing the phone clock does nothing. |
 | 2 | **Device binding** | One approved device per employee. Buddy-punching from a colleague's phone is blocked. |
 | 3 | **Immutable log** | Attendance events are append-only (enforced by a DB trigger). History cannot be rewritten. |
-| 4 | **Face evidence + liveness challenge** | A randomized liveness challenge is prompted and the face frames are stored with the event as evidence. Automated face matching is **→ next**, so every event is reviewed. |
+| 4 | **Trusted clock + work-hour windows** | The server stamps each check-in with its own trusted clock and enforces the work-hour window — even offline. Combined with GPS and device binding, the server decides every event. |
 | 5 | **Real GPS, mandatory** | Real device location with mock-location detection. Recorded as audit evidence. |
 | 6 | **Decision engine** | Accept / reject / flag on the evidence — and it fails safe. |
 
@@ -130,7 +130,7 @@ in the app and on this showcase. Every screen is designed for both light and dar
 |:---:|:---:|:---:|:---:|
 | <img src="img/dash.en.png" width="190"> | <img src="img/monitor.en.png" width="190"> | <img src="img/devices.en.png" width="190"> | <img src="img/employees.en.png" width="190"> |
 
-**Sign in once, then just your face or finger**
+**Sign in once, then Face ID or fingerprint**
 
 | First sign-in | Face ID / fingerprint | One-tap enable |
 |:---:|:---:|:---:|
@@ -143,8 +143,7 @@ in the app and on this showcase. Every screen is designed for both light and dar
 | <img src="img/activate.en.png" width="190"> | <img src="img/payrollsettings.en.png" width="190"> | <img src="img/payrollrun.en.png" width="190"> | <img src="img/slip-pdf.png" width="190"> |
 | A fresh install is neutral CoalTrack until the company licence code is entered — once per device. | Company rules are edited by the client's own HR/Superadmin; statutory rates stay locked. | Four-eyes approval on sensitive company payroll rules. | Official payslip PDF, also delivered by email from an authenticated sending domain. |
 
-First login uses a password on the device; after that Face ID / Touch ID (iOS) or fingerprint /
-face unlock (Android), adapted to each phone. Sessions are encrypted and device-bound, re-lock when
+First login uses a password on the device; after that Face ID / Touch ID (iOS) or fingerprint (Android), adapted to each phone. Sessions are encrypted and device-bound, re-lock when
 the app is backgrounded, and screenshots are blocked on sensitive screens.
 
 ---
@@ -154,7 +153,7 @@ the app is backgrounded, and screenshots are blocked on sensitive screens.
 | Aspect | Manual / Excel | CoalTrack |
 |---|---|---|
 | Attendance time | ✕ Phone clock, manipulable | ✓ **Server time, tamper-proof** |
-| Buddy-punching | ✕ Undetected | ✓ **One approved phone per employee + face evidence** |
+| Buddy-punching | ✕ Undetected | ✓ **One approved phone per employee + real GPS** |
 | Payroll recap | ✕ Days of manual work, error-prone | ✓ **Automatic from attendance** |
 | Reporting | ✕ Monthly, late | ✓ **Real-time** |
 | Tax & BPJS | ✕ Manual, error-prone | ✓ **PPh21 TER + BPJS automatic** |
@@ -166,7 +165,7 @@ the app is backgrounded, and screenshots are blocked on sensitive screens.
 
 ```
 Attendance    ─▶  Server decision  ─▶  Work session   ─▶  Payroll engine   ─▶  Payslip
-face + real GPS   server time,         verified hours     overtime, BPJS,      PDF + Email
+real GPS + time   server time,         verified hours     overtime, BPJS,      PDF + Email
 2 taps            immutable log        per day            PPh21 TER            + Telegram
 ```
 
@@ -202,7 +201,7 @@ Attendance (authoritative, immutable) → Work sessions → Shift/Roster → Pay
 | Four-eyes release of the bank transfer file | → next |
 | Offline queue that uploads itself when signal returns | → next |
 | Anomaly checks before pay day (duplicate accounts, ghost employees, abnormal overtime) | → next |
-| FCM push & automated face matching | → next |
+| FCM push notifications | → next |
 
 > **Honest note:** the backend is **not yet hosted publicly**. `demo.coaltrack.id` is a demo build
 > with sample data; production deployment happens per customer, on their own infrastructure.

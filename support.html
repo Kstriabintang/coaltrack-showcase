@@ -302,7 +302,7 @@ details p,details li{font-size:14px}
 
   <h3>Absensi</h3>
   <details><summary>Bagaimana absen saat tidak ada sinyal (offline)?</summary><div>
-    <p>Perekaman tetap bisa dilakukan tanpa sinyal. Aplikasi mengambil foto wajah, koordinat GPS, dan <strong>waktu satelit GPS</strong>, lalu menyimpannya di HP. <strong>Pengunggahan otomatis dari antrean lokal masih dalam rencana</strong> — untuk saat ini absen dikirim ketika Anda membuka aplikasi dalam keadaan ada sinyal.</p>
+    <p>Perekaman tetap bisa dilakukan tanpa sinyal. Aplikasi mencatat koordinat GPS dan <strong>waktu satelit GPS</strong>, lalu menyimpannya di HP. <strong>Pengunggahan otomatis dari antrean lokal masih dalam rencana</strong> — untuk saat ini absen dikirim ketika Anda membuka aplikasi dalam keadaan ada sinyal.</p>
     <ul>
       <li>Saat sinyal kembali, <strong>buka aplikasi</strong> dan kirim absen tersebut — keputusan server akan muncul di Riwayat.</li>
       <li>Jangan menghapus aplikasi atau membersihkan data aplikasi sebelum absen terkirim.</li>
@@ -318,13 +318,13 @@ details p,details li{font-size:14px}
       <li>Kejadian yang ditandai akan ditinjau HR; hubungi HR bila Anda yakin berada di area kerja.</li>
     </ul>
   </div></details>
-  <details><summary>Tantangan liveness gagal / foto wajah tidak terekam.</summary><div>
+  <details><summary>Tombol absen tidak aktif / lokasi atau jam ditolak.</summary><div>
     <ul>
-      <li>Hadapkan wajah ke kamera dengan pencahayaan cukup; hindari cahaya dari belakang.</li>
-      <li>Lepas masker, kacamata hitam, dan pastikan pelindung helm tidak menutupi wajah.</li>
-      <li>Pegang HP stabil, hanya satu wajah dalam bingkai, dan ikuti instruksi liveness (mis. kedip).</li>
-      <li>Foto wajah disimpan sebagai bukti bersama kejadian absen; belum ada pencocokan wajah otomatis, sehingga setiap kejadian ditinjau manusia.</li>
-      <li>Bila terus gagal, ulangi di tempat dengan cahaya lebih baik lalu hubungi HR — kejadian yang ditandai tetap dapat ditinjau HR.</li>
+      <li>Pastikan izin lokasi aktif dan akurasi GPS baik; di area sinyal lemah tunggu beberapa detik hingga lokasi terkunci.</li>
+      <li>Jangan gunakan aplikasi lokasi palsu (mock location) — absen akan ditolak.</li>
+      <li>Tombol absen mengikuti jam kerja menurut jam server; di luar jendela jam kerja tombol nonaktif.</li>
+      <li>Absen dinilai dari GPS, ikatan perangkat, dan cap waktu server — tanpa foto atau wajah.</li>
+      <li>Bila terus gagal, coba lagi setelah lokasi terkunci lalu hubungi HR — kejadian yang ditandai tetap dapat ditinjau HR.</li>
     </ul>
   </div></details>
   <details><summary>Absen saya ditolak atau ditandai. Apa yang harus dilakukan?</summary><div>
@@ -365,11 +365,11 @@ details p,details li{font-size:14px}
 
   <h3>Privasi &amp; data</h3>
   <details id="hapus-akun"><summary>Bagaimana cara menghapus akun dan data saya?</summary><div>
-    <p>Kirim email ke <a href="mailto:support@coaltrack.id?subject=Hapus%20Akun%20CoalTrack">support@coaltrack.id</a> dengan subjek <code>Hapus Akun CoalTrack</code> dari email terdaftar Anda (atau melalui HR). Kami memverifikasi identitas Anda, menonaktifkan akun, menghapus media wajah dan data identitas sesuai jadwal, lalu mengirim konfirmasi. Data absensi dan penggajian yang wajib disimpan berdasarkan hukum tetap disimpan oleh perusahaan Anda.</p>
+    <p>Kirim email ke <a href="mailto:support@coaltrack.id?subject=Hapus%20Akun%20CoalTrack">support@coaltrack.id</a> dengan subjek <code>Hapus Akun CoalTrack</code> dari email terdaftar Anda (atau melalui HR). Kami memverifikasi identitas Anda, menonaktifkan akun, menghapus data identitas sesuai jadwal, lalu mengirim konfirmasi. Data absensi dan penggajian yang wajib disimpan berdasarkan hukum tetap disimpan oleh perusahaan Anda.</p>
     <p><a class="btn ghost" href="privacy.html#hapus-akun">Prosedur lengkap: Hapus Akun &amp; Data →</a></p>
   </div></details>
-  <details><summary>Siapa yang bisa melihat foto absensi saya, dan berapa lama disimpan?</summary><div>
-    <p>Hanya HR/admin perusahaan Anda yang berwenang. Foto/video wajah absensi disimpan maksimal <strong>90 hari</strong> (dapat lebih pendek sesuai pengaturan perusahaan), kecuali kejadian ditandai untuk peninjauan. Selengkapnya di <a href="privacy.html#retensi">Kebijakan Privasi</a>.</p>
+  <details><summary>Data absensi saya — siapa yang bisa melihat dan berapa lama disimpan?</summary><div>
+    <p>Hanya HR/admin perusahaan Anda yang berwenang. CoalTrack tidak mengambil foto atau data wajah; yang tersimpan adalah kejadian absen, GPS, dan cap waktu server. Selengkapnya di <a href="privacy.html#retensi">Kebijakan Privasi</a>.</p>
   </div></details>
   <details><summary>Apakah lokasi saya dilacak terus-menerus?</summary><div>
     <p><strong>Tidak.</strong> Lokasi hanya diambil pada saat Anda menekan tombol absen masuk/pulang. Tidak ada pelacakan di latar belakang. Lihat <a href="privacy.html#izin">Izin aplikasi</a>.</p>
@@ -485,7 +485,7 @@ details p,details li{font-size:14px}
 
   <h3>Attendance</h3>
   <details><summary>How do I check in with no signal (offline)?</summary><div>
-    <p>You can still capture a check-in without signal. The app records your face photo, GPS coordinates, and <strong>GPS satellite time</strong>, and stores them on the phone. <strong>Automatic upload from a local queue is planned</strong> — for now the check-in is submitted when you open the app with a signal.</p>
+    <p>You can still capture a check-in without signal. The app records your GPS coordinates and <strong>GPS satellite time</strong>, and stores them on the phone. <strong>Automatic upload from a local queue is planned</strong> — for now the check-in is submitted when you open the app with a signal.</p>
     <ul>
       <li>When signal returns, <strong>open the app</strong> and submit the check-in — the server's decision then appears in History.</li>
       <li>Do not uninstall the app or clear its data before the check-in has been submitted.</li>
@@ -501,13 +501,13 @@ details p,details li{font-size:14px}
       <li>Flagged events are reviewed by HR; contact HR if you are sure you were inside the work area.</li>
     </ul>
   </div></details>
-  <details><summary>The liveness challenge failed / my face photo was not captured.</summary><div>
+  <details><summary>The check-in button is disabled / location or time was rejected.</summary><div>
     <ul>
-      <li>Face the camera in good light; avoid strong light behind you.</li>
-      <li>Remove masks and sunglasses, and make sure a helmet visor is not covering your face.</li>
-      <li>Hold the phone steady, keep a single face in the frame, and follow the liveness prompts (e.g. blink).</li>
-      <li>The face photo is stored with the event as evidence; there is no automated face matching yet, so every event is reviewed by a person.</li>
-      <li>If it keeps failing, retry in better light and contact HR — a flagged event can still be reviewed by HR.</li>
+      <li>Make sure location permission is on and GPS accuracy is good; in weak-signal areas wait a few seconds for the location to lock.</li>
+      <li>Do not use a mock-location app — the check-in will be rejected.</li>
+      <li>The check-in button follows work hours by the server clock; outside the work-hour window it is disabled.</li>
+      <li>A check-in is judged by GPS, device binding, and the server timestamp — no photo or face.</li>
+      <li>If it keeps failing, retry once the location locks and contact HR — a flagged event can still be reviewed by HR.</li>
     </ul>
   </div></details>
   <details><summary>My check-in was rejected or flagged. What now?</summary><div>
@@ -548,11 +548,11 @@ details p,details li{font-size:14px}
 
   <h3>Privacy &amp; data</h3>
   <details id="delete-account"><summary>How do I delete my account and data?</summary><div>
-    <p>Email <a href="mailto:support@coaltrack.id?subject=Delete%20CoalTrack%20Account">support@coaltrack.id</a> with the subject <code>Delete CoalTrack Account</code> from your registered email (or via HR). We verify your identity, deactivate the account, delete face media and identity data on schedule, and send confirmation. Attendance and payroll records that must be kept by law remain with your company.</p>
+    <p>Email <a href="mailto:support@coaltrack.id?subject=Delete%20CoalTrack%20Account">support@coaltrack.id</a> with the subject <code>Delete CoalTrack Account</code> from your registered email (or via HR). We verify your identity, deactivate the account, delete identity data on schedule, and send confirmation. Attendance and payroll records that must be kept by law remain with your company.</p>
     <p><a class="btn ghost" href="privacy.html#delete-account">Full procedure: Delete Account &amp; Data →</a></p>
   </div></details>
   <details><summary>Who can see my attendance photos, and how long are they kept?</summary><div>
-    <p>Only authorised HR/admin staff at your company. Attendance face photos/videos are kept for at most <strong>90 days</strong> (shorter if your company configures it), unless an event is flagged for review. Details in the <a href="privacy.html#retention">Privacy Policy</a>.</p>
+    <p>Only authorised HR/admin staff at your company. CoalTrack does not capture any photo or face data; what is stored is the attendance event, GPS, and the server timestamp. Details in the <a href="privacy.html#retention">Privacy Policy</a>.</p>
   </div></details>
   <details><summary>Is my location tracked continuously?</summary><div>
     <p><strong>No.</strong> Location is captured only when you tap check-in/out. There is no background tracking. See <a href="privacy.html#permissions">App permissions</a>.</p>
