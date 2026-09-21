@@ -116,9 +116,9 @@ in the app and on this showcase. Every screen is designed for both light and dar
 
 ## Screens
 
-| Home | History | Payslip |
-|:---:|:---:|:---:|
-| <img src="img/emp-home.en.png" width="190"> | <img src="img/emp-riwayat.en.png" width="190"> | <img src="img/emp-slip.en.png" width="190"> |
+| Home | Attend | History | Payslip |
+|:---:|:---:|:---:|:---:|
+| <img src="img/emp-home.en.png" width="190"> | <img src="img/emp-absen.en.png" width="190"> | <img src="img/emp-riwayat.en.png" width="190"> | <img src="img/emp-slip.en.png" width="190"> |
 
 | Leave & permits | Notifications | Edit profile | Dark mode |
 |:---:|:---:|:---:|:---:|
