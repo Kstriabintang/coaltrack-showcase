@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CoalTrack — Attendance &amp; Payroll for Coal Mining</title>
-<meta name="description" content="CoalTrack by Ksatria Bintang Samudra: anti-fraud attendance and automatic payroll for coal mining. Per-slide showcase in 7 languages.">
+<meta name="description" content="CoalTrack by PT Luxavero Teknologi Indonesia: anti-fraud attendance and automatic payroll for coal mining. Per-slide showcase in 7 languages.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CoalTrack">
 <meta property="og:title" content="CoalTrack — Coal Mine Attendance">
-<meta property="og:description" content="Anti-fraud attendance + automatic payroll for coal mining operations. By Ksatria Bintang Samudra.">
+<meta property="og:description" content="Anti-fraud attendance + automatic payroll for coal mining operations. By PT Luxavero Teknologi Indonesia.">
 <meta property="og:image" content="https://coaltrack.id/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://coaltrack.id/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CoalTrack — Coal Mine Attendance">
-<meta name="twitter:description" content="Anti-fraud attendance + payroll for coal mining. By Ksatria Bintang Samudra.">
+<meta name="twitter:description" content="Anti-fraud attendance + payroll for coal mining. By PT Luxavero Teknologi Indonesia.">
 <meta name="twitter:image" content="https://coaltrack.id/img/og.png">
 <meta name="theme-color" content="#0B1220">
 <link rel="icon" href="img/coaltrack-icon.png">
@@ -114,6 +114,7 @@ a{color:var(--or);text-decoration:none}
 .chip{display:inline-flex;align-items:center;gap:8px;font-size:12.8px;font-weight:600;color:var(--tx);
   background:var(--surf);border:1px solid var(--line);border-radius:999px;padding:9px 15px}
 .chip b{font-weight:800;color:var(--acc)}
+.chip .ci{width:15px;height:15px;flex:none;color:var(--acc)}
 
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:26px}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
@@ -297,24 +298,29 @@ html[dir="rtl"] .farrow,html[dir="rtl"] .arrow{display:inline-block;transform:sc
 .mstatus i{width:6px;height:6px;border-radius:50%;background:#E8940F;flex:none}
 .mailhead{display:flex;align-items:center;gap:11px;flex-wrap:wrap;padding:15px 17px;
   border-block-end:1px solid rgba(11,18,32,.07)}
-.mlogo{width:40px;height:40px;border-radius:11px;flex:none;display:grid;place-items:center;color:#E8940F;
-  background:#FFF7EC;border:1.5px dashed rgba(232,148,15,.5)}
-.mlogo svg{width:20px;height:20px}
 .mailhead .mto{flex:1 1 130px;min-width:0}
 .mailhead b{display:block;font-size:14.2px;font-weight:800;letter-spacing:-.015em;line-height:1.25}
 .mailhead .mfrom{display:block;font-size:11.2px;color:#7F8FA8;margin-top:3px;line-height:1.35}
 .mauth{flex:none;font-size:9.2px;font-weight:800;letter-spacing:.09em;color:#B96F05;background:#FFF3DE;
   border:1px solid rgba(232,148,15,.28);border-radius:999px;padding:5px 9px;white-space:nowrap}
 .mailbody{padding:17px 17px 19px}
+.mlogo{width:40px;height:40px;flex:none;border-radius:11px;background:#0B1220;padding:5px;box-sizing:border-box}
+.mletter{margin:13px 14px 15px;border:1px solid rgba(11,18,32,.10);border-radius:14px;overflow:hidden;background:#fff}
+.ml-head{display:flex;align-items:center;gap:9px;padding:11px 13px;background:#0B1220}
+.ml-head img{width:26px;height:26px;flex:none}
+.ml-brand{display:flex;flex-direction:column;line-height:1.1}
+.ml-brand b{font-size:13px;font-weight:800;color:#fff}
+.ml-brand i{font-style:normal;font-size:7.6px;font-weight:800;letter-spacing:.14em;color:#F5A623;margin-top:3px;text-transform:uppercase}
+.ml-rule{height:3px;background:#F5A623;background-image:linear-gradient(90deg,#F5A623,#FFC740 50%,#F5A623)}
+.ml-body{padding:13px 14px 14px}
+.ml-chip{display:inline-block;font-size:9.6px;font-weight:800;color:#166534;background:#E8F7EE;border:1px solid #B7E4C7;border-radius:999px;padding:3px 9px}
+.ml-title{display:block;font-size:15px;font-weight:800;color:#0B1220;margin:8px 0 6px;letter-spacing:-.01em}
+.ml-call{margin-top:11px;padding:9px 11px;background:#FFF8EC;border-inline-start:3px solid #F5A623;border-radius:8px;font-size:11.4px;line-height:1.5;color:#3C4656}
+.ml-call b{display:block;color:#0B1220;font-size:11.6px;margin-bottom:2px}
+.ml-foot{display:flex;flex-direction:column;gap:4px;padding:9px 13px 10px;background:#0B1220;font-size:9.6px;line-height:1.5;color:#AEB6C4}
+.ml-legal{color:#6B7590;border-top:1px solid #1E2A40;padding-top:5px}
 .mhi{font-size:13.4px;font-weight:800}
 .mintro{font-size:12.6px;color:#4C5D79;margin-top:6px;line-height:1.55}
-.mrows{margin-top:14px;border:1px solid rgba(11,18,32,.09);border-radius:12px;overflow:hidden}
-.mrows>div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 13px;font-size:12.5px}
-.mrows>div+div{border-block-start:1px solid rgba(11,18,32,.07)}
-.mrows span{color:#7F8FA8}
-.mrows b{font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.03em;white-space:nowrap}
-.mrows .mnet{background:#FFF7EC}
-.mrows .mnet span{color:#B96F05;font-weight:800}
 .mattach{display:flex;align-items:center;gap:11px;margin-top:14px;padding:11px 13px;border-radius:12px;
   border:1px solid rgba(232,148,15,.32);background:#FFF9F0}
 .mpdf{flex:none;width:33px;height:40px;border-radius:6px;display:grid;place-items:center;color:#fff;
@@ -354,10 +360,8 @@ html[dir="rtl"] .farrow,html[dir="rtl"] .arrow{display:inline-block;transform:sc
 #email .mailgrid{margin-top:clamp(10px,1.6vh,18px);gap:clamp(16px,2.2vw,30px)}
 #email .mailcard{max-width:404px}
 #email .mailhead{padding:12px 15px}
-#email .mailbody{padding:13px 15px 15px}
+#email .mletter{margin:11px 12px 13px}
 #email .mintro{margin-top:4px}
-#email .mrows{margin-top:11px}
-#email .mrows>div{padding:8px 12px}
 #email .mattach{margin-top:11px;padding:9px 12px}
 #email .mfoot{margin-top:8px}
 #email .mfeat{gap:8px}
@@ -521,10 +525,10 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <div class="by r" data-i18n="badge"></div>
     <p class="lead r" data-i18n="lead"></p>
     <div class="chips r">
-      <span class="chip">🛡️ <b data-i18n="chip1"></b></span>
-      <span class="chip">🙂 <b data-i18n="chip2"></b></span>
-      <span class="chip">📍 <b data-i18n="chip3"></b></span>
-      <span class="chip">✅ <b data-i18n="chip4"></b></span>
+      <span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><b data-i18n="chip1"></b></span>
+      <span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b data-i18n="chip2"></b></span>
+      <span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><b data-i18n="chip3"></b></span>
+      <span class="chip"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.8a10 10 0 0 1 4.8-2.6"/><path d="M14.4 10.3a10 10 0 0 1 4.6 2.5"/><path d="M12 20h.01"/></svg><b data-i18n="chip4"></b></span>
     </div>
     <div class="cta r" style="margin-top:24px">
       <a class="btn primary" data-cta="primary" data-mode="mail" href="mailto:support@coaltrack.id?subject=CoalTrack"><svg class="ic-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#ic-wa"/></svg><svg class="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#ic-mail"/></svg><span data-i18n="ctaMail"></span></a>
@@ -711,25 +715,29 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
           <span class="mstatus"><i></i><span data-i18n="mailStatus"></span></span>
         </div>
         <div class="mailhead">
-          <span class="mlogo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="m3 16 5-5 4 4 3-3 6 6"/><circle cx="9" cy="8.5" r="1.3"/></svg></span>
+          <img class="mlogo" src="img/coaltrack-mark.png" alt="" width="40" height="40" loading="lazy" decoding="async">
           <span class="mto"><b data-i18n="mailCardSubj"></b><span class="mfrom" data-i18n="mailCardFrom"></span></span>
           <span class="mauth">SPF · DKIM · DMARC</span>
         </div>
-        <div class="mailbody">
-          <p class="mhi" data-i18n="mailCardHi"></p>
-          <p class="mintro" data-i18n="mailCardIntro"></p>
-          <div class="mrows">
-            <div><span data-i18n="mailCardPeriod"></span><b>•• / ••••</b></div>
-            <div><span data-i18n="mailCardGross"></span><b>Rp ••.•••.•••</b></div>
-            <div><span data-i18n="mailCardDed"></span><b>Rp •.•••.•••</b></div>
-            <div class="mnet"><span data-i18n="mailCardNet"></span><b>Rp ••.•••.•••</b></div>
+        <div class="mletter">
+          <div class="ml-head">
+            <img src="img/coaltrack-mark.png" alt="" width="26" height="26" loading="lazy" decoding="async">
+            <span class="ml-brand"><b>CoalTrack</b><i data-i18n="mailCardTag"></i></span>
           </div>
-          <div class="mattach">
-            <span class="mpdf" aria-hidden="true">PDF</span>
-            <span class="mfile"><b data-i18n="mailCardFile"></b><span data-i18n="mailCardMeta"></span></span>
-            <svg class="mdl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+          <div class="ml-rule" aria-hidden="true"></div>
+          <div class="ml-body">
+            <span class="ml-chip" data-i18n="mailCardChip"></span>
+            <b class="ml-title" data-i18n="mailCardTitle"></b>
+            <p class="mhi" data-i18n="mailCardHi"></p>
+            <p class="mintro" data-i18n="mailCardIntro"></p>
+            <div class="ml-call"><b data-i18n="mailCardLockT"></b><span data-i18n="mailCardLockD"></span></div>
+            <div class="mattach">
+              <span class="mpdf" aria-hidden="true">PDF</span>
+              <span class="mfile"><b data-i18n="mailCardFile"></b><span data-i18n="mailCardMeta"></span></span>
+              <svg class="mdl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+            </div>
           </div>
-          <p class="mfoot" data-i18n="mailCardFoot"></p>
+          <div class="ml-foot"><span data-i18n="mailCardFoot"></span><span class="ml-legal">CoalTrack · coaltrack.id · PT Luxavero Teknologi Indonesia</span></div>
         </div>
       </div>
       <div>
@@ -928,7 +936,7 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
     <h2 class="r" data-i18n="s11ttl" style="font-size:clamp(30px,6vw,58px);margin-top:4px"></h2>
     <p class="lead r" data-i18n="s11lead" style="margin-inline:auto"></p>
     <div class="chips r">
-      <span class="chip">Ksatria Bintang Samudra</span>
+      <span class="chip">PT Luxavero Teknologi Indonesia</span>
       <span class="chip"><a href="https://coaltrack.id" style="color:inherit">coaltrack.id</a></span>
       <span class="chip"><a href="mailto:support@coaltrack.id" style="color:inherit">support@coaltrack.id</a></span>
     </div>
@@ -1076,12 +1084,12 @@ const I18N={
   "cLogin":"First sign-in",
   "cLock":"Face ID / fingerprint",
   "cSetup":"One-tap enable",
-  "badge":"Ksatria Bintang Samudra · Coal Mine Attendance",
-  "lead":"Anti-fraud attendance for coal mining operations — real GPS, server time, enforced work hours, offline capture. One Flutter app (iOS & Android), Laravel backend, HR web panel.",
+  "badge":"PT Luxavero Teknologi Indonesia · Coal Mine Attendance",
+  "lead":"Anti-fraud attendance for coal mining operations — real GPS, server time, enforced work hours, offline capture. An employee app for Android & iPhone, plus a web panel for HR.",
   "chip1":"Anti buddy-punching",
   "chip2":"Server time",
   "chip3":"Real GPS",
-  "chip4":"486 app + 520 API tests",
+  "chip4":"Works offline",
   "s2eye":"Employee app",
   "s2ttl":"Light & clear for field workers.",
   "cHome":"Home",
@@ -1126,17 +1134,18 @@ const I18N={
   "mail3d":"Sending is queued per employee. Anyone without an email address is listed back to HR, so they get a printed slip instead of silence.",
   "mail4t":"One slip, or the whole run",
   "mail4d":"Send the whole payroll run in one action from the panel. Sending is queued, so large runs go out steadily.",
-  "mailCardSubj":"Your payslip is ready",
-  "mailCardFrom":"Payroll · authenticated sending domain",
+  "mailCardSubj":"Payslip October 2026 — CoalTrack",
+  "mailCardFrom":"CoalTrack Payroll · payroll@coaltrack.id",
   "mailCardHi":"Dear employee,",
-  "mailCardIntro":"Your payslip for the period below is attached as a PDF. Please keep it for your records.",
-  "mailCardPeriod":"Period",
-  "mailCardGross":"Gross pay",
-  "mailCardDed":"Deductions",
-  "mailCardNet":"Take-home pay",
+  "mailCardTag":"Mining attendance & payroll",
+  "mailCardChip":"Payslip · October 2026",
+  "mailCardTitle":"Payslip October 2026",
+  "mailCardLockT":"Password-protected file.",
+  "mailCardLockD":"Open the PDF with your employee ID number.",
+  "mailCardIntro":"Here is your payslip for October 2026. The full breakdown is attached as a PDF.",
   "mailCardFile":"payslip.pdf",
   "mailCardMeta":"PDF · 1 page",
-  "mailCardFoot":"Sent automatically by payroll. Please do not reply to this email.",
+  "mailCardFoot":"Sent automatically by CoalTrack. Please do not reply to this email.",
   "mailStatus":"Delivered",
   "mailChanA":"Email",
   "mailChanB":"Print",
@@ -1161,12 +1170,12 @@ const I18N={
   "nApp":"employee + admin",
   "nWeb":"HR web panel",
   "nDb":"append-only",
-  "bTests":"Pest — 520 tests",
+  "bTests":"Automated tests on every release",
   "bData":"Region set by contract",
   "s10eye":"Status",
   "s10ttl":"Live today.",
   "r1t":"Backend + anti-fraud API",
-  "r1d":"Laravel 12 · 520 Pest tests",
+  "r1d":"Laravel 12 · automated tests",
   "r2t":"Employee mobile",
   "r2d":"Attend (online & offline), History, Leave, Pay, Profile, security",
   "r3t":"Payroll engine + PDF payslip",
@@ -1190,7 +1199,7 @@ const I18N={
   "get2d":"Chat on WhatsApp or email us. Tell us your workforce size and number of sites — we'll send a quote.",
   "get3t":"Onboarding in days",
   "get3d":"We set up your company, import your employees, and train your HR team. Live in days, not months.",
-  "getPrice":"Pricing: subscription per employee per month + maintenance tier (see previous slide). Ask for a quote.",
+  "getPrice":"Pricing: a one-time setup, then the monthly package for your workforce size (see the previous slide). Ask for a quote.",
   "ctaWa":"Chat on WhatsApp",
   "ctaMail":"Email support@coaltrack.id",
   "ctaDemo":"Request demo access",
@@ -1246,9 +1255,9 @@ const I18N={
   "hierNote":"Approval by exception — normal check-ins pass automatically; only offline or suspicious ones need a head's nod.",
   "prcEye":"Packages & subscription",
   "prcTtl":"Clear investment that grows with you.",
-  "prcLead":"Build once, then a monthly maintenance and support fee that scales with your workforce. Server and storage are billed separately, at cost.",
+  "prcLead":"A one-time setup, then one monthly fee that scales with your workforce — server, storage, daily backups, email, updates and support included.",
   "prcCol1":"Workforce",
-  "prcCol2":"Maintenance / month",
+  "prcCol2":"Monthly fee",
   "prcT1n":"Up to 1,000 workers",
   "prcT1p":"Rp 5 million",
   "prcT2n":"1,000–3,000 workers",
@@ -1257,7 +1266,7 @@ const I18N={
   "prcT3p":"Rp 15 million",
   "prcT4n":"Above 5,000 workers",
   "prcT4p":"Custom",
-  "prcNote":"Maintenance covers support, updates, and fixes. Server, storage, and infrastructure (VPS/cloud) are separate, charged at actual usage."
+  "prcNote":"The monthly fee covers server, storage, daily backups, email, updates, fixes and support — no separate infrastructure bill."
  },
  id:{
   "fErrName":"Nama minimal 3 karakter.",
@@ -1369,12 +1378,12 @@ const I18N={
   "cLogin":"Login pertama",
   "cLock":"Face ID / sidik jari",
   "cSetup":"Aktif sekali ketuk",
-  "badge":"Ksatria Bintang Samudra · Absensi Tambang Batu Bara",
-  "lead":"Absensi anti-curang untuk operasional tambang batu bara — GPS asli, jam server, jendela jam kerja, rekam offline. Satu aplikasi Flutter (iOS & Android), backend Laravel, panel web HR.",
+  "badge":"PT Luxavero Teknologi Indonesia · Absensi Tambang Batu Bara",
+  "lead":"Absensi anti-curang untuk operasional tambang batu bara — GPS asli, jam server, jendela jam kerja, rekam offline. Aplikasi karyawan untuk Android & iPhone, plus panel web untuk HRD.",
   "chip1":"Anti titip-absen",
   "chip2":"Waktu server",
   "chip3":"GPS asli",
-  "chip4":"486 tes app + 520 tes API",
+  "chip4":"Tetap jalan tanpa sinyal",
   "s2eye":"Aplikasi karyawan",
   "s2ttl":"Ringan & jelas untuk pekerja lapangan.",
   "cHome":"Beranda",
@@ -1419,17 +1428,18 @@ const I18N={
   "mail3d":"Pengiriman diantrekan per karyawan. Yang belum punya alamat email dilaporkan kembali ke HRD, supaya ia menerima slip cetak, bukan keheningan.",
   "mail4t":"Satu slip, atau satu putaran penuh",
   "mail4d":"Kirim seluruh proses gaji dalam satu tindakan dari panel. Pengiriman diantrekan, jadi proses besar keluar dengan stabil.",
-  "mailCardSubj":"Slip gaji Anda sudah siap",
-  "mailCardFrom":"Penggajian · domain pengirim terautentikasi",
+  "mailCardSubj":"Slip Gaji Oktober 2026 — CoalTrack",
+  "mailCardFrom":"CoalTrack Payroll · payroll@coaltrack.id",
   "mailCardHi":"Yth. Karyawan,",
-  "mailCardIntro":"Slip gaji untuk periode di bawah ini terlampir dalam bentuk PDF. Mohon disimpan sebagai arsip Anda.",
-  "mailCardPeriod":"Periode",
-  "mailCardGross":"Gaji kotor",
-  "mailCardDed":"Potongan",
-  "mailCardNet":"Gaji diterima",
+  "mailCardTag":"Absensi & penggajian tambang",
+  "mailCardChip":"Slip gaji · Oktober 2026",
+  "mailCardTitle":"Slip gaji Oktober 2026",
+  "mailCardLockT":"Berkas dilindungi kata sandi.",
+  "mailCardLockD":"Gunakan NIK (nomor induk karyawan) Anda untuk membuka PDF slip gaji.",
+  "mailCardIntro":"Berikut kami sampaikan slip gaji Anda untuk periode Oktober 2026. Rincian lengkap terlampir dalam berkas PDF pada email ini.",
   "mailCardFile":"slip-gaji.pdf",
   "mailCardMeta":"PDF · 1 halaman",
-  "mailCardFoot":"Dikirim otomatis oleh sistem penggajian. Mohon tidak membalas email ini.",
+  "mailCardFoot":"Email ini dikirim otomatis oleh CoalTrack. Mohon tidak membalas email ini.",
   "mailStatus":"Terkirim",
   "mailChanA":"Email",
   "mailChanB":"Cetak",
@@ -1454,12 +1464,12 @@ const I18N={
   "nApp":"karyawan + admin",
   "nWeb":"panel web HR",
   "nDb":"append-only",
-  "bTests":"Pest — 520 tes",
+  "bTests":"Tes otomatis di setiap rilis",
   "bData":"Wilayah data sesuai kontrak",
   "s10eye":"Status",
   "s10ttl":"Sudah jalan hari ini.",
   "r1t":"Backend + API anti-curang",
-  "r1d":"Laravel 12 · 520 tes Pest",
+  "r1d":"Laravel 12 · tes otomatis",
   "r2t":"Mobile karyawan",
   "r2d":"Absen (online & offline), Riwayat, Izin & cuti, Gaji, Profil, keamanan",
   "r3t":"Engine payroll + slip PDF",
@@ -1483,7 +1493,7 @@ const I18N={
   "get2d":"Chat via WhatsApp atau email kami. Sebutkan jumlah pekerja dan jumlah site — kami kirim penawaran.",
   "get3t":"Onboarding dalam hitungan hari",
   "get3d":"Kami siapkan perusahaan Anda, impor data karyawan, dan latih tim HR. Live dalam hitungan hari, bukan bulan.",
-  "getPrice":"Harga: langganan per karyawan per bulan + paket pemeliharaan (lihat slide sebelumnya). Minta penawaran.",
+  "getPrice":"Harga: biaya awal sekali bayar, lalu paket bulanan sesuai jumlah pekerja (lihat slide sebelumnya). Minta penawaran.",
   "ctaWa":"Chat via WhatsApp",
   "ctaMail":"Email support@coaltrack.id",
   "ctaDemo":"Minta akses demo",
@@ -1539,9 +1549,9 @@ const I18N={
   "hierNote":"Persetujuan seperlunya — absen normal lolos otomatis; hanya yang offline atau mencurigakan perlu diketuk kepala.",
   "prcEye":"Paket & langganan",
   "prcTtl":"Investasi jelas, tumbuh sesuai skala.",
-  "prcLead":"Bangun sekali, lalu biaya pemeliharaan dan dukungan bulanan yang menyesuaikan jumlah pekerja. Server dan penyimpanan ditagih terpisah, sesuai pemakaian.",
+  "prcLead":"Biaya awal sekali bayar, lalu satu biaya bulanan sesuai jumlah pekerja — server, penyimpanan, cadangan harian, email, pembaruan, dan dukungan sudah termasuk.",
   "prcCol1":"Jumlah pekerja",
-  "prcCol2":"Pemeliharaan / bulan",
+  "prcCol2":"Biaya / bulan",
   "prcT1n":"Sampai 1.000 pekerja",
   "prcT1p":"Rp 5 juta",
   "prcT2n":"1.000–3.000 pekerja",
@@ -1550,7 +1560,7 @@ const I18N={
   "prcT3p":"Rp 15 juta",
   "prcT4n":"Di atas 5.000 pekerja",
   "prcT4p":"Khusus",
-  "prcNote":"Pemeliharaan mencakup dukungan, pembaruan, dan perbaikan. Server, penyimpanan, dan infrastruktur (VPS/cloud) terpisah, sesuai pemakaian nyata."
+  "prcNote":"Biaya bulanan sudah mencakup server, penyimpanan, cadangan harian, email, pembaruan, perbaikan, dan dukungan — tanpa tagihan infrastruktur terpisah."
  },
  ms:{
   "fErrName":"Nama sekurang-kurangnya 3 aksara.",
@@ -1662,12 +1672,12 @@ const I18N={
   "cLogin":"Log masuk pertama",
   "cLock":"Face ID / cap jari",
   "cSetup":"Aktif satu ketik",
-  "badge":"Ksatria Bintang Samudra · Kehadiran Perlombongan Arang Batu",
-  "lead":"Kehadiran anti-penipuan untuk operasi lombong arang batu — GPS sebenar, masa pelayan, waktu kerja dikuatkuasakan, rakaman luar talian. Satu aplikasi Flutter (iOS & Android), backend Laravel, panel web HR.",
+  "badge":"PT Luxavero Teknologi Indonesia · Kehadiran Perlombongan Arang Batu",
+  "lead":"Kehadiran anti-penipuan untuk operasi lombong arang batu — GPS sebenar, masa pelayan, waktu kerja dikuatkuasakan, rakaman luar talian. Aplikasi pekerja untuk Android & iPhone, serta panel web untuk HR.",
   "chip1":"Anti curi-kehadiran",
   "chip2":"Masa pelayan",
   "chip3":"GPS sebenar",
-  "chip4":"486 ujian aplikasi + 520 ujian API",
+  "chip4":"Berfungsi tanpa isyarat",
   "s2eye":"Aplikasi pekerja",
   "s2ttl":"Ringkas & jelas untuk pekerja lapangan.",
   "cHome":"Utama",
@@ -1712,17 +1722,18 @@ const I18N={
   "mail3d":"Penghantaran dibaris gilir bagi setiap pekerja. Sesiapa tanpa alamat e-mel disenaraikan semula kepada HR, supaya mereka menerima slip bercetak, bukan kesunyian.",
   "mail4t":"Satu slip, atau seluruh pusingan",
   "mail4d":"Hantar keseluruhan larian gaji dalam satu tindakan dari panel. Penghantaran dibaris gilir, jadi larian besar keluar dengan stabil.",
-  "mailCardSubj":"Slip gaji anda sudah sedia",
-  "mailCardFrom":"Penggajian · domain penghantar disahkan",
+  "mailCardSubj":"Slip Gaji Oktober 2026 — CoalTrack",
+  "mailCardFrom":"CoalTrack Payroll · payroll@coaltrack.id",
   "mailCardHi":"Pekerja yang dihormati,",
-  "mailCardIntro":"Slip gaji bagi tempoh di bawah dilampirkan dalam bentuk PDF. Sila simpan sebagai rekod anda.",
-  "mailCardPeriod":"Tempoh",
-  "mailCardGross":"Gaji kasar",
-  "mailCardDed":"Potongan",
-  "mailCardNet":"Gaji bersih",
+  "mailCardTag":"Kehadiran & gaji perlombongan",
+  "mailCardChip":"Slip gaji · Oktober 2026",
+  "mailCardTitle":"Slip gaji Oktober 2026",
+  "mailCardLockT":"Fail dilindungi kata laluan.",
+  "mailCardLockD":"Gunakan nombor pekerja anda untuk membuka PDF slip gaji.",
+  "mailCardIntro":"Bersama ini slip gaji anda bagi tempoh Oktober 2026. Butiran penuh dilampirkan dalam fail PDF.",
   "mailCardFile":"slip-gaji.pdf",
   "mailCardMeta":"PDF · 1 halaman",
-  "mailCardFoot":"Dihantar automatik oleh sistem penggajian. Sila jangan balas e-mel ini.",
+  "mailCardFoot":"E-mel ini dihantar secara automatik oleh CoalTrack. Sila jangan balas e-mel ini.",
   "mailStatus":"Dihantar",
   "mailChanA":"E-mel",
   "mailChanB":"Cetak",
@@ -1747,12 +1758,12 @@ const I18N={
   "nApp":"pekerja + admin",
   "nWeb":"panel web HR",
   "nDb":"tambah-sahaja",
-  "bTests":"Pest — 520 ujian",
+  "bTests":"Ujian automatik setiap keluaran",
   "bData":"Wilayah data sesuai kontrak",
   "s10eye":"Status",
   "s10ttl":"Sudah berjalan hari ini.",
   "r1t":"Backend + API anti-penipuan",
-  "r1d":"Laravel 12 · 520 ujian Pest",
+  "r1d":"Laravel 12 · ujian automatik",
   "r2t":"Mobil pekerja",
   "r2d":"Hadir (dalam & luar talian), Sejarah, Cuti, Gaji, Profil, keselamatan",
   "r3t":"Enjin gaji + slip PDF",
@@ -1776,7 +1787,7 @@ const I18N={
   "get2d":"Sembang di WhatsApp atau e-mel kami. Beritahu bilangan pekerja dan tapak — kami hantar sebut harga.",
   "get3t":"Onboarding dalam beberapa hari",
   "get3d":"Kami sediakan syarikat anda, import data pekerja, dan latih pasukan HR. Beroperasi dalam beberapa hari, bukan bulan.",
-  "getPrice":"Harga: langganan setiap pekerja sebulan + pakej penyelenggaraan (lihat slaid sebelumnya). Minta sebut harga.",
+  "getPrice":"Harga: kos persediaan sekali bayar, kemudian pakej bulanan mengikut bilangan pekerja (lihat slaid sebelumnya). Minta sebut harga.",
   "ctaWa":"Sembang di WhatsApp",
   "ctaMail":"E-mel support@coaltrack.id",
   "ctaDemo":"Minta akses demo",
@@ -1832,9 +1843,9 @@ const I18N={
   "hierNote":"Kelulusan mengikut keperluan — kehadiran biasa lulus automatik; hanya yang luar talian atau mencurigakan perlu kelulusan ketua.",
   "prcEye":"Pakej & langganan",
   "prcTtl":"Pelaburan jelas, berkembang mengikut skala.",
-  "prcLead":"Bina sekali, kemudian yuran penyelenggaraan dan sokongan bulanan yang menyesuaikan bilangan pekerja. Pelayan dan storan dicaj berasingan, mengikut penggunaan.",
+  "prcLead":"Kos persediaan sekali bayar, kemudian satu yuran bulanan mengikut bilangan pekerja — pelayan, storan, sandaran harian, e-mel, kemas kini dan sokongan sudah termasuk.",
   "prcCol1":"Bilangan pekerja",
-  "prcCol2":"Penyelenggaraan / bulan",
+  "prcCol2":"Yuran / bulan",
   "prcT1n":"Sehingga 1,000 pekerja",
   "prcT1p":"Rp 5 juta",
   "prcT2n":"1,000–3,000 pekerja",
@@ -1843,7 +1854,7 @@ const I18N={
   "prcT3p":"Rp 15 juta",
   "prcT4n":"Melebihi 5,000 pekerja",
   "prcT4p":"Khusus",
-  "prcNote":"Penyelenggaraan meliputi sokongan, kemas kini, dan pembaikan. Pelayan, storan, dan infrastruktur (VPS/awan) berasingan, mengikut penggunaan sebenar."
+  "prcNote":"Yuran bulanan merangkumi pelayan, storan, sandaran harian, e-mel, kemas kini, pembaikan dan sokongan — tiada bil infrastruktur berasingan."
  },
  zh:{
   "fErrName":"姓名至少 3 个字符。",
@@ -1955,12 +1966,12 @@ const I18N={
   "cLogin":"首次登录",
   "cLock":"Face ID / 指纹",
   "cSetup":"一键启用",
-  "badge":"Ksatria Bintang Samudra · 煤矿考勤",
-  "lead":"面向煤矿运营的防作弊考勤——真实 GPS、服务器时间、强制工时窗口、离线打卡。一个 Flutter 应用（iOS 与 Android）、Laravel 后端、HR 网页面板。",
+  "badge":"PT Luxavero Teknologi Indonesia · 煤矿考勤",
+  "lead":"面向煤矿运营的防作弊考勤——真实 GPS、服务器时间、强制工时窗口、离线打卡。员工端 App 支持 Android 与 iPhone，另有供 HR 使用的网页面板。",
   "chip1":"杜绝代打卡",
   "chip2":"服务器时间",
   "chip3":"真实 GPS",
-  "chip4":"486 项应用测试 + 520 项 API 测试",
+  "chip4":"无信号也能打卡",
   "s2eye":"员工应用",
   "s2ttl":"为一线工人打造，轻巧清晰。",
   "cHome":"主页",
@@ -2005,17 +2016,18 @@ const I18N={
   "mail3d":"发送按员工排队。没有邮箱的员工会反馈给 HR，改为领取纸质工资条，而不是无声无息。",
   "mail4t":"一份工资单，或整批发放",
   "mail4d":"在面板中一键发送整个薪资期间。发送排队进行，大批量也能平稳送达。",
-  "mailCardSubj":"您的工资单已就绪",
-  "mailCardFrom":"薪资 · 已认证发信域名",
+  "mailCardSubj":"2026年10月工资单 — CoalTrack",
+  "mailCardFrom":"CoalTrack Payroll · payroll@coaltrack.id",
   "mailCardHi":"尊敬的员工：",
-  "mailCardIntro":"以下周期的工资单已以 PDF 附件形式随信奉上，请妥善保存备查。",
-  "mailCardPeriod":"周期",
-  "mailCardGross":"应发工资",
-  "mailCardDed":"扣款",
-  "mailCardNet":"实发工资",
+  "mailCardTag":"矿山考勤与薪资",
+  "mailCardChip":"工资单 · 2026年10月",
+  "mailCardTitle":"2026年10月工资单",
+  "mailCardLockT":"文件已设密码保护。",
+  "mailCardLockD":"请使用您的员工编号打开 PDF 工资单。",
+  "mailCardIntro":"随信附上您 2026 年 10 月的工资单，完整明细见 PDF 附件。",
   "mailCardFile":"工资单.pdf",
   "mailCardMeta":"PDF · 1 页",
-  "mailCardFoot":"由薪资系统自动发送，请勿回复本邮件。",
+  "mailCardFoot":"本邮件由 CoalTrack 自动发送，请勿回复。",
   "mailStatus":"已送达",
   "mailChanA":"电子邮件",
   "mailChanB":"打印",
@@ -2040,12 +2052,12 @@ const I18N={
   "nApp":"员工 + 管理",
   "nWeb":"HR 网页面板",
   "nDb":"仅追加",
-  "bTests":"Pest — 520 项测试",
+  "bTests":"每次发布均经自动化测试",
   "bData":"数据区域依合同约定",
   "s10eye":"状态",
   "s10ttl":"今天即可上线。",
   "r1t":"后端 + 防作弊 API",
-  "r1d":"Laravel 12 · 520 项 Pest 测试",
+  "r1d":"Laravel 12 · 自动化测试",
   "r2t":"员工端",
   "r2d":"打卡（在线与离线）、记录、请假、薪资、资料、安全",
   "r3t":"薪资引擎 + PDF 工资单",
@@ -2069,7 +2081,7 @@ const I18N={
   "get2d":"通过 WhatsApp 或邮件联系我们。告诉我们员工规模与矿点数量——我们将发送报价。",
   "get3t":"数天内完成上线",
   "get3d":"我们为您搭建公司账户、导入员工数据并培训人事团队。数天上线，而非数月。",
-  "getPrice":"定价：按员工每人每月订阅 + 维护套餐（见上一页）。欢迎索取报价。",
+  "getPrice":"价格：一次性部署费，之后按员工规模支付月度套餐（见上一页）。欢迎询价。",
   "ctaWa":"WhatsApp 咨询",
   "ctaMail":"邮件联系 support@coaltrack.id",
   "ctaDemo":"申请演示权限",
@@ -2125,9 +2137,9 @@ const I18N={
   "hierNote":"按例外审批——正常打卡自动通过；仅离线或可疑的需要负责人确认。",
   "prcEye":"套餐与订阅",
   "prcTtl":"清晰的投入，随规模增长。",
-  "prcLead":"一次搭建，之后按月维护与支持费，随员工规模调整。服务器与存储按用量单独计费。",
+  "prcLead":"一次性部署费，之后按员工规模支付一笔月费——服务器、存储、每日备份、邮件、更新与支持均已包含。",
   "prcCol1":"员工规模",
-  "prcCol2":"维护 / 每月",
+  "prcCol2":"月费",
   "prcT1n":"最多 1,000 名员工",
   "prcT1p":"Rp 500万",
   "prcT2n":"1,000–3,000 名员工",
@@ -2136,7 +2148,7 @@ const I18N={
   "prcT3p":"Rp 1,500万",
   "prcT4n":"5,000 名以上",
   "prcT4p":"面议",
-  "prcNote":"维护涵盖支持、更新与修复。服务器、存储与基础设施（VPS/云）单独计费，按实际用量。"
+  "prcNote":"月费已涵盖服务器、存储、每日备份、邮件、更新、修复与支持——无需另付基础设施费用。"
  },
  ar:{
   "fErrName":"يجب ألا يقل الاسم عن 3 أحرف.",
@@ -2248,12 +2260,12 @@ const I18N={
   "cLogin":"أول دخول",
   "cLock":"Face ID / بصمة",
   "cSetup":"تفعيل بنقرة",
-  "badge":"Ksatria Bintang Samudra · حضور منجم الفحم",
-  "lead":"حضور مقاوم للاحتيال لعمليات مناجم الفحم — GPS حقيقي، وقت الخادم، نافذة دوام مُلزمة، تسجيل دون اتصال. تطبيق Flutter واحد (iOS وAndroid)، خلفية Laravel، لوحة ويب للموارد البشرية.",
+  "badge":"PT Luxavero Teknologi Indonesia · حضور منجم الفحم",
+  "lead":"حضور مقاوم للاحتيال لعمليات مناجم الفحم — GPS حقيقي، وقت الخادم، نافذة دوام مُلزمة، تسجيل دون اتصال. تطبيق للموظفين على Android وiPhone، ولوحة ويب للموارد البشرية.",
   "chip1":"منع الحضور بالنيابة",
   "chip2":"وقت الخادم",
   "chip3":"GPS حقيقي",
-  "chip4":"486 اختبار تطبيق + 520 اختبار API",
+  "chip4":"يعمل دون اتصال",
   "s2eye":"تطبيق الموظف",
   "s2ttl":"خفيف وواضح لعمال الميدان.",
   "cHome":"الرئيسية",
@@ -2298,17 +2310,18 @@ const I18N={
   "mail3d":"يُصطف الإرسال لكل موظف. من لا يملك بريدًا يُعاد إدراجه للموارد البشرية ليحصل على قسيمة مطبوعة بدل الصمت.",
   "mail4t":"قسيمة واحدة أو الدورة كاملة",
   "mail4d":"أرسل فترة الرواتب كاملة بإجراء واحد من اللوحة. الإرسال يتم عبر قائمة انتظار، فتخرج الدفعات الكبيرة بثبات.",
-  "mailCardSubj":"قسيمة راتبك جاهزة",
-  "mailCardFrom":"الرواتب · نطاق إرسال موثّق",
+  "mailCardSubj":"قسيمة راتب أكتوبر 2026 — CoalTrack",
+  "mailCardFrom":"CoalTrack Payroll · payroll@coaltrack.id",
   "mailCardHi":"عزيزي الموظف،",
-  "mailCardIntro":"قسيمة راتبك للفترة أدناه مرفقة بصيغة PDF. يُرجى الاحتفاظ بها في سجلاتك.",
-  "mailCardPeriod":"الفترة",
-  "mailCardGross":"الراتب الإجمالي",
-  "mailCardDed":"الاستقطاعات",
-  "mailCardNet":"صافي الراتب",
+  "mailCardTag":"حضور ورواتب المناجم",
+  "mailCardChip":"قسيمة الراتب · أكتوبر 2026",
+  "mailCardTitle":"قسيمة راتب أكتوبر 2026",
+  "mailCardLockT":"الملف محمي بكلمة مرور.",
+  "mailCardLockD":"استخدم رقم الموظف الخاص بك لفتح ملف PDF.",
+  "mailCardIntro":"إليك قسيمة راتبك لشهر أكتوبر 2026. التفاصيل الكاملة مرفقة بصيغة PDF.",
   "mailCardFile":"قسيمة-الراتب.pdf",
   "mailCardMeta":"PDF · صفحة واحدة",
-  "mailCardFoot":"أُرسلت تلقائيًا من نظام الرواتب. يُرجى عدم الرد على هذه الرسالة.",
+  "mailCardFoot":"أُرسلت هذه الرسالة تلقائيًا من CoalTrack. يُرجى عدم الرد عليها.",
   "mailStatus":"تم التسليم",
   "mailChanA":"البريد الإلكتروني",
   "mailChanB":"طباعة",
@@ -2333,12 +2346,12 @@ const I18N={
   "nApp":"موظف + إدارة",
   "nWeb":"لوحة ويب للموارد البشرية",
   "nDb":"للإضافة فقط",
-  "bTests":"Pest — 520 اختبارًا",
+  "bTests":"اختبارات آلية مع كل إصدار",
   "bData":"منطقة البيانات حسب العقد",
   "s10eye":"الحالة",
   "s10ttl":"جاهز اليوم.",
   "r1t":"خلفية + واجهة مضادة للتلاعب",
-  "r1d":"Laravel 12 · 520 اختبار Pest",
+  "r1d":"Laravel 12 · اختبارات آلية",
   "r2t":"تطبيق الموظف",
   "r2d":"الحضور (متصل ودون اتصال)، السجل، الإجازات، الراتب، الملف، الأمان",
   "r3t":"محرك الرواتب + قسيمة PDF",
@@ -2362,7 +2375,7 @@ const I18N={
   "get2d":"راسلنا عبر واتساب أو البريد الإلكتروني. أخبرنا بعدد العاملين والمواقع — وسنرسل لك عرض سعر.",
   "get3t":"تهيئة خلال أيام",
   "get3d":"نجهّز شركتك، ونستورد بيانات الموظفين، وندرّب فريق الموارد البشرية. تشغيل خلال أيام لا شهور.",
-  "getPrice":"التسعير: اشتراك لكل موظف شهريًا + باقة صيانة (انظر الشريحة السابقة). اطلب عرض سعر.",
+  "getPrice":"التسعير: رسوم إعداد لمرة واحدة، ثم باقة شهرية حسب عدد العاملين (انظر الشريحة السابقة). اطلب عرض سعر.",
   "ctaWa":"تواصل عبر واتساب",
   "ctaMail":"راسلنا على support@coaltrack.id",
   "ctaDemo":"اطلب وصولًا تجريبيًا",
@@ -2418,9 +2431,9 @@ const I18N={
   "hierNote":"اعتماد بالاستثناء — الحضور العادي يمر تلقائيًا؛ فقط ما كان دون اتصال أو مريبًا يحتاج موافقة الرئيس.",
   "prcEye":"الباقات والاشتراك",
   "prcTtl":"استثمار واضح ينمو مع حجمك.",
-  "prcLead":"بناء لمرة واحدة، ثم رسوم صيانة ودعم شهرية تتناسب مع عدد العاملين. الخادم والتخزين يُحتسبان منفصلين حسب الاستخدام.",
+  "prcLead":"رسوم إعداد لمرة واحدة، ثم رسوم شهرية واحدة تتناسب مع عدد العاملين — تشمل الخادم والتخزين والنسخ الاحتياطي اليومي والبريد والتحديثات والدعم.",
   "prcCol1":"عدد العاملين",
-  "prcCol2":"الصيانة / شهريًا",
+  "prcCol2":"الرسوم / شهريًا",
   "prcT1n":"حتى 1,000 عامل",
   "prcT1p":"5 ملايين روبية",
   "prcT2n":"1,000–3,000 عامل",
@@ -2429,7 +2442,7 @@ const I18N={
   "prcT3p":"15 مليون روبية",
   "prcT4n":"أكثر من 5,000 عامل",
   "prcT4p":"حسب الطلب",
-  "prcNote":"تشمل الصيانة الدعم والتحديثات والإصلاحات. الخادم والتخزين والبنية التحتية (VPS/سحابة) منفصلة، حسب الاستخدام الفعلي."
+  "prcNote":"تشمل الرسوم الشهرية الخادم والتخزين والنسخ الاحتياطي اليومي والبريد والتحديثات والإصلاحات والدعم — دون فاتورة بنية تحتية منفصلة."
  }
 };
 I18N.th={
@@ -2542,12 +2555,12 @@ I18N.th={
  "cLogin":"เข้าสู่ระบบครั้งแรก",
  "cLock":"Face ID / ลายนิ้วมือ",
  "cSetup":"เปิดใช้แตะเดียว",
- "badge":"Ksatria Bintang Samudra · การลงเวลาเหมืองถ่านหิน",
- "lead":"ระบบลงเวลาป้องกันการทุจริตสำหรับเหมืองถ่านหิน — GPS จริง เวลาเซิร์ฟเวอร์ ช่วงเวลาทำงานบังคับ บันทึกได้แม้ไม่มีสัญญาณ แอป Flutter เดียว (iOS และ Android) แบ็กเอนด์ Laravel แผงเว็บ HR",
+ "badge":"PT Luxavero Teknologi Indonesia · การลงเวลาเหมืองถ่านหิน",
+ "lead":"ระบบลงเวลาป้องกันการทุจริตสำหรับเหมืองถ่านหิน — GPS จริง เวลาเซิร์ฟเวอร์ ช่วงเวลาทำงานบังคับ บันทึกได้แม้ไม่มีสัญญาณ แอปพนักงานสำหรับ Android และ iPhone พร้อมแผงเว็บสำหรับ HR",
  "chip1":"กันลงเวลาแทนกัน",
  "chip2":"เวลาเซิร์ฟเวอร์",
  "chip3":"GPS จริง",
- "chip4":"ทดสอบแอป 486 + API 520 รายการ",
+ "chip4":"ใช้งานได้แม้ไม่มีสัญญาณ",
  "s2eye":"แอปพนักงาน",
  "s2ttl":"เบาและชัดเจนสำหรับคนหน้างาน",
  "cHome":"หน้าแรก",
@@ -2592,17 +2605,18 @@ I18N.th={
  "mail3d":"การส่งเข้าคิวรายพนักงาน ผู้ที่ไม่มีอีเมลจะถูกแจ้งกลับให้ HR เพื่อรับสลิปพิมพ์แทนที่จะเงียบหาย",
  "mail4t":"ทีละใบ หรือทั้งรอบจ่าย",
  "mail4d":"ส่งทั้งงวดเงินเดือนด้วยการกระทำเดียวจากแผง การส่งเข้าคิว งวดใหญ่จึงส่งออกได้อย่างราบรื่น",
- "mailCardSubj":"สลิปเงินเดือนของคุณพร้อมแล้ว",
- "mailCardFrom":"ฝ่ายเงินเดือน · โดเมนผู้ส่งที่ยืนยันแล้ว",
+ "mailCardSubj":"สลิปเงินเดือน ตุลาคม 2026 — CoalTrack",
+ "mailCardFrom":"CoalTrack Payroll · payroll@coaltrack.id",
  "mailCardHi":"เรียน พนักงาน",
- "mailCardIntro":"สลิปเงินเดือนสำหรับงวดด้านล่างแนบมาในรูปแบบ PDF กรุณาเก็บไว้เป็นหลักฐาน",
- "mailCardPeriod":"งวด",
- "mailCardGross":"เงินได้รวม",
- "mailCardDed":"รายการหัก",
- "mailCardNet":"เงินสุทธิที่ได้รับ",
+ "mailCardTag":"ลงเวลาและเงินเดือนเหมือง",
+ "mailCardChip":"สลิปเงินเดือน · ตุลาคม 2026",
+ "mailCardTitle":"สลิปเงินเดือน ตุลาคม 2026",
+ "mailCardLockT":"ไฟล์มีรหัสผ่านป้องกัน",
+ "mailCardLockD":"ใช้รหัสพนักงานของคุณเพื่อเปิดไฟล์ PDF",
+ "mailCardIntro":"นี่คือสลิปเงินเดือนของคุณประจำเดือนตุลาคม 2026 รายละเอียดทั้งหมดแนบเป็นไฟล์ PDF",
  "mailCardFile":"สลิปเงินเดือน.pdf",
  "mailCardMeta":"PDF · 1 หน้า",
- "mailCardFoot":"ส่งอัตโนมัติโดยระบบเงินเดือน กรุณาอย่าตอบกลับอีเมลฉบับนี้",
+ "mailCardFoot":"อีเมลนี้ส่งอัตโนมัติโดย CoalTrack กรุณาอย่าตอบกลับ",
  "mailStatus":"ส่งถึงแล้ว",
  "mailChanA":"อีเมล",
  "mailChanB":"พิมพ์",
@@ -2627,12 +2641,12 @@ I18N.th={
  "nApp":"พนักงาน + ผู้ดูแล",
  "nWeb":"แผงเว็บ HR",
  "nDb":"เพิ่มได้อย่างเดียว",
- "bTests":"Pest — 520 รายการทดสอบ",
+ "bTests":"ทดสอบอัตโนมัติทุกครั้งที่ปล่อยเวอร์ชัน",
  "bData":"ภูมิภาคข้อมูลตามสัญญา",
  "s10eye":"สถานะ",
  "s10ttl":"พร้อมใช้วันนี้",
  "r1t":"แบ็กเอนด์ + API กันทุจริต",
- "r1d":"Laravel 12 · ทดสอบ Pest 520 รายการ",
+ "r1d":"Laravel 12 · ทดสอบอัตโนมัติ",
  "r2t":"แอปมือถือพนักงาน",
  "r2d":"ลงเวลา (ออนไลน์และออฟไลน์) ประวัติ การลา เงินเดือน โปรไฟล์ ความปลอดภัย",
  "r3t":"เครื่องคำนวณเงินเดือน + สลิป PDF",
@@ -2656,7 +2670,7 @@ I18N.th={
  "get2d":"แชตทาง WhatsApp หรืออีเมลหาเรา บอกจำนวนพนักงานและจำนวนไซต์ — เราจะส่งใบเสนอราคาให้",
  "get3t":"เริ่มใช้งานภายในไม่กี่วัน",
  "get3d":"เราตั้งค่าบริษัทของคุณ นำเข้าข้อมูลพนักงาน และอบรมทีม HR ใช้งานจริงได้ในไม่กี่วัน ไม่ใช่หลายเดือน",
- "getPrice":"ราคา: ค่าสมัครสมาชิกต่อพนักงานต่อเดือน + แพ็กเกจบำรุงรักษา (ดูสไลด์ก่อนหน้า) ขอใบเสนอราคาได้เลย",
+ "getPrice":"ราคา: ค่าติดตั้งครั้งเดียว แล้วจ่ายแพ็กเกจรายเดือนตามจำนวนพนักงาน (ดูสไลด์ก่อนหน้า) ขอใบเสนอราคาได้",
  "ctaWa":"แชตทาง WhatsApp",
  "ctaMail":"อีเมล support@coaltrack.id",
  "ctaDemo":"ขอสิทธิ์ทดลองใช้",
@@ -2712,9 +2726,9 @@ I18N.th={
  "hierNote":"อนุมัติเฉพาะกรณียกเว้น — การลงเวลาปกติผ่านอัตโนมัติ เฉพาะที่ออฟไลน์หรือน่าสงสัยจึงต้องให้หัวหน้าอนุมัติ",
  "prcEye":"แพ็กเกจ & การสมัครสมาชิก",
  "prcTtl":"การลงทุนที่ชัดเจน เติบโตไปกับคุณ",
- "prcLead":"สร้างครั้งเดียว จากนั้นค่าบำรุงรักษาและซัพพอร์ตรายเดือนที่ปรับตามจำนวนพนักงาน ค่าเซิร์ฟเวอร์และพื้นที่จัดเก็บคิดแยกตามจริง",
+ "prcLead":"ค่าติดตั้งครั้งเดียว แล้วจ่ายค่าบริการรายเดือนตามจำนวนพนักงาน — รวมเซิร์ฟเวอร์ พื้นที่จัดเก็บ สำรองข้อมูลรายวัน อีเมล อัปเดต และซัพพอร์ตแล้ว",
  "prcCol1":"จำนวนพนักงาน",
- "prcCol2":"ค่าบำรุงรักษา / เดือน",
+ "prcCol2":"ค่าบริการ / เดือน",
  "prcT1n":"ไม่เกิน 1,000 คน",
  "prcT1p":"Rp 5 ล้าน",
  "prcT2n":"1,000–3,000 คน",
@@ -2723,7 +2737,7 @@ I18N.th={
  "prcT3p":"Rp 15 ล้าน",
  "prcT4n":"มากกว่า 5,000 คน",
  "prcT4p":"กำหนดเอง",
- "prcNote":"ค่าบำรุงรักษาครอบคลุมการซัพพอร์ต การอัปเดต และการแก้ไข ค่าเซิร์ฟเวอร์ พื้นที่จัดเก็บ และโครงสร้างพื้นฐาน (VPS/คลาวด์) คิดแยก ตามการใช้งานจริง"
+ "prcNote":"ค่าบริการรายเดือนรวมเซิร์ฟเวอร์ พื้นที่จัดเก็บ สำรองข้อมูลรายวัน อีเมล อัปเดต การแก้ไข และซัพพอร์ต — ไม่มีบิลโครงสร้างพื้นฐานแยก"
 };
 I18N.fil={
   "fErrName":"Dapat hindi bababa sa 3 character ang pangalan.",
@@ -2835,12 +2849,12 @@ I18N.fil={
  "cLogin":"Unang sign-in",
  "cLock":"Face ID / fingerprint",
  "cSetup":"One-tap na pag-enable",
- "badge":"Ksatria Bintang Samudra · Attendance sa Minahan ng Karbon",
- "lead":"Anti-dayang attendance para sa operasyon ng minahan ng karbon — totoong GPS, oras ng server, ipinapatupad na oras ng trabaho, offline na pagtatala. Isang Flutter app (iOS at Android), Laravel backend, HR web panel.",
+ "badge":"PT Luxavero Teknologi Indonesia · Attendance sa Minahan ng Karbon",
+ "lead":"Anti-dayang attendance para sa operasyon ng minahan ng karbon — totoong GPS, oras ng server, ipinapatupad na oras ng trabaho, offline na pagtatala. App para sa mga empleyado sa Android at iPhone, at web panel para sa HR.",
  "chip1":"Anti buddy-punching",
  "chip2":"Oras ng server",
  "chip3":"Tunay na GPS",
- "chip4":"486 app + 520 API tests",
+ "chip4":"Gumagana kahit walang signal",
  "s2eye":"App ng empleyado",
  "s2ttl":"Magaan at malinaw para sa field workers.",
  "cHome":"Home",
@@ -2885,17 +2899,18 @@ I18N.fil={
  "mail3d":"Naka-queue ang pagpapadala bawat empleyado. Ang walang email address ay ibinabalik sa listahan ng HR, para makatanggap siya ng naka-print na slip sa halip na katahimikan.",
  "mail4t":"Isang slip, o buong payroll run",
  "mail4d":"Ipadala ang buong payroll run sa isang aksyon mula sa panel. Naka-queue ang pagpapadala, kaya maayos na lumalabas ang malalaking run.",
- "mailCardSubj":"Handa na ang inyong payslip",
- "mailCardFrom":"Payroll · authenticated na sending domain",
+ "mailCardSubj":"Payslip Oktubre 2026 — CoalTrack",
+ "mailCardFrom":"CoalTrack Payroll · payroll@coaltrack.id",
  "mailCardHi":"Mahal naming empleyado,",
- "mailCardIntro":"Nakalakip bilang PDF ang payslip ninyo para sa panahong nasa ibaba. Itago po ito para sa inyong talaan.",
- "mailCardPeriod":"Panahon",
- "mailCardGross":"Gross na sahod",
- "mailCardDed":"Mga bawas",
- "mailCardNet":"Take-home na sahod",
+ "mailCardTag":"Attendance at payroll sa minahan",
+ "mailCardChip":"Payslip · Oktubre 2026",
+ "mailCardTitle":"Payslip para sa Oktubre 2026",
+ "mailCardLockT":"Protektado ng password ang file.",
+ "mailCardLockD":"Gamitin ang inyong employee ID number para mabuksan ang PDF.",
+ "mailCardIntro":"Narito ang inyong payslip para sa Oktubre 2026. Nakalakip ang buong detalye bilang PDF.",
  "mailCardFile":"payslip.pdf",
  "mailCardMeta":"PDF · 1 pahina",
- "mailCardFoot":"Awtomatikong ipinadala ng payroll. Huwag pong sagutin ang email na ito.",
+ "mailCardFoot":"Awtomatikong ipinadala ng CoalTrack. Huwag pong sagutin ang email na ito.",
  "mailStatus":"Naihatid",
  "mailChanA":"Email",
  "mailChanB":"Print",
@@ -2920,12 +2935,12 @@ I18N.fil={
  "nApp":"empleyado + admin",
  "nWeb":"HR web panel",
  "nDb":"append-only",
- "bTests":"Pest — 520 tests",
+ "bTests":"Awtomatikong test sa bawat release",
  "bData":"Rehiyon ng data ayon sa kontrata",
  "s10eye":"Status",
  "s10ttl":"Live na ngayon.",
  "r1t":"Backend + anti-fraud API",
- "r1d":"Laravel 12 · 520 Pest tests",
+ "r1d":"Laravel 12 · awtomatikong test",
  "r2t":"Mobile ng empleyado",
  "r2d":"Attend (online at offline), History, Leave, Pay, Profile, seguridad",
  "r3t":"Payroll engine + PDF payslip",
@@ -2949,7 +2964,7 @@ I18N.fil={
  "get2d":"Mag-chat sa WhatsApp o mag-email sa amin. Sabihin ang dami ng manggagawa at bilang ng site — magpapadala kami ng quote.",
  "get3t":"Onboarding sa loob ng ilang araw",
  "get3d":"Ise-set up namin ang kumpanya mo, ii-import ang mga empleyado, at ite-train ang HR team. Live sa ilang araw, hindi buwan.",
- "getPrice":"Presyo: subscription bawat empleyado bawat buwan + maintenance tier (tingnan ang nakaraang slide). Humingi ng quote.",
+ "getPrice":"Presyo: isang beses na setup, saka buwanang package ayon sa dami ng manggagawa (tingnan ang naunang slide). Humingi ng quote.",
  "ctaWa":"Mag-chat sa WhatsApp",
  "ctaMail":"Mag-email sa support@coaltrack.id",
  "ctaDemo":"Humiling ng demo access",
@@ -3005,9 +3020,9 @@ I18N.fil={
  "hierNote":"Pag-apruba kapag kailangan lang — awtomatikong pumapasa ang normal na check-in; ang offline o kahina-hinala lang ang nangangailangan ng pahintulot ng pinuno.",
  "prcEye":"Mga package at subscription",
  "prcTtl":"Malinaw na pamumuhunan na lumalago kasabay mo.",
- "prcLead":"Gawin nang isang beses, tapos buwanang bayad sa maintenance at suporta na umaangkop sa dami ng manggagawa. Hiwalay na sinisingil ang server at storage, ayon sa gastos.",
+ "prcLead":"Isang beses na setup, saka isang buwanang bayad ayon sa dami ng manggagawa — kasama na ang server, storage, araw-araw na backup, email, updates at suporta.",
  "prcCol1":"Dami ng manggagawa",
- "prcCol2":"Maintenance / buwan",
+ "prcCol2":"Bayad / buwan",
  "prcT1n":"Hanggang 1,000 manggagawa",
  "prcT1p":"Rp 5 milyon",
  "prcT2n":"1,000–3,000 manggagawa",
@@ -3016,7 +3031,7 @@ I18N.fil={
  "prcT3p":"Rp 15 milyon",
  "prcT4n":"Higit sa 5,000 manggagawa",
  "prcT4p":"Custom",
- "prcNote":"Saklaw ng maintenance ang suporta, update, at pag-aayos. Hiwalay ang server, storage, at infrastructure (VPS/cloud), sinisingil ayon sa aktwal na paggamit."
+ "prcNote":"Saklaw ng buwanang bayad ang server, storage, araw-araw na backup, email, updates, pag-aayos at suporta — walang hiwalay na bayad sa infrastructure."
 };
 window.__ctI18N=I18N;
 // Tautan WhatsApp (wa.me + salam sesuai bahasa); '' bila SALES_WA kosong.
