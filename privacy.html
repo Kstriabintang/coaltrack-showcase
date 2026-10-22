@@ -254,6 +254,7 @@ details p,details li{font-size:14px}
   <li><a href="#insiden">Insiden keamanan</a></li>
   <li><a href="#perubahan">Perubahan kebijakan</a></li>
   <li><a href="#kontak">Kontak</a></li>
+  <li><a href="#ketentuan-negara">Ketentuan tambahan per negara</a></li>
 </ol></div>
 
 <section id="ringkasan">
@@ -262,7 +263,8 @@ details p,details li{font-size:14px}
     <li><strong>CoalTrack</strong> adalah aplikasi absensi dan penggajian yang disediakan oleh <strong>Pemberi Kerja</strong> Anda kepada karyawannya. Anda menggunakan aplikasi ini karena perusahaan tempat Anda bekerja berlangganan CoalTrack.</li>
     <li>Pemberi Kerja Anda adalah <strong>Pengendali Data Pribadi</strong>. <strong>PT Luxavero Teknologi Indonesia</strong> (pengembang CoalTrack) adalah <strong>Prosesor Data Pribadi</strong> yang memproses data hanya atas instruksi Pemberi Kerja.</li>
     <li>Data yang diproses: identitas dan kepegawaian, kejadian absensi, koordinat GPS <em>saat absen</em>, pengenal perangkat, data penggajian, dan diagnostik aplikasi. Tidak ada data wajah/biometrik yang dikumpulkan.</li>
-    <li>Kami <strong>tidak menjual</strong> data, <strong>tidak menayangkan iklan</strong>, dan tidak membagikan data kepada pihak lain selain Pemberi Kerja dan sub-prosesor yang terikat kontrak.</li>
+    <li>Data disimpan di Singapura (DigitalOcean, wilayah sgp1). Jika Pemberi Kerja Anda berada di luar Indonesia, baca juga <a href="#ketentuan-negara">Ketentuan tambahan per negara di bagian 17</a>.</li>
+    <li>Kami <strong>tidak menjual</strong> data dan <strong>tidak menayangkan iklan</strong>. Kami hanya membagikan data kepada Pemberi Kerja, sub-prosesor kami, dan layanan pihak ketiga terbatas yang tercantum di bagian 07. Misalnya, server penyedia peta menerima alamat IP pengguna HR dan area peta yang sedang dilihat.</li>
     <li>Lokasi hanya diambil pada saat absen masuk/pulang — <strong>tidak ada pelacakan di latar belakang</strong>.</li>
     <li>CoalTrack tidak mengambil, mengirim, atau menyimpan foto, video, atau data wajah apa pun untuk absensi.</li>
     <li>Anda dapat meminta akses, koreksi, dan penghapusan data — lihat bagian <a href="#hapus-akun">Hapus Akun &amp; Data</a>.</li>
@@ -272,8 +274,17 @@ details p,details li{font-size:14px}
 <section id="siapa-kami">
   <h2><span class="n">02</span>Siapa kami &amp; peran para pihak</h2>
   <p><strong>PT Luxavero Teknologi Indonesia</strong> (“<strong>Luxavero</strong>”, “kami”), didirikan oleh Ksatria Bintang Samudra, adalah pengembang dan pengelola platform CoalTrack, yang terdiri dari aplikasi seluler CoalTrack (Android dan iOS), portal web HR/admin, serta layanan API pendukungnya (bersama-sama disebut “<strong>Layanan</strong>”). Situs web kami: <a href="https://coaltrack.id">coaltrack.id</a>. Email: <a href="mailto:support@coaltrack.id">support@coaltrack.id</a>.</p>
+  <p>Luxavero adalah perseroan perorangan (PT Perorangan) berbadan hukum Indonesia dengan satu pemegang saham. Direktur: Ksatria Bintang Samudra. Alamat: Jl. Kuantan Timur RT 006 RW 003, Kel. Pasir Kemilu, Kec. Rengat, Kab. Indragiri Hulu, Riau 29316, Indonesia.</p>
   <p><strong>Pemberi Kerja</strong> adalah perusahaan tempat Anda bekerja yang berlangganan CoalTrack dan memberikan akun kepada Anda — nama Pemberi Kerja Anda tertera di aplikasi setelah lisensi perusahaan diaktifkan. Pemberi Kerja bertindak sebagai <strong>Pengendali Data Pribadi</strong>: ia menentukan tujuan dan cara pemrosesan, kebijakan absensi, area kerja (geofence), jadwal shift, komponen gaji, masa retensi, serta siapa saja di perusahaan yang berhak mengakses data Anda.</p>
   <p>Luxavero bertindak sebagai <strong>Prosesor Data Pribadi</strong>. Kami memproses data Anda hanya berdasarkan instruksi terdokumentasi dari Pemberi Kerja sesuai perjanjian pemrosesan data, dan tidak menggunakan data Anda untuk tujuan kami sendiri.</p>
+  <p><strong>Saat Luxavero menjadi Pengendali Data Pribadi.</strong> Luxavero sendiri menentukan tujuan dan cara pemrosesan data berikut:</p>
+  <ol type="a">
+    <li>Data pengunjung coaltrack.id. Situs ini di-hosting di GitHub Pages, dan GitHub mencatat alamat IP pengunjung untuk keperluan keamanan. Halaman situs memuat fon dari Google Fonts, yang menerima alamat IP Anda. Pilihan bahasa Anda hanya disimpan di peramban Anda.</li>
+    <li>Data yang Anda kirim melalui formulir permintaan demo: nama, perusahaan, email, nomor telepon, jumlah karyawan, dan pesan, beserta alamat IP dan <em>user agent</em> peramban Anda. Data ini disimpan di server kami di Singapura, dikirim melalui email ke kotak surat dukungan kami, dikirim sebagai pemberitahuan internal ke akun Telegram Luxavero, dan dijawab dengan email konfirmasi penerimaan yang dikirim melalui Brevo.</li>
+    <li>Data kontak perwakilan calon klien dan klien, yang digunakan untuk komunikasi penjualan dan layanan.</li>
+    <li>Data penagihan klien: tagihan, catatan pembayaran, dan bukti transfer bank yang diunggah oleh pengguna klien, termasuk nama pengirim dan nama pengunggah. Saat bukti transfer diunggah, pemberitahuan yang memuat bukti tersebut dikirim ke akun Telegram Luxavero.</li>
+  </ol>
+  <p>Kami menggunakan data ini untuk menjawab pertanyaan, memberikan demo, serta mengelola kontrak dan tagihan klien. Data ini tidak mencakup data absensi karyawan. Data (b) kami simpan selama 12 bulan sejak kontak terakhir, data (c) selama 24 bulan sejak kontak terakhir, dan catatan (d) selama 10 tahun sesuai kewajiban penyimpanan dokumen perpajakan dan perusahaan di Indonesia (bagian 06).</p>
   <div class="callout"><span class="ttl">Ke mana bertanya?</span>
     <p>Untuk pertanyaan mengenai <em>mengapa</em> data dikumpulkan, kebijakan absensi, sanksi, cuti, atau perhitungan gaji, hubungi <strong>HR Pemberi Kerja Anda</strong>. Untuk pertanyaan teknis atau pertanyaan privasi mengenai platform CoalTrack, hubungi kami di <a href="mailto:support@coaltrack.id">support@coaltrack.id</a>.</p>
   </div>
@@ -291,7 +302,7 @@ details p,details li{font-size:14px}
       <tr><td>Lokasi</td><td>Koordinat GPS (lintang/bujur), akurasi, ketinggian, kecepatan, penyedia lokasi, dan indikator lokasi tiruan (<em>mock location</em>) dari sistem operasi — <strong>hanya pada saat Anda menekan tombol absen masuk/pulang</strong>.</td><td>Sensor lokasi perangkat, dengan izin Anda.</td></tr>
       <tr><td>Integritas absensi (non-biometrik)</td><td>Sinyal non-biometrik untuk menilai keabsahan absen: koordinat &amp; akurasi GPS, indikasi lokasi tiruan, ikatan perangkat, dan cap waktu server tepercaya. <strong>Tidak ada foto, video, atau data wajah.</strong></td><td>Dihitung di perangkat &amp; server saat Anda menekan tombol absen.</td></tr>
       <tr><td>Perangkat</td><td>Merek/model, sistem operasi dan versinya, pengenal instalasi/perangkat (<em>device ID</em>), versi aplikasi, indikasi <em>root/jailbreak</em> dan pengaturan lokasi tiruan, token notifikasi push.</td><td>Dikumpulkan aplikasi untuk mengikat 1 perangkat per karyawan.</td></tr>
-      <tr><td>Penggajian &amp; keuangan</td><td>Komponen gaji (gaji pokok, tunjangan, potongan), status PTKP/perpajakan (PPh 21), NPWP, nomor kepesertaan BPJS Kesehatan/Ketenagakerjaan, nama bank dan nomor rekening, slip gaji, riwayat pembayaran. Data keuangan pribadi termasuk <strong>Data Pribadi yang bersifat spesifik</strong>.</td><td>Dimasukkan oleh HR/keuangan Pemberi Kerja; dihitung oleh mesin penggajian.</td></tr>
+      <tr><td>Penggajian &amp; keuangan</td><td>Komponen gaji (gaji pokok, tunjangan, potongan), status PTKP/perpajakan (PPh 21), NPWP, nomor kepesertaan BPJS Kesehatan/Ketenagakerjaan, nama bank dan nomor rekening, slip gaji, riwayat pembayaran (bagi Pemberi Kerja di Indonesia; modul penggajian menghitung pajak dan iuran jaminan sosial yang berlaku di Indonesia). Data keuangan pribadi termasuk <strong>Data Pribadi yang bersifat spesifik</strong>.</td><td>Dimasukkan oleh HR/keuangan Pemberi Kerja; dihitung oleh mesin penggajian.</td></tr>
       <tr><td>Diagnostik</td><td>Laporan kesalahan (<em>crash</em>), waktu respons, versi aplikasi, jenis jaringan, dan log teknis — tanpa isi pesan pribadi sedapat mungkin.</td><td>Dihasilkan otomatis oleh aplikasi dan server.</td></tr>
     </tbody>
   </table></div>
@@ -325,6 +336,7 @@ details p,details li{font-size:14px}
     <li><strong>Kepentingan yang sah</strong> Pemberi Kerja — pencegahan kecurangan absensi, keamanan sistem, dan perlindungan aset perusahaan, dengan tetap memperhatikan hak Anda.</li>
     <li><strong>Persetujuan eksplisit</strong> — bila diperlukan menurut hukum yang berlaku, dan dapat ditarik kapan saja melalui HR Pemberi Kerja atau email kami. Penarikan persetujuan tidak memengaruhi keabsahan pemrosesan sebelumnya; Pemberi Kerja menentukan metode absensi alternatif sesuai kebijakan internalnya.</li>
   </ul>
+  <p>Jika Pemberi Kerja Anda berkedudukan di luar Indonesia, Pemberi Kerja menentukan dasar hukum pemrosesan berdasarkan hukum negaranya sendiri. Lihat <a href="#ketentuan-negara">bagian 17</a>.</p>
 </section>
 
 <section id="retensi">
@@ -341,19 +353,23 @@ details p,details li{font-size:14px}
       <tr><td>Data penggajian &amp; slip gaji</td><td>Sesuai peraturan perpajakan &amp; ketenagakerjaan (umumnya 10 tahun)</td><td>Disimpan oleh/atas nama Pemberi Kerja sebagai Pengendali.</td></tr>
       <tr><td>Log akses &amp; audit keamanan</td><td>Maks. 12 bulan</td><td>Untuk investigasi insiden dan audit.</td></tr>
       <tr><td>Diagnostik aplikasi</td><td>Maks. 90 hari</td><td>Laporan <em>crash</em> dan log teknis.</td></tr>
-      <tr><td>Cadangan (backup)</td><td>Rotasi maks. 35 hari</td><td>Terenkripsi. Data yang telah dihapus akan hilang dari cadangan dalam siklus rotasi tersebut.</td></tr>
+      <tr><td>Permintaan demo</td><td>12 bulan sejak kontak terakhir</td><td>Luxavero sebagai Pengendali (bagian 02).</td></tr>
+      <tr><td>Kontak penjualan calon klien &amp; klien</td><td>24 bulan sejak kontak terakhir</td><td>Luxavero sebagai Pengendali (bagian 02).</td></tr>
+      <tr><td>Catatan penagihan klien (tagihan, catatan pembayaran, bukti transfer)</td><td>10 tahun</td><td>Luxavero sebagai Pengendali (bagian 02). Disimpan sesuai kewajiban penyimpanan dokumen perpajakan dan perusahaan di Indonesia.</td></tr>
+      <tr><td>Cadangan (backup)</td><td>Harian; setiap cadangan disimpan selama 14 hari</td><td>Disimpan di server yang sama di Singapura. Data yang telah dihapus akan hilang dari cadangan dalam 14 hari.</td></tr>
     </tbody>
   </table></div>
+  <p>Bagi Pemberi Kerja di luar Indonesia, masa simpan wajib menurut hukum mengikuti ketentuan negara Pemberi Kerja dan ditetapkan oleh Pemberi Kerja.</p>
 </section>
 
 <section id="keamanan">
   <h2><span class="n">07</span>Penyimpanan, keamanan &amp; sub-prosesor</h2>
   <h3>Lokasi penyimpanan</h3>
-  <p>Data disimpan di pusat data penyedia infrastruktur kami di <strong>Singapura</strong> dan/atau <strong>Indonesia</strong>. Cadangan terenkripsi disimpan di wilayah yang sama.</p>
+  <p>Server produksi, basis data, berkas yang diunggah, dan cadangan di-hosting oleh DigitalOcean di <strong>Singapura</strong> (wilayah sgp1). Saat ini kami tidak menyimpan data di server mana pun di Indonesia. Personel Luxavero mengakses data dari jarak jauh dari Indonesia untuk dukungan dan pemeliharaan.</p>
   <h3>Langkah keamanan</h3>
   <ul>
     <li><strong>Enkripsi dalam transit</strong> — seluruh komunikasi antara aplikasi, portal, dan server menggunakan HTTPS/TLS 1.2 atau lebih baru.</li>
-    <li><strong>Enkripsi saat disimpan</strong> — cadangan disimpan terenkripsi di sisi server.</li>
+    <li><strong>Cadangan</strong> — basis data dicadangkan setiap hari, dan setiap cadangan disimpan selama 14 hari di server yang sama.</li>
     <li><strong>Kontrol akses berbasis peran</strong> — hanya pengguna dengan peran yang sesuai (mis. HR/admin Pemberi Kerja) yang dapat melihat data karyawan; staf Luxavero mengakses data produksi hanya untuk dukungan dan pemeliharaan, secara terbatas dan tercatat.</li>
     <li><strong>Catatan absensi <em>append-only</em></strong> — riwayat absensi tidak dapat diubah atau dihapus melalui aplikasi; koreksi dicatat sebagai penyesuaian baru dengan jejak audit.</li>
     <li><strong>Di perangkat Anda</strong> — sesi disimpan di penyimpanan aman sistem operasi (Keychain/Keystore), data absen offline disimpan terenkripsi dan dihapus setelah tersinkron, tangkapan layar diblokir pada layar sensitif, dan aplikasi terkunci otomatis saat berpindah ke latar belakang.</li>
@@ -361,20 +377,31 @@ details p,details li{font-size:14px}
   </ul>
   <p>Tidak ada sistem yang sepenuhnya bebas risiko. Jika Anda menemukan celah keamanan, mohon laporkan ke <a href="mailto:support@coaltrack.id?subject=Security%20report">support@coaltrack.id</a>.</p>
   <h3>Sub-prosesor</h3>
-  <p>Kami menggunakan penyedia layanan berikut untuk menjalankan Layanan. Masing-masing terikat perjanjian dan hanya memproses data sebatas peran yang disebutkan.</p>
+  <p>Kami menggunakan penyedia layanan berikut untuk menjalankan Layanan. Masing-masing memproses data berdasarkan kontrak atau ketentuan layanannya dengan kami, dan hanya sebatas peran yang disebutkan.</p>
   <div class="tbl"><table>
     <thead><tr><th>Penyedia</th><th>Peran</th><th>Data yang diproses</th><th>Lokasi</th></tr></thead>
     <tbody>
-      <tr><td>DigitalOcean, LLC</td><td>Hosting server, basis data, penyimpanan objek, cadangan</td><td>Seluruh data Layanan (terenkripsi)</td><td>Singapura dan/atau Indonesia</td></tr>
-      <tr><td>Cloudflare, Inc.</td><td>DNS, CDN, sertifikat TLS, perlindungan WAF/DDoS</td><td>Data dalam transit: alamat IP dan metadata permintaan</td><td>Jaringan global</td></tr>
-      <tr><td>Brevo (Sendinblue SAS)</td><td>Pengiriman email transaksional (notifikasi, slip gaji)</td><td>Nama, alamat email, isi email dan lampiran slip gaji</td><td>Uni Eropa</td></tr>
+      <tr><td>DigitalOcean, LLC</td><td>Hosting server, basis data, berkas yang diunggah, dan cadangan harian</td><td>Seluruh data Layanan</td><td>Singapura (sgp1)</td></tr>
+      <tr><td>Cloudflare, Inc.</td><td>DNS untuk coaltrack.id, penerusan email masuk yang dikirim ke alamat @coaltrack.id, dan relai email (Cloudflare Workers, api.coaltrack.id) yang dipakai aplikasi seluler untuk mengirim slip gaji ke Brevo</td><td>Kueri DNS; email masuk dalam transit (pengirim, penerima, isi; Cloudflare menyatakan tidak menyimpan isi pesan); email slip gaji yang dikirim dari aplikasi, dalam transit (nama karyawan, alamat email, periode gaji, dan PDF slip gaji)</td><td>Jaringan global</td></tr>
+      <tr><td>Google LLC (Gmail)</td><td>Kotak surat yang menerima email ke alamat @coaltrack.id yang diteruskan oleh Cloudflare, termasuk permintaan privasi dan penghapusan</td><td>Isi email</td><td>Amerika Serikat/global</td></tr>
+      <tr><td>Brevo (Sendinblue SAS)</td><td>Email transaksional (notifikasi, slip gaji, tagihan kepada kontak klien, balasan atas permintaan demo)</td><td>Nama, alamat email, isi email dan lampiran</td><td>Prancis (Uni Eropa)</td></tr>
       <tr><td>Codemagic (Nevercode Ltd)</td><td>Layanan <em>build</em> dan rilis aplikasi (CI/CD)</td><td>Tidak memproses data pribadi karyawan (hanya kode sumber dan sertifikat penandatanganan)</td><td>Uni Eropa</td></tr>
       <tr><td>Apple (APNs) / Google (FCM)</td><td>Pengiriman notifikasi push — bila notifikasi diaktifkan</td><td>Token perangkat, judul dan isi notifikasi</td><td>Global</td></tr>
-      <tr><td>Telegram</td><td>Pengiriman slip gaji melalui bot — opsional, hanya bila diaktifkan Pemberi Kerja dan dipilih karyawan</td><td>ID obrolan Telegram, berkas slip gaji</td><td>Global</td></tr>
-      <tr><td>Google Play / Apple App Store</td><td>Distribusi aplikasi dan laporan <em>crash</em> agregat</td><td>Data diagnostik anonim dari toko aplikasi</td><td>Global</td></tr>
+      <tr><td>Apple App Store &amp; TestFlight / Google Play</td><td>Distribusi aplikasi, pengujian pra-rilis, dan laporan <em>crash</em></td><td>Diagnostik dari toko aplikasi; bagi penguji TestFlight, umpan balik dan data <em>crash</em> yang dibagikan Apple kepada kami, yang dapat mencakup nama dan email penguji</td><td>Global</td></tr>
     </tbody>
   </table></div>
   <p>Daftar sub-prosesor dapat diperbarui. Perubahan yang material diberitahukan kepada Pemberi Kerja sebelum berlaku.</p>
+  <h3>Layanan pihak ketiga lain yang menerima data terbatas</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Penyedia</th><th>Peran</th><th>Data yang diterima</th><th>Lokasi</th></tr></thead>
+    <tbody>
+      <tr><td>Mapbox, Inc.; Esri (Environmental Systems Research Institute, Inc., ArcGIS Online); server <em>tile</em> OpenStreetMap Foundation</td><td>Tampilan peta (<em>map tiles</em>) di panel web HR, saat pengguna HR melihat lokasi absensi pada peta</td><td>Alamat IP dan data peramban pengguna HR, serta area peta yang dilihat (koordinat <em>tile</em>), yang dapat mengungkap area di sekitar lokasi absen</td><td>Amerika Serikat (Mapbox, Esri); CDN global (OpenStreetMap). Mapbox menyatakan menghapus alamat IP setelah 30 hari.</td></tr>
+      <tr><td>GitHub, Inc. (GitHub Pages)</td><td>Hosting situs web coaltrack.id</td><td>Alamat IP pengunjung, dicatat untuk keamanan</td><td>Amerika Serikat</td></tr>
+      <tr><td>Google (Google Fonts)</td><td>Halaman situs web memuat fon</td><td>Alamat IP dan data peramban pengunjung</td><td>Amerika Serikat/global</td></tr>
+      <tr><td>Telegram (Telegram Messenger Inc.)</td><td>Pemberitahuan internal kepada Luxavero tentang permintaan demo dan bukti transfer bank yang diunggah; Luxavero adalah pengendali (bagian 02). Tidak ada data absensi karyawan</td><td>Data kontak calon klien; data tagihan klien dan berkas bukti transfer</td><td>Server di beberapa yurisdiksi</td></tr>
+      <tr><td>WhatsApp (Meta)</td><td>Hanya jika Anda menghubungi kami melalui tautan WhatsApp di situs web kami</td><td>Nomor telepon dan pesan Anda</td><td>Global</td></tr>
+    </tbody>
+  </table></div>
 </section>
 
 <section id="pembagian">
@@ -382,6 +409,8 @@ details p,details li{font-size:14px}
   <ul>
     <li><strong>Pemberi Kerja Anda</strong> — HR/admin dan atasan yang berwenang sesuai peran yang ditetapkan Pemberi Kerja sebagai Pengendali Data.</li>
     <li><strong>Sub-prosesor</strong> yang disebutkan di atas, sebatas diperlukan untuk menjalankan Layanan, dengan kewajiban kerahasiaan dan keamanan.</li>
+    <li><strong>Personel Luxavero di Indonesia</strong>, yang mengakses data dari jarak jauh untuk dukungan dan pemeliharaan secara terbatas dan tercatat (bagian 07).</li>
+    <li><strong>Penyedia peta</strong> (bagian 07), yang menerima alamat IP pengguna HR dan area peta yang dilihat. Penyedia peta tidak menerima nama karyawan.</li>
     <li><strong>Otoritas berwenang</strong> — bila diwajibkan oleh hukum atau perintah yang sah (mis. perpajakan, BPJS, pengadilan, aparat penegak hukum), dengan sepengetahuan Pemberi Kerja sejauh diizinkan hukum.</li>
     <li><strong>Penerus usaha</strong> — dalam hal penggabungan, akuisisi, atau pengalihan aset, dengan tetap tunduk pada kebijakan ini.</li>
   </ul>
@@ -390,7 +419,14 @@ details p,details li{font-size:14px}
 
 <section id="transfer">
   <h2><span class="n">09</span>Transfer lintas negara</h2>
-  <p>Sebagian infrastruktur kami berada di Singapura dan sebagian sub-prosesor beroperasi di luar Indonesia. Setiap transfer dilakukan sesuai Pasal 56 UU PDP: kepada penyedia di negara dengan tingkat pelindungan data yang setara atau lebih tinggi, dan/atau dengan pengamanan yang mengikat (klausul kontrak, enkripsi, dan pembatasan akses). Pemberi Kerja dapat meminta penyimpanan data hanya di Indonesia sesuai ketersediaan layanan.</p>
+  <p>CoalTrack dioperasikan dari Indonesia dan di-hosting di Singapura. Data pribadi dapat ditransfer ke, atau diakses dari, tempat-tempat berikut:</p>
+  <ul>
+    <li><strong>Singapura</strong>: server produksi, basis data, berkas yang diunggah, dan cadangan (DigitalOcean, sgp1).</li>
+    <li><strong>Indonesia</strong>: personel Luxavero yang memberikan dukungan dan pemeliharaan.</li>
+    <li><strong>Prancis (Uni Eropa)</strong>: email transaksional (Brevo).</li>
+    <li><strong>Amerika Serikat dan jaringan global</strong>: notifikasi push (Apple, Google), distribusi dan pengujian aplikasi (App Store/TestFlight, Google Play), tampilan peta di panel HR (Mapbox, Esri, OpenStreetMap), DNS, penerusan email masuk, dan relai email slip gaji (Cloudflare), serta kotak surat penerima email ke @coaltrack.id (Gmail, Google).</li>
+  </ul>
+  <p>Bagi Pemberi Kerja di Indonesia, setiap transfer dilakukan sesuai Pasal 56 UU PDP: data dikirim kepada penerima di negara dengan tingkat pelindungan data yang setara atau lebih tinggi, dan/atau dengan pengamanan yang mengikat (klausul kontrak, enkripsi dalam transit, dan pembatasan akses). Bagi Pemberi Kerja di negara lain, <a href="#ketentuan-negara">bagian 17</a> menjelaskan dasar transfer menurut hukum setempat. Saat ini kami tidak menyediakan hosting di Indonesia maupun di negara Pemberi Kerja sendiri.</p>
 </section>
 
 <section id="hak">
@@ -410,6 +446,7 @@ details p,details li{font-size:14px}
   </div>
   <h3>Cara menggunakan hak Anda</h3>
   <p>Ajukan permintaan melalui <strong>HR Pemberi Kerja Anda</strong> (jalur utama, karena Pemberi Kerja adalah Pengendali Data) atau melalui email <a href="mailto:support@coaltrack.id">support@coaltrack.id</a>; kami akan meneruskan dan mengoordinasikan permintaan tersebut dengan Pemberi Kerja. Kami dapat meminta verifikasi identitas sebelum memproses. Kami mengonfirmasi penerimaan permintaan dalam <strong>1 hari kerja</strong>, dan menyelesaikannya dalam batas waktu yang ditetapkan UU PDP (untuk akses dan perbaikan data umumnya 3×24 jam sejak permintaan lengkap diterima), atau paling lambat <strong>30 hari</strong> untuk permintaan penghapusan yang memerlukan verifikasi dan koordinasi dengan Pemberi Kerja.</p>
+  <p>Jika Pemberi Kerja Anda berada di luar Indonesia, yang berlaku adalah hak, batas waktu, dan otoritas pelindungan data di negara Anda. Lihat <a href="#ketentuan-negara">bagian 17</a>.</p>
 </section>
 
 <section id="hapus-akun">
@@ -418,7 +455,7 @@ details p,details li{font-size:14px}
   <ol class="steps">
     <li><b>Kirim permintaan</b>Kirim email ke <a href="mailto:support@coaltrack.id?subject=Hapus%20Akun%20CoalTrack&body=Nama%20lengkap%3A%20%0ANama%20perusahaan%20(Pemberi%20Kerja)%3A%20%0ANomor%20induk%20karyawan%3A%20%0AEmail%2Fnomor%20HP%20terdaftar%3A%20%0APermintaan%3A%20hapus%20seluruh%20akun%20%26%20data%20%2F%20lepas%20perangkat%0A">support@coaltrack.id</a> dengan subjek <code>Hapus Akun CoalTrack</code>, berisi: nama lengkap, nama perusahaan (Pemberi Kerja), nomor induk karyawan, email/nomor HP yang terdaftar, dan jenis permintaan (hapus seluruh akun &amp; data, atau hanya data tertentu). Kirim dari email yang terdaftar di akun Anda, atau ajukan melalui HR Pemberi Kerja.</li>
     <li><b>Verifikasi</b>Dalam 1 hari kerja kami mengonfirmasi penerimaan dan memverifikasi identitas Anda. Kami dapat meminta konfirmasi dari HR Pemberi Kerja karena akun CoalTrack diterbitkan oleh perusahaan Anda.</li>
-    <li><b>Pemrosesan</b>Setelah terverifikasi: akun dinonaktifkan dan perangkat dilepas <strong>segera (maks. 3 hari kerja)</strong>; token perangkat dihapus <strong>maks. 7 hari</strong>; data identitas dan kontak dihapus atau dianonimkan <strong>maks. 30 hari</strong>; salinan pada cadangan terhapus pada siklus rotasi berikutnya (<strong>maks. 35 hari</strong>).</li>
+    <li><b>Pemrosesan</b>Setelah terverifikasi: akun dinonaktifkan dan perangkat dilepas <strong>segera (maks. 3 hari kerja)</strong>; token perangkat dihapus <strong>maks. 7 hari</strong>; data identitas dan kontak dihapus atau dianonimkan <strong>maks. 30 hari</strong>; salinan pada cadangan terhapus pada siklus rotasi berikutnya (<strong>maks. 14 hari</strong>).</li>
     <li><b>Konfirmasi</b>Kami mengirimkan konfirmasi tertulis melalui email setelah penghapusan selesai.</li>
   </ol>
   <h3>Data yang tetap disimpan</h3>
@@ -456,7 +493,7 @@ details p,details li{font-size:14px}
 
 <section id="insiden">
   <h2><span class="n">14</span>Insiden keamanan</h2>
-  <p>Jika terjadi kegagalan pelindungan data pribadi, kami memberitahukan Pemberi Kerja secara tertulis <strong>paling lambat 3×24 jam</strong> sejak diketahui (Pasal 46 UU PDP), berisi data yang terdampak, waktu dan cara terjadinya, serta langkah penanganan. Pemberi Kerja sebagai Pengendali memberitahukan subjek data dan lembaga yang berwenang; kami membantu proses tersebut.</p>
+  <p>Jika kami mengetahui adanya kegagalan pelindungan data pribadi yang memengaruhi data yang kami proses untuk Pemberi Kerja, kami memberitahukan Pemberi Kerja secara tertulis tanpa penundaan yang tidak semestinya dan <strong>paling lambat 24 jam</strong> sejak kami mengetahuinya. Pemberitahuan tersebut memuat informasi yang tersedia saat itu: data yang terdampak, waktu dan cara terjadinya, kemungkinan akibatnya, serta langkah penanganan yang telah diambil. Kami terus menyampaikan perkembangannya kepada Pemberi Kerja. Pemberi Kerja, sebagai Pengendali, memberitahukan subjek data dan lembaga yang berwenang dalam batas waktu menurut hukum yang berlaku baginya: di Indonesia, paling lambat 3×24 jam (Pasal 46 UU PDP); untuk negara lain, lihat <a href="#ketentuan-negara">bagian 17</a>. Kami membantu proses tersebut. Dalam hal Luxavero sendiri bertindak sebagai Pengendali (bagian 02), Luxavero yang menyampaikan pemberitahuan tersebut.</p>
 </section>
 
 <section id="perubahan">
@@ -467,17 +504,26 @@ details p,details li{font-size:14px}
 <section id="kontak">
   <h2><span class="n">16</span>Kontak</h2>
   <div class="grid2">
-    <div class="card"><b>PT Luxavero Teknologi Indonesia (Prosesor Data)</b>
+    <div class="card"><b>PT Luxavero Teknologi Indonesia (Prosesor Data untuk data karyawan; Pengendali Data untuk data situs web, penjualan, dan penagihan)</b>
       <p>Pengembang &amp; pengelola CoalTrack</p>
+      <p>Alamat: Jl. Kuantan Timur RT 006 RW 003, Kel. Pasir Kemilu, Kec. Rengat, Kab. Indragiri Hulu, Riau 29316, Indonesia</p>
+      <p>Direktur: Ksatria Bintang Samudra</p>
       <p>Email: <a href="mailto:support@coaltrack.id">support@coaltrack.id</a></p>
       <p>Web: <a href="https://coaltrack.id">coaltrack.id</a></p>
       <p>Pertanyaan privasi dan permintaan hak subjek data dapat ditujukan ke alamat email di atas dengan subjek “Privasi”.</p>
+      <p>Pejabat Pelindungan Data Pribadi: Ksatria Bintang Samudra (Direktur), <a href="mailto:support@coaltrack.id?subject=Privacy%20%E2%80%93%20DPO">support@coaltrack.id</a>, subjek “Privacy – DPO”.</p>
+      <p>Untuk mengajukan pengaduan kepada otoritas pelindungan data di luar Indonesia, lihat <a href="#ketentuan-negara">bagian 17</a>.</p>
     </div>
     <div class="card"><b>Pemberi Kerja Anda (Pengendali Data)</b>
       <p>Hubungi HR/Personalia perusahaan Anda untuk pertanyaan tentang kebijakan absensi, sanksi, penggajian, dan penggunaan data di perusahaan.</p>
       <p>Nama perusahaan Anda tampil di aplikasi setelah lisensi diaktifkan — untuk permintaan data, hubungi bagian HR perusahaan tersebut.</p>
     </div>
   </div>
+</section>
+
+<section id="ketentuan-negara">
+  <h2><span class="n">17</span>Ketentuan tambahan per negara</h2>
+  <p><strong>Untuk Pemberi Kerja dan karyawan di luar Indonesia.</strong> Ketentuan tambahan untuk Australia, Filipina, Afrika Selatan, Malaysia, Singapura, dan Thailand tersedia dalam versi bahasa Inggris kebijakan ini, pada bagian 17 <a data-set="en" href="?lang=en#country-supplements"><em>Country-specific supplements</em></a>; ketentuan untuk Malaysia juga tersedia dalam <a data-set="en" href="?lang=en#sup-malaysia-ms">Bahasa Melayu</a>. Ketentuan tambahan tersebut melengkapi bagian 01–16, dan bila ada perbedaan, yang berlaku bagi karyawan di negara bersangkutan adalah ketentuan tambahan negara itu.</p>
 </section>
 </div></main>
 </div>
@@ -514,6 +560,7 @@ details p,details li{font-size:14px}
   <li><a href="#incidents">Security incidents</a></li>
   <li><a href="#changes">Changes to this policy</a></li>
   <li><a href="#contact">Contact</a></li>
+  <li><a href="#country-supplements">Country-specific supplements</a></li>
 </ol></div>
 
 <section id="summary">
@@ -522,7 +569,8 @@ details p,details li{font-size:14px}
     <li><strong>CoalTrack</strong> is an attendance and payroll app provided by your <strong>Employer</strong> to its workforce. You use it because the company you work for subscribes to CoalTrack.</li>
     <li>Your Employer is the <strong>Data Controller</strong>. <strong>PT Luxavero Teknologi Indonesia</strong> (the developer of CoalTrack) is the <strong>Data Processor</strong> and processes data only on the Employer's instructions.</li>
     <li>Data processed: identity and employment data, attendance events, GPS coordinates <em>at check-in/out</em>, device identifiers, payroll data, and app diagnostics. No face/biometric data is collected.</li>
-    <li>We <strong>do not sell</strong> data, <strong>show no ads</strong>, and share data only with the Employer and contractually bound subprocessors.</li>
+    <li>Data is hosted in Singapore (DigitalOcean, region sgp1). If your Employer is outside Indonesia, also read the <a href="#country-supplements">Country-specific supplements in section 17</a>.</li>
+    <li>We <strong>do not sell</strong> data and <strong>show no ads</strong>. We share data only with the Employer, our subprocessors, and the limited third-party services listed in section 07. For example, map-tile servers receive an HR user's IP address and the map area being viewed.</li>
     <li>Location is captured only at the moment of check-in/out — <strong>no background tracking</strong>.</li>
     <li>CoalTrack does not capture, transmit, or store any photo, video, or face data for attendance.</li>
     <li>You can request access, correction, and deletion — see <a href="#delete-account">Delete Account &amp; Data</a>.</li>
@@ -532,8 +580,17 @@ details p,details li{font-size:14px}
 <section id="who-we-are">
   <h2><span class="n">02</span>Who we are &amp; the roles of the parties</h2>
   <p><strong>PT Luxavero Teknologi Indonesia</strong> (“<strong>Luxavero</strong>”, “we”), founded by Ksatria Bintang Samudra, develops and operates the CoalTrack platform, consisting of the CoalTrack mobile app (Android and iOS), the HR/admin web portal, and the supporting API services (together, the “<strong>Service</strong>”). Website: <a href="https://coaltrack.id">coaltrack.id</a>. Email: <a href="mailto:support@coaltrack.id">support@coaltrack.id</a>.</p>
+  <p>Luxavero is an Indonesian sole-shareholder limited liability company (PT Perorangan). Director: Ksatria Bintang Samudra. Address: Jl. Kuantan Timur RT 006 RW 003, Kel. Pasir Kemilu, Kec. Rengat, Kab. Indragiri Hulu, Riau 29316, Indonesia.</p>
   <p>The <strong>Employer</strong> is the company you work for that subscribes to CoalTrack and issues your account — your Employer's name is shown in the app once the company licence is activated. The Employer acts as the <strong>Data Controller</strong>: it determines the purposes and means of processing, attendance policies, work areas (geofences), shift schedules, salary components, retention periods, and who in the company may access your data.</p>
   <p>Luxavero acts as the <strong>Data Processor</strong>. We process your data only on the Employer's documented instructions under a data processing agreement, and never for our own purposes.</p>
+  <p><strong>When Luxavero is the Data Controller.</strong> Luxavero decides how and why it processes the following data:</p>
+  <ol type="a">
+    <li>Data of visitors to coaltrack.id. The site is hosted on GitHub Pages, and GitHub logs visitors' IP addresses for security purposes. Pages load fonts from Google Fonts, which receives your IP address. Your language choice is stored only in your browser.</li>
+    <li>Data you submit through the demo-request form: name, company, email, phone, number of employees and message, together with your IP address and browser user agent. This data is stored on our servers in Singapore, emailed to our support mailbox, sent as an internal alert to Luxavero's Telegram account, and acknowledged by an email sent through Brevo.</li>
+    <li>Contact details of representatives of prospective and existing clients, used for sales and service communications.</li>
+    <li>Client billing data: invoices, payment records and bank-transfer proofs uploaded by a client's users, including the names of the sender and the uploader. When a proof is uploaded, an alert containing the proof is sent to Luxavero's Telegram account.</li>
+  </ol>
+  <p>We use this data to answer enquiries, provide demos, and administer client contracts and invoices. It does not include employees' attendance data. We keep the data in (b) for 12 months after the last contact, the data in (c) for 24 months after the last contact, and the records in (d) for 10 years under Indonesian tax and company record-keeping obligations (section 06).</p>
   <div class="callout"><span class="ttl">Who to ask</span>
     <p>For questions about <em>why</em> data is collected, attendance policy, sanctions, leave, or pay calculations, contact <strong>your Employer's HR</strong>. For technical questions or privacy questions about the CoalTrack platform, contact us at <a href="mailto:support@coaltrack.id">support@coaltrack.id</a>.</p>
   </div>
@@ -551,7 +608,7 @@ details p,details li{font-size:14px}
       <tr><td>Location</td><td>GPS coordinates (latitude/longitude), accuracy, altitude, speed, location provider, and the operating system's mock-location indicator — <strong>only at the moment you tap check-in/out</strong>.</td><td>Device location sensors, with your permission.</td></tr>
       <tr><td>Attendance integrity (non-biometric)</td><td>Non-biometric signals used to judge a check-in: GPS coordinates &amp; accuracy, mock-location indicators, device binding, and a trusted server timestamp. <strong>No photo, video, or face data.</strong></td><td>Computed on device &amp; server when you tap check-in/out.</td></tr>
       <tr><td>Device</td><td>Make/model, operating system and version, installation/device identifier, app version, root/jailbreak and mock-location indicators, push notification token.</td><td>Collected by the app to bind one device per employee.</td></tr>
-      <tr><td>Payroll &amp; financial</td><td>Salary components (base pay, allowances, deductions), tax status (PTKP / PPh 21), tax ID (NPWP), BPJS health and employment membership numbers, bank name and account number, payslips, payment history. Personal financial data is <strong>specific (sensitive) personal data</strong>.</td><td>Entered by the Employer's HR/finance; calculated by the payroll engine.</td></tr>
+      <tr><td>Payroll &amp; financial</td><td>Salary components (base pay, allowances, deductions), tax status (PTKP / PPh 21), tax ID (NPWP), BPJS health and employment membership numbers, bank name and account number, payslips, payment history (for Employers in Indonesia; the payroll module calculates Indonesian taxes and social-security contributions). Personal financial data is <strong>specific (sensitive) personal data</strong>.</td><td>Entered by the Employer's HR/finance; calculated by the payroll engine.</td></tr>
       <tr><td>Diagnostics</td><td>Crash reports, response times, app version, network type, and technical logs — without personal message content wherever possible.</td><td>Generated automatically by the app and server.</td></tr>
     </tbody>
   </table></div>
@@ -585,6 +642,7 @@ details p,details li{font-size:14px}
     <li><strong>Legitimate interests</strong> of the Employer — preventing attendance fraud, securing systems, and protecting company assets, balanced against your rights.</li>
     <li><strong>Explicit consent</strong> — where required by applicable law, and can be withdrawn at any time through the Employer's HR or by emailing us. Withdrawal does not affect the lawfulness of earlier processing; the Employer determines an alternative attendance method under its internal policy.</li>
   </ul>
+  <p>If your Employer is established outside Indonesia, it determines the legal basis for processing under the law of its own country. See <a href="#country-supplements">section 17</a>.</p>
 </section>
 
 <section id="retention">
@@ -601,19 +659,23 @@ details p,details li{font-size:14px}
       <tr><td>Payroll data &amp; payslips</td><td>Per tax and labour regulations (generally 10 years)</td><td>Kept by or on behalf of the Employer as Controller.</td></tr>
       <tr><td>Access &amp; security audit logs</td><td>Max. 12 months</td><td>For incident investigation and audits.</td></tr>
       <tr><td>App diagnostics</td><td>Max. 90 days</td><td>Crash reports and technical logs.</td></tr>
-      <tr><td>Backups</td><td>Rotated within max. 35 days</td><td>Encrypted. Deleted data disappears from backups within that rotation cycle.</td></tr>
+      <tr><td>Demo requests</td><td>12 months after the last contact</td><td>Luxavero is the Controller (section 02).</td></tr>
+      <tr><td>Sales contacts of prospects &amp; clients</td><td>24 months after the last contact</td><td>Luxavero is the Controller (section 02).</td></tr>
+      <tr><td>Client billing records (invoices, payment records, transfer proofs)</td><td>10 years</td><td>Luxavero is the Controller (section 02). Kept under Indonesian tax and company record-keeping obligations.</td></tr>
+      <tr><td>Backups</td><td>Daily; each backup is kept for 14 days</td><td>Stored on the same server in Singapore. Deleted data disappears from backups within 14 days.</td></tr>
     </tbody>
   </table></div>
+  <p>For Employers outside Indonesia, statutory retention periods are those of the Employer's country and are set by the Employer.</p>
 </section>
 
 <section id="security">
   <h2><span class="n">07</span>Storage, security &amp; subprocessors</h2>
   <h3>Where data is stored</h3>
-  <p>Data is stored in our infrastructure provider's data centres in <strong>Singapore</strong> and/or <strong>Indonesia</strong>. Encrypted backups are kept in the same region.</p>
+  <p>Production servers, the database, uploaded files and backups are hosted by DigitalOcean in <strong>Singapore</strong> (region sgp1). We do not currently host data in Indonesia. Luxavero personnel access the data remotely from Indonesia for support and maintenance.</p>
   <h3>Security measures</h3>
   <ul>
     <li><strong>Encryption in transit</strong> — all communication between the app, the portal, and the server uses HTTPS/TLS 1.2 or newer.</li>
-    <li><strong>Encryption at rest</strong> — backups are stored encrypted on the server side.</li>
+    <li><strong>Backups</strong> — the database is backed up daily, and each backup is kept for 14 days on the same server.</li>
     <li><strong>Role-based access control</strong> — only users with an appropriate role (e.g. the Employer's HR/admin) can view employee data; Luxavero staff access production data only for support and maintenance, on a limited and logged basis.</li>
     <li><strong>Append-only attendance log</strong> — attendance history cannot be edited or deleted through the app; corrections are recorded as new adjustments with an audit trail.</li>
     <li><strong>On your device</strong> — sessions are stored in the operating system's secure storage (Keychain/Keystore), offline attendance data is stored encrypted and removed once synced, screenshots are blocked on sensitive screens, and the app locks automatically when sent to the background.</li>
@@ -621,20 +683,31 @@ details p,details li{font-size:14px}
   </ul>
   <p>No system is entirely free of risk. If you discover a security vulnerability, please report it to <a href="mailto:support@coaltrack.id?subject=Security%20report">support@coaltrack.id</a>.</p>
   <h3>Subprocessors</h3>
-  <p>We use the following providers to run the Service. Each is bound by contract and processes data only for the role described.</p>
+  <p>We use the following providers to run the Service. Each processes data under its contract or service terms with us, and only for the role described.</p>
   <div class="tbl"><table>
     <thead><tr><th>Provider</th><th>Role</th><th>Data processed</th><th>Location</th></tr></thead>
     <tbody>
-      <tr><td>DigitalOcean, LLC</td><td>Server hosting, database, object storage, backups</td><td>All Service data (encrypted)</td><td>Singapore and/or Indonesia</td></tr>
-      <tr><td>Cloudflare, Inc.</td><td>DNS, CDN, TLS certificates, WAF/DDoS protection</td><td>Data in transit: IP addresses and request metadata</td><td>Global network</td></tr>
-      <tr><td>Brevo (Sendinblue SAS)</td><td>Transactional email delivery (notifications, payslips)</td><td>Name, email address, email content and payslip attachment</td><td>European Union</td></tr>
+      <tr><td>DigitalOcean, LLC</td><td>Server hosting, database, uploaded files and daily backups</td><td>All Service data</td><td>Singapore (sgp1)</td></tr>
+      <tr><td>Cloudflare, Inc.</td><td>DNS for coaltrack.id, routing of inbound email sent to @coaltrack.id addresses, and the email relay (Cloudflare Workers, api.coaltrack.id) through which the mobile app sends payslips to Brevo</td><td>DNS queries; inbound emails in transit (sender, recipient, content; Cloudflare states it does not store message content); payslip emails sent from the app, in transit (employee name, email address, pay period and payslip PDF)</td><td>Global network</td></tr>
+      <tr><td>Google LLC (Gmail)</td><td>Mailbox to which Cloudflare forwards email sent to @coaltrack.id, including privacy and deletion requests</td><td>Email content</td><td>United States/global</td></tr>
+      <tr><td>Brevo (Sendinblue SAS)</td><td>Transactional email (notifications, payslips, invoices to client contacts, replies to demo requests)</td><td>Name, email address, email content and attachments</td><td>France (EU)</td></tr>
       <tr><td>Codemagic (Nevercode Ltd)</td><td>App build and release service (CI/CD)</td><td>No employee personal data (source code and signing certificates only)</td><td>European Union</td></tr>
       <tr><td>Apple (APNs) / Google (FCM)</td><td>Push notification delivery — when notifications are enabled</td><td>Device token, notification title and body</td><td>Global</td></tr>
-      <tr><td>Telegram</td><td>Payslip delivery via bot — optional, only when enabled by the Employer and chosen by the employee</td><td>Telegram chat ID, payslip file</td><td>Global</td></tr>
-      <tr><td>Google Play / Apple App Store</td><td>App distribution and aggregated crash reporting</td><td>Anonymous diagnostic data from the app stores</td><td>Global</td></tr>
+      <tr><td>Apple App Store &amp; TestFlight / Google Play</td><td>App distribution, pre-release testing and crash reporting</td><td>Store diagnostics; for TestFlight testers, the feedback and crash data Apple shares with us, which may include the tester's name and email</td><td>Global</td></tr>
     </tbody>
   </table></div>
   <p>The list of subprocessors may be updated. Material changes are notified to the Employer before they take effect.</p>
+  <h3>Other third-party services that receive limited data</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Provider</th><th>Role</th><th>Data received</th><th>Location</th></tr></thead>
+    <tbody>
+      <tr><td>Mapbox, Inc.; Esri (Environmental Systems Research Institute, Inc., ArcGIS Online); OpenStreetMap Foundation tile servers</td><td>Map tiles in the HR web panel, when HR users view attendance locations on a map</td><td>The HR user's IP address and browser data, and the map area (tile coordinates) being viewed, which can reveal the area around a check-in location</td><td>United States (Mapbox, Esri); global CDN (OpenStreetMap). Mapbox states that it deletes IP addresses after 30 days.</td></tr>
+      <tr><td>GitHub, Inc. (GitHub Pages)</td><td>Hosting of the coaltrack.id website</td><td>Visitor IP address, logged for security</td><td>United States</td></tr>
+      <tr><td>Google (Google Fonts)</td><td>Website pages load fonts</td><td>Visitor IP address and browser data</td><td>United States/global</td></tr>
+      <tr><td>Telegram (Telegram Messenger Inc.)</td><td>Internal alerts to Luxavero about demo requests and uploaded bank-transfer proofs; Luxavero is the controller (section 02). No employee attendance data</td><td>Prospect contact details; client invoice data and transfer-proof files</td><td>Servers in multiple jurisdictions</td></tr>
+      <tr><td>WhatsApp (Meta)</td><td>Only if you contact us through the WhatsApp links on our website</td><td>Your phone number and messages</td><td>Global</td></tr>
+    </tbody>
+  </table></div>
 </section>
 
 <section id="sharing">
@@ -642,6 +715,8 @@ details p,details li{font-size:14px}
   <ul>
     <li><strong>Your Employer</strong> — HR/admin staff and authorised supervisors, according to the roles set by the Employer as Data Controller.</li>
     <li><strong>Subprocessors</strong> listed above, to the extent needed to run the Service, under confidentiality and security obligations.</li>
+    <li><strong>Luxavero personnel in Indonesia</strong>, who access data remotely for support and maintenance on a limited and logged basis (section 07).</li>
+    <li><strong>Map-tile providers</strong> (section 07), which receive HR users' IP addresses and the map areas viewed. They do not receive employee names.</li>
     <li><strong>Competent authorities</strong> — where required by law or a lawful order (e.g. tax, BPJS, courts, law enforcement), with the Employer's knowledge where legally permitted.</li>
     <li><strong>Business successors</strong> — in a merger, acquisition, or asset transfer, still subject to this policy.</li>
   </ul>
@@ -650,7 +725,14 @@ details p,details li{font-size:14px}
 
 <section id="transfers">
   <h2><span class="n">09</span>International transfers</h2>
-  <p>Part of our infrastructure is located in Singapore and some subprocessors operate outside Indonesia. Every transfer follows Article 56 of the PDP Law: to providers in countries with an equal or higher level of data protection, and/or with binding safeguards (contractual clauses, encryption, and access restrictions). The Employer may request Indonesia-only data residency subject to service availability.</p>
+  <p>CoalTrack is operated from Indonesia and hosted in Singapore. Personal data may be transferred to, or accessed from, the following places:</p>
+  <ul>
+    <li><strong>Singapore</strong>: production servers, database, uploaded files and backups (DigitalOcean, sgp1).</li>
+    <li><strong>Indonesia</strong>: Luxavero personnel who provide support and maintenance.</li>
+    <li><strong>France (EU)</strong>: transactional email (Brevo).</li>
+    <li><strong>United States and global networks</strong>: push notifications (Apple, Google), app distribution and testing (App Store/TestFlight, Google Play), map tiles in the HR panel (Mapbox, Esri, OpenStreetMap), DNS, inbound email routing and the payslip email relay (Cloudflare), and the mailbox that receives email sent to @coaltrack.id (Gmail, Google).</li>
+  </ul>
+  <p>For Employers in Indonesia, every transfer follows Article 56 of the PDP Law: data goes to recipients in countries with an equal or higher level of protection, and/or under binding safeguards (contractual clauses, encryption in transit and access restrictions). For Employers in other countries, <a href="#country-supplements">section 17</a> describes the transfer basis under local law. We do not currently offer hosting in Indonesia or in the Employer's own country.</p>
 </section>
 
 <section id="your-rights">
@@ -670,6 +752,7 @@ details p,details li{font-size:14px}
   </div>
   <h3>How to exercise your rights</h3>
   <p>Submit requests through <strong>your Employer's HR</strong> (the primary channel, as the Employer is the Data Controller) or by emailing <a href="mailto:support@coaltrack.id">support@coaltrack.id</a>; we will forward and coordinate the request with the Employer. We may ask you to verify your identity first. We acknowledge requests within <strong>1 business day</strong> and complete them within the time limits set by the PDP Law (for access and correction generally 3×24 hours from receipt of a complete request), or at most <strong>30 days</strong> for deletion requests that require verification and coordination with the Employer.</p>
+  <p>If your Employer is outside Indonesia, the rights, time limits and regulator of your country apply. See <a href="#country-supplements">section 17</a>.</p>
 </section>
 
 <section id="delete-account">
@@ -678,7 +761,7 @@ details p,details li{font-size:14px}
   <ol class="steps">
     <li><b>Send the request</b>Email <a href="mailto:support@coaltrack.id?subject=Delete%20CoalTrack%20Account&body=Full%20name%3A%20%0ACompany%20(Employer)%3A%20%0AEmployee%20number%3A%20%0ARegistered%20email%2Fphone%3A%20%0ARequest%3A%20delete%20entire%20account%20%26%20data%20%2F%20release%20device%0A">support@coaltrack.id</a> with the subject <code>Delete CoalTrack Account</code>, including: your full name, company (Employer) name, employee number, registered email/phone number, and the type of request (delete the entire account &amp; data, or specific data only). Send it from the email address registered on your account, or submit it through your Employer's HR.</li>
     <li><b>Verification</b>Within 1 business day we acknowledge receipt and verify your identity. We may ask the Employer's HR to confirm, because CoalTrack accounts are issued by your company.</li>
-    <li><b>Processing</b>Once verified: the account is deactivated and the device released <strong>immediately (max. 3 business days)</strong>; device tokens are deleted within <strong>7 days</strong>; identity and contact data are deleted or anonymised within <strong>30 days</strong>; backup copies expire in the next rotation cycle (<strong>max. 35 days</strong>).</li>
+    <li><b>Processing</b>Once verified: the account is deactivated and the device released <strong>immediately (max. 3 business days)</strong>; device tokens are deleted within <strong>7 days</strong>; identity and contact data are deleted or anonymised within <strong>30 days</strong>; backup copies expire in the next rotation cycle (<strong>max. 14 days</strong>).</li>
     <li><b>Confirmation</b>We send written confirmation by email once deletion is complete.</li>
   </ol>
   <h3>Data that is retained</h3>
@@ -716,7 +799,7 @@ details p,details li{font-size:14px}
 
 <section id="incidents">
   <h2><span class="n">14</span>Security incidents</h2>
-  <p>In the event of a personal data breach, we notify the Employer in writing <strong>within 3×24 hours</strong> of becoming aware of it (Article 46 PDP Law), describing the data affected, when and how it occurred, and the remediation steps. The Employer, as Controller, notifies data subjects and the competent authority; we assist with that process.</p>
+  <p>If we become aware of a personal data breach affecting data we process for an Employer, we notify the Employer in writing without undue delay and <strong>no later than 24 hours</strong> after becoming aware of it. The notice contains the information then available: the data affected, when and how the breach occurred, its likely consequences, and the remediation steps taken. We keep the Employer updated. The Employer, as Controller, notifies data subjects and the authority within the deadlines of its law: in Indonesia, within 3×24 hours (Article 46 PDP Law); for other countries, see <a href="#country-supplements">section 17</a>. We assist with that process. Where Luxavero is itself the Controller (section 02), Luxavero makes these notifications.</p>
 </section>
 
 <section id="changes">
@@ -727,17 +810,108 @@ details p,details li{font-size:14px}
 <section id="contact">
   <h2><span class="n">16</span>Contact</h2>
   <div class="grid2">
-    <div class="card"><b>PT Luxavero Teknologi Indonesia (Data Processor)</b>
+    <div class="card"><b>PT Luxavero Teknologi Indonesia (Data Processor for employee data; Data Controller for website, sales and billing data)</b>
       <p>Developer &amp; operator of CoalTrack</p>
+      <p>Address: Jl. Kuantan Timur RT 006 RW 003, Kel. Pasir Kemilu, Kec. Rengat, Kab. Indragiri Hulu, Riau 29316, Indonesia</p>
+      <p>Director: Ksatria Bintang Samudra</p>
       <p>Email: <a href="mailto:support@coaltrack.id">support@coaltrack.id</a></p>
       <p>Web: <a href="https://coaltrack.id">coaltrack.id</a></p>
       <p>Privacy questions and data-subject requests may be sent to the email above with the subject “Privacy”.</p>
+      <p>Data Protection Officer: Ksatria Bintang Samudra (Director), <a href="mailto:support@coaltrack.id?subject=Privacy%20%E2%80%93%20DPO">support@coaltrack.id</a>, subject “Privacy – DPO”.</p>
+      <p>To complain to a data protection authority outside Indonesia, see <a href="#country-supplements">section 17</a>.</p>
     </div>
     <div class="card"><b>Your Employer (Data Controller)</b>
       <p>Contact your company's HR department for questions about attendance policy, sanctions, payroll, and how data is used within the company.</p>
       <p>Your company's name appears in the app once its licence is activated — for data requests, contact that company's HR department.</p>
     </div>
   </div>
+</section>
+
+<section id="country-supplements">
+  <h2><span class="n">17</span>Country-specific supplements</h2>
+  <p>These supplements apply if your Employer is established in, or you work in, one of the countries below. They add to sections 01–16. Where a supplement differs from those sections, the supplement applies for that country.</p>
+  <ul>
+    <li><strong>Who we are.</strong> “We” means PT Luxavero Teknologi Indonesia, Jl. Kuantan Timur RT 006 RW 003, Kel. Pasir Kemilu, Kec. Rengat, Kab. Indragiri Hulu, Riau 29316, Indonesia (director: Ksatria Bintang Samudra). Privacy contact: <a href="mailto:support@coaltrack.id?subject=Privacy">support@coaltrack.id</a>, subject “Privacy”.</li>
+    <li><strong>Where your data goes (all countries).</strong>
+      <ul>
+        <li>Servers, database, uploaded files and daily backups: Singapore (DigitalOcean, region sgp1).</li>
+        <li>Remote support and maintenance access: our personnel in Indonesia.</li>
+        <li>Transactional email: Brevo (France, EU). Payslips emailed from the mobile app first pass through our email relay on Cloudflare's global network.</li>
+        <li>Email you send to an @coaltrack.id address: routed by Cloudflare (global network) to our Gmail mailbox (Google, United States and global).</li>
+        <li>Push notifications and app distribution: Apple and Google (United States and global).</li>
+        <li>Map tiles in the HR web panel: Mapbox and Esri (United States) and OpenStreetMap tile servers (global network). These receive the HR user's IP address and the map area being viewed. They do not receive your name.</li>
+      </ul>
+    </li>
+    <li><strong>Our role.</strong> For attendance and employment data, we act only on your Employer's instructions. For visitors to coaltrack.id, sales contacts and client billing contacts, we decide the purposes ourselves (section 02).</li>
+  </ul>
+
+  <h3 id="sup-australia">17.1 Australia</h3>
+  <p><strong>Law and roles.</strong> The Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs) bind your Employer if it is an “APP entity” (generally, turnover above A$3 million). An employer's handling of employee records directly related to employment is exempt (s 7B(3)); contractors' and job applicants' records are not. We act only on your Employer's instructions; whether the Act binds us directly depends on its small-business and “Australian link” (s 5B) rules.</p>
+  <p><strong>Overseas recipients (APPs 1.4, 8).</strong> Singapore, Indonesia, France, the United States and global networks. Your Employer stays accountable for them (s 16C) unless it keeps effective control by contract.</p>
+  <p><strong>Breaches.</strong> We notify your Employer without undue delay. Where the Notifiable Data Breaches scheme applies, your Employer assesses a suspected breach within 30 days and, if serious harm is likely, notifies the OAIC and affected individuals as soon as practicable.</p>
+  <p><strong>Automated decisions.</strong> From 10 December 2026, APPs 1.7–1.9 require disclosure of automated decisions that could significantly affect individuals. CoalTrack accepts, flags or rejects check-ins using GPS position and accuracy, mock-location indicators, device binding and server time; HR can review each (section 10).</p>
+  <p><strong>Your rights.</strong> Seek access or correction (APPs 12–13) through your Employer; we assist. Complain to your Employer first, then to the OAIC (<a href="https://www.oaic.gov.au">www.oaic.gov.au</a>) if unresolved after 30 days. Serious invasions of privacy are also actionable in court (statutory tort, from 10 June 2025).</p>
+  <p><strong>Employer duties.</strong></p>
+  <ul>
+    <li>NSW: written notice at least 14 days before surveillance starts, and a notified computer-surveillance policy (Workplace Surveillance Act 2005 ss 10, 12).</li>
+    <li>ACT: 14 days' notice and good-faith consultation (Workplace Privacy Act 2011 ss 13–14).</li>
+    <li>Vic, WA, SA, NT: express or implied consent before using a tracking device to locate a person (surveillance devices laws: Vic s 8, WA s 7, SA s 7, NT s 13).</li>
+  </ul>
+
+  <h3 id="sup-philippines">17.2 Philippines</h3>
+  <p><strong>Law and roles.</strong> The Data Privacy Act of 2012 (RA 10173), its Implementing Rules and Regulations (IRR) and National Privacy Commission (NPC) issuances apply. Your Employer is the personal information controller (PIC). We are its personal information processor (PIP) under an outsourcing agreement that must state, among other things, where processing takes place (IRR Rule X). The Act reaches processing abroad relating to Philippine citizens or residents (s 6). For our own website, sales and billing data, we are the PIC.</p>
+  <p><strong>Cross-border.</strong> No transfer approval is required. Your Employer remains accountable for data processed abroad and must ensure comparable protection by contract or other reasonable means (s 21). The NPC's model contractual clauses (Advisory 2024-01) may be used.</p>
+  <p><strong>Breaches.</strong> We notify your Employer promptly. Where notification is required, your Employer notifies the NPC and affected data subjects within 72 hours of knowledge or reasonable belief of the breach (NPC Circular 16-03). Outsourcing does not shift this duty.</p>
+  <p><strong>Your rights.</strong> You may be informed, object, access (including information on automated processing), rectify, have data erased or blocked, claim damages and use data portability (DPA ss 16–18; IRR s 34). Exercise these rights through your Employer's Data Protection Officer (DPO); we assist. Complaints: NPC (<a href="https://www.privacy.gov.ph">www.privacy.gov.ph</a>), which generally requires that you first raise the matter in writing with your Employer.</p>
+  <p><strong>DPO.</strong> Every PIC and PIP subject to the Act must designate a DPO (IRR s 26). Ours: Ksatria Bintang Samudra (Director), <a href="mailto:support@coaltrack.id?subject=Privacy%20%E2%80%93%20DPO">support@coaltrack.id</a>, subject “Privacy – DPO”.</p>
+  <p><strong>Employer duties.</strong> Give employees a privacy notice and sign an outsourcing agreement with us. Where NPC Circular 2022-04 thresholds apply (e.g., 250 or more employees, or sensitive personal information of 1,000 or more individuals), register its DPO and data processing systems with the NPC, including any required notice of automated decision-making.</p>
+
+  <h3 id="sup-south-africa">17.3 South Africa</h3>
+  <p><strong>Law and roles.</strong> The Protection of Personal Information Act 4 of 2013 (POPIA) applies. Your Employer is the responsible party. We are its operator: we process personal information only with its authorisation, in confidence and under a written contract requiring security safeguards (ss 20–21). We are the responsible party for our own website, sales and billing contacts.</p>
+  <p><strong>Transfers abroad (s 72).</strong> Personal information goes to Singapore, Indonesia, France and the United States. Your Employer relies on s 72(1)(a): we are bound by a binding agreement providing an adequate level of protection, including limits on onward transfer.</p>
+  <p><strong>Security compromises.</strong> We notify your Employer immediately where there are reasonable grounds to believe personal information was accessed or acquired by an unauthorised person (s 21(2)). Your Employer notifies the Information Regulator (through its eServices portal) and affected data subjects as soon as reasonably possible (s 22).</p>
+  <p><strong>Automated decisions (s 71).</strong> A decision with legal or substantial effect may not rest solely on automated profiling of work performance, location or conduct unless safeguards apply. These include the right to make representations and to receive sufficient information about the underlying logic. HR can review CoalTrack flags and rejections (section 10); make representations through HR.</p>
+  <p><strong>Your rights.</strong> Access (s 23), correction or deletion (s 24, Form 2), objection (s 11(3), Form 1) and complaint to the Information Regulator (s 74, Form 5): <a href="https://www.inforegulator.org.za">www.inforegulator.org.za</a>, <a href="mailto:enquiries@inforegulator.org.za">enquiries@inforegulator.org.za</a>. Make requests to your Employer's Information Officer; we assist.</p>
+  <p><strong>Employer duties.</strong></p>
+  <ul>
+    <li>Register its Information Officer with the Regulator before the officer performs any duties (s 55(2)).</li>
+    <li>Give employees the s 18 notice, including the transfer abroad.</li>
+    <li>Ensure its contract with us meets s 21.</li>
+  </ul>
+
+  <h3 id="sup-malaysia">17.4 Malaysia</h3>
+  <p><strong>Law and roles.</strong> The Personal Data Protection Act 2010 (PDPA), as amended by Act A1727 (in force in stages on 1 January, 1 April and 1 June 2025), applies. Your Employer is the data controller (formerly “data user”); we are its data processor, and since 1 April 2025 processors must themselves comply with the Security Principle (s 9). For our own website, sales and billing data, we are the data controller.</p>
+  <p><strong>Language.</strong> Notices to data subjects must be in Bahasa Melayu and English (s 7(3)). This supplement is published in both.</p>
+  <p><strong>Transfers (s 129).</strong> Data goes to Singapore, Indonesia and the providers in section 07. Your Employer may transfer data where the destination has a law substantially similar to the PDPA or ensures adequate protection, or on a s 129(3) ground such as all reasonable precautions and due diligence (for example, ASEAN Model Contractual Clauses; Commissioner's guideline of 29 April 2025).</p>
+  <p><strong>Breaches (s 12B, from 1 June 2025).</strong> We notify your Employer promptly. Your Employer notifies the Commissioner as soon as practicable and within 72 hours. Where significant harm is likely, it also notifies affected data subjects without unnecessary delay and within 7 days of notifying the Commissioner.</p>
+  <p><strong>Your rights.</strong> Access (s 30; answered within 21 days), correction (s 34), withdrawal of consent (s 38), preventing processing likely to cause damage or distress (s 42), stopping direct marketing (s 43) and data portability (s 43A, where technically feasible). Exercise them through your Employer; we assist. Complaints: Personal Data Protection Commissioner (<a href="https://www.pdp.gov.my">www.pdp.gov.my</a>).</p>
+  <p><strong>Data protection officer.</strong> Controllers and processors must appoint a DPO when the Commissioner's thresholds are met (s 12A): more than 20,000 data subjects, more than 10,000 for sensitive personal data (including financial information), or regular and systematic monitoring. Your Employer notifies the Commissioner within 21 days of appointment.</p>
+
+  <div lang="ms" id="sup-malaysia-ms">
+    <h3>17.4 Malaysia — Bahasa Melayu</h3>
+    <p><strong>Undang-undang dan peranan.</strong> Akta Perlindungan Data Peribadi 2010 (APDP), sebagaimana dipinda oleh Akta A1727 (berkuat kuasa secara berperingkat pada 1 Januari, 1 April dan 1 Jun 2025), terpakai. Majikan anda ialah pengawal data (dahulunya “pengguna data”). Kami ialah pemproses data bagi majikan anda. Sejak 1 April 2025, pemproses data sendiri wajib mematuhi Prinsip Keselamatan (seksyen 9). Bagi data laman web, jualan dan pengebilan kami sendiri, kami ialah pengawal data.</p>
+    <p><strong>Bahasa.</strong> Notis kepada subjek data hendaklah dalam bahasa kebangsaan dan bahasa Inggeris (seksyen 7(3)). Suplemen ini diterbitkan dalam kedua-dua bahasa.</p>
+    <p><strong>Pemindahan ke luar Malaysia (seksyen 129).</strong> Data dihantar ke Singapura, Indonesia dan kepada penyedia perkhidmatan dalam seksyen 07. Majikan anda boleh memindahkan data jika tempat destinasi mempunyai undang-undang yang pada substansinya serupa dengan APDP atau memastikan perlindungan yang mencukupi. Majikan juga boleh bergantung pada alasan dalam seksyen 129(3), seperti segala langkah berjaga-jaga yang munasabah dan usaha wajar, contohnya Klausa Kontrak Model ASEAN (garis panduan pemindahan rentas sempadan oleh Pesuruhjaya, 29 April 2025).</p>
+    <p><strong>Pelanggaran data peribadi (seksyen 12B, mulai 1 Jun 2025).</strong> Kami memaklumkan majikan anda dengan segera. Majikan anda memaklumkan Pesuruhjaya dengan seberapa segera yang praktik dan dalam tempoh 72 jam. Jika kemudaratan yang ketara berkemungkinan berlaku, majikan juga memaklumkan subjek data yang terjejas tanpa kelengahan yang tidak perlu dan dalam tempoh 7 hari selepas memaklumkan Pesuruhjaya.</p>
+    <p><strong>Hak anda.</strong> Anda mempunyai hak akses (seksyen 30; dijawab dalam tempoh 21 hari), pembetulan (seksyen 34), penarikan balik persetujuan (seksyen 38), menghalang pemprosesan yang mungkin menyebabkan kerosakan atau distres (seksyen 42), menghentikan pemasaran langsung (seksyen 43) dan kemudahalihan data (seksyen 43A, jika boleh dilaksanakan secara teknikal). Gunakan hak ini melalui majikan anda; kami akan membantu. Aduan: Pesuruhjaya Perlindungan Data Peribadi (<a href="https://www.pdp.gov.my">www.pdp.gov.my</a>).</p>
+    <p><strong>Pegawai perlindungan data.</strong> Pengawal data dan pemproses data wajib melantik Pegawai Perlindungan Data (DPO) apabila ambang Pesuruhjaya dipenuhi (seksyen 12A): lebih daripada 20,000 subjek data, lebih daripada 10,000 subjek data bagi data peribadi sensitif (termasuk maklumat kewangan), atau pemantauan data peribadi secara tetap dan sistematik. Majikan anda memaklumkan Pesuruhjaya dalam tempoh 21 hari selepas pelantikan.</p>
+  </div>
+
+  <h3 id="sup-singapore">17.5 Singapore</h3>
+  <p><strong>Law and roles.</strong> The Personal Data Protection Act 2012 (PDPA) applies. Your Employer is the organisation responsible for your data, with the same obligations for data we process for it as if it processed the data itself (s 4(3)). We are its data intermediary. Processing under a written contract, we are directly bound only by the protection, retention and breach-notification-to-the-Employer obligations (s 4(2)). For our own website, sales and billing data, we are an organisation under the PDPA; business contact information is largely outside its data protection rules (s 4(5)).</p>
+  <p><strong>Employment data.</strong> Consent is not needed where collection, use or disclosure is reasonable for managing or terminating employment. Your Employer must still tell employees the purposes (s 20(4)–(5)).</p>
+  <p><strong>Transfers (s 26).</strong> Data is stored in Singapore (DigitalOcean, sgp1). Data that leaves Singapore must be protected by legally enforceable obligations, such as a contract, giving comparable protection. This covers support access from Indonesia, EU email, and US/global push, app-store and map services.</p>
+  <p><strong>Breaches (Part 6A).</strong> We notify your Employer without undue delay (s 26C(3)(a)). Your Employer assesses whether the breach is notifiable (likely significant harm, or 500 or more individuals affected). If it is, your Employer notifies the PDPC within 3 calendar days of that assessment, and notifies affected individuals where significant harm is likely (ss 26B, 26D).</p>
+  <p><strong>Your rights.</strong> Access, including how your data was used or disclosed in the past year (s 21), correction (s 22) and withdrawal of consent (s 16). Exercise them through your Employer's data protection officer; we assist. Complaints: Personal Data Protection Commission (<a href="https://www.pdpc.gov.sg">www.pdpc.gov.sg</a>), after you have first approached the organisation.</p>
+  <p><strong>Employer duties.</strong> Designate a data protection officer and publish the business contact information of at least one (s 11(3), (5)).</p>
+
+  <h3 id="sup-thailand">17.6 Thailand</h3>
+  <p><strong>Law and roles.</strong> The Personal Data Protection Act B.E. 2562 (2019) has applied in full since 1 June 2022. Your Employer is the data controller; we are its data processor and, under a written agreement, act only on its instructions, keep data secure, notify breaches and keep processing records (s 40). The Act can reach processors outside Thailand that offer services to, or monitor the behaviour of, people in Thailand (s 5). For our own website, sales and billing data, we are the data controller.</p>
+  <p><strong>Transfers (ss 28–29).</strong> Data goes to Singapore, Indonesia and the providers in section 07. Absent an adequacy decision by the Personal Data Protection Committee (PDPC), transfers rely on appropriate safeguards, such as standard contractual clauses accepted under the PDPC's cross-border Notifications (in force 24 March 2024).</p>
+  <p><strong>Breaches.</strong> We notify your Employer without delay (s 40(2)). Your Employer notifies the Office of the PDPC without delay and, where feasible, within 72 hours of becoming aware, unless the breach is unlikely to result in risk to individuals. Where the risk is high, it also notifies them without delay (s 37(4)).</p>
+  <p><strong>Your rights.</strong> Access and a copy (s 30), portability (s 31), objection (s 32), erasure (s 33), restriction (s 34), rectification (ss 35–36) and withdrawal of consent (s 19). Exercise them through your Employer; we assist. Complaints: Expert Committee via the Office of the PDPC (<a href="https://www.pdpc.or.th">www.pdpc.or.th</a>) (s 73).</p>
+  <p><strong>Data protection officer.</strong> Controllers and processors must designate a DPO where s 41 applies, for example large-scale regular monitoring (100,000 or more data subjects under a PDPC Notification in force since 13 December 2023), and give its contact details to data subjects and the Office.</p>
+  <p><strong>Employer duties.</strong> Inform employees of the s 23 matters at or before collection, and rely on a lawful basis in s 24.</p>
 </section>
 </div></main>
 </div>
