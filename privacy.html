@@ -984,7 +984,15 @@ details p,details li{font-size:14px}
       else{window.scrollTo(0,0);}
     });
   }
-  if(location.hash){var t=document.getElementById(location.hash.slice(1));if(t)setTimeout(function(){t.scrollIntoView();},0);}
+  if(location.hash){var t=document.getElementById(location.hash.slice(1));if(t){
+    // Fon web selesai dimuat setelah lompatan pertama dan menggeser tata letak (kunjungan pertama):
+    // lompat sekali lagi setelah fon/halaman siap, kecuali pengunjung sudah menggulir sendiri.
+    var moved=false,mark=function(){moved=true;},go=function(){if(!moved)t.scrollIntoView();};
+    ['wheel','touchstart','keydown','mousedown'].forEach(function(n){window.addEventListener(n,mark,{passive:true});});
+    setTimeout(go,0);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(go,0);});
+    window.addEventListener('load',function(){setTimeout(go,0);});
+  }}
   window.addEventListener('hashchange',function(){var l=fromHash();if(l&&l!==root.lang)set(l,false);});
 })();
 </script>
