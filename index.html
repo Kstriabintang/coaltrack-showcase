@@ -234,6 +234,42 @@ html[dir="rtl"] .farrow,html[dir="rtl"] .arrow{display:inline-block;transform:sc
 .prow{grid-template-columns:1.35fr 1fr}
 .pval{text-align:end;font-weight:800;color:var(--acc)}
 .cmphead .pval{font-weight:800;color:var(--acc)}
+/* negara harga: chip "Harga untuk" + panel pilihan yang melayang di bawahnya (tata letak tidak bergeser) */
+.ctry{position:relative;display:flex;flex-direction:column;align-items:center;margin-top:clamp(14px,2.2vw,22px)}
+.ctry-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 10px;max-width:100%}
+.ctry-lbl{font-size:12.5px;font-weight:700;color:var(--tx2)}
+.ctry-btn{font-family:inherit;line-height:1.3;cursor:pointer;max-width:100%;flex-wrap:wrap;justify-content:center;
+  transition:border-color .2s,box-shadow .2s}
+.ctry-btn:hover,.ctry-btn[aria-expanded="true"]{border-color:var(--acc)}
+.ctry-btn:focus-visible{border-radius:999px;outline-color:var(--accs)}
+.ctry-flag{font-size:15px;line-height:1}
+.ctry-dot{color:var(--tx3);font-weight:800}
+.ctry-chg{font-weight:800;text-decoration:underline;text-decoration-color:var(--acc);text-underline-offset:3px}
+.ctry-list{position:absolute;z-index:6;top:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  width:min(780px,calc(100vw - 32px));list-style:none;margin:0;padding:10px;border-radius:16px;
+  background:linear-gradient(var(--surf),var(--surf)),var(--ink);border:1px solid var(--line);
+  box-shadow:0 30px 60px -24px rgba(11,18,32,.45);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.ctry-list[hidden]{display:none}
+.ctry-list button{width:100%;height:100%;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;
+  font:inherit;font-size:12.8px;font-weight:700;line-height:1.3;color:var(--tx);text-align:start;cursor:pointer;
+  background:var(--surf);border:1px solid var(--line);transition:border-color .2s}
+.ctry-list button:hover{border-color:var(--acc)}
+.ctry-list button:focus-visible{border-radius:12px;outline-color:var(--accs)}
+.ctry-list button[aria-current="true"]{border-color:var(--acc);background:var(--surf2);box-shadow:inset 0 0 0 1px var(--acc)}
+.ctry-list .cf{flex:none;font-size:16px;line-height:1}
+.ctry-list .cn{flex:1 1 auto;min-width:0;overflow-wrap:break-word}
+.ctry-list .cc{flex:none;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--tx3)}
+@media(max-width:700px){
+  .ctry-list{grid-template-columns:1fr 1fr}
+  /* kolom sempit: kode mata uang turun ke bawah nama negara */
+  .ctry-list button{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:8px;row-gap:1px;align-content:center}
+  .ctry-list .cf{grid-row:1 / span 2}
+  .ctry-list .cc{grid-column:2}
+}
+.prc-priv{margin-top:8px}
+.prc-priv a{color:var(--tx2);font-weight:700;text-decoration:underline;text-decoration-color:var(--acc);text-underline-offset:3px}
+.prc-priv a:hover{color:var(--accs)}
+.prc-priv a:focus-visible{outline-color:var(--accs)}
 
 /* ======================= status ======================= */
 .road{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
@@ -840,19 +876,27 @@ body.light-context .counter{color:rgba(11,18,32,.42)}
 </section>
 
 <!-- 19 PRICING -->
-<section class="slide light">
+<section class="slide light" id="pricing">
   <div class="wrap center">
     <span class="eyebrow r" data-i18n="prcEye" style="justify-content:center"></span>
     <h2 class="r" data-i18n="prcTtl"></h2>
     <p class="lead r" data-i18n="prcLead"></p>
+    <div class="ctry r" id="ctry">
+      <div class="ctry-row">
+        <span class="ctry-lbl" id="ctry-lbl"></span>
+        <button type="button" class="chip ctry-btn" id="ctry-btn" aria-expanded="false" aria-controls="ctry-list" aria-labelledby="ctry-lbl ctry-btn"><span class="ctry-flag" id="ctry-flag" aria-hidden="true"></span><span id="ctry-name"></span><span class="ctry-dot" aria-hidden="true">·</span><span class="ctry-chg" id="ctry-chg"></span></button>
+      </div>
+      <ul class="ctry-list" id="ctry-list" hidden></ul>
+    </div>
     <div class="cmp prc r">
       <div class="cmprow prow cmphead"><div class="asp" data-i18n="prcCol1"></div><div class="pval" data-i18n="prcCol2"></div></div>
-      <div class="cmprow prow"><div class="asp" data-i18n="prcT1n"></div><div class="pval" data-i18n="prcT1p"></div></div>
-      <div class="cmprow prow"><div class="asp" data-i18n="prcT2n"></div><div class="pval" data-i18n="prcT2p"></div></div>
-      <div class="cmprow prow"><div class="asp" data-i18n="prcT3n"></div><div class="pval" data-i18n="prcT3p"></div></div>
+      <div class="cmprow prow"><div class="asp" data-i18n="prcT1n"></div><div class="pval" data-prc="0"></div></div>
+      <div class="cmprow prow"><div class="asp" data-i18n="prcT2n"></div><div class="pval" data-prc="1"></div></div>
+      <div class="cmprow prow"><div class="asp" data-i18n="prcT3n"></div><div class="pval" data-prc="2"></div></div>
       <div class="cmprow prow"><div class="asp" data-i18n="prcT4n"></div><div class="pval" data-i18n="prcT4p"></div></div>
     </div>
-    <p class="note r" data-i18n="prcNote"></p>
+    <p class="note r" id="prc-note"><span data-i18n="prcNote"></span><span id="prc-tax"></span></p>
+    <p class="note prc-priv r"><a id="prc-priv" href="privacy.html?lang=en"></a></p>
   </div>
 </section>
 
@@ -1259,14 +1303,11 @@ const I18N={
   "prcCol1":"Workforce",
   "prcCol2":"Monthly fee",
   "prcT1n":"Up to 1,000 workers",
-  "prcT1p":"US$790",
   "prcT2n":"1,000–3,000 workers",
-  "prcT2p":"US$1,690",
   "prcT3n":"3,000–5,000 workers",
-  "prcT3p":"US$2,690",
   "prcT4n":"Above 5,000 workers",
   "prcT4p":"Custom",
-  "prcNote":"The monthly fee covers server, storage, daily backups, email, updates, fixes and support — no separate infrastructure bill. Prices in USD, excluding local taxes."
+  "prcNote":"The monthly fee covers server, storage, daily backups, email, updates, fixes and support — no separate infrastructure bill."
  },
  id:{
   "fErrName":"Nama minimal 3 karakter.",
@@ -1553,11 +1594,8 @@ const I18N={
   "prcCol1":"Jumlah pekerja",
   "prcCol2":"Biaya / bulan",
   "prcT1n":"Sampai 1.000 pekerja",
-  "prcT1p":"Rp 5 juta",
   "prcT2n":"1.000–3.000 pekerja",
-  "prcT2p":"Rp 9 juta",
   "prcT3n":"3.000–5.000 pekerja",
-  "prcT3p":"Rp 15 juta",
   "prcT4n":"Di atas 5.000 pekerja",
   "prcT4p":"Khusus",
   "prcNote":"Biaya bulanan sudah mencakup server, penyimpanan, cadangan harian, email, pembaruan, perbaikan, dan dukungan — tanpa tagihan infrastruktur terpisah."
@@ -1847,14 +1885,11 @@ const I18N={
   "prcCol1":"Bilangan pekerja",
   "prcCol2":"Yuran / bulan",
   "prcT1n":"Sehingga 1,000 pekerja",
-  "prcT1p":"US$790",
   "prcT2n":"1,000–3,000 pekerja",
-  "prcT2p":"US$1,690",
   "prcT3n":"3,000–5,000 pekerja",
-  "prcT3p":"US$2,690",
   "prcT4n":"Melebihi 5,000 pekerja",
   "prcT4p":"Khusus",
-  "prcNote":"Yuran bulanan merangkumi pelayan, storan, sandaran harian, e-mel, kemas kini, pembaikan dan sokongan — tiada bil infrastruktur berasingan. Harga dalam USD, tidak termasuk cukai tempatan."
+  "prcNote":"Yuran bulanan merangkumi pelayan, storan, sandaran harian, e-mel, kemas kini, pembaikan dan sokongan — tiada bil infrastruktur berasingan."
  },
  zh:{
   "fErrName":"姓名至少 3 个字符。",
@@ -2141,14 +2176,11 @@ const I18N={
   "prcCol1":"员工规模",
   "prcCol2":"月费",
   "prcT1n":"最多 1,000 名员工",
-  "prcT1p":"US$790",
   "prcT2n":"1,000–3,000 名员工",
-  "prcT2p":"US$1,690",
   "prcT3n":"3,000–5,000 名员工",
-  "prcT3p":"US$2,690",
   "prcT4n":"5,000 名以上",
   "prcT4p":"面议",
-  "prcNote":"月费已涵盖服务器、存储、每日备份、邮件、更新、修复与支持——无需另付基础设施费用。价格以美元计，不含当地税费。"
+  "prcNote":"月费已涵盖服务器、存储、每日备份、邮件、更新、修复与支持——无需另付基础设施费用。"
  },
  ar:{
   "fErrName":"يجب ألا يقل الاسم عن 3 أحرف.",
@@ -2435,14 +2467,11 @@ const I18N={
   "prcCol1":"عدد العاملين",
   "prcCol2":"الرسوم / شهريًا",
   "prcT1n":"حتى 1,000 عامل",
-  "prcT1p":"US$790",
   "prcT2n":"1,000–3,000 عامل",
-  "prcT2p":"US$1,690",
   "prcT3n":"3,000–5,000 عامل",
-  "prcT3p":"US$2,690",
   "prcT4n":"أكثر من 5,000 عامل",
   "prcT4p":"حسب الطلب",
-  "prcNote":"تشمل الرسوم الشهرية الخادم والتخزين والنسخ الاحتياطي اليومي والبريد والتحديثات والإصلاحات والدعم — دون فاتورة بنية تحتية منفصلة. الأسعار بالدولار الأمريكي ولا تشمل الضرائب المحلية."
+  "prcNote":"تشمل الرسوم الشهرية الخادم والتخزين والنسخ الاحتياطي اليومي والبريد والتحديثات والإصلاحات والدعم — دون فاتورة بنية تحتية منفصلة."
  }
 };
 I18N.th={
@@ -2730,14 +2759,11 @@ I18N.th={
  "prcCol1":"จำนวนพนักงาน",
  "prcCol2":"ค่าบริการ / เดือน",
  "prcT1n":"ไม่เกิน 1,000 คน",
- "prcT1p":"US$790",
  "prcT2n":"1,000–3,000 คน",
- "prcT2p":"US$1,690",
  "prcT3n":"3,000–5,000 คน",
- "prcT3p":"US$2,690",
  "prcT4n":"มากกว่า 5,000 คน",
  "prcT4p":"กำหนดเอง",
- "prcNote":"ค่าบริการรายเดือนรวมเซิร์ฟเวอร์ พื้นที่จัดเก็บ สำรองข้อมูลรายวัน อีเมล อัปเดต การแก้ไข และซัพพอร์ต — ไม่มีบิลโครงสร้างพื้นฐานแยก ราคาเป็นดอลลาร์สหรัฐ ไม่รวมภาษีท้องถิ่น"
+ "prcNote":"ค่าบริการรายเดือนรวมเซิร์ฟเวอร์ พื้นที่จัดเก็บ สำรองข้อมูลรายวัน อีเมล อัปเดต การแก้ไข และซัพพอร์ต — ไม่มีบิลโครงสร้างพื้นฐานแยก"
 };
 I18N.fil={
   "fErrName":"Dapat hindi bababa sa 3 character ang pangalan.",
@@ -3024,14 +3050,200 @@ I18N.fil={
  "prcCol1":"Dami ng manggagawa",
  "prcCol2":"Bayad / buwan",
  "prcT1n":"Hanggang 1,000 manggagawa",
- "prcT1p":"US$790",
  "prcT2n":"1,000–3,000 manggagawa",
- "prcT2p":"US$1,690",
  "prcT3n":"3,000–5,000 manggagawa",
- "prcT3p":"US$2,690",
  "prcT4n":"Higit sa 5,000 manggagawa",
  "prcT4p":"Custom",
- "prcNote":"Saklaw ng buwanang bayad ang server, storage, araw-araw na backup, email, updates, pag-aayos at suporta — walang hiwalay na bayad sa infrastructure. Presyo sa USD, hindi kasama ang lokal na buwis."
+ "prcNote":"Saklaw ng buwanang bayad ang server, storage, araw-araw na backup, email, updates, pag-aayos at suporta — walang hiwalay na bayad sa infrastructure."
+};
+// ===== NEGARA PENGUNJUNG — teks per bahasa (chip negara, mata uang & pajak, rujukan privasi) =====
+// Harga mengikuti NEGARA, bukan bahasa (orang Australia yang membaca bahasa Melayu tetap melihat A$).
+// sep = pemisah sebelum kalimat mata uang/pajak; idr = harga Rupiah untuk negara ID;
+// tax.ID di kamus id kosong = catatan Indonesia tetap seperti semula.
+const CTY_TXT={
+ en:{
+  "lbl":"Prices for:","change":"Change","list":"Choose your country","sep":" ",
+  "inEn":" (in English)","inId":" (in Indonesian)",
+  "idr":["Rp 5 million","Rp 9 million","Rp 15 million"],
+  "name":{"AU":"Australia","SG":"Singapore","MY":"Malaysia","PH":"Philippines","ZA":"South Africa","TH":"Thailand","ID":"Indonesia","INTL":"Other countries"},
+  "tax":{
+   "AU":"Prices in Australian dollars (AUD), excluding GST.",
+   "SG":"Prices in Singapore dollars (SGD), excluding GST.",
+   "MY":"Prices in Malaysian ringgit (MYR), excluding SST.",
+   "PH":"Prices in Philippine pesos (PHP), excluding VAT.",
+   "ZA":"Prices in South African rand (ZAR), excluding VAT.",
+   "TH":"Prices in Thai baht (THB), excluding VAT.",
+   "ID":"Prices in Indonesian rupiah (IDR).",
+   "INTL":"Prices in USD, excluding local taxes."},
+  "priv":{
+   "AU":"Data protection for Australian employers: privacy policy, section 17.1",
+   "SG":"Data protection for Singapore employers: privacy policy, section 17.5",
+   "MY":"Data protection for Malaysian employers: privacy policy, section 17.4",
+   "PH":"Data protection for Philippine employers: privacy policy, section 17.2",
+   "ZA":"Data protection for South African employers: privacy policy, section 17.3",
+   "TH":"Data protection for Thai employers: privacy policy, section 17.6",
+   "ID":"Data protection in Indonesia: privacy policy",
+   "INTL":"How we protect personal data: privacy policy"}
+ },
+ id:{
+  "lbl":"Harga untuk:","change":"Ganti","list":"Pilih negara Anda","sep":" ",
+  "inEn":" (dalam bahasa Inggris)","inId":" (dalam bahasa Indonesia)",
+  "idr":["Rp 5 juta","Rp 9 juta","Rp 15 juta"],
+  "name":{"AU":"Australia","SG":"Singapura","MY":"Malaysia","PH":"Filipina","ZA":"Afrika Selatan","TH":"Thailand","ID":"Indonesia","INTL":"Negara lain"},
+  "tax":{
+   "AU":"Harga dalam dolar Australia (AUD), belum termasuk GST.",
+   "SG":"Harga dalam dolar Singapura (SGD), belum termasuk GST.",
+   "MY":"Harga dalam ringgit Malaysia (MYR), belum termasuk SST.",
+   "PH":"Harga dalam peso Filipina (PHP), belum termasuk VAT.",
+   "ZA":"Harga dalam rand Afrika Selatan (ZAR), belum termasuk VAT.",
+   "TH":"Harga dalam baht Thailand (THB), belum termasuk VAT.",
+   "ID":"",
+   "INTL":"Harga dalam USD, belum termasuk pajak setempat."},
+  "priv":{
+   "AU":"Pelindungan data bagi pemberi kerja di Australia: kebijakan privasi, bagian 17.1",
+   "SG":"Pelindungan data bagi pemberi kerja di Singapura: kebijakan privasi, bagian 17.5",
+   "MY":"Pelindungan data bagi pemberi kerja di Malaysia: kebijakan privasi, bagian 17.4",
+   "PH":"Pelindungan data bagi pemberi kerja di Filipina: kebijakan privasi, bagian 17.2",
+   "ZA":"Pelindungan data bagi pemberi kerja di Afrika Selatan: kebijakan privasi, bagian 17.3",
+   "TH":"Pelindungan data bagi pemberi kerja di Thailand: kebijakan privasi, bagian 17.6",
+   "ID":"Pelindungan data pribadi di Indonesia: kebijakan privasi",
+   "INTL":"Cara kami melindungi data pribadi: kebijakan privasi"}
+ },
+ ms:{
+  "lbl":"Harga untuk:","change":"Tukar","list":"Pilih negara anda","sep":" ",
+  "inEn":" (dalam bahasa Inggeris)","inId":" (dalam bahasa Indonesia)",
+  "idr":["Rp 5 juta","Rp 9 juta","Rp 15 juta"],
+  "name":{"AU":"Australia","SG":"Singapura","MY":"Malaysia","PH":"Filipina","ZA":"Afrika Selatan","TH":"Thailand","ID":"Indonesia","INTL":"Negara lain"},
+  "tax":{
+   "AU":"Harga dalam dolar Australia (AUD), tidak termasuk GST.",
+   "SG":"Harga dalam dolar Singapura (SGD), tidak termasuk GST.",
+   "MY":"Harga dalam ringgit Malaysia (MYR), tidak termasuk SST.",
+   "PH":"Harga dalam peso Filipina (PHP), tidak termasuk VAT.",
+   "ZA":"Harga dalam rand Afrika Selatan (ZAR), tidak termasuk VAT.",
+   "TH":"Harga dalam baht Thailand (THB), tidak termasuk VAT.",
+   "ID":"Harga dalam rupiah Indonesia (IDR).",
+   "INTL":"Harga dalam USD, tidak termasuk cukai tempatan."},
+  "priv":{
+   "AU":"Perlindungan data bagi majikan di Australia: dasar privasi, seksyen 17.1",
+   "SG":"Perlindungan data bagi majikan di Singapura: dasar privasi, seksyen 17.5",
+   "MY":"Perlindungan data bagi majikan di Malaysia: dasar privasi, seksyen 17.4",
+   "PH":"Perlindungan data bagi majikan di Filipina: dasar privasi, seksyen 17.2",
+   "ZA":"Perlindungan data bagi majikan di Afrika Selatan: dasar privasi, seksyen 17.3",
+   "TH":"Perlindungan data bagi majikan di Thailand: dasar privasi, seksyen 17.6",
+   "ID":"Perlindungan data di Indonesia: dasar privasi",
+   "INTL":"Cara kami melindungi data peribadi: dasar privasi"}
+ },
+ zh:{
+  "lbl":"价格地区：","change":"更改","list":"选择您所在的国家/地区","sep":"",
+  "inEn":"（英文）","inId":"（印尼文）",
+  "idr":["500 万印尼盾","900 万印尼盾","1,500 万印尼盾"],
+  "name":{"AU":"澳大利亚","SG":"新加坡","MY":"马来西亚","PH":"菲律宾","ZA":"南非","TH":"泰国","ID":"印度尼西亚","INTL":"其他国家/地区"},
+  "tax":{
+   "AU":"价格以澳元（AUD）计，不含 GST。",
+   "SG":"价格以新加坡元（SGD）计，不含 GST。",
+   "MY":"价格以马来西亚令吉（MYR）计，不含 SST。",
+   "PH":"价格以菲律宾比索（PHP）计，不含增值税（VAT）。",
+   "ZA":"价格以南非兰特（ZAR）计，不含增值税（VAT）。",
+   "TH":"价格以泰铢（THB）计，不含增值税（VAT）。",
+   "ID":"价格以印尼盾（IDR）计。",
+   "INTL":"价格以美元计，不含当地税费。"},
+  "priv":{
+   "AU":"澳大利亚雇主的数据保护：隐私政策第 17.1 节",
+   "SG":"新加坡雇主的数据保护：隐私政策第 17.5 节",
+   "MY":"马来西亚雇主的数据保护：隐私政策第 17.4 节",
+   "PH":"菲律宾雇主的数据保护：隐私政策第 17.2 节",
+   "ZA":"南非雇主的数据保护：隐私政策第 17.3 节",
+   "TH":"泰国雇主的数据保护：隐私政策第 17.6 节",
+   "ID":"印度尼西亚的数据保护：隐私政策",
+   "INTL":"我们如何保护个人数据：隐私政策"}
+ },
+ ar:{
+  "lbl":"الأسعار حسب البلد:","change":"تغيير","list":"اختر بلدك","sep":" ",
+  "inEn":" (بالإنجليزية)","inId":" (بالإندونيسية)",
+  "idr":["5 ملايين روبية","9 ملايين روبية","15 مليون روبية"],
+  "name":{"AU":"أستراليا","SG":"سنغافورة","MY":"ماليزيا","PH":"الفلبين","ZA":"جنوب أفريقيا","TH":"تايلاند","ID":"إندونيسيا","INTL":"دول أخرى"},
+  "tax":{
+   "AU":"الأسعار بالدولار الأسترالي (AUD) ولا تشمل ضريبة السلع والخدمات (GST).",
+   "SG":"الأسعار بالدولار السنغافوري (SGD) ولا تشمل ضريبة السلع والخدمات (GST).",
+   "MY":"الأسعار بالرينغيت الماليزي (MYR) ولا تشمل ضريبة المبيعات والخدمات (SST).",
+   "PH":"الأسعار بالبيزو الفلبيني (PHP) ولا تشمل ضريبة القيمة المضافة.",
+   "ZA":"الأسعار بالراند الجنوب أفريقي (ZAR) ولا تشمل ضريبة القيمة المضافة.",
+   "TH":"الأسعار بالبات التايلاندي (THB) ولا تشمل ضريبة القيمة المضافة.",
+   "ID":"الأسعار بالروبية الإندونيسية (IDR).",
+   "INTL":"الأسعار بالدولار الأمريكي ولا تشمل الضرائب المحلية."},
+  "priv":{
+   "AU":"حماية البيانات لأصحاب العمل في أستراليا: سياسة الخصوصية، القسم 17.1",
+   "SG":"حماية البيانات لأصحاب العمل في سنغافورة: سياسة الخصوصية، القسم 17.5",
+   "MY":"حماية البيانات لأصحاب العمل في ماليزيا: سياسة الخصوصية، القسم 17.4",
+   "PH":"حماية البيانات لأصحاب العمل في الفلبين: سياسة الخصوصية، القسم 17.2",
+   "ZA":"حماية البيانات لأصحاب العمل في جنوب أفريقيا: سياسة الخصوصية، القسم 17.3",
+   "TH":"حماية البيانات لأصحاب العمل في تايلاند: سياسة الخصوصية، القسم 17.6",
+   "ID":"حماية البيانات في إندونيسيا: سياسة الخصوصية",
+   "INTL":"كيف نحمي البيانات الشخصية: سياسة الخصوصية"}
+ },
+ th:{
+  "lbl":"ราคาสำหรับ:","change":"เปลี่ยน","list":"เลือกประเทศของคุณ","sep":" ",
+  "inEn":" (ภาษาอังกฤษ)","inId":" (ภาษาอินโดนีเซีย)",
+  "idr":["5 ล้านรูเปียห์","9 ล้านรูเปียห์","15 ล้านรูเปียห์"],
+  "name":{"AU":"ออสเตรเลีย","SG":"สิงคโปร์","MY":"มาเลเซีย","PH":"ฟิลิปปินส์","ZA":"แอฟริกาใต้","TH":"ไทย","ID":"อินโดนีเซีย","INTL":"ประเทศอื่น ๆ"},
+  "tax":{
+   "AU":"ราคาเป็นดอลลาร์ออสเตรเลีย (AUD) ไม่รวม GST",
+   "SG":"ราคาเป็นดอลลาร์สิงคโปร์ (SGD) ไม่รวม GST",
+   "MY":"ราคาเป็นริงกิตมาเลเซีย (MYR) ไม่รวม SST",
+   "PH":"ราคาเป็นเปโซฟิลิปปินส์ (PHP) ไม่รวม VAT",
+   "ZA":"ราคาเป็นแรนด์แอฟริกาใต้ (ZAR) ไม่รวม VAT",
+   "TH":"ราคาเป็นเงินบาท (THB) ไม่รวมภาษีมูลค่าเพิ่ม (VAT)",
+   "ID":"ราคาเป็นรูเปียห์อินโดนีเซีย (IDR)",
+   "INTL":"ราคาเป็นดอลลาร์สหรัฐ ไม่รวมภาษีท้องถิ่น"},
+  "priv":{
+   "AU":"การคุ้มครองข้อมูลสำหรับนายจ้างในออสเตรเลีย: นโยบายความเป็นส่วนตัว ข้อ 17.1",
+   "SG":"การคุ้มครองข้อมูลสำหรับนายจ้างในสิงคโปร์: นโยบายความเป็นส่วนตัว ข้อ 17.5",
+   "MY":"การคุ้มครองข้อมูลสำหรับนายจ้างในมาเลเซีย: นโยบายความเป็นส่วนตัว ข้อ 17.4",
+   "PH":"การคุ้มครองข้อมูลสำหรับนายจ้างในฟิลิปปินส์: นโยบายความเป็นส่วนตัว ข้อ 17.2",
+   "ZA":"การคุ้มครองข้อมูลสำหรับนายจ้างในแอฟริกาใต้: นโยบายความเป็นส่วนตัว ข้อ 17.3",
+   "TH":"การคุ้มครองข้อมูลสำหรับนายจ้างในประเทศไทย: นโยบายความเป็นส่วนตัว ข้อ 17.6",
+   "ID":"การคุ้มครองข้อมูลในอินโดนีเซีย: นโยบายความเป็นส่วนตัว",
+   "INTL":"วิธีที่เราคุ้มครองข้อมูลส่วนบุคคล: นโยบายความเป็นส่วนตัว"}
+ },
+ fil:{
+  "lbl":"Presyo para sa:","change":"Palitan","list":"Piliin ang inyong bansa","sep":" ",
+  "inEn":" (sa Ingles)","inId":" (sa Bahasa Indonesia)",
+  "idr":["Rp 5 milyon","Rp 9 milyon","Rp 15 milyon"],
+  "name":{"AU":"Australia","SG":"Singapore","MY":"Malaysia","PH":"Pilipinas","ZA":"South Africa","TH":"Thailand","ID":"Indonesia","INTL":"Ibang bansa"},
+  "tax":{
+   "AU":"Presyo sa Australian dollar (AUD), hindi kasama ang GST.",
+   "SG":"Presyo sa Singapore dollar (SGD), hindi kasama ang GST.",
+   "MY":"Presyo sa Malaysian ringgit (MYR), hindi kasama ang SST.",
+   "PH":"Presyo sa piso (PHP), hindi kasama ang VAT.",
+   "ZA":"Presyo sa South African rand (ZAR), hindi kasama ang VAT.",
+   "TH":"Presyo sa Thai baht (THB), hindi kasama ang VAT.",
+   "ID":"Presyo sa Indonesian rupiah (IDR).",
+   "INTL":"Presyo sa USD, hindi kasama ang lokal na buwis."},
+  "priv":{
+   "AU":"Proteksyon ng data para sa mga employer sa Australia: patakaran sa privacy, seksyon 17.1",
+   "SG":"Proteksyon ng data para sa mga employer sa Singapore: patakaran sa privacy, seksyon 17.5",
+   "MY":"Proteksyon ng data para sa mga employer sa Malaysia: patakaran sa privacy, seksyon 17.4",
+   "PH":"Proteksyon ng data para sa mga employer sa Pilipinas: patakaran sa privacy, seksyon 17.2",
+   "ZA":"Proteksyon ng data para sa mga employer sa South Africa: patakaran sa privacy, seksyon 17.3",
+   "TH":"Proteksyon ng data para sa mga employer sa Thailand: patakaran sa privacy, seksyon 17.6",
+   "ID":"Proteksyon ng data sa Indonesia: patakaran sa privacy",
+   "INTL":"Paano namin pinoprotektahan ang personal na data: patakaran sa privacy"}
+ }
+};
+// Bahasa Indonesia untuk pembaca di LUAR Indonesia: fitur gaji & pajak diberi label "Indonesia",
+// sama seperti bahasa lain (kamus id ditulis untuk perusahaan di Indonesia: Rupiah, BPJS tanpa label).
+const ID_ABROAD={
+  "fn4d":"lembur; Indonesia: BPJS & PPh 21 TER sudah terpasang",
+  "cmpEa":"Pajak & jaminan sosial",
+  "cmpEc":"Indonesia: otomatis · negara lain: ekspor ke sistem penggajian Anda",
+  "cmpFm":"Jam dibayar, tak pernah dikerjakan",
+  "s4lead":"Lembur dihitung dari absensi terverifikasi oleh mesin yang sama di server dan aplikasi; di Indonesia, BPJS dan PPh 21 TER sudah terpasang. Slip sungguhan muncul di aplikasi begitu HRD memfinalisasi periode; PDF-nya dikirim ke email, terkunci kata sandi. Di luar Indonesia, ekspor rekap absensi bulanan (Excel) ke sistem penggajian Anda sendiri.",
+  "r3d":"Indonesia: BPJS, PPh21 TER, lembur — mesin yang sama di server & aplikasi",
+  "r7t":"Lokasi kerja, pengingat kontrak, ekspor Coretax (Indonesia)",
+  "r7d":"lokasi kerja beradius, pengingat kontrak berakhir, ekspor PPh 21 format Coretax (Indonesia)",
+  "govLead":"Untuk penggajian Indonesia, tabel ketentuan pemerintah dijaga CoalTrack. Kebijakan perusahaan, data karyawan, dan setiap persetujuan tetap di tangan tim Anda — tanpa bergantung pada vendor.",
+  "govR1d":"Indonesia: tarif PPh21 TER, iuran & batas BPJS, PTKP",
+  "govR3d":"Gaji, status pajak, nomor pajak, rekening bank"
 };
 window.__ctI18N=I18N;
 // Tautan WhatsApp (wa.me + salam sesuai bahasa); '' bila SALES_WA kosong.
@@ -3141,8 +3353,148 @@ function initDemoForm(){
     }
   });
 }
-function setLang(code){
-  const dict=I18N[code]||I18N.en;
+// ===== NEGARA PENGUNJUNG: harga, pajak & rujukan privasi =====
+// Ditebak di perangkat saja — tanpa layanan geo-IP, tanpa cookie, tanpa permintaan jaringan.
+// Urutan: ?country=XX (ikut disimpan) > pilihan tersimpan (ct_country) > zona waktu perangkat
+// > wilayah pada bahasa peramban (mis. en-AU) > INTL.
+const CTY_LIST=['AU','SG','MY','PH','ZA','TH','ID','INTL'];
+const CTY_FLAG={AU:'🇦🇺',SG:'🇸🇬',MY:'🇲🇾',PH:'🇵🇭',ZA:'🇿🇦',TH:'🇹🇭',ID:'🇮🇩',INTL:'🌐'};
+const CTY_CUR={AU:'AUD',SG:'SGD',MY:'MYR',PH:'PHP',ZA:'ZAR',TH:'THB',ID:'IDR',INTL:'USD'};
+// Biaya bulanan: ≤1.000 / 1.000–3.000 / 3.000–5.000 pekerja (>5.000 = khusus, teks prcT4p).
+// Kurs ECB 21 Okt 2026 + aturan pembulatan pemilik — jangan dihitung ulang. ID memakai CTY_TXT.*.idr.
+const CTY_PRICE={
+  AU:['A$1,190','A$2,490','A$3,890'],
+  SG:['S$1,090','S$2,190','S$3,490'],
+  MY:['RM3,290','RM6,990','RM10,900'],
+  PH:['₱49,900','₱106,900','₱169,900'],
+  ZA:['R12,900','R27,900','R43,900'],
+  TH:['฿26,900','฿56,900','฿89,900'],
+  INTL:['US$790','US$1,690','US$2,690']
+};
+// Suplemen negara di privacy.html (bagian 17, versi Inggris; Malaysia juga berbahasa Melayu).
+const CTY_PRIV={AU:'privacy.html?lang=en#sup-australia',SG:'privacy.html?lang=en#sup-singapore',
+  MY:'privacy.html?lang=en#sup-malaysia',PH:'privacy.html?lang=en#sup-philippines',
+  ZA:'privacy.html?lang=en#sup-south-africa',TH:'privacy.html?lang=en#sup-thailand',
+  ID:'privacy.html?lang=id',INTL:'privacy.html?lang=en'};
+const TZ_CTY={'Asia/Singapore':'SG','Singapore':'SG','Asia/Kuala_Lumpur':'MY','Asia/Kuching':'MY',
+  'Asia/Manila':'PH','Africa/Johannesburg':'ZA','Asia/Bangkok':'TH','Asia/Jakarta':'ID','Asia/Pontianak':'ID',
+  'Asia/Makassar':'ID','Asia/Ujung_Pandang':'ID','Asia/Jayapura':'ID'};
+// Windows melaporkan Asia/Bangkok (UTC+7) / Asia/Singapore (UTC+8) untuk negara lain berjam sama bila
+// "Negara atau wilayah" Windows tidak cocok — misalnya Jakarta atau Balikpapan. Di dua zona ini saja,
+// bahasa peramban yang jelas menunjuk negara lain berjam sama (id-ID, en-MY, fil-PH, atau bahasa Indonesia) menang.
+const TZ_SHARED={'Asia/Bangkok':['ID'],'Asia/Singapore':['MY','PH','ID']};
+const CTY_LANG={ID:'id',MY:'ms',TH:'th',PH:'fil'}; // bahasa bawaan per negara bila bahasa peramban tak didukung
+let COUNTRY='INTL';
+function browserLangs(){
+  try{const l=navigator.languages; if(l&&l.length) return [].slice.call(l);}catch(e){}
+  return [navigator.language||''];
+}
+function normCountry(v){
+  v=String(v||'').trim().toUpperCase();
+  if(CTY_LIST.indexOf(v)>=0) return v;
+  return /^[A-Z]{2}$/.test(v)?'INTL':null; // kode negara lain yang sah → harga USD
+}
+function saveCountry(c){try{localStorage.setItem('ct_country',c)}catch(e){}}
+// region = wilayah pertama yang tertulis (en-AU → AU, zh-Hans-SG → SG);
+// hint = entri pertama yang memberi wilayah atau berbahasa Indonesia (→ ID), untuk TZ_SHARED.
+function langInfo(){
+  let region=null, hint=null;
+  browserLangs().forEach(tag=>{
+    const p=String(tag||'').split(/[-_]/); let r=null;
+    for(let j=1;j<p.length&&p[j].length>1;j++){if(/^([A-Za-z]{2}|\d{3})$/.test(p[j])){r=p[j].toUpperCase();break;}}
+    if(r&&!region) region=r;
+    if(!hint) hint=r||(/^(id|in)$/i.test(p[0])?'ID':null);
+  });
+  return {region,hint};
+}
+function detectCountry(){
+  try{const q=normCountry(new URLSearchParams(location.search).get('country')); if(q){saveCountry(q); return q;}}catch(e){}
+  try{const s=normCountry(localStorage.getItem('ct_country')); if(s) return s;}catch(e){}
+  let tz=''; try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+  const L=langInfo(), byTz=/^Australia\//.test(tz)?'AU':TZ_CTY[tz];
+  if(byTz){const sh=TZ_SHARED[tz]; return sh&&sh.indexOf(L.hint)>=0?L.hint:byTz;}
+  return CTY_LIST.indexOf(L.region)>=0?L.region:'INTL';
+}
+// Bahasa awal bila pengunjung belum pernah memilih: bahasa peramban pertama yang didukung,
+// lalu bahasa bawaan negara, lalu en. Pilihan tersimpan (ct_lang) selalu menang.
+function detectLang(country){
+  const ok=LANGS.map(l=>l[0]);
+  try{const s=localStorage.getItem('ct_lang'); if(ok.indexOf(s)>=0) return s;}catch(e){}
+  const list=browserLangs();
+  for(let i=0;i<list.length;i++){
+    let p=String(list[i]||'').toLowerCase().split(/[-_]/)[0];
+    if(p==='tl') p='fil'; else if(p==='in') p='id';
+    if(ok.indexOf(p)>=0) return p;
+  }
+  return CTY_LANG[country]||'en';
+}
+function renderCountry(code){
+  const c=COUNTRY, t=CTY_TXT[code]||CTY_TXT.en, zh=code==='zh';
+  const p=c==='ID'?t.idr:CTY_PRICE[c];
+  document.querySelectorAll('[data-prc]').forEach(el=>{el.textContent=p[+el.getAttribute('data-prc')]||'';});
+  const tax=document.getElementById('prc-tax'); if(tax) tax.textContent=t.tax[c]?t.sep+t.tax[c]:'';
+  const a=document.getElementById('prc-priv');
+  if(a){
+    const ms=c==='MY'&&code==='ms', doc=ms?'ms':(c==='ID'?'id':'en');
+    a.href=ms?'privacy.html?lang=en#sup-malaysia-ms':CTY_PRIV[c];
+    a.hreflang=doc;
+    a.textContent=t.priv[c]+(doc===code?'':(doc==='id'?t.inId:t.inEn));
+  }
+  const put=(id,v)=>{const el=document.getElementById(id); if(el) el.textContent=v;};
+  put('ctry-lbl',t.lbl); put('ctry-flag',CTY_FLAG[c]); put('ctry-chg',t.change);
+  put('ctry-name',t.name[c]+(zh?'（':' (')+CTY_CUR[c]+(zh?'）':')'));
+  const list=document.getElementById('ctry-list');
+  if(list){
+    list.setAttribute('aria-label',t.list);
+    list.querySelectorAll('button[data-c]').forEach(b=>{
+      const k=b.getAttribute('data-c'); b.querySelector('.cn').textContent=t.name[k];
+      if(k===c) b.setAttribute('aria-current','true'); else b.removeAttribute('aria-current');
+    });
+  }
+}
+function setCountry(c){
+  COUNTRY=c; saveCountry(c);
+  // ?country=XX yang masih di bilah alamat ikut diganti, supaya muat ulang memakai pilihan terbaru.
+  try{const u=new URL(location.href); if(u.searchParams.has('country')){u.searchParams.set('country',c); history.replaceState(history.state,'',u.href);}}catch(e){}
+  setLang(document.documentElement.lang||'en',false);
+}
+// Chip "Harga untuk: … · Ganti": tombol pembuka (aria-expanded) + daftar tombol negara, dibuka di tempat.
+function initCountryPicker(){
+  const box=document.getElementById('ctry'), btn=document.getElementById('ctry-btn'), list=document.getElementById('ctry-list');
+  if(!box||!btn||!list) return;
+  function close(focusBtn){list.hidden=true; btn.setAttribute('aria-expanded','false'); if(focusBtn) btn.focus();}
+  CTY_LIST.forEach(c=>{
+    const li=document.createElement('li'), b=document.createElement('button');
+    b.type='button'; b.setAttribute('data-c',c);
+    b.innerHTML='<span class="cf" aria-hidden="true">'+CTY_FLAG[c]+'</span><span class="cn"></span><span class="cc">'+CTY_CUR[c]+'</span>';
+    b.addEventListener('click',()=>{setCountry(c); close(true);});
+    li.appendChild(b); list.appendChild(li);
+  });
+  btn.addEventListener('click',()=>{
+    if(list.hidden){list.hidden=false; btn.setAttribute('aria-expanded','true');}
+    else close(false);
+  });
+  // Panel melayang: tutup saat mengetuk di luar, atau saat fokus papan ketik keluar dari chip.
+  document.addEventListener('pointerdown',e=>{if(!list.hidden&&!box.contains(e.target)) close(false);});
+  box.addEventListener('focusout',e=>{if(!list.hidden&&e.relatedTarget&&!box.contains(e.relatedTarget)) close(false);});
+  // Spasi, Enter & panah di sini milik tombol-tombol ini: jangan diteruskan ke pintasan slide di window.
+  box.addEventListener('keydown',e=>{
+    e.stopPropagation();
+    if(e.key==='Escape'&&!list.hidden){e.preventDefault(); close(true); return;}
+    const o=[].slice.call(list.querySelectorAll('button')), i=o.indexOf(document.activeElement);
+    if(i<0) return;
+    const rtl=document.documentElement.dir==='rtl', k=e.key;
+    let n=-1;
+    if(k==='ArrowDown'||k===(rtl?'ArrowLeft':'ArrowRight')) n=(i+1)%o.length;
+    else if(k==='ArrowUp'||k===(rtl?'ArrowRight':'ArrowLeft')) n=(i-1+o.length)%o.length;
+    else if(k==='Home') n=0;
+    else if(k==='End') n=o.length-1;
+    if(n>=0){e.preventDefault(); o[n].focus();}
+  });
+}
+function setLang(code,save){
+  // Kamus id ditulis untuk perusahaan di Indonesia; di luar Indonesia fitur gaji/pajak diberi label.
+  const dict=(code==='id'&&COUNTRY!=='ID')?Object.assign({},I18N.id,ID_ABROAD):(I18N[code]||I18N.en);
   applySalesCta(code);
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const v=dict[el.getAttribute('data-i18n')];
@@ -3158,7 +3510,9 @@ function setLang(code){
   root.lang=code;
   root.dir = code==='ar' ? 'rtl' : 'ltr';
   document.querySelectorAll('#langbar button').forEach(b=>b.classList.toggle('on',b.dataset.l===code));
-  try{localStorage.setItem('ct_lang',code)}catch(e){}
+  // Hanya pilihan pengunjung (klik bendera) yang disimpan; bahasa hasil tebakan tidak.
+  if(save){try{localStorage.setItem('ct_lang',code)}catch(e){}}
+  renderCountry(code);
 }
 
 (function(){
@@ -3166,13 +3520,13 @@ function setLang(code){
   LANGS.forEach(([code,flag])=>{
     const b=document.createElement('button');
     b.textContent=flag; b.dataset.l=code; b.title=code.toUpperCase();
-    b.addEventListener('click',()=>setLang(code));
+    b.addEventListener('click',()=>setLang(code,true));
     bar.appendChild(b);
   });
   renderStores();
-  let start='en';
-  try{const s=localStorage.getItem('ct_lang'); if(s&&I18N[s])start=s;}catch(e){}
-  setLang(start);
+  COUNTRY=detectCountry();
+  initCountryPicker();
+  setLang(detectLang(COUNTRY),false);
   initDemoForm();
 
   // nav dots + progress + reveal
